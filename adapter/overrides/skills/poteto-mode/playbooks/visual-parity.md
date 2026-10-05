@@ -1,9 +1,13 @@
-# Visual parity
+> Apply the [host and permission contract](../../../resources/host-contract.md). Delegation below means actual permitted host workers. If unavailable, disclose sequential execution; independent-review gates remain unfulfilled. External writes require user authorization. This playbook does not grant it.
 
-Read [the host contract](../../../resources/host-contract.md) before acting.
+### Visual parity
 
-1. Establish an immutable screenshot baseline across relevant states before migration. No baseline means no parity claim.
-2. Keep the harness, baseline, and acceptance criterion fixed. Do not restructure components just to hide differences. If the baseline is wrong, raise the issue before replacing it.
-3. Migrate shared primitives first, then one component at a time. Use isolated outputs for actual permitted parallel work.
-4. Capture and diff each component on the matching surface. For an exact-parity task, nonzero differences fail; investigate every delta. Missing image tooling is a verification gap.
-5. Follow opening-a-pr for authorized batches. Report each component, diff result, harness location, evidence, and remaining work.
+**You own pixel-exact equivalence. The baseline is the spec. You do not touch it.** Equivalence is verified by image diff, not by eye.
+
+1. Establish the baseline first, before any migration: a visual regression harness that screenshots the current component across its states, plus the target when matching two implementations. No baseline, no parity claim. A blocking prerequisite, not a follow-up.
+2. Anti-shortcut clauses, stated and held: no harness modifications, no baseline tampering, no component restructuring to make a diff pass. If the baseline looks wrong, stop and ask, don't edit it.
+3. Migrate one component at a time. Parallelize across worktrees, one owner per component (the **separate-before-serializing-shared-state** principle skill). Shared primitives migrate first as a blocking phase.
+4. Verify each component against its baseline via image diff on the matching surface via the control skill. A nonzero diff is a fail. Investigate the pixel delta. Repeat within the active session until the diff is zero, or report the remaining delta and a resumable checkpoint.
+5. Run **Opening a PR** per component or per safe batch.
+
+**Reply:** components migrated, the diff result for each, the baseline harness location, what's left.

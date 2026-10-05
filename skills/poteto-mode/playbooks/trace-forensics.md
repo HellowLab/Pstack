@@ -1,12 +1,16 @@
-# Trace forensics
+> Apply the [host and permission contract](../../../resources/host-contract.md). Delegation below means actual permitted host workers. If unavailable, disclose sequential execution; independent-review gates remain unfulfilled. External writes require user authorization. This playbook does not grant it.
 
-Read [the host contract](../../../resources/host-contract.md) before acting.
+### Trace forensics
 
-The captured artifact is the evidence. Diagnose it without re-running the workload or changing product code.
+**You own the diagnosis from the artifact. Load it, shape it, narrow to the cause, attribute to source.**
 
-1. Identify the format and use an available parser. Process large captures in bounded slices or actual permitted delegates. Keep the reduced findings in the main context.
-2. Transform the capture into a queryable structure, such as a table of samples, frames, or heap nodes. Preserve the original artifact.
-3. Find the hot path, retainer chain to a garbage-collection root, or blocked thread and its wait reason. Trace the mechanism instead of reporting only the largest number.
-4. Map the finding to file, symbol, and line using the capture's source information. Resolve missing symbols where possible; otherwise report the limitation.
-5. Compare a paired capture when available. Without corroboration, call the finding the strongest supported hypothesis rather than a confirmed cause.
-6. Return the artifact format, reduced finding, source mapping, evidence paths, and confidence. Record throughput checkpoint: n/a, read-only forensics. Route to bug-fix or perf-issue only when that work is requested.
+Distinct from **Runtime forensics**, which instruments the live process. Here the capture already exists. The artifact is a fixed dataset, read it, don't re-run it. Keep tooling generic so the playbook stays portable: a DevTools or trace parser for cpuprofile and `.json.gz`, a text editor for a spindump, your heap tooling for a heapsnapshot.
+
+1. Identify the format and load it with the right tool. Parse large artifacts in a subagent (the **principle-guard-the-context-window** skill) and keep the reduced finding in the main thread.
+2. Transform the raw artifact into a form you can query. Dump the trace or heap snapshot into sqlite, one row per sample, frame, or node. Reach the queryable shape before you read.
+3. Narrow to the cause. Query for the frames that hold the most time and walk the call tree to the hot path. For a leak, follow the retainer chain from the leaked object to a GC root. For a spindump, find the thread stuck on-CPU or blocked and its wait reason.
+4. Attribute to source. Map the hot frame to file, symbol, and line via the artifact's own symbols. A frame with no source mapping is not yet a diagnosis. Resolve the symbols, or say plainly the artifact does not carry them.
+5. Confirm against a paired capture when you have one. Diff a before and after artifact. Without one, mark the finding as the strongest hypothesis the artifact supports, not a confirmed cause.
+6. Hand back a cited diagnosis, no fix unless asked. Route to Bug fix or Perf issue once the cause is known. Throughput checkpoint stays one line: `throughput checkpoint: n/a, read-only forensics`.
+
+**Reply:** the artifact and format, the reduced finding, the source location, the artifact paths, and whether a paired capture confirmed it.

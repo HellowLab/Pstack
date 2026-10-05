@@ -12,6 +12,7 @@ import tarfile
 import tempfile
 
 from build import ROOT, build, hashes, read_json, review_gaps
+from maintenance_pr import BRANCH
 
 UPSTREAM = "https://github.com/cursor/plugins.git"
 
@@ -37,13 +38,23 @@ def export_snapshot(checkout, commit, destination):
             target.chmod(0o755 if member.mode & 0o111 else 0o644)
 
 
-def sync(checkout, root=ROOT):
+def candidate_tree(root=ROOT):
+    remote = git(root, "ls-remote", "--heads", "origin", BRANCH).decode().strip()
+    if not remote:
+        return None
+    git(root, "fetch", "--no-tags", "origin", BRANCH)
+    return git(root, "rev-parse", "FETCH_HEAD:upstream/pstack").decode().strip()
+
+
+def sync(checkout, root=ROOT, existing_candidate_tree=None):
     lock = read_json(root / "upstream/lock.json")
     latest = git(checkout, "rev-parse", "HEAD").decode().strip()
     tree = git(checkout, "rev-parse", "HEAD:pstack").decode().strip()
     summary = f"Checked cursor/plugins {latest}; pstack subtree {tree}."
     if tree == lock["tree"]:
         return False, summary + " No subtree change."
+    if tree == existing_candidate_tree:
+        return False, summary + " This subtree is already staged on the maintenance branch. Preserved its review and timestamps."
     with tempfile.TemporaryDirectory() as temp:
         staged = Path(temp) / "pstack"
         staged.mkdir()
@@ -92,7 +103,7 @@ def main():
         if checkout is None:
             checkout = Path(temp) / "source"
             subprocess.run(["git", "clone", "--depth=1", "--no-tags", UPSTREAM, str(checkout)], check=True)
-        changed, summary = sync(checkout)
+        changed, summary = sync(checkout, existing_candidate_tree=candidate_tree())
     print(summary)
     if os.getenv("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a") as output:

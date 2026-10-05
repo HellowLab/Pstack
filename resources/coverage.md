@@ -14,7 +14,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `.gitignore` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `LICENSE` | unchanged | Complete MIT license preserved at repository and package root. | reviewed |
 | `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `agents/comment-sicko.md` | unsupported | Native agent registration unsupported; poteto-mode and no-comments adapt the workflow without a fictitious agent type. | reviewed |
+| `agents/comment-sicko.md` | adapted | Complete comment-review role preserved as a prompt resource; no native agent registration. Uncertain constraints remain until resolved rather than being deleted on ambiguity. | reviewed |
 | `agents/poteto-agent.md` | unsupported | Native agent registration unsupported; poteto-mode and no-comments adapt the workflow without a fictitious agent type. | reviewed |
 | `assets/logo.png` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `automations/benny/FOR_AGENTS.md` | unsupported | Benny external issue automation is outside the skills-only runtime; no automatic external actions. | reviewed |
@@ -47,9 +47,9 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `docs/guide/images/understanding.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/verification.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `skills/architect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/architect/references/design-red-flags.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/architect/references/rationale-template.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/architect/references/runner-prompt.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
+| `skills/architect/references/design-red-flags.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
+| `skills/architect/references/rationale-template.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
+| `skills/architect/references/runner-prompt.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/arena/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/automate-me/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/benchmark-checklist/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
@@ -57,24 +57,24 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/bro/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/correct/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/create-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/create-verification-skill/references/feature-map-example/README.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/create-verification-skill/references/feature-map-example/create-note.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/create-verification-skill/references/feature-map-example/search.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
+| `skills/create-verification-skill/references/feature-map-example/README.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
+| `skills/create-verification-skill/references/feature-map-example/create-note.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
+| `skills/create-verification-skill/references/feature-map-example/search.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/figure-it-out/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/how/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/how/references/explainer-prompt.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/how/references/explorer-prompt.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
+| `skills/how/references/explainer-prompt.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/how/references/explorer-prompt.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/interrogate/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/interrogate/references/code-quality-review.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/interrogate/references/lead-judgment.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/interrogate/references/reviewer-prompt.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/interrogate/references/rubric.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
+| `skills/interrogate/references/code-quality-review.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
+| `skills/interrogate/references/lead-judgment.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
+| `skills/interrogate/references/reviewer-prompt.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
+| `skills/interrogate/references/rubric.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/maintain-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/make-bot-ui/SKILL.md` | unsupported | Explanatory entry point only; Grok Bot webhook runtime is not supplied. | reviewed |
 | `skills/no-comments/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/poteto-help/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/poteto-help/references/prompting.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/poteto-help/references/recipes.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
+| `skills/poteto-help/references/prompting.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/poteto-help/references/recipes.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/poteto-mode/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/poteto-mode/playbooks/authoring-a-skill.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/autonomous-run.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
@@ -99,7 +99,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/poteto-mode/playbooks/trace-forensics.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/visual-parity.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/worktree-cleanup.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
-| `skills/poteto-mode/references/bugbot-triage.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
+| `skills/poteto-mode/references/bugbot-triage.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/poteto-mode/scripts/bootstrap.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/bun.lock` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/check-plan.mjs` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
@@ -146,31 +146,31 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/principle-type-system-discipline/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/recall/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/reflect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/reflect/references/divergent-reviewer.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/reflect/references/judgment-reviewer.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/reflect/references/synthesizer.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/reflect/references/tooling-reviewer.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
+| `skills/reflect/references/divergent-reviewer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/reflect/references/judgment-reviewer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/reflect/references/synthesizer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/reflect/references/tooling-reviewer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/setup-pstack/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/show-me-your-work/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/show-me-your-work/references/decision-log-template.tsv` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
+| `skills/show-me-your-work/references/decision-log-template.tsv` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/show-me-your-work/scripts/log.sh` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/swarm/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/tdd/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/teach/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/technical-writing/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/typescript-best-practices/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
-| `skills/typescript-best-practices/references/patterns.md` | unchanged | Portable TypeScript examples copied byte-for-byte. | reviewed |
+| `skills/typescript-best-practices/references/patterns.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/unslop/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/why/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/why/references/epistemics.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/why/references/investigator-prompt.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/why/references/source-playbook.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/why/references/sources/code-archaeology.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/why/references/sources/databricks.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/why/references/sources/datadog.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/why/references/sources/incident-postmortem.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/why/references/sources/linear.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/why/references/sources/notion.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/why/references/sources/sentry.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/why/references/sources/slack.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
-| `skills/why/references/synthesizer-prompt.md` | unsupported | Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body. | reviewed |
+| `skills/why/references/epistemics.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
+| `skills/why/references/investigator-prompt.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/why/references/source-playbook.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/why/references/sources/code-archaeology.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/why/references/sources/databricks.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/why/references/sources/datadog.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/why/references/sources/incident-postmortem.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/why/references/sources/linear.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/why/references/sources/notion.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/why/references/sources/sentry.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/why/references/sources/slack.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
+| `skills/why/references/synthesizer-prompt.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |

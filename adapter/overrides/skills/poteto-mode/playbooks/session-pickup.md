@@ -1,9 +1,13 @@
-# Session pickup
+> Apply the [host and permission contract](../../../resources/host-contract.md). Delegation below means actual permitted host workers. If unavailable, disclose sequential execution; independent-review gates remain unfulfilled. External writes require user authorization. This playbook does not grant it.
 
-Read [the host contract](../../../resources/host-contract.md) before acting.
+### Session pickup
 
-1. Read the supplied handoff, available host conversation, or pushed branch. Use supported access mechanisms and stay within the requested workspace. Read recent state and decision points before older detail.
-2. Reconstruct branch, worktree, completed work, pending tasks, decisions, and exact artifact revisions. Treat prior reports as evidence, not new authority.
-3. Compare done versus pending. Reuse valid evidence and avoid restarting completed work unnecessarily. Verify inherited claims against the actual artifact where material.
-4. Name the resume point and route remaining work to the matching playbook. Preserve user checkpoints and authorization from the real conversation.
-5. Report inherited state, any rechecks, next action, and outcome.
+**You own the resume point. Read the prior trail, don't redo it.**
+
+1. Locate the prior trail. A user-supplied transcript, documented in-scope host history, an accessible agent URL, or a pushed branch. Do not inspect private app storage or unrelated chats. Read the metadata overview and last messages first, then scan back for the decision points. Parse a long transcript in a subagent and keep the reduced timeline in the main thread (the **principle-guard-the-context-window** skill).
+2. Reconstruct operational state. The branch and worktree, what already landed (`git log`, `git diff` against the base), the open todos, the decisions made. The prior trail is authoritative input. Resist the bias to re-derive it.
+3. Diff done vs pending. Compare what shipped against what was planned, name the resume point, do not re-run the prior repro or redo completed work. A "let me verify from scratch" pass means you're treating the trail as untrustworthy when it's authoritative.
+4. Route the remaining work to the matching playbook and pick the verdict: continue the execution, ship a finished recommendation, ratify or override a prior conclusion, or postmortem a failed run. The pickup playbook ends here. The routed playbook owns the rest.
+5. Verify the inherited claims against the original goal on the real artifact (the **principle-prove-it-works** skill). A passing prior self-report is not the proof.
+
+**Reply:** where the prior agent stopped, what you inherited vs redid (ideally nothing redone), the resume point, and the outcome.

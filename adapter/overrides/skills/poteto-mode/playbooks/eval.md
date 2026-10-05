@@ -1,10 +1,27 @@
-# Eval
+> Apply the [host and permission contract](../../../resources/host-contract.md). Delegation below means actual permitted host workers. If unavailable, disclose sequential execution; independent-review gates remain unfulfilled. External writes require user authorization. This playbook does not grant it.
 
-Read [the host contract](../../../resources/host-contract.md) before acting.
+### Eval
 
-1. State the variant and expected behavior. Define three to six observable rubric criteria outside candidate context.
-2. Use isolated, neutrally named task directories and a natural user prompt. Do not leak labels such as eval, test, judge, experiment, rubric, score, candidate, or arena into candidate-visible context. Do not request hidden reasoning or lists of applied principles.
-3. Run actual available independent candidates with equivalent task inputs. A multi-model comparison requires real supported models; if absent, report it blocked rather than role-playing diversity.
-4. Give an actual independent judge sanitized outputs and the rubric without model labels. One judge scores both variants on the same scale. If unavailable, label any manual assessment non-blinded and non-independent.
-5. Inspect observable tool traces through documented host access, not private app storage. Grade opened resources and resulting behavior, not self-report. If traces are absent, report that coverage gap.
-6. Read all outputs, reconcile findings, and report variant, rubric, actual candidates, judge, failures, synthesis, and promotion recommendation. Do not promote solely on static checks.
+**You own the experiment design. Plan, blind, run, synthesize.**
+
+**Non-negotiables for blinding:**
+
+- No `eval`, `test`, `judge`, `experiment`, `rubric`, `score`, `compare`, `benchmark`, `candidate`, or `arena` in any directory, file, or prompt the candidate sees.
+- The candidate prompt looks like an organic user request. State the goal, not the meta.
+- No chain-eliciting cues. Don't ask the candidate to list which skills, principles, or files they applied. Ask for design notes generally and grade chain-following from code shape, not self-report.
+- Sanitize directory and slug names. Use project-shaped names a user might pick.
+- Don't tell the candidate other candidates exist.
+- The judge can know it's judging but sees outputs by sanitized label only, never by model name.
+- Comparing two variants: one judge scores both sets in a single pass on one scale, blind to which set each came from.
+
+**Steps:**
+
+1. **Frame.** State what variant is under test and what behavior counts as success. Write the rubric (3-6 concrete criteria) for the judge only. Hold it back from candidates.
+2. **Set up sanitized environments.** Per-candidate working dir with the variant in place. Plant any context an organic task would have: a project skeleton, the skills the candidate would naturally read.
+3. **Author one organic prompt.** What a user would type. No leakage of what's being measured.
+4. **Spawn N parallel candidates** on different models per the **arena** skill's Phase B. Each works in its own sanitized dir. Same prompt to each.
+5. **Spawn one blinded judge** on a different model family per the **arena** skill's Phase C. Judge sees outputs by sanitized label and the rubric, never a model name.
+6. **Verify the chain from transcripts, not self-report.** Read observable tool traces exposed by documented host access for these candidates only. If traces are unavailable, chain-following cannot be verified; record that gap. Look at which files each candidate actually opened. Grade chain-following from the files it really read plus the shape of the code, never from the candidate's own claims.
+7. **Read every candidate output yourself** end to end. Compare to the judge's verdict. Disagreement means a model is biased or the rubric is ambiguous. Synthesize.
+
+**Reply:** variant under test, rubric, per-candidate notes, judge's verdict, your synthesis, and a recommendation for whether to promote the variant.

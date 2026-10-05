@@ -1,7 +1,29 @@
 # Recall
 
-1. Fix the topic, workspace, and time window. Use a supplied state capsule directly when complete. A specific handoff routes to session pickup in [poteto-mode](../poteto-mode/SKILL.md).
-2. Inspect the active conversation and history available through documented host capabilities. Search only the requested scope. Do not infer private transcript paths or search other projects.
-3. Use [why](../why/SKILL.md) to inspect the shared record for a named subsystem. List unavailable sources as gaps.
-4. Verify discovered branches, PRs, and tickets against live state when tools permit. Preserve disagreements between old notes and current state.
-5. Return at most five capsule bullets, one status per work thread, recurring problems, and the single most useful next move. Cite actual evidence and separate planned, uncommitted, open, merged, and reverted work.
+**Before you start or resume work, you rebuild the user's recent working context and hand back a tight capsule of where things stand now and what to do next.**
+
+Keep it tight and on-topic. Read only what the in-scope threads need, then stop.
+
+Your context lives in two records. Your own chat history holds what you did and decided. The shared record holds everything that happened around the same code under other names: the symptoms users keep reporting, the fixes that shipped and got reverted, the errors still firing in prod. That second record is what the **why** skill searches, across source control, the issue tracker, chat and issue channels, long-form docs, and error tracking. A feature with a long bug tail keeps most of its story there, so don't reconstruct it from your transcripts alone.
+
+History comes only from the active conversation, explicitly supplied transcripts, or documented host history access within the user-requested scope. Do not inspect private application storage or unrelated chats.
+
+1. Classify, then route. One specific prior chat to resume is the `session-pickup` playbook, not this. Turning habits into a durable skill is `automate-me`. A human-readable summary of your work is a different task. Recall loads working context across recent chats before you act. If the user already gave you a full state capsule (paths, branch, the change), use it and skip the mining.
+2. Lock the scope before searching. Pin the window ("recent" is a real range, default the last 7 days), the topic if named, and the workspace (default the active one. Never read another project's transcripts without being asked). State the scope back. Never quietly turn "all" into "recent N".
+3. Fan out across your chat history. Use actual permitted workers, each taking a slice of the available in-scope corpus. Inherit the current model unless a supported override was requested. Without delegation, search slices sequentially and disclose it. Tell every subagent to order candidates by real host timestamps and never by UUID name, grep the topic first and then read only the matching chats and only their relevant regions, and skip the current chat plus obvious noise (subagent, eval, and test chats). Each returns the same schema, one block per chat: topic, the user's goal, decisions, open threads, struggles and corrections, and artifacts (PRs, tickets, branches), each citing the chat UUID. For one or two chats, skip the fan-out and search directly. The raw transcripts stay in the subagents. The main thread gets only their findings.
+4. Sweep the shared record whenever the topic names a feature, file, subsystem, area, or bug. This is the default, not a judgment call, and "my work on X" does not exempt it. Hand it to the **why** skill's source investigators, but steer their question from "why was this built this way" to "what's the current state, what's been tried and didn't hold, and what are users still reporting". Reuse its per-source playbooks, run the investigators in parallel with the chat-history mining, and inherit its posture: one investigator per source, null results are findings, skip an unavailable MCP and say so. Fold what comes back into the brief. Skip this step only for pure activity recall with no named target ("what did I do this week"), where your own history and live state are the entire answer.
+5. Verify against live state. Take the PRs, branches, and tickets that the mining and the sweep surfaced and check them with available authorized source-control and tracker tools. When the answer hinges on what an agent actually did (the tools it ran, files it read, errors it hit), read the relevant observable transcript/tool records if exposed, and mark any missing evidence.
+6. Write the brief to the contract below. Group by thread. Stay on the named topic.
+
+## Output contract
+
+Lead with the capsule, then the thread status, then the problems, then the next move. Deeper detail goes below or gets cut.
+
+- **Capsule.** At most 5 bullets. What this work is and where it stands overall.
+- **Threads.** One line each, prefixed with exactly one status tag: `[merged #N]`, `[open PR #N]`, `[in flight <branch>]`, `[verified, uncommitted]`, `[reverted #N]`, or `[planned, not started]`. A thread with no tag is not done yet, so tag it.
+- **Problems.** At most 5, the recurring ones. Include the symptoms users keep reporting and any fix that shipped and was reverted, so the next attempt starts where the last one failed.
+- **Next move.** The single most useful next action, concrete.
+
+An adjacent feature or ticket stays out unless it blocks this one. When the capsule and thread lines outgrow a screen, cut detail before you cut threads. Write the brief through the **unslop** skill, cite chat findings by UUID and shared-record findings by their source (PR #, ticket ID, chat permalink, error-tracker issue), and sanitize private context before any public output.
+
+**Reply:** the brief, to the contract above.

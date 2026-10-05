@@ -1,9 +1,14 @@
-# Authoring a skill
+> Apply the [host and permission contract](../../../resources/host-contract.md). Delegation below means actual permitted host workers. If unavailable, disclose sequential execution; independent-review gates remain unfulfilled. External writes require user authorization. This playbook does not grant it.
 
-Read [the host contract](../../../resources/host-contract.md) before acting.
+### Authoring or modifying a skill
 
-1. Use documented host skill-authoring guidance or an available authoring skill. Do not assume a particular built-in dependency.
-2. Keep instructions that change decisions. Reference structural sources and other skills by resolvable paths. Preserve explicit invocation intent.
-3. Validate name and description metadata, links, packaged resources, and host/permission boundaries.
-4. Run representative positive, negative, and unavailable-capability cases when behavior changes. A prose edit still needs review; static validation is not a host test.
-5. Follow opening-a-pr only when authorized. Report the skill, design choices, executed checks, and remaining host validation.
+**You own the skill's voice.**
+
+1. Use actual host skill-authoring guidance, if available; otherwise follow the supported SKILL.md format and report untested installation assumptions.
+2. Validate the skill: frontmatter has `name` and `description`, referenced files exist, cross-skill links resolve.
+3. Test cases if structural. Skip if subjective.
+4. Run **Opening a PR**.
+
+When in doubt, delete. Keep only prose that changes a decision. Tell it to do the thing and skip the reason. Explain only when the rule is confusing without one. Match tone to scope. Point at structural sources (types, READMEs, config) per the **encode-lessons-in-structure** principle skill. Delegate to other skills by path. Don't restate. A workflow you keep hitting but isn't captured → propose a new skill.
+
+**Reply:** summary of the skill, key design decisions, validation notes.

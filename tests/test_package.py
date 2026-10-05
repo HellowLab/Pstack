@@ -70,9 +70,11 @@ class PackageTests(unittest.TestCase):
             for target in re.findall(r"\[[^\]]*\]\(([^)]+)\)", content.decode()):
                 if target.startswith(("https://", "http://", "#")):
                     continue
+                if name == "skills/why/references/synthesizer-prompt.md" and target == "url":
+                    continue  # Upstream output-template slot, not a package resource.
                 resolved = (ROOT / name).parent.joinpath(target.split("#")[0]).resolve()
                 self.assertTrue(resolved.is_relative_to(ROOT), (name, target))
-                self.assertIn(resolved.relative_to(ROOT).as_posix(), self.files, (name, target))
+                self.assertTrue(resolved.relative_to(ROOT).as_posix() in self.files, (name, target))
 
     def test_license_and_attribution_in_archive(self):
         data = archive(self.files)
@@ -119,6 +121,58 @@ class PackageTests(unittest.TestCase):
                 self.assertIn(phrase, text, case["id"])
         playbooks = [key for key in self.files if key.startswith("skills/poteto-mode/playbooks/")]
         self.assertEqual(len(playbooks), 23)
+
+    def test_portable_reference_inventory_and_workflow_structure(self):
+        # Preserve complete role/rubric/template resources, not just entrypoint names.
+        source = ROOT / "upstream/pstack/skills"
+        for path in source.glob("*/references/**/*"):
+            if path.is_file():
+                destination = "skills/" + path.relative_to(source).as_posix()
+                self.assertTrue(destination in self.files, destination)
+        restored = ("architect", "arena", "automate-me", "blast-radius",
+                    "create-verification-skill", "figure-it-out", "how", "interrogate",
+                    "maintain-verification-skill", "poteto-mode", "recall", "reflect",
+                    "show-me-your-work", "swarm", "why")
+        for name in restored:
+            original = (source / name / "SKILL.md").read_text()
+            adapted = self.files[f"skills/{name}/SKILL.md"].decode()
+            headings = re.findall(r"^#{2,3} .+$", original, re.MULTILINE)
+            for heading in headings:
+                self.assertIn(heading, adapted, name)
+
+    def test_load_bearing_semantic_contracts(self):
+        # Static preservation checks. Live model behavior is a separate release gate.
+        contracts = {
+            "architect/SKILL.md": ["Require at least two structurally distinct candidates",
+                "Screen every candidate", "references/design-red-flags.md",
+                "references/rationale-template.md", "Phase C: Agree (opt-in)",
+                "The caller's usage is written first"],
+            "interrogate/SKILL.md": ["references/reviewer-prompt.md",
+                "references/rubric.md", "references/code-quality-review.md",
+                "references/lead-judgment.md"],
+            "why/SKILL.md": ["references/epistemics.md", "references/synthesizer-prompt.md"],
+            "why/references/epistemics.md": ["### 1. Direct", "### 2. Supported",
+                "### 3. Inferred", "### 4. Speculative", "### 5. Unknown",
+                "## When Evidence Contradicts", "## Calibration Check Before Finalizing"],
+            "reflect/SKILL.md": ["references/judgment-reviewer.md",
+                "references/tooling-reviewer.md", "references/divergent-reviewer.md",
+                "references/synthesizer.md", "Accepted / Rejected / Backlog"],
+            "show-me-your-work/SKILL.md": ["Append-only", "Never edit or delete history",
+                "first row has phase `start`", "audit never edits or removes a row",
+                "Self-review is not a substitute"],
+            "poteto-mode/playbooks/feature.md": ["Blocking first steps", "Independent workstreams",
+                "Shared mutable state", "Smallest safe decomposition"],
+            "poteto-mode/playbooks/refactoring.md": ["Pin the behavior contract first",
+                "Type check and lint are not a pin", "If the diff does not lower reader load"],
+            "poteto-mode/playbooks/multi-phase-plan.md": ["Regression lane against trunk",
+                "Do not claim a ratio between unlike scenarios", "**Review gate.**"],
+        }
+        for path, clauses in contracts.items():
+            text = self.files["skills/" + path].decode()
+            for clause in clauses:
+                self.assertTrue(clause in text, (path, clause))
+        self.assertEqual(self.files["skills/show-me-your-work/references/decision-log-template.tsv"],
+                         b"ts\tphase\tdecision\twhy\tevidence\tresult\n")
 
     def test_ci_uses_scoped_permissions_and_no_publication(self):
         for path in (ROOT / ".github/workflows").glob("*.yml"):
@@ -229,6 +283,17 @@ class UpstreamTests(unittest.TestCase):
         self.assertEqual(list((self.root / "dist").glob("*.zip")), [])
         self.assertIn("No ZIP is available", (self.root / "docs/upstream-update.md").read_text())
         self.assertIn("skills/how/SKILL.md", review_gaps(self.root))
+
+    def test_existing_candidate_is_a_noop_even_from_older_default_branch(self):
+        path = self.repo / "pstack/README.md"
+        path.write_text(path.read_text() + "\nAnother source change.\n")
+        self.commit()
+        candidate = self.command("rev-parse", "HEAD:pstack")
+        before = hashes(self.root / "upstream")
+        changed, summary = sync(self.repo, self.root, existing_candidate_tree=candidate)
+        self.assertFalse(changed)
+        self.assertIn("already staged", summary)
+        self.assertEqual(hashes(self.root / "upstream"), before)
 
 
 if __name__ == "__main__":

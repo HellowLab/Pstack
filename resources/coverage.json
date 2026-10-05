@@ -35,8 +35,9 @@
     },
     {
       "source": "agents/comment-sicko.md",
-      "status": "unsupported",
-      "reason": "Native agent registration unsupported; poteto-mode and no-comments adapt the workflow without a fictitious agent type.",
+      "status": "adapted",
+      "destination": "skills/no-comments/references/reviewer.md",
+      "reason": "Complete comment-review role preserved as a prompt resource; no native agent registration. Uncertain constraints remain until resolved rather than being deleted on ambiguity.",
       "review": "reviewed"
     },
     {
@@ -234,20 +235,23 @@
     },
     {
       "source": "skills/architect/references/design-red-flags.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "unchanged",
+      "destination": "skills/architect/references/design-red-flags.md",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
       "source": "skills/architect/references/rationale-template.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "unchanged",
+      "destination": "skills/architect/references/rationale-template.md",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
       "source": "skills/architect/references/runner-prompt.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/architect/references/runner-prompt.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
@@ -301,20 +305,23 @@
     },
     {
       "source": "skills/create-verification-skill/references/feature-map-example/README.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "unchanged",
+      "destination": "skills/create-verification-skill/references/feature-map-example/README.md",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
       "source": "skills/create-verification-skill/references/feature-map-example/create-note.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "unchanged",
+      "destination": "skills/create-verification-skill/references/feature-map-example/create-note.md",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
       "source": "skills/create-verification-skill/references/feature-map-example/search.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "unchanged",
+      "destination": "skills/create-verification-skill/references/feature-map-example/search.md",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
@@ -333,14 +340,16 @@
     },
     {
       "source": "skills/how/references/explainer-prompt.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/how/references/explainer-prompt.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/how/references/explorer-prompt.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/how/references/explorer-prompt.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
@@ -352,26 +361,30 @@
     },
     {
       "source": "skills/interrogate/references/code-quality-review.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "unchanged",
+      "destination": "skills/interrogate/references/code-quality-review.md",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
       "source": "skills/interrogate/references/lead-judgment.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "unchanged",
+      "destination": "skills/interrogate/references/lead-judgment.md",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
       "source": "skills/interrogate/references/reviewer-prompt.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "unchanged",
+      "destination": "skills/interrogate/references/reviewer-prompt.md",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
       "source": "skills/interrogate/references/rubric.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "unchanged",
+      "destination": "skills/interrogate/references/rubric.md",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
@@ -404,14 +417,16 @@
     },
     {
       "source": "skills/poteto-help/references/prompting.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/poteto-help/references/prompting.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/poteto-help/references/recipes.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/poteto-help/references/recipes.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
@@ -584,8 +599,9 @@
     },
     {
       "source": "skills/poteto-mode/references/bugbot-triage.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/poteto-mode/references/bugbot-triage.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
@@ -892,26 +908,30 @@
     },
     {
       "source": "skills/reflect/references/divergent-reviewer.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/reflect/references/divergent-reviewer.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/reflect/references/judgment-reviewer.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/reflect/references/judgment-reviewer.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/reflect/references/synthesizer.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/reflect/references/synthesizer.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/reflect/references/tooling-reviewer.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/reflect/references/tooling-reviewer.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
@@ -930,8 +950,9 @@
     },
     {
       "source": "skills/show-me-your-work/references/decision-log-template.tsv",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "unchanged",
+      "destination": "skills/show-me-your-work/references/decision-log-template.tsv",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
@@ -979,7 +1000,7 @@
       "source": "skills/typescript-best-practices/references/patterns.md",
       "status": "unchanged",
       "destination": "skills/typescript-best-practices/references/patterns.md",
-      "reason": "Portable TypeScript examples copied byte-for-byte.",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
@@ -998,74 +1019,86 @@
     },
     {
       "source": "skills/why/references/epistemics.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "unchanged",
+      "destination": "skills/why/references/epistemics.md",
+      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
       "review": "reviewed"
     },
     {
       "source": "skills/why/references/investigator-prompt.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/why/references/investigator-prompt.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/why/references/source-playbook.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/why/references/source-playbook.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/why/references/sources/code-archaeology.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/why/references/sources/code-archaeology.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/why/references/sources/databricks.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/why/references/sources/databricks.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/why/references/sources/datadog.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/why/references/sources/datadog.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/why/references/sources/incident-postmortem.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/why/references/sources/incident-postmortem.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/why/references/sources/linear.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/why/references/sources/linear.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/why/references/sources/notion.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/why/references/sources/notion.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/why/references/sources/sentry.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/why/references/sources/sentry.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/why/references/sources/slack.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/why/references/sources/slack.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
       "source": "skills/why/references/synthesizer-prompt.md",
-      "status": "unsupported",
-      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body.",
+      "status": "adapted",
+      "destination": "skills/why/references/synthesizer-prompt.md",
+      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     }
   ]

@@ -9,6 +9,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import maintenance_pr
+from sync_upstream import candidate_tree
 
 
 class MaintenanceTests(unittest.TestCase):
@@ -30,6 +31,8 @@ class MaintenanceTests(unittest.TestCase):
             Path(folder).mkdir()
             Path(folder, "fixture").write_text("baseline")
         Path("resources/coverage.json").write_text("{}")
+        Path("upstream/pstack").mkdir()
+        Path("upstream/pstack/source.md").write_text("canonical source fixture")
         Path("resources/coverage.md").write_text("baseline")
         Path("docs/upstream-update.md").write_text("baseline")
         self.real_run("git", "add", ".")
@@ -72,6 +75,7 @@ class MaintenanceTests(unittest.TestCase):
         self.candidate("second update")
         self.invoke()
         second = self.real_run("git", "rev-parse", "HEAD")
+        self.assertEqual(candidate_tree(self.root), self.real_run("git", "rev-parse", "HEAD:upstream/pstack"))
         self.assertNotEqual(first, second)
         self.assertEqual(sum(call[1:3] == ("pr", "create") for call in self.calls), 1)
         self.assertEqual(sum(call[1:3] == ("pr", "edit") for call in self.calls), 1)

@@ -1,10 +1,17 @@
-# Bug fix
+> Apply the [host and permission contract](../../../resources/host-contract.md). Delegation below means actual permitted host workers. If unavailable, disclose sequential execution; independent-review gates remain unfulfilled. External writes require user authorization. This playbook does not grant it.
 
-Read [the host contract](../../../resources/host-contract.md) before acting.
+### Bug fix
 
-1. Reproduce on the actual affected surface using an available driver. If access prevents reproduction, attempt what is reachable and state the precise gap. Never call source inspection a reproduction.
-2. Ground with how and why. Form candidate mechanisms, choose experiments that eliminate the most possibilities, and instrument unclear runtime state. Confirm the surviving mechanism before planning the fix. Revert changes whose hypotheses were refuted.
-3. Use architect if the fix changes a function boundary. Implement the smallest change justified by evidence, using a separate owner when actual delegation is available.
-4. Re-run the original reproduction on the same surface. Unit tests alone do not establish absence of a runtime bug.
-5. Use tdd for a cheap, meaningful regression path. Capture failing-before and passing-after evidence; do not manufacture a test solely to mirror implementation.
-6. Follow opening-a-pr when authorized. Report symptom, root cause, fix, actual repro output, and remaining gaps.
+**You own this task. Plan, review, verify.** Delegate investigation and the fix to subagents, stay in the lead.
+
+Be scientific. Every shipped line traces to runtime evidence. Belt-and-suspenders that "might help" is a hypothesis, not a fix. It does not ship. When evidence refutes a hypothesis, revert what it motivated. The smallest change the evidence justifies ships, nothing more.
+
+1. Reproduce it yourself on the matching surface via the control skill (Non-negotiables), even when a debug or instrumentation protocol says to ask the user to reproduce. Ask the user only with a stated, specific reason the control surface cannot reach the target, and only after driving it as far as it goes. If it won't reproduce directly, synthesize the trigger, tighten conditions, or instrument until it fires.
+2. Binary-search the cause. Form the candidate hypotheses, then rule them out until one survives. Seed them with `how` over the affected subsystem and the **why** skill for regression history. Each pass, take the split that cuts the most remaining problem space, get runtime evidence, eliminate. When program state is unclear, add instrumentation or logging and read it as the code runs. Don't guess. Keep a long hunt in a bounded hypothesis loop; future wakeups require an explicitly authorized supported host mechanism. Confirm the surviving *mechanism* with runtime evidence before the step-3 architect/interrogate fan-out.
+3. Plan the fix. If it crosses a function boundary, `architect` first. Delegate implementation to a subagent using actual permitted host workers with inherited model settings with a specific scope.
+4. Verify on the same surface. The original repro now passes. "Inconclusive" or wrong-surface is not a pass. Flag it. Unit tests show branch behavior, not bug absence.
+5. Stage the commits so the failing repro lands before the fix in git history. See the **tdd** skill for the failing-test-first cadence when the bug has a cheap local test path. Skip it when the test would be expensive, integration-heavy, or unclear.
+   This is the canonical **sequence-verifiable-units** principle skill, the failing test first and the fix on top.
+6. Run **Opening a PR**.
+
+**Reply:** what was broken, root cause, fix, how you verified. Paste failing-then-passing repro output verbatim.

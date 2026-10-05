@@ -6,6 +6,8 @@ The repository owns update tracking. It does not depend on an assistant remember
 
 The job clones the canonical public repository and compares `HEAD:pstack` with the pinned tree ID. Changes elsewhere in the monorepo do not create a PR. Any subtree change counts, including documentation changes and same-version edits. Every run logs the checked commit and subtree in its Actions summary. The committed lock records the most recent check that changed the snapshot; consult Actions for later no-change checks.
 
+It also fetches the existing maintenance branch and compares its actual `upstream/pstack` Git tree. If that branch already holds the current upstream subtree, the run is a no-op even while default-branch approval is pending. It does not rewrite the branch, change `checked_at`, or edit the PR body merely because another day passed.
+
 On a changed subtree, the job replaces the source-only snapshot, updates its lock, writes a changed-file report, regenerates preview artifacts, and runs validation. Reviewed hashes are never updated by automation. Changed or unknown files cause the validation gate to fail, and the preview remains explicitly unqualified. This failure is expected until adaptation review finishes.
 
 If upstream metadata changes so much that generation cannot proceed, the job still stages the source diff and report for review, removes stale ZIPs, and marks generation blocked. It does not leave an old package looking like the new candidate.
@@ -17,6 +19,8 @@ GitHub suppresses ordinary push/PR workflow recursion for `GITHUB_TOKEN` events,
 ## Current organization gate
 
 Initial inspection on 2026-10-05 found read-only default workflow permissions and `can_approve_pull_request_reviews: false` for this repository. That setting controls whether Actions may create or approve PRs. No setting was changed. If PR creation is blocked, the job reports the error, preserves its maintenance branch and uploaded artifacts, and fails visibly. A maintainer can open the draft from that branch manually. Enabling an organization policy is an owner decision outside this implementation.
+
+The read-only API is `GET /repos/HellowLab/Pstack-GPT/actions/permissions/workflow`. The setting is under [repository Actions settings](https://github.com/HellowLab/Pstack-GPT/settings/actions), Workflow permissions, Allow GitHub Actions to create and approve pull requests. A minimal proposed change would set only `can_approve_pull_request_reviews` to true for this repository while leaving the default token permissions at read. This setting permits approvals as well as creation, although this workflow never approves a PR. It needs explicit owner authorization. Whether a repository-only change suffices is unconfirmed: reading the organization policy returned 403 because the existing credential lacks `admin:org`. Do not broaden token scope or change organization policy to work around that uncertainty. A human can inspect the organization UI if the repository checkbox is unavailable.
 
 ## Review an update
 

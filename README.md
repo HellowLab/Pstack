@@ -42,6 +42,6 @@ To remove a test installation, use `codex plugin remove pstack-gpt@pstack-gpt-pr
 
 ## Maintain and publish
 
-Read [maintenance](docs/maintenance.md) for the daily check, the one-draft-PR update flow, the current organization policy blocker, and manual adaptation review. Read [publishing](docs/publishing.md) for verified-publisher requirements, actual host validation, review, and explicit publication steps. The initial implementation remains subject to human review and must not be merged automatically.
+Read [maintenance](docs/maintenance.md) for the daily check, the one-draft-PR update flow, the current repository PR-creation permission blocker, and manual adaptation review. Read [publishing](docs/publishing.md) for verified-publisher requirements, actual host validation, review, and explicit publication steps. The initial implementation remains subject to human review and must not be merged automatically.
 
 Pstack is MIT licensed. Copyright (c) 2026 Lauren Tan. See [LICENSE](LICENSE).
