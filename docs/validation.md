@@ -61,6 +61,8 @@ The earlier PR-triggered run at commit `60ef3bf` did not execute any test steps.
 
 ## Required before public release
 
+Start with the [behavioral qualification plan](behavioral-qualification.md), which provides disposable synthetic fixtures, exact prompts, and observable verdict criteria. Preparing those fixtures does not execute or pass a model evaluation.
+
 1. Install the exact candidate in a clean supported ChatGPT test surface and a clean supported Codex test surface. Record host/version, date, artifact checksum, exposed tools, install result, discovered skill count, and removal result. Use a fresh conversation to avoid previously loaded skill versions. Verify that the installed host can read `../../resources/host-contract.md`, sibling skills, nested role references, and playbooks through its actual resource API; filesystem link resolution alone does not prove cloud accessibility.
 2. Run every workflow case from `tests/workflow-cases.json` on each host. Save actual prompts, observable tool calls, outputs, file/remote changes, and an evidence-based verdict. Do not collect hidden reasoning or claim compliance from model self-report.
 3. Compare supported workflows with the pinned upstream intent. Check the preserved stage order, evidence standards, independent verification, and stopping conditions. Evaluate core workflows on real disposable projects, including a failing-before bug repro, a behavior-preserving refactor, an architecture comparison, source-history investigation, and current-head PR review.
