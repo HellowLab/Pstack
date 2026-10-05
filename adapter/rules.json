@@ -1,0 +1,942 @@
+{
+  "format": 1,
+  "skills": {
+    "architect": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "arena": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "automate-me": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "benchmark-checklist": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "blast-radius": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "bro": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "correct": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "create-verification-skill": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "figure-it-out": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "how": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "interrogate": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "maintain-verification-skill": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "make-bot-ui": {
+      "body": "override",
+      "support": "unsupported"
+    },
+    "no-comments": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "poteto-help": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "poteto-mode": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "principle-attack-the-premise": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-boundary-discipline": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-build-the-lever": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-encode-lessons-in-structure": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-exhaust-the-design-space": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-experience-first": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-explain-the-number": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-fix-root-causes": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-foundational-thinking": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-guard-the-context-window": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "principle-laziness-protocol": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-make-operations-idempotent": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-migrate-callers-then-delete-legacy-apis": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-minimize-reader-load": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-model-the-domain": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-never-block-on-the-human": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "principle-outcome-oriented-execution": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-prove-it-works": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-redesign-from-first-principles": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-separate-before-serializing-shared-state": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-sequence-verifiable-units": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-subtract-before-you-add": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-test-behavior-not-implementation": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "principle-type-system-discipline": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "recall": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "reflect": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "setup-pstack": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "show-me-your-work": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "swarm": {
+      "body": "override",
+      "support": "adapted"
+    },
+    "tdd": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "teach": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "technical-writing": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "typescript-best-practices": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "unslop": {
+      "body": "upstream",
+      "support": "adapted"
+    },
+    "why": {
+      "body": "override",
+      "support": "adapted"
+    }
+  },
+  "files": {
+    ".cursor-plugin/plugin.json": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    ".gitignore": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "LICENSE": {
+      "status": "unchanged",
+      "reason": "Complete MIT license preserved at repository and package root."
+    },
+    "README.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "agents/comment-sicko.md": {
+      "status": "unsupported",
+      "reason": "Native agent registration unsupported; poteto-mode and no-comments adapt the workflow without a fictitious agent type."
+    },
+    "agents/poteto-agent.md": {
+      "status": "unsupported",
+      "reason": "Native agent registration unsupported; poteto-mode and no-comments adapt the workflow without a fictitious agent type."
+    },
+    "assets/logo.png": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "automations/benny/FOR_AGENTS.md": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "automations/benny/README.md": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "automations/benny/skills/reproduce-and-fix-issues/SKILL.md": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "automations/benny/skills/reproduce-and-fix-issues/references/control-adapter.md": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "automations/benny/skills/reproduce-and-fix-issues/references/feature-map.example.md": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "automations/benny/skills/reproduce-and-fix-issues/references/verify-existing-fix.md": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "automations/benny/skills/setup-benny/SKILL.md": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "automations/benny/skills/triage-issue-reports/SKILL.md": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "automations/benny/skills/triage-issue-reports/references/routing.example.md": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "automations/benny/templates/configuration.example.yaml": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "automations/benny/templates/reproduce-automation-prompt.md": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "automations/benny/templates/triage-automation-prompt.md": {
+      "status": "unsupported",
+      "reason": "Benny external issue automation is outside the skills-only runtime; no automatic external actions."
+    },
+    "docs/guide/01-setup.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/02-poteto-mode.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/03-understand.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/04-design.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/05-build-and-clean.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/06-verify-and-ship.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/07-overnight.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/08-principles.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/09-make-it-yours.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/10-recipes-and-pitfalls.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/README.md": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/images/design.jpg": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/images/overnight.jpg": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/images/recipes.jpg": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/images/router.jpg": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/images/understanding.jpg": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "docs/guide/images/verification.jpg": {
+      "status": "unsupported",
+      "reason": "Source-only supporting material; not loaded or executed by the package."
+    },
+    "skills/architect/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/architect/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/architect/references/design-red-flags.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/architect/references/rationale-template.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/architect/references/runner-prompt.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/arena/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/arena/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/automate-me/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/automate-me/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/benchmark-checklist/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/benchmark-checklist/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/blast-radius/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/blast-radius/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/bro/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/bro/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/correct/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/correct/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/create-verification-skill/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/create-verification-skill/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/create-verification-skill/references/feature-map-example/README.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/create-verification-skill/references/feature-map-example/create-note.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/create-verification-skill/references/feature-map-example/search.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/figure-it-out/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/figure-it-out/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/how/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/how/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/how/references/explainer-prompt.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/how/references/explorer-prompt.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/interrogate/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/interrogate/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/interrogate/references/code-quality-review.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/interrogate/references/lead-judgment.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/interrogate/references/reviewer-prompt.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/interrogate/references/rubric.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/maintain-verification-skill/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/maintain-verification-skill/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/make-bot-ui/SKILL.md": {
+      "status": "unsupported",
+      "destination": "skills/make-bot-ui/SKILL.md",
+      "reason": "Explanatory entry point only; Grok Bot webhook runtime is not supplied."
+    },
+    "skills/no-comments/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/no-comments/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/poteto-help/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-help/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/poteto-help/references/prompting.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/poteto-help/references/recipes.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/poteto-mode/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/poteto-mode/playbooks/authoring-a-skill.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/authoring-a-skill.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/autonomous-run.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/autonomous-run.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/autopilot-full.md": {
+      "status": "unsupported",
+      "destination": "skills/poteto-mode/playbooks/autopilot-full.md",
+      "reason": "Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied."
+    },
+    "skills/poteto-mode/playbooks/autopilot-stack.md": {
+      "status": "unsupported",
+      "destination": "skills/poteto-mode/playbooks/autopilot-stack.md",
+      "reason": "Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied."
+    },
+    "skills/poteto-mode/playbooks/babysit.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/babysit.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/bug-fix.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/bug-fix.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/eval.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/eval.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/feature.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/feature.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/hillclimb.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/hillclimb.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/investigation.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/investigation.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/multi-phase-plan.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/multi-phase-plan.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/opening-a-pr.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/opening-a-pr.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/orchestrate.md": {
+      "status": "unsupported",
+      "destination": "skills/poteto-mode/playbooks/orchestrate.md",
+      "reason": "Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied."
+    },
+    "skills/poteto-mode/playbooks/pause-safely.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/pause-safely.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/perf-issue.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/perf-issue.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/prototype.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/prototype.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/refactoring.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/refactoring.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/runtime-forensics.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/runtime-forensics.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/session-pickup.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/session-pickup.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/shipping.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/shipping.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/trace-forensics.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/trace-forensics.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/visual-parity.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/visual-parity.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/playbooks/worktree-cleanup.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/playbooks/worktree-cleanup.md",
+      "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
+    },
+    "skills/poteto-mode/references/bugbot-triage.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/poteto-mode/scripts/bootstrap.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/bun.lock": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/check-plan.mjs": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/orch/orch.test.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/orch/orch.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/orch/store.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/package.json": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/cli.test.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/cli.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/fakes.test-helper.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/github.test.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/github.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/policy.test.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/policy.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/render.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/tsconfig.json": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/types.compile.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/types.ts": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/watch-pr/watch-pr": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/poteto-mode/scripts/worktree-audit.sh": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/principle-attack-the-premise/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-attack-the-premise/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-boundary-discipline/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-boundary-discipline/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-build-the-lever/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-build-the-lever/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-encode-lessons-in-structure/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-encode-lessons-in-structure/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-exhaust-the-design-space/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-exhaust-the-design-space/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-experience-first/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-experience-first/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-explain-the-number/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-explain-the-number/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-fix-root-causes/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-fix-root-causes/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-foundational-thinking/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-foundational-thinking/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-guard-the-context-window/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-guard-the-context-window/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/principle-laziness-protocol/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-laziness-protocol/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-make-operations-idempotent/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-make-operations-idempotent/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-minimize-reader-load/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-minimize-reader-load/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-model-the-domain/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-model-the-domain/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-never-block-on-the-human/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-never-block-on-the-human/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/principle-outcome-oriented-execution/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-outcome-oriented-execution/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-prove-it-works/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-prove-it-works/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-redesign-from-first-principles/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-redesign-from-first-principles/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-separate-before-serializing-shared-state/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-separate-before-serializing-shared-state/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-sequence-verifiable-units/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-sequence-verifiable-units/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-subtract-before-you-add/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-subtract-before-you-add/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-test-behavior-not-implementation/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-test-behavior-not-implementation/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/principle-type-system-discipline/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/principle-type-system-discipline/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/recall/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/recall/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/reflect/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/reflect/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/reflect/references/divergent-reviewer.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/reflect/references/judgment-reviewer.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/reflect/references/synthesizer.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/reflect/references/tooling-reviewer.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/setup-pstack/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/setup-pstack/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/show-me-your-work/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/show-me-your-work/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/show-me-your-work/references/decision-log-template.tsv": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/show-me-your-work/scripts/log.sh": {
+      "status": "unsupported",
+      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+    },
+    "skills/swarm/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/swarm/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/tdd/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/tdd/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/teach/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/teach/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/technical-writing/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/technical-writing/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/typescript-best-practices/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/typescript-best-practices/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/typescript-best-practices/references/patterns.md": {
+      "status": "unchanged",
+      "destination": "skills/typescript-best-practices/references/patterns.md",
+      "reason": "Portable TypeScript examples copied byte-for-byte."
+    },
+    "skills/unslop/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/unslop/SKILL.md",
+      "reason": "Upstream body retained; invocation and host/permission guards added."
+    },
+    "skills/why/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/why/SKILL.md",
+      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+    },
+    "skills/why/references/epistemics.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/why/references/investigator-prompt.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/why/references/source-playbook.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/why/references/sources/code-archaeology.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/why/references/sources/databricks.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/why/references/sources/datadog.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/why/references/sources/incident-postmortem.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/why/references/sources/linear.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/why/references/sources/notion.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/why/references/sources/sentry.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/why/references/sources/slack.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    },
+    "skills/why/references/synthesizer-prompt.md": {
+      "status": "unsupported",
+      "reason": "Upstream host-specific prompt/reference excluded; supported workflow requirements are in the adapted skill body."
+    }
+  }
+}
