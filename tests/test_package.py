@@ -219,6 +219,17 @@ class UpstreamTests(unittest.TestCase):
         self.assertTrue(changed)
         self.assertIn("<subtree tree, including file modes>", review_gaps(self.root))
 
+    def test_incompatible_metadata_keeps_candidate_without_stale_zip(self):
+        path = self.repo / "pstack/skills/how/SKILL.md"
+        path.write_text("New incompatible registration format")
+        self.commit()
+        changed, summary = sync(self.repo, self.root)
+        self.assertTrue(changed)
+        self.assertIn("Generation blocked", summary)
+        self.assertEqual(list((self.root / "dist").glob("*.zip")), [])
+        self.assertIn("No ZIP is available", (self.root / "docs/upstream-update.md").read_text())
+        self.assertIn("skills/how/SKILL.md", review_gaps(self.root))
+
 
 if __name__ == "__main__":
     unittest.main()

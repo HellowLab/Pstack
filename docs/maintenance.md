@@ -8,6 +8,8 @@ The job clones the canonical public repository and compares `HEAD:pstack` with t
 
 On a changed subtree, the job replaces the source-only snapshot, updates its lock, writes a changed-file report, regenerates preview artifacts, and runs validation. Reviewed hashes are never updated by automation. Changed or unknown files cause the validation gate to fail, and the preview remains explicitly unqualified. This failure is expected until adaptation review finishes.
 
+If upstream metadata changes so much that generation cannot proceed, the job still stages the source diff and report for review, removes stale ZIPs, and marks generation blocked. It does not leave an old package looking like the new candidate.
+
 The job opens or updates one draft on `maintenance/pstack-upstream`. It uses only the repository's `GITHUB_TOKEN`, `contents: write`, and `pull-requests: write`. It never merges, publishes, adds credentials, or alters security settings. It refuses to overwrite a branch whose tip is not from the Actions bot, or a PR made ready for review. Branch replacement uses an explicit force-with-lease against the observed bot-branch tip; it cannot force-push the default branch.
 
 GitHub suppresses ordinary push/PR workflow recursion for `GITHUB_TOKEN` events, so the scheduled job runs the candidate checks directly and uploads its ZIP, coverage, and report. A human push to the review branch runs normal CI. Review the scheduled run as well as PR checks.

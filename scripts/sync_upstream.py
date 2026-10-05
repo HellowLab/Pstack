@@ -48,7 +48,10 @@ def sync(checkout, root=ROOT):
         staged = Path(temp) / "pstack"
         staged.mkdir()
         export_snapshot(checkout, latest, staged)
-        version = read_json(staged / ".cursor-plugin/plugin.json")["version"]
+        try:
+            version = read_json(staged / ".cursor-plugin/plugin.json")["version"]
+        except (ValueError, KeyError, FileNotFoundError):
+            version = "unknown; upstream metadata requires review"
         files = hashes(staged)
         changed = sorted(key for key in files.keys() | lock["files"].keys()
                          if files.get(key) != lock["files"].get(key))
@@ -67,7 +70,16 @@ def sync(checkout, root=ROOT):
               "The generated ZIP is an unqualified preview. No auto-merge or publication.", "", "Changed files:", ""]
     report.extend(f"- `{path}`" for path in changed)
     (root / "docs/upstream-update.md").write_text("\n".join(report) + "\n")
-    build(root)
+    try:
+        build(root)
+    except (ValueError, KeyError, IndexError, FileNotFoundError) as error:
+        for artifact in (root / "dist").glob("*"):
+            if artifact.is_file():
+                artifact.unlink()
+        failure = "Generation blocked by incompatible upstream input. " + type(error).__name__
+        with (root / "docs/upstream-update.md").open("a") as output:
+            output.write("\n" + failure + ". No ZIP is available for this candidate. Inspect the source diff and rerun the build locally for diagnostics.\n")
+        return True, summary + " " + failure
     return True, summary + f" {len(review_gaps(root))} files require adaptation review."
 
 
