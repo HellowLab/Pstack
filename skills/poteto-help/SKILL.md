@@ -33,7 +33,7 @@ Check the state that changes the answer, and mention it only when it does:
 ## Get set up
 
 1. Install Pstack only through a supported host plugin installation surface. This is an independent adaptation, not the official Cursor release. Native compatibility must be verified; no marketplace listing is published by these instructions.
-2. Run [`/setup-pstack`](../setup-pstack/SKILL.md) to inspect available tools, workers, controls, and verification gaps. It does not write vendor-model configuration.
+2. Run [`/setup-pstack`](../setup-pstack/SKILL.md) to choose a reasoning budget and model preferences for each role using the host's available controls. Review and accept the proposed settings before saving them. Defaults inherit the current model; saved preferences apply in future sessions only when the host's loading mechanism has been verified.
 3. Start a real task with `/poteto-mode`, a goal, and a check that can pass or fail.
 
 Installing does not authorize an external action. Explicit-only skills run on invocation or a route from an invoked workflow; setup retains upstream's automatic eligibility. Read [`references/prompting.md`](references/prompting.md) to word the first prompt. Extra candidates and independent reviewers consume time and tokens; use only actual available workers and inherit model settings unless a supported override was requested. Missing independent review remains a gap.
@@ -71,7 +71,7 @@ The default answer is `/poteto-mode`, which runs most of the others when its ste
 | Vet a performance number before reporting or acting on it | [`/benchmark-checklist`](../benchmark-checklist/SKILL.md) |
 | Run a large or cross-cutting change, or one to review after stepping away | [`/figure-it-out`](../figure-it-out/SKILL.md) |
 | Keep a decision log during a run, and review it afterward | [`/show-me-your-work`](../show-me-your-work/SKILL.md) |
-| Inspect actual host capabilities and verification gaps | [`/setup-pstack`](../setup-pstack/SKILL.md) |
+| Choose supported models and reasoning budgets for each role | [`/setup-pstack`](../setup-pstack/SKILL.md) |
 | Turn their own working habits into a personal mode skill | [`/automate-me`](../automate-me/SKILL.md) |
 | Turn what a finished task taught into skill edits | [`/reflect`](../reflect/SKILL.md) |
 | Stop agents from repeating the same mistakes in this repo | [`/correct`](../correct/SKILL.md) |
@@ -89,7 +89,7 @@ Close calls:
 - `/recall` rebuilds context across recent chats. Resuming one specific chat or branch is the Session pickup playbook.
 - `/figure-it-out` designs one rigorous run. The Orchestrate playbook runs a program that spans days and many PRs. The Autonomous run playbook drives one task to a finish condition.
 
-Not included in this skills-only adaptation: companion cleanup/control plugins, persistent loop execution, vendor model configuration, native agent registration, and webhook bot hosting. The Orchestrate and two Autopilot routes are explicit unsupported-runtime explanations, not claims of unattended execution. A similarly named skill exposed by another plugin is not this package's implementation.
+Not included in this skills-only adaptation: companion cleanup/control plugins, persistent loop execution, model installation or entitlement changes, native agent registration, and webhook bot hosting. Setup can record accepted role/model/effort preferences; it cannot add host capabilities. The Orchestrate and two Autopilot routes are explicit unsupported-runtime explanations, not claims of unattended execution. A similarly named skill exposed by another plugin is not this package's implementation.
 
 ## Playbooks and principles
 
@@ -114,10 +114,10 @@ Principles are one-rule skills that `/poteto-mode` reads and cites in its replie
 |---|---|
 | The mode stopped applying after a few turns | Persistent mode UI is host-specific. Start each new task with `/poteto-mode`. |
 | A question got treated as the next step of the last task | Say "new task", or say the turn doesn't need the mode. |
-| A new model choice had no effect | Setup does not configure vendor models. Check the actual host model controls. |
+| A new model choice had no effect | Check that the role preference was accepted, is present in this session, and still matches supported host controls. Inherited aliases keep the parent's model and effort; a saved file alone does not guarantee loading. |
 | Runs cost more than expected | See the cost paragraph under Get set up. |
 | A skill didn't load on its own | Only `/setup-pstack` loads from the user's words. The others load when the user types them or when `/poteto-mode` runs them, and it doesn't run every skill. |
-| Parallel agents overwrote each other | Give each agent its own worktree, or run them through actual supported workers, which each get their own machine. |
+| Parallel agents overwrote each other | Give each writer its own worktree or other isolated output location. Verify the host's isolation; separate workers may share a filesystem. |
 | An overnight run moved but finished nothing | A supported authorized scheduler and a checkable predicate are required; this package does not supply background execution. See [guide page 7](https://github.com/cursor/plugins/blob/2cbf58508f40de470d7490b55c51d71241928fa2/pstack/docs/guide/07-overnight.md). |
 | The reply claims success from a green build | Ask for the real command, flow, stored value, or profile. That's the prove-it-works principle. |
 

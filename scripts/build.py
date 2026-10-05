@@ -62,7 +62,7 @@ def render(root=ROOT):
     gaps = review_gaps(root)
     manifest = read_json(root / "plugin.json")
     output = {name: (root / name).read_bytes() for name in
-              ("plugin.json", "LICENSE", "NOTICE.md", "resources/host-contract.md")}
+              ("plugin.json", "LICENSE", "NOTICE.md", "resources/host-contract.md", "assets/pstack.jpeg")}
     # Older Codex releases read only this documented compatibility manifest.
     compatibility = {key: value for key, value in manifest.items()
                      if key not in ("$schema", "extensions")}

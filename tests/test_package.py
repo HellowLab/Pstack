@@ -36,8 +36,16 @@ class PackageTests(unittest.TestCase):
         self.assertLessEqual(len(interface["shortDescription"]), 30)
         self.assertEqual(interface["shortDescription"], "The unofficial Plugin")
         for field in ("logo", "composerIcon"):
-            if field in interface:
-                self.assertIn(interface[field].removeprefix("./"), self.files)
+            self.assertEqual(interface[field], "./assets/pstack.jpeg")
+            self.assertIn(interface[field].removeprefix("./"), self.files)
+
+    def test_approved_artwork_is_packaged_without_changes(self):
+        original = (ROOT / "assets/pstack.jpeg").read_bytes()
+        self.assertEqual(len(original), 723089)
+        self.assertEqual(hashlib.sha256(original).hexdigest(),
+                         "fa5786e6f6a39ea36fd5bc09ac542b647094268c192de421b8eb4e771c87585d")
+        with zipfile.ZipFile(io.BytesIO(archive(self.files))) as package:
+            self.assertEqual(package.read("assets/pstack.jpeg"), original)
 
     def test_all_registered_skills_and_invocation_semantics(self):
         upstream = sorted((ROOT / "upstream/pstack/skills").glob("*/SKILL.md"))

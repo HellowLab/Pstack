@@ -20,6 +20,8 @@
       "interface": {
         "displayName": "Pstack",
         "shortDescription": "The unofficial Plugin",
+        "logo": "./assets/pstack.jpeg",
+        "composerIcon": "./assets/pstack.jpeg",
         "longDescription": "Independent adaptation of Lauren Tan's Pstack. Skills for investigation, design, implementation, review, and verification. Uses only tools and permissions available in the host. Some upstream integrations are unsupported.",
         "developerName": "HellowLab",
         "category": "Developer Tools",

@@ -2,6 +2,8 @@
 
 The unofficial Plugin
 
+<img src="assets/pstack.jpeg" alt="Pstack potato builder and colorful crew, with the subtitle The unofficial Plugin" width="640">
+
 Independent HellowLab adaptation of [Lauren Tan's Pstack](https://github.com/cursor/plugins/tree/main/pstack) for ChatGPT and Codex. This is not an official poteto, Cursor, or OpenAI release.
 
 Pstack provides skills for understanding code, designing changes, implementation, review, and verification. It uses only the tools and permissions available in the host. This initial release candidate is not marketplace-approved or host-qualified. No marketplace package has been submitted or published.
@@ -26,7 +28,7 @@ python3 scripts/build.py
 python3 scripts/build.py --check
 ```
 
-The ZIP and SHA-256 file are in [dist](dist/). They contain root `plugin.json`, a generated Codex compatibility manifest, generated skills, resources, the full MIT license, and attribution. The supplied branding asset is not yet included because its transfer to the build environment failed. Icons and branding review remain release gates. The ZIP contains no upstream executable helpers, MCP configuration, hooks, secrets, or publisher agreements. Repeated builds from the same inputs are byte-identical.
+The ZIP and SHA-256 file are in [dist](dist/). They contain root `plugin.json`, a generated Codex compatibility manifest, generated skills, resources, the approved original artwork, the full MIT license, and attribution. Both icon fields reference the unchanged [Pstack artwork](assets/pstack.jpeg). Its "Always up to date" chalkboard is artwork copy: upstream checks run daily once the workflow reaches the default branch, and updates require review. Marketplace branding approval remains a release gate. The ZIP contains no upstream executable helpers, MCP configuration, hooks, secrets, or publisher agreements. Repeated builds from the same inputs are byte-identical.
 
 Edit `adapter/overrides/`, `adapter/rules.json`, and authored metadata rather than generated skills. The complete untouched upstream subtree is retained under `upstream/pstack/` as review data. Do not install that subtree as this plugin.
 

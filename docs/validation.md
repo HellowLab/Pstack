@@ -15,21 +15,35 @@ Local Git fixtures exercise the actual update implementation. They prove that sa
 | Check | ChatGPT | Codex |
 |---|---|---|
 | Root portable packaging and schema | Static pass | Static pass |
-| Local staging of exact ZIP | Available staged artifact, not installed | Available staged artifact, not installed |
-| Native installation | Not run; requires accessible test installation surface | Earlier candidates passed on CLI 0.136.0; current candidate blocked by read-only host state |
-| Skill discovery in a fresh conversation | Not run | Not run; existing conversation catalog did not reload |
+| Local staging of exact ZIP | Available staged artifact, not installed | Passed for the recorded checksum below |
+| Native installation and removal | Not run; requires accessible test installation surface | Passed in isolated state on CLI 0.159.0-alpha.3 for the recorded checksum |
+| Fresh-process skill discovery | Not run | All 51 Pstack skills discovered; no loading errors |
+| Installed resource access through host API | Not run | Four representative text resources and the artwork returned exact ZIP bytes |
+| Skill discovery and invocation in a fresh conversation | Not run | Not run; process discovery does not prove conversation behavior |
 | Installed skill invocation and explicit-only behavior | Not run | Not run |
 | Independent reviewer and missing-tool behavior | Contract checked, live evaluation pending | Contract checked, live evaluation pending |
 | Marketplace skill scan and publisher review | Not submitted | Not submitted |
-| Supplied branding asset | Transfer blocked; no substitute included | Missing required distribution icons |
+| Supplied branding asset | Original packaged; host rendering and marketplace review pending | Original packaged; both icon paths resolved by host API; UI rendering pending |
 
-### Current candidate checks
+### Candidate with approved artwork
 
-On 2026-10-05, the 28-test suite and reproducible-build check passed after restoring setup's seven stages, four budget options, and 17 role entries. The ZIP SHA-256 is `9ef579757d8790093170cdb27d973580a5ac48004c07b1866da73020c6fbb23d`. All files in a fresh local staging directory matched this ZIP byte for byte. This is staging evidence, not installation or model behavior.
+On 2026-10-05, the candidate ZIP with SHA-256 `33d76c03e0789057c1816d2fe991d4089bd6fa6e1c2d0f5c1d59986b8a45be3c` passed all 29 tests and the reproducible-build check. It includes the unchanged approved artwork and corrected setup help. The image is 1254 × 1254 RGB JPEG, 723089 bytes, with SHA-256 `fa5786e6f6a39ea36fd5bc09ac542b647094268c192de421b8eb4e771c87585d`. Pixel inspection confirmed the `Pstack` banner and exact `The unofficial Plugin` subtitle.
 
-Codex CLI `0.159.0-alpha.3` could inspect plugin command help, but local marketplace registration failed because its configured state directory was read-only. Its app server also failed to initialize its SQLite state there, before any resource request could run. The executor skill catalog returned no installed skills. No model run, credential change, or host permission change was made. Native installation, fresh-conversation discovery, resource API access, and workflow behavior for this candidate remain unverified. The earlier native-install evidence below applies only to the stated earlier checksums.
+A fresh isolated Codex CLI `0.159.0-alpha.3` installation passed registration, installation, and enabled-state checks. All 117 installed files matched the ZIP. A fresh app-server process discovered all 51 Pstack skills with no loading errors. Both `logo` and `composerIcon` resolved to the packaged original. The host `fs/readFile` API returned exact ZIP bytes for the four text resources listed in the earlier check below and for `assets/pstack.jpeg`.
 
-The approved original artwork could not be materialized in this executor, including one fresh transfer retry. No bytes were received or inspected and no substitute was packaged. Artwork integration remains blocked.
+Plugin and marketplace removal succeeded and the final listing was empty. No credentials were copied, no `auth.json` was created, and no model turn was requested. This is native installation, fresh-process discovery, and local host resource-access evidence. It does not establish ChatGPT installation, UI rendering, fresh-conversation invocation, explicit-only behavior, or model compliance. Those checks remain open.
+
+### Candidate checks at a05192c
+
+On 2026-10-05, the 28-test suite and reproducible-build check passed at commit `a05192c9b8b062e7162dd328406127f4ed0eb586` after restoring setup's seven stages, four budget options, and 17 role entries. The ZIP SHA-256 is `9ef579757d8790093170cdb27d973580a5ac48004c07b1866da73020c6fbb23d`. All 116 files in a fresh local staging directory matched this ZIP byte for byte. Both the [push CI](https://github.com/HellowLab/Pstack/actions/runs/37375895696) and [PR CI](https://github.com/HellowLab/Pstack/actions/runs/37375900797) passed at that exact commit. This evidence applies to the recorded checksum; repeat the checks after package changes.
+
+Codex CLI `0.159.0-alpha.3` initially failed marketplace registration and app-server startup with `Read-only file system (os error 30)` in its configured state directory. Redirecting only SQLite state and logs did not resolve startup. A disposable subprocess using the documented [CODEX_HOME state location](https://learn.chatgpt.com/docs/config-file/config-advanced#config-and-state-locations) succeeded. The subprocess used a fresh empty state directory and no copied credentials or existing user configuration. The original host configuration and access controls were unchanged.
+
+The local marketplace registered, the exact package installed, and `plugin list` reported it enabled. Every installed file matched the ZIP. A fresh app-server process returned all 51 Pstack skills through `plugin/read` and `skills/list`; the latter reported no skill-loading errors. Its `fs/readFile` API returned byte-identical content for `resources/host-contract.md`, `skills/how/SKILL.md`, `skills/interrogate/references/reviewer-prompt.md`, and `skills/poteto-mode/playbooks/bug-fix.md`. These checks cover the shared contract, a sibling skill, a nested reviewer reference, and a playbook through the actual local host API. They do not establish ChatGPT cloud resource access.
+
+Plugin and marketplace removal both succeeded; a subsequent listing was empty. No `auth.json` was created and no model turn was requested. Fresh-process discovery and resource reads do not prove skill invocation, explicit-only behavior, or model compliance in a fresh conversation. Those behavioral checks remain untested on both hosts.
+
+This earlier checksum did not include the approved artwork. The subsequent candidate above includes and verifies the original.
 
 ### Earlier installation evidence
 
