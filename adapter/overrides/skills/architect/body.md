@@ -28,7 +28,7 @@ Use the actual available, permitted runners from the host contract. If only one 
 
 Design it twice. Require at least two structurally distinct candidates before synthesis, even when the first looks sufficient. This is the **exhaust-the-design-space** principle skill made concrete. Whole-shape alternatives, not point fixes inside one shape.
 
-Screen every candidate against [`references/design-red-flags.md`](references/design-red-flags.md) before synthesis. Assume the next contributor is an agent that sees only the files it opened, copies the nearest example, and takes the shortest path that compiles. Prefer the design where a change that looks right from one file is right for the whole repo.
+Screen every candidate against [`references/design-red-flags.md`](references/design-red-flags.md) before synthesis. Before choosing a base or grafts, present a finding for every flag for each candidate, grounded in its proposed interfaces, state ownership, or call paths. Explain absent or inapplicable flags rather than omitting them. Record any resulting revisions or rejection before writing the synthesis decision. Assume the next contributor is an agent that sees only the files it opened, copies the nearest example, and takes the shortest path that compiles. Prefer the design where a change that looks right from one file is right for the whole repo.
 
 Compare viable candidates on interface depth. Prefer the design that hides more complexity behind a smaller, simpler public surface. A rich interface can keep call chains short by concentrating capability instead of scattering it across layers.
 
@@ -75,3 +75,5 @@ When you scrap:
 ## Outputs
 
 The caller's usage is written first and the type sketch derived from it. One file with new types and signatures for small changes. Module map plus type definitions for larger work. The rationale ships alongside, shaped per `references/rationale-template.md`, including the usage sketch and the synthesis decision.
+
+Claim a case is defined only when the sketch or rationale states its policy and outcome; otherwise list it as an open question.

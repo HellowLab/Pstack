@@ -1,6 +1,6 @@
 {
   "name": "pstack",
-  "version": "0.1.0-rc.3",
+  "version": "0.1.0-rc.4",
   "description": "Pstack engineering workflows faithfully adapted for ChatGPT and Codex, independently maintained by HellowLab.",
   "author": {
     "name": "HellowLab",
