@@ -16,13 +16,13 @@ The job opens or updates one draft on `maintenance/pstack-upstream`. It uses onl
 
 GitHub suppresses ordinary push/PR workflow recursion for `GITHUB_TOKEN` events, so the scheduled job runs the candidate checks directly and uploads its ZIP, coverage, and report. A human push to the review branch runs normal CI. Review the scheduled run as well as PR checks.
 
-## Current repository permission gate
+## Current repository permissions
 
-On 2026-10-05 the repository reported `default_workflow_permissions: read` and `can_approve_pull_request_reviews: false`. An owner-authorized repository-only request to enable PR creation while preserving read defaults returned HTTP 409: `The organization does not allow GitHub Actions to create or approve pull requests`. A subsequent read confirmed both values remained unchanged. This is an organization policy blocker, not an untried repository setting.
+On 2026-10-05, an initial repository-only request to enable Actions PR creation returned HTTP 409 because organization policy prohibited it. That historical blocker is now cleared. After explicit owner authorization for the organization-level setting at 23:14 UTC, the maintainer saved the control and verified through GitHub's browser settings that the organization and Pstack permit Actions to create and approve pull requests. Default workflow-token permissions remained read-only. The implementation executor could not independently read this administration setting through its GitHub connector; this record is based on the maintainer's browser readback.
 
-The workflow reports this error, preserves the candidate branch and artifacts, and fails visibly. A maintainer can open a draft from that branch manually. If permissions are resolved later, the recovery path retries the missing PR without rewriting the candidate. No organization policy or credential scope was changed. The organization policy read API also returned 403 with the existing credential; do not broaden credentials or organization grants as part of this workflow.
+The repository control is under [Actions settings](https://github.com/HellowLab/Pstack/settings/actions), Workflow permissions, Allow GitHub Actions to create and approve pull requests. GitHub bundles creation and approval in this control, although this workflow never approves, merges, or publishes. An organization-level change can affect other inheriting repositories; it is not a repository-only setting. No workflow code, automatic merge behavior, or credentials changed with this permission update.
 
-The repository control is under [Actions settings](https://github.com/HellowLab/Pstack/settings/actions), Workflow permissions, Allow GitHub Actions to create and approve pull requests. GitHub bundles creation and approval in this control, although this workflow never approves, merges, or publishes. A repository-only change cannot override the confirmed organization restriction.
+Permission readback does not prove a successful scheduled run. The schedule remains inactive until an authorized merge puts the workflow on the default branch. Verify the first actual run and any resulting draft PR after that merge. If a future permission error occurs, the workflow preserves the candidate branch and artifacts and fails visibly. A maintainer can open the draft manually; later runs retry a missing draft without rewriting the preserved candidate.
 
 ## Review an update
 

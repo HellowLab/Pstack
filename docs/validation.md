@@ -15,15 +15,26 @@ Local Git fixtures exercise the actual update implementation. They prove that sa
 | Check | ChatGPT | Codex |
 |---|---|---|
 | Root portable packaging and schema | Static pass | Static pass |
-| Local staging of exact ZIP | Private rc.3 update succeeded; staging alone is not installation evidence | Passed for the recorded checksum below |
-| Native installation and removal | Private rc.3 update succeeded; removal check pending | See checksum-specific evidence below |
-| Fresh-process skill discovery | Private rc.2 installation exposed 51 skills; full rc.3 discovery recount pending | All 51 Pstack skills discovered for the recorded candidate |
-| Installed resource access through host API | rc.3 full-content reads passed for two skill-local contracts and one playbook; see evidence below | See checksum-specific evidence below |
-| Skill discovery and invocation in a fresh conversation | B01 and limited B02/B08 variants observed on rc.2; exact skill-read traces unavailable | Not run; process discovery does not prove conversation behavior |
-| Installed skill invocation and explicit-only behavior | Three limited boundaries observed on rc.2; full fixture cases pending | Not run |
-| Independent reviewer and missing-tool behavior | Contract checked, live evaluation pending | Contract checked, live evaluation pending |
+| Local staging of exact ZIP | Private rc.4 installation verified; see current-host evidence below | Passed for the recorded checksum below |
+| Native installation and removal | Private rc.4 installation verified; removal check pending | See checksum-specific evidence below |
+| Fresh-process skill discovery | Installed rc.4 UI exposed 51 skills at 23:10 UTC; fresh-process recount not separately recorded | All 51 Pstack skills discovered for the recorded candidate |
+| Installed resource access through host API | rc.3 targeted contract reads passed; installed rc.4 resources read in native-cloud tasks below | See checksum-specific evidence below |
+| Skill discovery and invocation in a fresh conversation | Native-cloud rc.4 coding and read-only variants recorded below; rc.2 boundary traces limited | Not run; process discovery does not prove conversation behavior |
+| Installed skill invocation and explicit-only behavior | rc.2 boundaries and rc.4 native-host variants recorded below; full suite pending | Not run |
+| Independent reviewer and missing-tool behavior | Native-cloud coding replay passed independent review; missing-tool evidence remains limited | Contract checked, live evaluation pending |
 | Marketplace skill scan and publisher review | Not submitted | Not submitted |
-| Supplied branding asset | rc.2 sidebar image observed; detail view fallback unresolved; approved original retained | Original packaged; both icon paths resolved by host API; UI rendering pending |
+| Supplied branding asset | rc.4 installed copy verified; directory icon fallback unresolved; original retained | Original packaged; both icon paths resolved by host API; UI rendering pending |
+
+### Current rc.4 installation and coding evidence
+
+On 2026-10-05 at 23:10 UTC, the maintainer verified the private rc.4 installed-settings copy and all 51 installed skills. The directory detail icon still used a fallback, so directory rendering remains unresolved. This is installed-host evidence, not public marketplace approval or a complete removal test.
+
+A fresh native cloud task verified actual installed rc.4 resources and exercised two local synthetic repositories:
+
+- **Bug fix — PASS within the synthetic task:** the regression test was committed and failed before the fix; the same three tests passed after the fix.
+- **Refactor — PASS within the synthetic task:** all 36 characterized inputs passed before and after the structural change.
+
+A fresh independent native-host reviewer replayed the exact recorded commits and reported no in-scope issues. Both synthetic repositories were clean and had no remotes; the Pstack product repository was unchanged by those runs. The maintainer supplied these results; private evidence paths, archives, and transcripts remain outside this repository. These checks demonstrate actual coding and test execution in the native cloud host, not a Codex CLI model conversation, an external PR workflow, production integration, every input, or full semantic parity. The implementation and reviewer checks do not establish broader model diversity or persistent orchestration.
 
 ### Architecture screening correction in rc.4
 
@@ -100,7 +111,7 @@ Following the rename, candidate `pstack-0.1.0-rc.2.zip` with SHA-256 `5b4967a322
 
 The suite also protects full portable reference inventory, upstream workflow headings, required architectural screening and rationale templates, review lenses, epistemic tiers and calibration, and the exact append-only TSV protocol. These semantic preservation checks prevent specific losses found in review. They remain static instruction checks, not model behavior tests.
 
-The earlier PR-triggered run at commit `60ef3bf` did not execute any test steps. Its failure annotation was `The job was not acquired by Runner of type hosted even after multiple attempts`. This was hosted-runner acquisition failure, separate from the organization policy that blocks Actions-created PRs. The push-triggered run at that same commit passed.
+The earlier PR-triggered run at commit `60ef3bf` did not execute any test steps. Its failure annotation was `The job was not acquired by Runner of type hosted even after multiple attempts`. This was hosted-runner acquisition failure, separate from the former organization policy that blocked Actions-created PRs. The push-triggered run at that same commit passed.
 
 ## Current private-beta milestone
 
@@ -108,13 +119,11 @@ Rc.4 is ready for limited private-beta use of the documented supported workflows
 
 The delivered package represents 51 skill entrypoints and 23 playbook routes from the pinned 164-file upstream snapshot, with MIT attribution, reviewed host adaptations, unchanged approved artwork, reproducible artifacts, and a repository-owned update/review workflow. Native Codex installation and resource access are verified; private ChatGPT resource access and the limited behavioral variants above have actual-host evidence.
 
-The next checks are bounded:
+The bounded first-version coding checks are complete: a failing-before bug fix, a behavior-preserving refactor, and independent replay now supplement the read-only cases. The current checkpoint is recommended for an explicitly authorized merge as a limited private beta; this recommendation does not merge the PR or authorize public submission.
 
-1. Verify the exact installed rc.4 identity, skill discovery, contract reads, and removal in the private ChatGPT test surface. Recheck its installed-settings and directory-detail copy and icon; retain the existing rendering issue if unresolved.
-2. B05 and B07 now have the qualified observations above. To close the outstanding B07 action-attempt requirement, retain and review the original visible tool trace if available; otherwise rerun B07 alone in a fresh fixture with trace capture. Do not infer absence of attempted external mutations from unchanged files.
-3. Run one disposable failing-before bug-fix workflow through a verified fix and one behavior-preserving refactor with before/after tests. Use these to qualify implementation behavior, which the read-only variants do not establish.
+Residual qualification is finite: complete the private-host removal check; resolve or explicitly accept the directory icon limitation; inspect the original B07 tool trace or rerun B07 alone with trace capture; and finish the existing both-host release checklist below, including a real current-head PR review. Native cloud coding does not replace the outstanding Codex model-conversation checks, which require an available authenticated writable host. Do not add new features to close a host limitation. Fix observed defects and retain unsupported persistent runtimes, integrations, and unavailable independent workers as explicit limits.
 
-Stop expanding this first-version scope after those checks. Fix observed failures; retain unsupported persistent runtimes, unavailable integrations, and absent independent workers as explicit capability limits rather than new feature work. The exact Codex model-conversation checks still require an available authenticated writable host. The remaining finite public-release checks below and publisher steps in [publishing](publishing.md) are separate gates. The upstream schedule remains inactive until an approved merge, and organization policy still blocks automatic maintenance-PR creation; manual draft creation is the documented recovery path.
+The former Actions PR-creation policy blocker is cleared by the maintainer's verified browser readback, with default token permissions still read-only; see [maintenance](maintenance.md). The schedule remains inactive until an approved merge. Its first real run and draft-PR behavior still need verification afterward. Publisher verification, identifier availability, review, and explicit submission/publication approval remain separate steps in [publishing](publishing.md).
 
 ## Required before public release
 

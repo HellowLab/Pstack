@@ -16,7 +16,7 @@ All 51 registered skill entry points and 23 playbook routes are represented. Use
 
 ## Compatibility limits
 
-Inventory coverage does not mean full runtime parity. The Grok Bot UI and persistent orchestration/autopilot runtimes have explanatory entry points but are unsupported. Native Cursor agent registration, helper scripts, model defaults, and private transcript paths are not portable. [Design and fidelity decisions](docs/design.md) explain each difference. The package never invents a tool, reviewer, model panel, or external-action authorization. [Validation](docs/validation.md) separates installation and resource-access checks from actual model behavior. The daily upstream workflow is not active while the initial draft remains unmerged, and automatic PR creation is blocked by the documented organization policy.
+Inventory coverage does not mean full runtime parity. The Grok Bot UI and persistent orchestration/autopilot runtimes have explanatory entry points but are unsupported. Native Cursor agent registration, helper scripts, model defaults, and private transcript paths are not portable. [Design and fidelity decisions](docs/design.md) explain each difference. The package never invents a tool, reviewer, model panel, or external-action authorization. [Validation](docs/validation.md) separates installation and resource-access checks from actual model behavior. The daily upstream workflow is not active while the initial draft remains unmerged. The previously blocking Actions PR permission has been enabled; the first real scheduled run remains unverified.
 
 ## Build and validate
 
@@ -48,6 +48,6 @@ To remove a test installation, use `codex plugin remove pstack@pstack-preview` a
 
 ## Maintain and publish
 
-Read [maintenance](docs/maintenance.md) for the daily check, the one-draft-PR update flow, the current repository PR-creation permission blocker, and manual adaptation review. Read [publishing](docs/publishing.md) for verified-publisher requirements, actual host validation, review, and explicit publication steps. The initial implementation remains subject to human review and must not be merged automatically.
+Read [maintenance](docs/maintenance.md) for the daily check, the one-draft-PR update flow, the verified repository PR-creation permission and recovery behavior, and manual adaptation review. Read [publishing](docs/publishing.md) for verified-publisher requirements, actual host validation, review, and explicit publication steps. The initial implementation remains subject to human review and must not be merged automatically.
 
 Pstack is MIT licensed. Copyright (c) 2026 Lauren Tan. See [LICENSE](LICENSE).
