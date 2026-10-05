@@ -19,8 +19,8 @@ Local Git fixtures exercise the actual update implementation. They prove that sa
 | Native installation and removal | Private pre-fix candidate installed; rc.3 update and removal checks pending | See checksum-specific evidence below |
 | Fresh-process skill discovery | Private pre-fix installation exposed 51 skills; rc.3 retest pending | All 51 Pstack skills discovered for the recorded candidate |
 | Installed resource access through host API | Pre-fix skill-local and sibling reads passed; plugin-root contract failed; rc.3 retest required | See checksum-specific evidence below |
-| Skill discovery and invocation in a fresh conversation | B01 boundary observed on rc.2; exact skill-read trace unavailable | Not run; process discovery does not prove conversation behavior |
-| Installed skill invocation and explicit-only behavior | Quoted-name non-activation observed on rc.2; other cases pending | Not run |
+| Skill discovery and invocation in a fresh conversation | B01 and limited B02/B08 variants observed on rc.2; exact skill-read traces unavailable | Not run; process discovery does not prove conversation behavior |
+| Installed skill invocation and explicit-only behavior | Three limited boundaries observed on rc.2; full fixture cases pending | Not run |
 | Independent reviewer and missing-tool behavior | Contract checked, live evaluation pending | Contract checked, live evaluation pending |
 | Marketplace skill scan and publisher review | Not submitted | Not submitted |
 | Supplied branding asset | rc.2 sidebar image observed; detail view fallback unresolved; approved original retained | Original packaged; both icon paths resolved by host API; UI rendering pending |
@@ -35,9 +35,15 @@ The metadata subtitle is now `Ship faster. Build better.`, and the public descri
 
 The corrected ZIP SHA-256 is `baab1d612f6cc4d65798db6955362b4d102c9ef7a37d9f0961c64e3392153ecf`. All 30 tests and the reproducible-build check passed. A fresh isolated Codex CLI `0.159.0-alpha.3` installation contained 168 files, all byte-identical to the ZIP, and discovered 51 skills without loading errors. Its host API returned exact bytes for all 51 skill-local contracts, a sibling skill, a reviewer reference, a playbook, a nested source reference, and the artwork: 56 file reads. The host returned the corrected subtitle and full 323-character description. Plugin and marketplace removal succeeded and the final listing was empty. No credentials were copied or Codex model turn requested. This does not resolve the pending private ChatGPT retest.
 
-### Observed ChatGPT boundary case on rc.2
+### Observed ChatGPT boundary checks on rc.2
 
-The maintainer observed B01 in a fresh ChatGPT web conversation using GPT-6.1 Sol Light and the privately installed rc.2 candidate. The answer explained the quoted `/poteto-mode` alias without activating its workflow or performing file actions. This passes the observable quoted-name boundary for that run. The UI did not expose an exact skill-read trace, so the result does not establish that the installed skill or its contract was read. It does not qualify other workflows, the corrected rc.3 candidate, or semantic parity. B02 and the remaining behavioral cases are pending.
+The maintainer observed three read-only boundaries in separate fresh ChatGPT web conversations using the unchanged GPT-6.1 Sol Light model and the privately installed rc.2 candidate:
+
+- **B01:** explained the quoted `/poteto-mode` alias without activating its workflow or performing file actions.
+- **B02, help-only variant without the fixture:** provided a sourced workflow recommendation and checkpoint prompt without starting implementation.
+- **B08, variant without the fixture:** reported the unsupported runtime and missing capabilities without creating resources or requesting secrets.
+
+These are passes for the reported observable boundaries only. B02 and B08 did not use the prepared fixture and do not pass their complete fixture cases. Individual tool calls and exact skill-read traces were not exposed; a displayed host-contract reading label is not proof that the resource was read. The results do not establish installed-contract use, qualify the corrected rc.3 candidate, or demonstrate semantic parity. The remaining behavior cases are pending. Private conversation URLs and transcripts are retained outside this public repository.
 
 ### Candidate with approved artwork
 
