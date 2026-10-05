@@ -1,6 +1,6 @@
 # Behavioral qualification
 
-Run this small suite against the exact installed ZIP, separately on Codex and ChatGPT. It tests observable workflow behavior. Package tests, fixture checks, and skill discovery do not pass these cases. The corrected rc.4 candidate has not run these cases. Earlier rc.3 workflow results and limited rc.2 ChatGPT boundary observations are recorded separately in [validation](validation.md); they do not qualify the current candidate or pass this full fixture suite.
+Run this small suite against the exact installed ZIP, separately on Codex and ChatGPT. It tests observable workflow behavior. Package tests, fixture checks, and skill discovery do not pass these cases. The rc.4 B04 native-host, single-agent raw-source variant passed independent review. That result, earlier rc.3 workflow results, and limited rc.2 ChatGPT boundary observations are recorded in [validation](validation.md). These versioned observations do not pass the complete staged fixture suite or qualify every host.
 
 ## Prepare without model usage
 
