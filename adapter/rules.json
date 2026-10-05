@@ -856,7 +856,7 @@
     "skills/setup-pstack/SKILL.md": {
       "status": "adapted",
       "destination": "skills/setup-pstack/SKILL.md",
-      "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
+      "reason": "Preserve all seven setup stages, four budget choices, and 17 role entries; use observed host model controls and authorized project persistence rather than vendor defaults or a global rule."
     },
     "skills/show-me-your-work/SKILL.md": {
       "status": "adapted",

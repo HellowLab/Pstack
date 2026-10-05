@@ -150,7 +150,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/reflect/references/judgment-reviewer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/reflect/references/synthesizer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/reflect/references/tooling-reviewer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/setup-pstack/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
+| `skills/setup-pstack/SKILL.md` | adapted | Preserve all seven setup stages, four budget choices, and 17 role entries; use observed host model controls and authorized project persistence rather than vendor defaults or a global rule. | reviewed |
 | `skills/show-me-your-work/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/show-me-your-work/references/decision-log-template.tsv` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/show-me-your-work/scripts/log.sh` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |

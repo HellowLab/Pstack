@@ -187,6 +187,31 @@ class PackageTests(unittest.TestCase):
         self.assertEqual(self.files["skills/show-me-your-work/references/decision-log-template.tsv"],
                          b"ts\tphase\tdecision\twhy\tevidence\tresult\n")
 
+    def test_setup_preserves_roles_budget_and_confirmation_stages(self):
+        original = (ROOT / "upstream/pstack/skills/setup-pstack/SKILL.md").read_text()
+        adapted = self.files["skills/setup-pstack/SKILL.md"].decode()
+        for heading in re.findall(r"^#{2,3} .+$", original, re.MULTILINE):
+            self.assertIn(heading, adapted)
+        source_table = original.split("# budget: unlimited (max)\n", 1)[1].split("```", 1)[0]
+        target_table = adapted.split("```text\n", 1)[1].split("```", 1)[0]
+        roles = lambda table: [line.split(":", 1)[0] for line in table.splitlines() if ":" in line]
+        self.assertEqual(roles(source_table), roles(target_table))
+        for label in ("unlimited — keep max", "large — xhigh reasoning",
+                      "medium — high reasoning", "small — medium reasoning"):
+            self.assertIn(label, adapted)
+        for clause in ("Alias entries still count toward panel size",
+                       "Do not derive a new identifier", "only when the user accepts it",
+                       "Replace only the Pstack configuration section",
+                       "Do not promise that a saved preference applies to new sessions"):
+            self.assertIn(clause, adapted)
+        contract = self.files["resources/host-contract.md"].decode()
+        self.assertIn("revalidate them against actual host capabilities", contract)
+        self.assertIn("never pass those aliases as API identifiers", contract)
+        for name in ("bug-fix", "feature", "refactoring", "hillclimb", "perf-issue"):
+            playbook = self.files[f"skills/poteto-mode/playbooks/{name}.md"].decode()
+            self.assertIn("role settings allowed by the host contract", playbook)
+            self.assertNotIn("with inherited model settings", playbook)
+
     def test_ci_uses_scoped_permissions_and_no_publication(self):
         for path in (ROOT / ".github/workflows").glob("*.yml"):
             workflow = yaml.safe_load(path.read_text())

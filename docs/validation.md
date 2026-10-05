@@ -8,7 +8,7 @@ Run the commands in the root README. The suite validates metadata against the sa
 
 Local Git fixtures exercise the actual update implementation. They prove that same-version and mode-only subtree changes are detected, unrelated monorepo changes are ignored, unknown skills are withheld, symlinks are rejected before replacement, and snapshot tampering fails the build. Incompatible metadata preserves the review candidate while removing stale ZIPs. Local bare-remotes exercise branch creation and update, preservation of main, refusal to overwrite human work, policy-error reporting, and recovery after a successful push followed by failed PR creation, with mocked forge responses. Source hashes are never auto-approved. Changed skills and reference resources receive a pending-review placeholder rather than newly imported executable instructions. These are behavioral tests of the build/update code.
 
-`tests/workflow-cases.json` contains ten positive, negative, and unavailable-capability scenarios. Automated assertions check that the necessary instruction contracts exist. They do not run a model or prove compliance. The cases are also the manual host evaluation checklist.
+`tests/workflow-cases.json` contains eleven positive, negative, and unavailable-capability scenarios. Automated assertions check that the necessary instruction contracts exist. They do not run a model or prove compliance. The cases are also the manual host evaluation checklist.
 
 ## Host matrix
 
@@ -16,12 +16,22 @@ Local Git fixtures exercise the actual update implementation. They prove that sa
 |---|---|---|
 | Root portable packaging and schema | Static pass | Static pass |
 | Local staging of exact ZIP | Available staged artifact, not installed | Available staged artifact, not installed |
-| Native installation | Not run; requires accessible test installation surface | Passed on Codex CLI 0.136.0 with generated compatibility manifest |
+| Native installation | Not run; requires accessible test installation surface | Earlier candidates passed on CLI 0.136.0; current candidate blocked by read-only host state |
 | Skill discovery in a fresh conversation | Not run | Not run; existing conversation catalog did not reload |
 | Installed skill invocation and explicit-only behavior | Not run | Not run |
 | Independent reviewer and missing-tool behavior | Contract checked, live evaluation pending | Contract checked, live evaluation pending |
 | Marketplace skill scan and publisher review | Not submitted | Not submitted |
 | Supplied branding asset | Transfer blocked; no substitute included | Missing required distribution icons |
+
+### Current candidate checks
+
+On 2026-10-05, the 28-test suite and reproducible-build check passed after restoring setup's seven stages, four budget options, and 17 role entries. The ZIP SHA-256 is `9ef579757d8790093170cdb27d973580a5ac48004c07b1866da73020c6fbb23d`. All files in a fresh local staging directory matched this ZIP byte for byte. This is staging evidence, not installation or model behavior.
+
+Codex CLI `0.159.0-alpha.3` could inspect plugin command help, but local marketplace registration failed because its configured state directory was read-only. Its app server also failed to initialize its SQLite state there, before any resource request could run. The executor skill catalog returned no installed skills. No model run, credential change, or host permission change was made. Native installation, fresh-conversation discovery, resource API access, and workflow behavior for this candidate remain unverified. The earlier native-install evidence below applies only to the stated earlier checksums.
+
+The approved original artwork could not be materialized in this executor, including one fresh transfer retry. No bytes were received or inspected and no substitute was packaged. Artwork integration remains blocked.
+
+### Earlier installation evidence
 
 The available CLI reported `codex-cli 0.136.0`. An existing `features.context_management` map initially failed its boolean configuration parser. The temporary command-line override `-c features.context_management=false` allowed plugin commands to run without editing that feature setting or changing access controls. Registering a disposable local marketplace succeeded. The root-only candidate was discovered but installation failed with `missing plugin.json`.
 
