@@ -24,7 +24,7 @@ python3 scripts/build.py
 python3 scripts/build.py --check
 ```
 
-The ZIP and SHA-256 file are in [dist](dist/). They contain root `plugin.json`, generated skills, resources, the full MIT license, and attribution. The supplied branding asset is not yet included because its transfer to the build environment failed. Icons and branding review remain release gates. The ZIP contains no upstream executable helpers, MCP configuration, hooks, secrets, or publisher agreements. Repeated builds from the same inputs are byte-identical.
+The ZIP and SHA-256 file are in [dist](dist/). They contain root `plugin.json`, a generated Codex compatibility manifest, generated skills, resources, the full MIT license, and attribution. The supplied branding asset is not yet included because its transfer to the build environment failed. Icons and branding review remain release gates. The ZIP contains no upstream executable helpers, MCP configuration, hooks, secrets, or publisher agreements. Repeated builds from the same inputs are byte-identical.
 
 Edit `adapter/overrides/`, `adapter/rules.json`, and authored metadata rather than generated skills. The complete untouched upstream subtree is retained under `upstream/pstack/` as review data. Do not install that subtree as this plugin.
 

@@ -63,6 +63,14 @@ def render(root=ROOT):
     manifest = read_json(root / "plugin.json")
     output = {name: (root / name).read_bytes() for name in
               ("plugin.json", "LICENSE", "NOTICE.md", "resources/host-contract.md")}
+    # Older Codex releases read only this documented compatibility manifest.
+    compatibility = {key: value for key, value in manifest.items()
+                     if key not in ("$schema", "extensions")}
+    compatibility["skills"] = "./skills/"
+    compatibility["interface"] = {key: value for key, value in
+                                  manifest["extensions"]["com.openai"]["interface"].items()
+                                  if key != "supportURL"}
+    output[".codex-plugin/plugin.json"] = (json.dumps(compatibility, indent=2) + "\n").encode()
     descriptions = read_json(root / "adapter/descriptions.json")
     for name, rule in rules["skills"].items():
         path = source / f"skills/{name}/SKILL.md"

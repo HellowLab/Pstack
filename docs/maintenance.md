@@ -16,7 +16,7 @@ The job opens or updates one draft on `maintenance/pstack-upstream`. It uses onl
 
 GitHub suppresses ordinary push/PR workflow recursion for `GITHUB_TOKEN` events, so the scheduled job runs the candidate checks directly and uploads its ZIP, coverage, and report. A human push to the review branch runs normal CI. Review the scheduled run as well as PR checks.
 
-## Current organization gate
+## Current repository permission gate
 
 Initial inspection on 2026-10-05 found read-only default workflow permissions and `can_approve_pull_request_reviews: false` for this repository. That setting controls whether Actions may create or approve PRs. No setting was changed. If PR creation is blocked, the job reports the error, preserves its maintenance branch and uploaded artifacts, and fails visibly. A maintainer can open the draft from that branch manually. Enabling an organization policy is an owner decision outside this implementation.
 

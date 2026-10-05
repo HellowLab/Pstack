@@ -55,6 +55,18 @@ class PackageTests(unittest.TestCase):
                 self.assertIn("Run only on an explicit user invocation", target)
             self.assertIn("host and permission contract", target)
 
+    def test_codex_compatibility_manifest_has_one_metadata_source(self):
+        portable = json.loads(self.files["plugin.json"])
+        compatibility = json.loads(self.files[".codex-plugin/plugin.json"])
+        for field in ("name", "version", "description", "author", "license", "repository"):
+            self.assertEqual(compatibility[field], portable[field])
+        self.assertEqual(compatibility["skills"], "./skills/")
+        expected = dict(portable["extensions"]["com.openai"]["interface"])
+        expected.pop("supportURL", None)
+        self.assertEqual(compatibility["interface"], expected)
+        self.assertNotIn("mcpServers", compatibility)
+        self.assertNotIn("apps", compatibility)
+
     def test_complete_source_coverage_and_review(self):
         self.assertEqual(hashes(ROOT / "upstream/pstack"), read_json(ROOT / "upstream/lock.json")["files"])
         self.assertEqual(set(self.rules["files"]), set(hashes(ROOT / "upstream/pstack")))

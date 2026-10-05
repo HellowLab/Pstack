@@ -8,7 +8,7 @@ Pstack-GPT keeps the upstream snapshot as evidence and produces a separate skill
 - `upstream/lock.json` records the commit, subtree tree ID, upstream version, latest checked monorepo commit, date, and file hashes.
 - `adapter/reviewed.json` records the source bytes considered during adaptation review. `adapter/reviewed-tree.txt` pins the reviewed Git tree, including file modes. A changed, added, or removed file or a changed tree blocks the review gate, even if the upstream version is unchanged.
 - `adapter/rules.json` classifies every file and each registered skill. `adapter/overrides/` holds readable replacement bodies and playbooks. `adapter/descriptions.json` changes descriptions that would otherwise promise unavailable host behavior.
-- Root `plugin.json` and `resources/host-contract.md` are maintained directly. `skills/`, coverage reports, and `dist/` are generated.
+- Root `plugin.json` and `resources/host-contract.md` are maintained directly. `skills/`, coverage reports, `.codex-plugin/plugin.json`, and `dist/` are generated. The Codex compatibility manifest derives all shared metadata from the root manifest, maps OpenAI interface fields to the older layout, and omits only `supportURL`, which that layout does not support. It adds no tools or permissions.
 
 The build uses only the Python standard library. Test-only dependencies validate YAML and the pinned official JSON schema. ZIP entries have a fixed order, timestamp, permissions, and uncompressed representation so rebuilding does not depend on compression-library versions.
 
