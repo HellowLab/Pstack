@@ -1,6 +1,6 @@
 # Adaptation design
 
-Pstack-GPT keeps the upstream snapshot as evidence and produces a separate skills-only package. A small Python build joins explicitly classified source files, reviewed body overrides, invocation guards, and a shared host contract. It never executes upstream scripts or performs broad string replacements.
+Pstack keeps the upstream snapshot as evidence and produces a separate skills-only package. A small Python build joins explicitly classified source files, reviewed body overrides, invocation guards, and a shared host contract. It never executes upstream scripts or performs broad string replacements.
 
 ## Sources of truth
 

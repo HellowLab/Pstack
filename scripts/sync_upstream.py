@@ -103,11 +103,16 @@ def main():
         if checkout is None:
             checkout = Path(temp) / "source"
             subprocess.run(["git", "clone", "--depth=1", "--no-tags", UPSTREAM, str(checkout)], check=True)
-        changed, summary = sync(checkout, existing_candidate_tree=candidate_tree())
+        existing = candidate_tree()
+        latest_tree = git(checkout, "rev-parse", "HEAD:pstack").decode().strip()
+        changed, summary = sync(checkout, existing_candidate_tree=existing)
+        recover_pr = (not changed and existing == latest_tree
+                      and existing != read_json(ROOT / "upstream/lock.json")["tree"])
     print(summary)
     if os.getenv("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a") as output:
             output.write(f"changed={str(changed).lower()}\n")
+            output.write(f"recover_pr={str(recover_pr).lower()}\n")
     if os.getenv("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as output:
             output.write(summary + "\n")

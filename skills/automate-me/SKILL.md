@@ -47,7 +47,7 @@ Cross-check across slices before elevating a signal. Patterns seen in 2+ slices 
 
 Mining misses intent that hasn't come up yet. Use the available structured question tool (or a concise chat question) tool (structured multi-choice) rather than asking the user to type from scratch.
 
-Shape: one or two questions with 4-6 options each, `allow_multiple: true` for category questions. Start broad ("Which areas matter most?"), then follow up on selected areas with specific options. After the structured rounds, one free-form chat question catches anything the options missed.
+Use one or two concise questions, with the option count and fields supported by the actual host question tool. Use multiple selection only when its exposed schema permits it; otherwise ask one choice at a time or allow a short text answer. Start broad ("Which areas matter most?"), then follow up on selected areas with specific options. After the structured rounds, one free-form chat question catches anything the options missed.
 
 Don't dump 20 questions.
 
@@ -73,7 +73,7 @@ Use the host's actual skill-authoring guidance to author the skill. Placement:
 - Path: preserve the existing skill location. For a new skill, use the documented project-local or personal skill location chosen by the user. If no installable location is exposed, produce a reviewable artifact and report installation pending.
 - Handle: the user's first name or chosen identifier.
 - Frontmatter `description`: trigger on their name + `/<handle>-mode` + "work in their style", not on generic keywords like "write code" or "review PR".
-- Frontmatter formatting: follow `create-skill`'s YAML rules. Keep `description` as one YAML scalar. Quote it or use `description: >-` with indented continuation lines when punctuation or wrapping requires it.
+- Frontmatter formatting: follow available host authoring guidance and valid YAML. Keep `description` as one YAML scalar. Quote it or use `description: >-` with indented continuation lines when punctuation or wrapping requires it.
 - Frontmatter `disable-model-invocation: true` by default. Opt out only if the user explicitly wants their mode to apply on every turn.
 
 ### 5. Iterate on prose
@@ -103,5 +103,5 @@ Run a description-optimization loop only if the skill's trigger accuracy turns o
 
 ## When not to use
 
-- User wants a task-specific skill (not working conventions): `create-skill` alone, no mining required.
+- User wants a task-specific skill (not working conventions): use actual available skill-authoring guidance, no mining required.
 - User wants to capture one narrow workflow (e.g. "how I write commit messages"). That's a regular skill, not a mode skill.

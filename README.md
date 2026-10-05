@@ -1,8 +1,10 @@
-# Pstack-GPT
+# Pstack
+
+The unofficial Plugin
 
 Independent HellowLab adaptation of [Lauren Tan's Pstack](https://github.com/cursor/plugins/tree/main/pstack) for ChatGPT and Codex. This is not an official poteto, Cursor, or OpenAI release.
 
-Pstack-GPT provides skills for understanding code, designing changes, implementation, review, and verification. It uses only the tools and permissions available in the host. This initial release candidate is not marketplace-approved or host-qualified. No marketplace package has been submitted or published.
+Pstack provides skills for understanding code, designing changes, implementation, review, and verification. It uses only the tools and permissions available in the host. This initial release candidate is not marketplace-approved or host-qualified. No marketplace package has been submitted or published.
 
 The source is pinned to Pstack **0.15.13**, commit [`2cbf585`](https://github.com/cursor/plugins/tree/2cbf58508f40de470d7490b55c51d71241928fa2/pstack). The [generated coverage map](resources/coverage.md) exposes the pinned version, last checked revision, adaptation status, and every source file's disposition. The [upstream workflow](.github/workflows/upstream.yml) checks subtree changes daily after it reaches the default branch. It detects changes without a version bump and requires adaptation review. It never merges or publishes.
 
@@ -33,12 +35,12 @@ Edit `adapter/overrides/`, `adapter/rules.json`, and authored metadata rather th
 Stage the exact ZIP in a fresh disposable marketplace:
 
 ```sh
-python3 scripts/stage_local.py /tmp/pstack-gpt-preview
+python3 scripts/stage_local.py /tmp/pstack-preview
 ```
 
-The staging command does not install or alter user configuration. On a supported Codex installation, register that local source with `codex plugin marketplace add /tmp/pstack-gpt-preview`, then install with `codex plugin add pstack-gpt@pstack-gpt-preview`. These installation commands change local plugin configuration. In the desktop plugin directory, select the local source where available, install the candidate, and start a new chat. Local-source availability varies between ChatGPT and Codex surfaces. See [the host validation matrix](docs/validation.md) for what was actually tested and what remains blocked.
+The staging command does not install or alter user configuration. On a supported Codex installation, register that local source with `codex plugin marketplace add /tmp/pstack-preview`, then install with `codex plugin add pstack@pstack-preview`. These installation commands change local plugin configuration. In the desktop plugin directory, select the local source where available, install the candidate, and start a new chat. Local-source availability varies between ChatGPT and Codex surfaces. See [the host validation matrix](docs/validation.md) for what was actually tested and what remains blocked.
 
-To remove a test installation, use `codex plugin remove pstack-gpt@pstack-gpt-preview` and `codex plugin marketplace remove pstack-gpt-preview` on a compatible CLI. Keep evidence before deleting the disposable staging directory. No public marketplace URL exists yet.
+To remove a test installation, use `codex plugin remove pstack@pstack-preview` and `codex plugin marketplace remove pstack-preview` on a compatible CLI. Keep evidence before deleting the disposable staging directory. No public marketplace URL exists yet.
 
 ## Maintain and publish
 

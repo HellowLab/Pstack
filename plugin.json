@@ -1,14 +1,14 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "pstack-gpt",
-  "version": "0.1.0-rc.1",
-  "description": "Independent HellowLab adaptation of Lauren Tan's Pstack engineering skills for ChatGPT.",
+  "name": "pstack",
+  "version": "0.1.0-rc.2",
+  "description": "Independent HellowLab adaptation of Lauren Tan's Pstack engineering skills for ChatGPT and Codex.",
   "author": {
     "name": "HellowLab",
     "url": "https://github.com/HellowLab"
   },
-  "homepage": "https://github.com/HellowLab/Pstack-GPT",
-  "repository": "https://github.com/HellowLab/Pstack-GPT",
+  "homepage": "https://github.com/HellowLab/Pstack",
+  "repository": "https://github.com/HellowLab/Pstack",
   "license": "MIT",
   "keywords": [
     "engineering",
@@ -18,14 +18,14 @@
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Pstack-GPT",
-        "shortDescription": "Engineering, with evidence",
+        "displayName": "Pstack",
+        "shortDescription": "The unofficial Plugin",
         "longDescription": "Independent adaptation of Lauren Tan's Pstack. Skills for investigation, design, implementation, review, and verification. Uses only tools and permissions available in the host. Some upstream integrations are unsupported.",
         "developerName": "HellowLab",
         "category": "Developer Tools",
         "capabilities": [],
-        "websiteURL": "https://github.com/HellowLab/Pstack-GPT",
-        "supportURL": "https://github.com/HellowLab/Pstack-GPT/issues",
+        "websiteURL": "https://github.com/HellowLab/Pstack",
+        "supportURL": "https://github.com/HellowLab/Pstack/issues",
         "defaultPrompt": [
           "Use poteto-help to explain the available workflows.",
           "Use how to explain this code."

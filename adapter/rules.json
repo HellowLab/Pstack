@@ -631,8 +631,9 @@
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
     },
     "skills/poteto-mode/scripts/check-plan.mjs": {
-      "status": "unsupported",
-      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
+      "status": "adapted",
+      "destination": "skills/poteto-mode/references/plan-validation.md",
+      "reason": "Preserve structural checks as an explicit review contract; no Node helper, vendor-model assertion, scheduler, or project-trunk plugin path is assumed."
     },
     "skills/poteto-mode/scripts/orch/orch.test.ts": {
       "status": "unsupported",

@@ -8,13 +8,13 @@ The root portable manifest follows [OpenAI packaging guidance](https://developer
 
 1. Resolve pending source adaptation, fidelity decisions, and both-host installation/behavior checks in [validation](validation.md). Review the ZIP contents and its checksum from a clean checkout of the exact approved commit.
 2. Have the owner select the OpenAI organization and project that will own the plugin and complete individual or business publisher verification. GitHub organization membership does not establish an OpenAI verified publisher. An OpenAI organization owner can submit; another member needs the appropriate Apps Management Write role.
-3. Confirm the actual verified publisher name, listing text, category, support route, and supplied artwork. The package uses HellowLab's independent identity and preserves Lauren Tan's attribution. It does not reuse the upstream logo. The current display name is Pstack-GPT and the stable machine identifier is `pstack-gpt`.
+3. Confirm the actual verified publisher name, listing text, category, support route, and supplied artwork. The package uses HellowLab's independent identity and preserves Lauren Tan's attribution. It does not reuse the upstream logo. The display name and banner are `Pstack`; the subtitle and artwork copy are exactly `The unofficial Plugin`. The machine identifier `pstack` passes package-schema validation, but marketplace identifier availability is unverified without publisher access.
 4. Resolve any dashboard metadata requirements against current guidance. A skills-only package does not require the four MCP review URLs or MCP review test-case block. Do not invent legal URLs, reviewer credentials, or demo evidence. The supplied artwork could not be transferred into this build environment after one supported retry. No substitute icon is included. Add the inspected, approved original before Codex distribution or public submission, since those require icons.
 5. Decide whether the documented unsupported runtime capabilities are acceptable for the initial public offering. Do not market those capabilities as implemented. A real runtime port needs separately reviewed scope.
 
-## Branding gate
+## Artwork gate
 
-The supplied artwork and product name require review against the [OpenAI brand guidelines](https://openai.com/brand/), particularly incorporated OpenAI marks and GPT naming. This is an unresolved public-submission issue, not a confirmed rejection. Do not silently rename the project, redesign the supplied image, crop it, or substitute a different logo. Resolve any necessary marketplace-specific variant with the owner first.
+Use the supplied replacement artwork unchanged after materialization and pixel inspection. Its download failed twice, including one fresh transfer retry; no image bytes were received or inspected. No earlier artwork or substitute is included. Preserve the original and verify the banner `Pstack` and subtitle `The unofficial Plugin` before packaging it. Listing approval and identifier availability remain publisher-dashboard checks; do not infer them from a valid local manifest.
 
 ## Submission sequence
 

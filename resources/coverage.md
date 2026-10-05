@@ -102,7 +102,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/poteto-mode/references/bugbot-triage.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/poteto-mode/scripts/bootstrap.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/bun.lock` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
-| `skills/poteto-mode/scripts/check-plan.mjs` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
+| `skills/poteto-mode/scripts/check-plan.mjs` | adapted | Preserve structural checks as an explicit review contract; no Node helper, vendor-model assertion, scheduler, or project-trunk plugin path is assumed. | reviewed |
 | `skills/poteto-mode/scripts/orch/orch.test.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/orch/orch.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/orch/store.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |

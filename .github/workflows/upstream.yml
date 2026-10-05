@@ -37,6 +37,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: python scripts/maintenance_pr.py
+      - name: Recover a missing draft without rewriting its branch
+        if: steps.sync.outputs.recover_pr == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: python scripts/maintenance_pr.py --existing-only
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always() && steps.sync.outputs.changed == 'true'
         with:

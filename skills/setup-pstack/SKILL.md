@@ -1,6 +1,6 @@
 ---
 name: setup-pstack
-description: "Configure Pstack-GPT for the capabilities actually available in this host. Use for /setup-pstack, configure pstack models, or pstack budget."
+description: "Configure Pstack for the capabilities actually available in this host. Use for /setup-pstack, configure pstack models, or pstack budget."
 ---
 
 Apply when the user's request matches the setup description.

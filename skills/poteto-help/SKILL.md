@@ -1,6 +1,6 @@
 ---
 name: poteto-help
-description: "Guide users through Pstack-GPT setup, skills, playbooks, and limitations. Use for /poteto-help or Pstack help."
+description: "Guide users through Pstack setup, skills, playbooks, and limitations. Use for /poteto-help or Pstack help."
 disable-model-invocation: true
 ---
 
@@ -14,7 +14,7 @@ Answer the user's question about pstack, hand them a prompt they can send, and l
 
 A message that asks for work, such as "use pstack to fix this bug", is not a help question. Read [`poteto-mode`](../poteto-mode/SKILL.md), do the work under it, and explain that persistence depends on the actual host.
 
-This file maps questions to the skills and guide pages that hold the answers. Those files own the details. Read the file you route to before you quote it, and trust it when it disagrees with this map. The links here point into the installed plugin, which the user may not be able to open, so give the user the file's public copy: `https://github.com/HellowLab/Pstack-GPT/blob/feat/chatgpt-skills-adaptation/` followed by its path.
+This file maps questions to the skills and guide pages that hold the answers. Those files own the details. Read the file you route to before you quote it, and trust it when it disagrees with this map. The links here point into the installed plugin, which the user may not be able to open, so give the user the file's public copy: `https://github.com/HellowLab/Pstack/blob/feat/chatgpt-skills-adaptation/` followed by its path.
 
 ## Find out what they need
 
@@ -32,7 +32,7 @@ Check the state that changes the answer, and mention it only when it does:
 
 ## Get set up
 
-1. Install Pstack-GPT only through a supported host plugin installation surface. This is an independent adaptation, not the official Cursor release. Native compatibility must be verified; no marketplace listing is published by these instructions.
+1. Install Pstack only through a supported host plugin installation surface. This is an independent adaptation, not the official Cursor release. Native compatibility must be verified; no marketplace listing is published by these instructions.
 2. Run [`/setup-pstack`](../setup-pstack/SKILL.md) to inspect available tools, workers, controls, and verification gaps. It does not write vendor-model configuration.
 3. Start a real task with `/poteto-mode`, a goal, and a check that can pass or fail.
 

@@ -28,12 +28,13 @@ class PackageTests(unittest.TestCase):
     def test_manifest_matches_official_schema(self):
         manifest = json.loads(self.files["plugin.json"])
         jsonschema.validate(manifest, read_json(ROOT / "docs/plugin.schema.json"))
-        self.assertEqual(manifest["name"], "pstack-gpt")
-        self.assertEqual(manifest["extensions"]["com.openai"]["interface"]["displayName"], "Pstack-GPT")
-        self.assertEqual(manifest["repository"], "https://github.com/HellowLab/Pstack-GPT")
+        self.assertEqual(manifest["name"], "pstack")
+        self.assertEqual(manifest["extensions"]["com.openai"]["interface"]["displayName"], "Pstack")
+        self.assertEqual(manifest["repository"], "https://github.com/HellowLab/Pstack")
         self.assertNotIn("review", manifest["extensions"]["com.openai"])
         interface = manifest["extensions"]["com.openai"]["interface"]
         self.assertLessEqual(len(interface["shortDescription"]), 30)
+        self.assertEqual(interface["shortDescription"], "The unofficial Plugin")
         for field in ("logo", "composerIcon"):
             if field in interface:
                 self.assertIn(interface[field].removeprefix("./"), self.files)
@@ -201,6 +202,25 @@ class PackageTests(unittest.TestCase):
         self.assertIn("--force-with-lease=refs/heads/", updater)
         self.assertNotIn('"merge"', updater)
         self.assertNotIn('"release"', updater)
+
+    def test_restored_workflows_do_not_call_excluded_runtime_helpers(self):
+        forbidden = (r"pstack/skills/", r"agent store", r"ready, never draft",
+                     r"check-plan\.mjs", r"watcher.s four-column", r"allow_multiple",
+                     r"/loop\b", r"hand (?:creation )?to `create-skill`")
+        for name, content in self.files.items():
+            if not name.startswith("skills/") or not name.endswith(".md"):
+                continue
+            for pattern in forbidden:
+                self.assertIsNone(re.search(pattern, content.decode()), (name, pattern))
+        plan = self.files["skills/poteto-mode/playbooks/multi-phase-plan.md"].decode()
+        self.assertIn("../references/plan-validation.md", plan)
+        self.assertIn("never as a script run", plan)
+        contract = self.files["skills/poteto-mode/references/plan-validation.md"].decode()
+        for obligation in ("introduction under ten", "PR block order", "exactly ten",
+                           "1 through 10", "Metric, Probe, Baseline, and Rule",
+                           "None gate", "screenshots, video, and operator review",
+                           "all four appendices", "Fill every placeholder"):
+            self.assertIn(obligation, contract)
 
 
 class UpstreamTests(unittest.TestCase):

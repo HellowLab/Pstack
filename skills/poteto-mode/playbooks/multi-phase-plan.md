@@ -7,10 +7,10 @@
 1. When the change is one or two files with an obvious approach, skip the plan. Say so and stop.
 2. Settle open questions by prototype before you write. Run `playbooks/prototype.md` for each. Keep the branch, the SHA, and the screenshots for Appendix A. Ask the operator only about a product or preference call that no run can settle. Give options (the **never-block-on-the-human** principle skill).
 3. Explore in subagents through actual permitted host workers per the Subagents section (the **guard-the-context-window** principle skill). Each returns file pointers, conventions, test commands, and entry points. No inlined dumps.
-4. Copy the skeleton below into the plan file and fill every placeholder. Unless the operator names a path, write the file under the agent store's `docs/`. Keep every heading and every sub-block in the order shown. One section per PR. One PR is one change with its own evidence (the **sequence-verifiable-units** principle skill). Name the execution playbook in **How to read this**. Pick between `playbooks/autopilot-full.md` and `playbooks/autopilot-stack.md` per the rule at the end of `playbooks/autopilot-stack.md`. A standing program takes `playbooks/orchestrate.md`.
+4. Copy the skeleton below into the plan file and fill every placeholder. Use a user-specified path or a known writable project documentation location; when no filesystem is exposed, produce a reviewable plan artifact through the host. Keep every heading and every sub-block in the order shown. One section per PR. One PR is one change with its own evidence (the **sequence-verifiable-units** principle skill). Name the execution playbook in **How to read this**. Choose supported per-task playbooks for the actual work, such as Feature, Refactoring, or Babysit. Record whether PRs are independent or form a base-branch stack and who is authorized to land them. The Orchestrate and Autopilot runtimes are unsupported here; if the requested execution requires them, mark execution blocked and deliver the plan without promising that runtime.
 5. Write under `/technical-writing` in full, then `/unslop`. The body is one Diátaxis mode, how-to. Appendices hold explanation and reference. Each heading states the task or the finding. No long dashes. No mid-sentence colons.
-6. Run `node pstack/skills/poteto-mode/scripts/check-plan.mjs <plan.md>` and fix every line it prints (the **encode-lessons-in-structure** principle skill).
-7. Hand back. Post the plan path and the script's output, then stop. Execution starts on the operator's explicit go, under the execution playbook the plan names.
+6. Apply every check in [the plan validation contract](../references/plan-validation.md). Record each finding with the plan line or section and correct it. The upstream executable checker is not packaged; report this as a structural review, never as a script run. A project-specific checker may be used only after its implementation is inspected and its checks cover this contract.
+7. Hand back. Post the plan path and the structural validation results, then stop. Execution starts on the operator's explicit go, under the execution playbook the plan names.
 
 **Verification.** Tests alone are not sufficient verification. A PR is verified only when its unit, live, and perf boxes are all checked (the **prove-it-works** principle skill). That sentence is the verification rule. Every verification block opens with it. The live block is mandatory. Ten lanes at the PR head drive the real surface through its control skill, per the **swarm** skill, using the actual worker capabilities established by the adapted swarm skill. Each lane is one box with a concrete scenario, the screenshot it saves, and its pass predicate. One lane is the **Regression lane against trunk.** It runs the same load-bearing scenario on trunk and head. If trunk does not have the feature, the lane records that fact and gates the behavior the diff adds plus the end state the user waits for instead of inventing a trunk result. The perf gate is dual-sided. Trunk and head must both produce the named metric. If trunk lacks the feature, also isolate the work the diff adds and set an absolute budget for that work plus the end-to-end state the user waits for. Do not claim a ratio between unlike scenarios. The perf block names the metric, the interleaved probe, the trunk baseline measured first, and the rule with the number that fails. A PR that changes an interaction is review-gated. The operator reviews it in chat with screenshots and a video before merge. A PR that changes no interaction writes `**Review gate.** None. <PR id> is not review-gated.` and no boxes under it.
 
@@ -34,21 +34,21 @@ Tests alone are not sufficient verification. A PR is verified only when its unit
 ### Arm the program
 
 - [ ] State the protocol and this plan to the operator, then stop. Start execution only on the operator's explicit go.
-- [ ] Read these from trunk at program start. Re-read them at every tick.
-  - [ ] `git show origin/main:pstack/skills/poteto-mode/playbooks/<execution playbook>.md`
-  - [ ] `git show origin/main:pstack/skills/swarm/SKILL.md`
-  - [ ] `git show origin/main:<control skill path>`
-  - [ ] `git show origin/main:pstack/skills/poteto-mode/playbooks/opening-a-pr.md`
-  - [ ] `git show origin/main:pstack/skills/<each other leaf skill the program uses>`
+- [ ] Resolve these through the host's installed-skill resource interface at program start. Record the actual package version and resource references, and re-read them at each authorized audit. Do not assume plugin files live in the project repository or on its default branch.
+  - [ ] The selected supported execution playbook.
+  - [ ] The installed swarm skill.
+  - [ ] The available control skill or verified project harness.
+  - [ ] The installed Opening a PR playbook.
+  - [ ] Each other leaf skill the plan uses.
 - [ ] On the operator's go, register an hourly audit only through an explicitly authorized supported host scheduler with the tick prompt below, or report future wakeups unavailable. Never leave the cadence to memory.
-- [ ] Use this tick prompt, verbatim. "Re-read the execution playbook from trunk. Audit the operation against it and fix drift in this tick. Probe every active lane and judge progress by side effects only. Stand down a stuck lane and dispatch its replacement now. Then post a short status message to the operator in chat only when the audit found a tracked change that no earlier status message reported, such as a PR opened, a code-ready head, a round launched or closed, a verdict, a merge, a stuck agent and the action taken, a blocker added or cleared, or a decision only the operator can make. Name every such change and nothing else. Do not repeat a table, the merged list, or an unchanged blocker. If the audit found none, end the turn with no reply text. Either way, log this tick's row in your decision trail. The row names the items reported, or none."
+- [ ] Use this tick prompt, verbatim. "Re-read the pinned installed execution playbook through its actual resource reference. Audit the operation against it and fix drift in this tick. Probe every active lane and judge progress by side effects only. Stand down a stuck lane and dispatch its replacement now. Then post a short status message to the operator in chat only when the audit found a tracked change that no earlier status message reported, such as a PR opened, a code-ready head, a round launched or closed, a verdict, a merge, a stuck agent and the action taken, a blocker added or cleared, or a decision only the operator can make. Name every such change and nothing else. Do not repeat a table, the merged list, or an unchanged blocker. If the audit found none, end the turn with no reply text. Either way, log this tick's row in your decision trail. The row names the items reported, or none."
 - [ ] On the operator's hold or stand-down, send every owner a zero-writes order at once.
 
 ### Spawn owners
 
 - [ ] Spawn one owner per PR with the full lifecycle the execution playbook names.
 - [ ] Follow this dependency graph. Start dependent work only after its parent merges, or base it on the parent branch when the execution playbook stacks.
-  - [ ] <PR id> and <PR id> are independent and first. Both branch from `main`.
+  - [ ] <PR id> and <PR id> are independent and first. Both branch from the repository's verified default branch.
   - [ ] <PR id> after <PR id>.
 - [ ] Hold the file boundaries. <PR id or class> touches only `<glob>`.
 - [ ] Hold the review gate. <PR ids> change an interaction. They wait for the operator's review in chat with screenshots and a video before merge.
@@ -56,7 +56,7 @@ Tests alone are not sufficient verification. A PR is verified only when its unit
 ### PR mechanics, for every PR
 
 - [ ] Resolve the forge once. Default to `gh`; if `command -v origin` succeeds and Origin can resolve the repository, use `origin pr` for every PR operation. Record any fallback to `gh`. Never require `gt`.
-- [ ] Open the PR ready, never draft, per **Opening a PR**. Use the run's built-in PR tool when it has one, else `origin pr create --status open --base <base-branch>` or `gh pr create --base <base-branch>` according to the resolved forge. A stack child targets its parent branch.
+- [ ] Follow the adapted Opening a PR playbook through an actual forge tool. Preserve the user's draft/ready choice; keep unverified work draft by default. A stack child targets its parent branch. No status choice authorizes merging.
 - [ ] Run the repo's lint and typecheck once before the PR-facing push. Push with hooks on.
 - [ ] Review the diff for unnecessary complexity before each commit using available tools and `/no-comments` before review.
 - [ ] Triage every Bugbot and security-reviewer comment per `../references/bugbot-triage.md`.
@@ -99,7 +99,7 @@ Each live lane requires an isolated environment at the exact PR head. Use real s
 
 - [ ] <Test file and the case it gains.> Run `<command>`.
 
-**Verify, live.** Tests alone are not sufficient verification. A PR is verified only when its unit, live, and perf boxes are all checked. Ten lanes on `<swarm workers model>` at the PR head, per the boot recipe.
+**Verify, live.** Tests alone are not sufficient verification. A PR is verified only when its unit, live, and perf boxes are all checked. Ten lanes using `<actual available worker configuration or explicit missing-capability gap>` at the PR head, per the boot recipe.
 
 - [ ] Lane 1. Regression lane against trunk. Run <the same load-bearing scenario> at trunk and head. If trunk lacks the feature, record that and gate <the behavior the diff adds plus the end state the user waits for>. Save `<slug>.png`. Pass when <predicate>.
 - [ ] Lane 2. <Scenario.> Save `<slug>.png`. Pass when <predicate>.
@@ -122,7 +122,7 @@ Each live lane requires an isolated environment at the exact PR head. Use real s
 **Review gate.** The operator reviews before merge.
 
 - [ ] Copy lane <n> screenshots into `<media path>/<pr-id>-review-<slug>.png`.
-- [ ] Record a 30 to 60 second video of the change on a lane VM. Save it as `<media path>/<pr-id>-review.mp4`.
+- [ ] Record a 30 to 60 second video of the change in the actual isolated lane environment. Save it as `<media path>/<pr-id>-review.mp4`.
 - [ ] Post the screenshots and the video in chat. Stop at merge-ready. Wait for the operator's click.
 
 **Merge.**
@@ -151,7 +151,7 @@ Each live lane requires an isolated environment at the exact PR head. Use real s
 
 ## Appendix D. Links and reading list
 
-<Docs to read before editing. Which PRs get `pstack/skills/how/SKILL.md` and `pstack/skills/interrogate/SKILL.md`. The trail per `pstack/skills/show-me-your-work/SKILL.md`.>
+<Docs to read before editing. Which PRs get the installed how skill and the installed interrogate skill. The trail per the installed show-me-your-work skill.>
 ````
 
-**Reply:** the plan path, the PR ids with their dependencies and the review-gated set, what the prototypes proved and what stays unproven, and the check script's output.
+**Reply:** the plan path, the PR ids with their dependencies and the review-gated set, what the prototypes proved and what stays unproven, and the structural validation results and any unavailable automated checks.

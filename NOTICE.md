@@ -1,6 +1,6 @@
 # Attribution
 
-Pstack-GPT is maintained by HellowLab as an independent adaptation of Pstack by Lauren Tan, also known as poteto. It is not an official poteto, Cursor, or OpenAI release and does not imply their endorsement.
+Pstack is maintained by HellowLab as an independent adaptation of Pstack by Lauren Tan, also known as poteto. It is not an official poteto, Cursor, or OpenAI release and does not imply their endorsement.
 
 Canonical source: https://github.com/cursor/plugins/tree/main/pstack
 

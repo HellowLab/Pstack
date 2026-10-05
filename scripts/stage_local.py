@@ -14,15 +14,18 @@ def stage(destination):
     if review_gaps():
         raise ValueError("Resolve pending adaptation before host installation tests.")
     archive, _ = build(check=True)
-    plugin = destination / "plugins/pstack-gpt"
+    manifest = read_json(ROOT / "plugin.json")
+    name = manifest["name"]
+    display_name = manifest["extensions"]["com.openai"]["interface"]["displayName"]
+    plugin = destination / "plugins" / name
     plugin.mkdir(parents=True)
     with zipfile.ZipFile(ROOT / archive) as package:
         package.extractall(plugin)
     catalog = destination / ".agents/plugins/marketplace.json"
     catalog.parent.mkdir(parents=True)
     catalog.write_text(json.dumps({
-        "name": "pstack-gpt-preview", "interface": {"displayName": "Pstack-GPT preview"},
-        "plugins": [{"name": "pstack-gpt", "source": {"source": "local", "path": "./plugins/pstack-gpt"},
+        "name": f"{name}-preview", "interface": {"displayName": f"{display_name} preview"},
+        "plugins": [{"name": name, "source": {"source": "local", "path": f"./plugins/{name}"},
                      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
                      "category": "Developer Tools"}],
     }, indent=2) + "\n")

@@ -141,8 +141,8 @@ def archive(files):
 
 def build(root=ROOT, check=False):
     files = render(root)
-    version = read_json(root / "plugin.json")["version"]
-    zip_name = f"dist/pstack-gpt-{version}.zip"
+    manifest = read_json(root / "plugin.json")
+    zip_name = f"dist/{manifest['name']}-{manifest['version']}.zip"
     files[zip_name] = archive(files)
     digest = hashlib.sha256(files[zip_name]).hexdigest()
     files[zip_name + ".sha256"] = f"{digest}  {Path(zip_name).name}\n".encode()

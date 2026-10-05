@@ -63,9 +63,26 @@ class MaintenanceTests(unittest.TestCase):
         Path("upstream/fixture").write_text(content)
         Path("docs/upstream-update.md").write_text(content)
 
-    def invoke(self):
+    def invoke(self, existing_only=False):
         with patch.dict(os.environ, {"GITHUB_REPOSITORY": "fixture/project", "DEFAULT_BRANCH": "main"}), patch.object(maintenance_pr, "run", side_effect=self.command):
-            maintenance_pr.main()
+            maintenance_pr.main(existing_only=existing_only)
+
+    def test_failed_pr_creation_recovers_without_rewriting_candidate(self):
+        self.block_create = True
+        self.candidate("candidate report that must survive")
+        with self.assertRaisesRegex(SystemExit, "GitHub blocked the PR operation"):
+            self.invoke()
+        first = self.real_run("git", "rev-parse", "HEAD")
+        self.real_run("git", "switch", "main")
+        self.block_create = False
+        self.invoke(existing_only=True)
+        self.assertEqual(self.prs, [{"number": 1, "isDraft": True}])
+        self.assertEqual(self.real_run("git", "ls-remote", "origin", "refs/heads/" + maintenance_pr.BRANCH).split()[0], first)
+        self.assertEqual(self.real_run("git", "rev-parse", "HEAD"), self.base)
+        self.assertIn("candidate report that must survive", Path(".build/maintenance-pr.md").read_text())
+        self.invoke(existing_only=True)
+        self.assertEqual(sum(call[1:3] == ("pr", "create") for call in self.calls), 2)
+        self.assertEqual(sum(call[1:3] == ("pr", "edit") for call in self.calls), 0)
 
     def test_create_then_update_one_draft_and_preserve_main(self):
         self.candidate("first update")

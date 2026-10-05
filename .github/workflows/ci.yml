@@ -20,6 +20,6 @@ jobs:
       - run: python scripts/build.py --check
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: pstack-gpt-release-candidate
+          name: pstack-release-candidate
           path: dist/
           if-no-files-found: error
