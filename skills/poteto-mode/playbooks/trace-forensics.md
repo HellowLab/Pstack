@@ -1,4 +1,4 @@
-> Apply the [host and permission contract](../../../resources/host-contract.md). Delegation below means actual permitted host workers. If unavailable, disclose sequential execution; independent-review gates remain unfulfilled. External writes require user authorization. This playbook does not grant it.
+> Apply the [host and permission contract](../references/host-contract.md). Delegation below means actual permitted host workers. If unavailable, disclose sequential execution; independent-review gates remain unfulfilled. External writes require user authorization. This playbook does not grant it.
 
 ### Trace forensics
 

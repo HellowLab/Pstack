@@ -1,12 +1,12 @@
 # Pstack
 
-The unofficial Plugin
+Ship faster. Build better.
 
-<img src="assets/pstack.jpeg" alt="Pstack potato builder and colorful crew, with the subtitle The unofficial Plugin" width="640">
+<img src="assets/pstack.jpeg" alt="Pstack potato builder and colorful crew" width="640">
 
-Independent HellowLab adaptation of [Lauren Tan's Pstack](https://github.com/cursor/plugins/tree/main/pstack) for ChatGPT and Codex. This is not an official poteto, Cursor, or OpenAI release.
+Bring Pstack’s engineering workflows to ChatGPT and Codex. Faithfully adapted from [Lauren Tan’s original](https://github.com/cursor/plugins/tree/main/pstack), with upstream tracking and reviewed updates to keep pace with Pstack as it evolves. Investigate, design, build, review, and verify with a consistent set of engineering practices. Independently maintained by HellowLab.
 
-Pstack provides skills for understanding code, designing changes, implementation, review, and verification. It uses only the tools and permissions available in the host. This initial release candidate is not marketplace-approved or host-qualified. No marketplace package has been submitted or published.
+This is not an official poteto, Cursor, or OpenAI release. Pstack uses only the tools and permissions available in the host. This release candidate is not marketplace-approved or fully host-qualified. No public marketplace package has been submitted or published.
 
 The source is pinned to Pstack **0.15.13**, commit [`2cbf585`](https://github.com/cursor/plugins/tree/2cbf58508f40de470d7490b55c51d71241928fa2/pstack). The [generated coverage map](resources/coverage.md) exposes the pinned version, last checked revision, adaptation status, and every source file's disposition. The [upstream workflow](.github/workflows/upstream.yml) checks subtree changes daily after it reaches the default branch. It detects changes without a version bump and requires adaptation review. It never merges or publishes.
 
@@ -14,7 +14,9 @@ The source is pinned to Pstack **0.15.13**, commit [`2cbf585`](https://github.co
 
 All 51 registered skill entry points and 23 playbook routes are represented. Use `poteto-help` for a guide, `how` for runtime behavior, `why` for rationale, `architect` for design, `interrogate` for critique, and `poteto-mode` for the workflow router. Slash spellings are aliases; the host's skill picker may expose them differently. Explicit-only invocation semantics are retained, including when the host must enforce them from instructions rather than metadata.
 
-Inventory coverage does not mean full runtime parity. The Grok Bot UI and persistent orchestration/autopilot runtimes have explanatory entry points but are unsupported. Native Cursor agent registration, helper scripts, model defaults, and private transcript paths are not portable. [Design and fidelity decisions](docs/design.md) explain each difference. The package never invents a tool, reviewer, model panel, or external-action authorization.
+## Compatibility limits
+
+Inventory coverage does not mean full runtime parity. The Grok Bot UI and persistent orchestration/autopilot runtimes have explanatory entry points but are unsupported. Native Cursor agent registration, helper scripts, model defaults, and private transcript paths are not portable. [Design and fidelity decisions](docs/design.md) explain each difference. The package never invents a tool, reviewer, model panel, or external-action authorization. [Validation](docs/validation.md) separates installation and resource-access checks from actual model behavior. The daily upstream workflow is not active while the initial draft remains unmerged, and automatic PR creation is blocked by the documented organization policy.
 
 ## Build and validate
 

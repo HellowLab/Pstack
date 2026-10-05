@@ -1,6 +1,6 @@
 # Autonomous run
 
-Read [the host contract](../../../resources/host-contract.md) before acting.
+Read [the host contract](../references/host-contract.md) before acting.
 
 1. State a checkable exit predicate and resource limits before iteration.
 2. Use an available event or wait mechanism during this session. Persistent recurrence requires a supported scheduler and user authorization. No host-neutral background loop is bundled.

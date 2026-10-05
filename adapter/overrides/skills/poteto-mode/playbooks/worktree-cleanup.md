@@ -1,6 +1,6 @@
 # Worktree cleanup
 
-Read [the host contract](../../../resources/host-contract.md) before acting.
+Read [the host contract](../references/host-contract.md) before acting.
 
 1. Inventory worktrees through the available Git or host API, along with tracked, untracked, and ignored work, branch state, size, and known active usage. Do not infer inactivity from age or a name.
 2. Check pinned/active work through supported host tools or the user's supplied list. If usage cannot be determined, hold the candidate.

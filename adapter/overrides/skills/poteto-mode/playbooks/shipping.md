@@ -1,4 +1,4 @@
-> Read the [host and permission contract](../../../resources/host-contract.md). Use actual supported tools and respect user authorization for external writes.
+> Read the [host and permission contract](../references/host-contract.md). Use actual supported tools and respect user authorization for external writes.
 
 Confirm explicit user authorization for landing this scope before any merge or arming auto-merge.
 

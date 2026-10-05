@@ -1,6 +1,6 @@
 # Orchestrate
 
-Read [the host contract](../../../resources/host-contract.md) before acting.
+Read [the host contract](../references/host-contract.md) before acting.
 
 This upstream standing-program workflow depends on a persistent orchestration store, worker lifecycle controls, scheduling, and cloud-agent behavior. Those helpers are not part of this skills-only package. Full unattended orchestration is unsupported until an explicit host adapter is implemented and tested.
 

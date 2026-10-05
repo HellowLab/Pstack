@@ -5,7 +5,7 @@ description: "Configure Pstack for the capabilities actually available in this h
 
 Apply when the user's request matches the setup description.
 
-Read and follow [the host and permission contract](../../resources/host-contract.md) before acting.
+Read and follow [the host and permission contract](references/host-contract.md) before acting.
 
 # Setup pstack
 

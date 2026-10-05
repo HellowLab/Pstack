@@ -1,4 +1,4 @@
-Follow [the host contract](../../../resources/host-contract.md). This template does not create tools, access, agents, model diversity, or authority. Tool names and provider schemas below are examples; verify actual exposed capabilities before using them. Missing capabilities are explicit gaps. Use the template in a labeled sequential pass when independent execution is unavailable.
+Follow [the host contract](host-contract.md). This template does not create tools, access, agents, model diversity, or authority. Tool names and provider schemas below are examples; verify actual exposed capabilities before using them. Missing capabilities are explicit gaps. Use the template in a labeled sequential pass when independent execution is unavailable.
 
 Synthesize three reviewers' findings from the active transcript into skill edits, backlog items, or rejections. Do not modify files. The parent applies the Accepted list after user approval. Use any MCP tool available in your environment to verify a finding (e.g. ticket, observability trace, chat thread).
 

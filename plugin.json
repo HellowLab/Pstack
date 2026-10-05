@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "pstack",
-  "version": "0.1.0-rc.2",
-  "description": "Independent HellowLab adaptation of Lauren Tan's Pstack engineering skills for ChatGPT and Codex.",
+  "version": "0.1.0-rc.3",
+  "description": "Pstack engineering workflows faithfully adapted for ChatGPT and Codex, independently maintained by HellowLab.",
   "author": {
     "name": "HellowLab",
     "url": "https://github.com/HellowLab"
@@ -19,10 +19,10 @@
     "com.openai": {
       "interface": {
         "displayName": "Pstack",
-        "shortDescription": "The unofficial Plugin",
+        "shortDescription": "Ship faster. Build better.",
         "logo": "./assets/pstack.jpeg",
         "composerIcon": "./assets/pstack.jpeg",
-        "longDescription": "Independent adaptation of Lauren Tan's Pstack. Skills for investigation, design, implementation, review, and verification. Uses only tools and permissions available in the host. Some upstream integrations are unsupported.",
+        "longDescription": "Bring Pstack’s engineering workflows to ChatGPT and Codex. Faithfully adapted from Lauren Tan’s original, with upstream tracking and reviewed updates to keep pace with Pstack as it evolves. Investigate, design, build, review, and verify with a consistent set of engineering practices. Independently maintained by HellowLab.",
         "developerName": "HellowLab",
         "category": "Developer Tools",
         "capabilities": [],

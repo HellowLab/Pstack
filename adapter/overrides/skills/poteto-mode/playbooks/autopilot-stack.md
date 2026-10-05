@@ -1,6 +1,6 @@
 # Autopilot stack
 
-Read [the host contract](../../../resources/host-contract.md) before acting.
+Read [the host contract](../references/host-contract.md) before acting.
 
 Full unattended owner coordination is unsupported without a tested host lifecycle and scheduler adapter. This package can describe or execute authorized in-session stack work, but must label that limitation.
 

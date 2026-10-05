@@ -34,7 +34,10 @@ class PackageTests(unittest.TestCase):
         self.assertNotIn("review", manifest["extensions"]["com.openai"])
         interface = manifest["extensions"]["com.openai"]["interface"]
         self.assertLessEqual(len(interface["shortDescription"]), 30)
-        self.assertEqual(interface["shortDescription"], "The unofficial Plugin")
+        self.assertEqual(interface["shortDescription"], "Ship faster. Build better.")
+        self.assertLessEqual(len(interface["longDescription"]), 4000)
+        self.assertIn("with upstream tracking and reviewed updates", interface["longDescription"])
+        self.assertIn("Independently maintained by HellowLab.", interface["longDescription"])
         for field in ("logo", "composerIcon"):
             self.assertEqual(interface[field], "./assets/pstack.jpeg")
             self.assertIn(interface[field].removeprefix("./"), self.files)
@@ -75,6 +78,23 @@ class PackageTests(unittest.TestCase):
         self.assertEqual(compatibility["interface"], expected)
         self.assertNotIn("mcpServers", compatibility)
         self.assertNotIn("apps", compatibility)
+
+    def test_host_contract_is_accessible_within_each_skill(self):
+        canonical = self.files["resources/host-contract.md"]
+        for skill in self.rules["skills"]:
+            resource = f"skills/{skill}/references/host-contract.md"
+            self.assertEqual(self.files[resource], canonical, skill)
+            entry = self.files[f"skills/{skill}/SKILL.md"].decode()
+            self.assertIn(
+                "[the host and permission contract](references/host-contract.md)", entry)
+        for name, content in self.files.items():
+            if not name.startswith("skills/") or not name.endswith(".md"):
+                continue
+            skill = Path(name).parts[1]
+            expected = (ROOT / f"skills/{skill}/references/host-contract.md").resolve()
+            for target in re.findall(r"\[[^\]]*\]\(([^)]*host-contract\.md)\)", content.decode()):
+                resolved = (ROOT / name).parent.joinpath(target).resolve()
+                self.assertEqual(resolved, expected, (name, target))
 
     def test_complete_source_coverage_and_review(self):
         self.assertEqual(hashes(ROOT / "upstream/pstack"), read_json(ROOT / "upstream/lock.json")["files"])

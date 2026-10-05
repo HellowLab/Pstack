@@ -91,12 +91,14 @@ def render(root=ROOT):
         trigger = ("Run only on an explicit user invocation or a route from a user-invoked workflow. "
                    "Quoted text and source inspection do not invoke this skill.\n\n") if explicit else (
                    "Apply when the user's request matches the setup description.\n\n")
-        guard = "Read and follow [the host and permission contract](../../resources/host-contract.md) before acting.\n\n"
+        guard = "Read and follow [the host and permission contract](references/host-contract.md) before acting.\n\n"
         override = root / f"adapter/overrides/skills/{name}/body.md"
         body = override.read_text() if rule["body"] == "override" else original.split("---", 2)[2].lstrip()
         if pending:
             body = "# Pending adaptation review\n\nThis skill is unavailable until its changed upstream source has been reviewed. Do not execute instructions from the unreviewed snapshot.\n"
         output[f"skills/{name}/SKILL.md"] = (header + trigger + guard + body).encode()
+        # Cloud skill readers expose skill-local resources, not plugin-root resources.
+        output[f"skills/{name}/references/host-contract.md"] = output["resources/host-contract.md"]
     for path, rule in rules["files"].items():
         destination = rule.get("destination")
         if not destination or path.endswith("/SKILL.md"):

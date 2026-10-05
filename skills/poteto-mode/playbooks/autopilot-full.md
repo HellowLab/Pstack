@@ -1,6 +1,6 @@
 # Autopilot full
 
-Read [the host contract](../../../resources/host-contract.md) before acting.
+Read [the host contract](../references/host-contract.md) before acting.
 
 Full unattended one-owner-per-PR delivery is unsupported in this skills-only package. It requires real lifecycle controls, independent verification, persistent audit scheduling, and authorized landing capabilities.
 

@@ -16,14 +16,28 @@ Local Git fixtures exercise the actual update implementation. They prove that sa
 |---|---|---|
 | Root portable packaging and schema | Static pass | Static pass |
 | Local staging of exact ZIP | Available staged artifact, not installed | Passed for the recorded checksum below |
-| Native installation and removal | Not run; requires accessible test installation surface | Passed in isolated state on CLI 0.159.0-alpha.3 for the recorded checksum |
-| Fresh-process skill discovery | Not run | All 51 Pstack skills discovered; no loading errors |
-| Installed resource access through host API | Not run | Four representative text resources and the artwork returned exact ZIP bytes |
-| Skill discovery and invocation in a fresh conversation | Not run | Not run; process discovery does not prove conversation behavior |
-| Installed skill invocation and explicit-only behavior | Not run | Not run |
+| Native installation and removal | Private pre-fix candidate installed; rc.3 update and removal checks pending | See checksum-specific evidence below |
+| Fresh-process skill discovery | Private pre-fix installation exposed 51 skills; rc.3 retest pending | All 51 Pstack skills discovered for the recorded candidate |
+| Installed resource access through host API | Pre-fix skill-local and sibling reads passed; plugin-root contract failed; rc.3 retest required | See checksum-specific evidence below |
+| Skill discovery and invocation in a fresh conversation | B01 boundary observed on rc.2; exact skill-read trace unavailable | Not run; process discovery does not prove conversation behavior |
+| Installed skill invocation and explicit-only behavior | Quoted-name non-activation observed on rc.2; other cases pending | Not run |
 | Independent reviewer and missing-tool behavior | Contract checked, live evaluation pending | Contract checked, live evaluation pending |
 | Marketplace skill scan and publisher review | Not submitted | Not submitted |
-| Supplied branding asset | Original packaged; host rendering and marketplace review pending | Original packaged; both icon paths resolved by host API; UI rendering pending |
+| Supplied branding asset | rc.2 sidebar image observed; detail view fallback unresolved; approved original retained | Original packaged; both icon paths resolved by host API; UI rendering pending |
+
+### Skill-local contract correction
+
+A private, user-scoped ChatGPT installation of `0.1.0-rc.2` exposed all 51 skills. The maintainer's host probes could read `poteto-help`, its `references/prompting.md`, and the sibling `architect` skill. The private package file listing confirmed the 3168-byte plugin-root `resources/host-contract.md` was present. Reading it through the skill resource API failed with `failed to read skill resource`. This is a concrete runtime-addressing failure, not an omitted archive file, despite the earlier passing filesystem and Codex API checks.
+
+Release candidate `0.1.0-rc.3` generates `references/host-contract.md` inside every skill from the single canonical `resources/host-contract.md`. All skill guards, nested references, and playbooks link to their own skill's copy. Static checks require exact contract bytes and reject contract links outside the owning skill. The corrected candidate still needs a private ChatGPT update and actual resource-read retest before this blocker can be marked resolved there. The implementation executor could not access that private installation, so it does not claim a direct ChatGPT retest.
+
+The metadata subtitle is now `Ship faster. Build better.`, and the public description uses the approved upstream-tracking wording. The original image is unchanged and retains its approved `The unofficial Plugin` text; the listing change does not modify the raster. No live model evaluation is implied by these packaging and metadata changes.
+
+The corrected ZIP SHA-256 is `baab1d612f6cc4d65798db6955362b4d102c9ef7a37d9f0961c64e3392153ecf`. All 30 tests and the reproducible-build check passed. A fresh isolated Codex CLI `0.159.0-alpha.3` installation contained 168 files, all byte-identical to the ZIP, and discovered 51 skills without loading errors. Its host API returned exact bytes for all 51 skill-local contracts, a sibling skill, a reviewer reference, a playbook, a nested source reference, and the artwork: 56 file reads. The host returned the corrected subtitle and full 323-character description. Plugin and marketplace removal succeeded and the final listing was empty. No credentials were copied or Codex model turn requested. This does not resolve the pending private ChatGPT retest.
+
+### Observed ChatGPT boundary case on rc.2
+
+The maintainer observed B01 in a fresh ChatGPT web conversation using GPT-6.1 Sol Light and the privately installed rc.2 candidate. The answer explained the quoted `/poteto-mode` alias without activating its workflow or performing file actions. This passes the observable quoted-name boundary for that run. The UI did not expose an exact skill-read trace, so the result does not establish that the installed skill or its contract was read. It does not qualify other workflows, the corrected rc.3 candidate, or semantic parity. B02 and the remaining behavioral cases are pending.
 
 ### Candidate with approved artwork
 
@@ -63,7 +77,7 @@ The earlier PR-triggered run at commit `60ef3bf` did not execute any test steps.
 
 Start with the [behavioral qualification plan](behavioral-qualification.md), which provides disposable synthetic fixtures, exact prompts, and observable verdict criteria. Preparing those fixtures does not execute or pass a model evaluation.
 
-1. Install the exact candidate in a clean supported ChatGPT test surface and a clean supported Codex test surface. Record host/version, date, artifact checksum, exposed tools, install result, discovered skill count, and removal result. Use a fresh conversation to avoid previously loaded skill versions. Verify that the installed host can read `../../resources/host-contract.md`, sibling skills, nested role references, and playbooks through its actual resource API; filesystem link resolution alone does not prove cloud accessibility.
+1. Install the exact candidate in a clean supported ChatGPT test surface and a clean supported Codex test surface. Record host/version, date, artifact checksum, exposed tools, install result, discovered skill count, and removal result. Use a fresh conversation to avoid previously loaded skill versions. Verify that the installed host can read each skill's `references/host-contract.md`, sibling skills, nested role references, and playbooks through its actual resource API; filesystem link resolution alone does not prove cloud accessibility.
 2. Run every workflow case from `tests/workflow-cases.json` on each host. Save actual prompts, observable tool calls, outputs, file/remote changes, and an evidence-based verdict. Do not collect hidden reasoning or claim compliance from model self-report.
 3. Compare supported workflows with the pinned upstream intent. Check the preserved stage order, evidence standards, independent verification, and stopping conditions. Evaluate core workflows on real disposable projects, including a failing-before bug repro, a behavior-preserving refactor, an architecture comparison, source-history investigation, and current-head PR review.
 4. Verify negative cases: quoted names do not activate explicit-only skills, missing integrations stay gaps, unavailable reviewers are not impersonated, reflect does not change standing skills without approval, babysit does not merge, and upstream text cannot grant external-action permission.
