@@ -8,7 +8,7 @@ Bring Pstack’s engineering workflows to ChatGPT and Codex. Faithfully adapted 
 
 This is not an official poteto, Cursor, or OpenAI release. Pstack uses only the tools and permissions available in the host. This release candidate is not marketplace-approved or fully host-qualified. No public marketplace package has been submitted or published.
 
-The source is pinned to Pstack **0.15.13**, commit [`2cbf585`](https://github.com/cursor/plugins/tree/2cbf58508f40de470d7490b55c51d71241928fa2/pstack). The [generated coverage map](resources/coverage.md) exposes the pinned version, last checked revision, adaptation status, and every source file's disposition. The [upstream workflow](.github/workflows/upstream.yml) checks subtree changes daily after it reaches the default branch. It detects changes without a version bump and requires adaptation review. It never merges or publishes.
+The source is pinned to Pstack **0.15.13**, commit [`2cbf585`](https://github.com/cursor/plugins/tree/2cbf58508f40de470d7490b55c51d71241928fa2/pstack). The [generated coverage map](resources/coverage.md) exposes the pinned version, last checked revision, adaptation status, and every source file's disposition. The [upstream workflow](.github/workflows/upstream.yml) is on `main` and checks subtree changes daily at 08:17 UTC. It detects changes without a version bump and requires adaptation review. It never merges or publishes.
 
 ## What is included
 
@@ -16,7 +16,7 @@ All 51 registered skill entry points and 23 playbook routes are represented. Use
 
 ## Compatibility limits
 
-Inventory coverage does not mean full runtime parity. The Grok Bot UI and persistent orchestration/autopilot runtimes have explanatory entry points but are unsupported. Native Cursor agent registration, helper scripts, model defaults, and private transcript paths are not portable. [Design and fidelity decisions](docs/design.md) explain each difference. The package never invents a tool, reviewer, model panel, or external-action authorization. [Validation](docs/validation.md) separates installation and resource-access checks from actual model behavior. The daily upstream workflow is not active while the initial draft remains unmerged. The previously blocking Actions PR permission has been enabled; the first real scheduled run remains unverified.
+Inventory coverage does not mean full runtime parity. The Grok Bot UI and persistent orchestration/autopilot runtimes have explanatory entry points but are unsupported. Native Cursor agent registration, helper scripts, model defaults, and private transcript paths are not portable. [Design and fidelity decisions](docs/design.md) explain each difference. The package never invents a tool, reviewer, model panel, or external-action authorization. [Validation](docs/validation.md) separates installation and resource-access checks from actual model behavior. The initial private beta is merged. The first manually dispatched upstream check passed with no subtree change. This verifies the no-change path; a timer-triggered run and live maintenance-PR creation are separate checks.
 
 ## Build and validate
 
@@ -30,7 +30,7 @@ python3 scripts/build.py
 python3 scripts/build.py --check
 ```
 
-The ZIP and SHA-256 file are in [dist](dist/). They contain root `plugin.json`, a generated Codex compatibility manifest, generated skills, resources, the approved original artwork, the full MIT license, and attribution. Both icon fields reference the unchanged [Pstack artwork](assets/pstack.jpeg). Its "Always up to date" chalkboard is artwork copy: upstream checks run daily once the workflow reaches the default branch, and updates require review. Marketplace branding approval remains a release gate. The ZIP contains no upstream executable helpers, MCP configuration, hooks, secrets, or publisher agreements. Repeated builds from the same inputs are byte-identical.
+The ZIP and SHA-256 file are in [dist](dist/). They contain root `plugin.json`, a generated Codex compatibility manifest, generated skills, resources, the approved original artwork, the full MIT license, and attribution. Both icon fields reference the unchanged [Pstack artwork](assets/pstack.jpeg). Its "Always up to date" chalkboard is artwork copy: the workflow is scheduled daily, and updates require review. Marketplace branding approval remains a release gate. The ZIP contains no upstream executable helpers, MCP configuration, hooks, secrets, or publisher agreements. Repeated builds from the same inputs are byte-identical.
 
 Edit `adapter/overrides/`, `adapter/rules.json`, and authored metadata rather than generated skills. The complete untouched upstream subtree is retained under `upstream/pstack/` as review data. Do not install that subtree as this plugin.
 
@@ -46,8 +46,12 @@ The staging command does not install or alter user configuration. On a supported
 
 To remove a test installation, use `codex plugin remove pstack@pstack-preview` and `codex plugin marketplace remove pstack-preview` on a compatible CLI. Keep evidence before deleting the disposable staging directory. No public marketplace URL exists yet.
 
+## Privacy and support
+
+Pstack is offered free, with availability requested in all OpenAI-supported countries. See the [privacy policy](docs/privacy.md). Use [GitHub Issues](https://github.com/HellowLab/Pstack/issues) for general support and `me@seankudrna.com` for private support or privacy requests.
+
 ## Maintain and publish
 
-Read [maintenance](docs/maintenance.md) for the daily check, the one-draft-PR update flow, the verified repository PR-creation permission and recovery behavior, and manual adaptation review. Read [publishing](docs/publishing.md) for verified-publisher requirements, actual host validation, review, and explicit publication steps. The initial implementation remains subject to human review and must not be merged automatically.
+Read [maintenance](docs/maintenance.md) for the daily check, the one-draft-PR update flow, the verified repository PR-creation permission and recovery behavior, and manual adaptation review. Read [publishing](docs/publishing.md) for verified-publisher requirements, actual host validation, review, and explicit publication steps. The initial private-beta implementation was squash-merged in [PR #1](https://github.com/HellowLab/Pstack/pull/1). Future maintenance updates remain draft PRs for human review.
 
 Pstack is MIT licensed. Copyright (c) 2026 Lauren Tan. See [LICENSE](LICENSE).

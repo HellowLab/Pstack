@@ -1,10 +1,11 @@
 {
   "name": "pstack",
-  "version": "0.1.0-rc.4",
+  "version": "0.1.0-rc.5",
   "description": "Pstack engineering workflows faithfully adapted for ChatGPT and Codex, independently maintained by HellowLab.",
   "author": {
-    "name": "HellowLab",
-    "url": "https://github.com/HellowLab"
+    "name": "SEAN P KUDRNA",
+    "url": "https://github.com/HellowLab",
+    "email": "me@seankudrna.com"
   },
   "homepage": "https://github.com/HellowLab/Pstack",
   "repository": "https://github.com/HellowLab/Pstack",
@@ -21,13 +22,14 @@
     "logo": "./assets/pstack.jpeg",
     "composerIcon": "./assets/pstack.jpeg",
     "longDescription": "Bring Pstack\u2019s engineering workflows to ChatGPT and Codex. Faithfully adapted from Lauren Tan\u2019s original, with upstream tracking and reviewed updates to keep pace with Pstack as it evolves. Investigate, design, build, review, and verify with a consistent set of engineering practices. Independently maintained by HellowLab.",
-    "developerName": "HellowLab",
+    "developerName": "SEAN P KUDRNA",
     "category": "Developer Tools",
     "capabilities": [],
     "websiteURL": "https://github.com/HellowLab/Pstack",
     "defaultPrompt": [
       "Use poteto-help to explain the available workflows.",
       "Use how to explain this code."
-    ]
+    ],
+    "privacyPolicyURL": "https://github.com/HellowLab/Pstack/blob/main/docs/privacy.md"
   }
 }
