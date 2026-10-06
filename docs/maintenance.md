@@ -2,7 +2,9 @@
 
 The repository owns update tracking. It does not depend on an assistant remembering the project.
 
-`Check Pstack upstream` runs daily at 08:17 UTC and supports manual dispatch after its workflow is on the default branch. GitHub can delay or disable schedules, so this is a daily check, not a zero-lag freshness guarantee. While the initial implementation remains an unmerged draft, the schedule is not active.
+`Check Pstack upstream` is on `main`, scheduled daily at 08:17 UTC, and supports manual dispatch. GitHub can delay or disable schedules, so this is a daily check, not a zero-lag freshness guarantee.
+
+[PR #1](https://github.com/HellowLab/Pstack/pull/1) was squash-merged on 2026-10-05 at `c5bdedd287d54d0e3e4afa0b1fdca511e9519247`. [The first real upstream check](https://github.com/HellowLab/Pstack/actions/runs/37388955293) succeeded through manual dispatch on that commit. It checked `cursor/plugins` commit `e5a8186d7b43be8d6ac4452440fbead5f1a51c70` and found the pinned Pstack subtree `6a8c28c4bdd81315ac46392fc86d8013cca8a684` unchanged. Candidate validation, draft creation, recovery, and artifact upload were correctly skipped. This proves the no-change path only. Live changed-subtree PR creation and a timer-triggered run are not established by this result.
 
 The job clones the canonical public repository and compares `HEAD:pstack` with the pinned tree ID. Changes elsewhere in the monorepo do not create a PR. Any subtree change counts, including documentation changes and same-version edits. Every run logs the checked commit and subtree in its Actions summary. The committed lock records the most recent check that changed the snapshot; consult Actions for later no-change checks.
 
@@ -22,7 +24,7 @@ On 2026-10-05, an initial repository-only request to enable Actions PR creation 
 
 The repository control is under [Actions settings](https://github.com/HellowLab/Pstack/settings/actions), Workflow permissions, Allow GitHub Actions to create and approve pull requests. GitHub bundles creation and approval in this control, although this workflow never approves, merges, or publishes. An organization-level change can affect other inheriting repositories; it is not a repository-only setting. No workflow code, automatic merge behavior, or credentials changed with this permission update.
 
-Permission readback does not prove a successful scheduled run. The schedule remains inactive until an authorized merge puts the workflow on the default branch. Verify the first actual run and any resulting draft PR after that merge. If a future permission error occurs, the workflow preserves the candidate branch and artifacts and fails visibly. A maintainer can open the draft manually; later runs retry a missing draft without rewriting the preserved candidate.
+The merge and successful manual run above establish workflow availability and the no-change path. Permission readback and skipped draft steps do not prove that a changed-subtree run can create a PR. Verify the draft state and review gate on the first real changed-subtree run. If a future permission error occurs, the workflow preserves the candidate branch and artifacts and fails visibly. A maintainer can open the draft manually; later runs retry a missing draft without rewriting the preserved candidate.
 
 ## Review an update
 
