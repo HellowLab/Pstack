@@ -36,6 +36,8 @@ Run the **arena** skill with the design-sketch task and the Phase A grounding ar
 
 Use the actual available, permitted runners from the host contract. If only one agent is available, produce distinct candidates sequentially and disclose the lack of independent exploration. Do not infer a model family or model identifier.
 
+Use accepted `architect runners` preferences from the current session or an authorized project document instead of Arena's runner list. An unconfigured role has two inherited entries. Run one permitted worker per entry. Preserve confirmed panel lists and disclose any unavailable independent or diverse exploration.
+
 Design it twice. Require at least two structurally distinct candidates before synthesis, even when the first looks sufficient. This is the **exhaust-the-design-space** principle skill made concrete. Whole-shape alternatives, not point fixes inside one shape.
 
 Screen every candidate against [`references/design-red-flags.md`](references/design-red-flags.md) before synthesis. Before choosing a base or grafts, present a finding for every flag for each candidate, grounded in its proposed interfaces, state ownership, or call paths. Explain absent or inapplicable flags rather than omitting them. Record any resulting revisions or rejection before writing the synthesis decision. Assume the next contributor is an agent that sees only the files it opened, copies the nearest example, and takes the shortest path that compiles. Prefer the design where a change that looks right from one file is right for the whole repo.

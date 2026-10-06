@@ -6,7 +6,7 @@ This page distinguishes repository checks from actual host behavior. A schema-va
 
 Run the commands in the root README. The suite validates metadata against the saved official Agent Plugins schema, all registered skills and invocation flags, references, licensing, attribution, complete source coverage, byte-identical regeneration, package exclusions, and host/permission regression patterns.
 
-Local Git fixtures exercise the actual update implementation. They prove that same-version and mode-only subtree changes are detected, unrelated monorepo changes are ignored, unknown skills are withheld, symlinks are rejected before replacement, and snapshot tampering fails the build. Incompatible metadata preserves the review candidate while removing stale ZIPs. Local bare-remotes exercise branch creation and update, preservation of main, refusal to overwrite human work, policy-error reporting, and recovery after a successful push followed by failed PR creation, with mocked forge responses. Source hashes are never auto-approved. Changed skills and reference resources receive a pending-review placeholder rather than newly imported executable instructions. These are behavioral tests of the build/update code.
+Local Git fixtures exercise the actual update implementation. They prove that same-version and mode-only subtree changes are detected, unrelated monorepo changes are ignored, unknown skills are withheld, symlinks are rejected before replacement, and snapshot tampering fails the build. Incompatible metadata preserves the review candidate while removing the current ZIP and checksum. Earlier archive pairs remain unchanged; corruption or an incomplete pair blocks writes. Local bare-remotes exercise branch creation and update, preservation of main, refusal to overwrite human work, policy-error reporting, and recovery after a successful push followed by failed PR creation, with mocked forge responses. Source hashes are never auto-approved. Changed skills and reference resources receive a pending-review placeholder rather than newly imported executable instructions. These are behavioral tests of the build/update code.
 
 `tests/workflow-cases.json` contains eleven positive, negative, and unavailable-capability scenarios. Automated assertions check that the necessary instruction contracts exist. They do not run a model or prove compliance. The cases are also the manual host evaluation checklist.
 
@@ -24,6 +24,14 @@ Local Git fixtures exercise the actual update implementation. They prove that sa
 | Independent reviewer and missing-tool behavior | Native-cloud coding replay passed independent review; missing-tool evidence remains limited | Contract checked, live evaluation pending |
 | Marketplace skill scan and publisher review | Not submitted | Not submitted |
 | Supplied branding asset | rc.4 installed copy verified; directory icon fallback unresolved; original retained | Original packaged; both icon paths resolved by host API; UI rendering pending |
+
+### Prepared 0.1.1 adaptation
+
+On 2026-10-06, the unreleased 0.1.1 candidate adapted upstream 0.15.15 after inspecting all 16 changed source files and their unchanged file modes. Independent source and diff review approved the five changed skill overrides and archive-preservation behavior. All 41 repository tests and the reproducible-build check passed locally. The candidate ZIP has SHA-256 `ad72b3939b9d65962cebd82a6c42e50c2dfe3e0c5771f978175b8fb20db73056`.
+
+Setup now targets maximum supported reasoning for unlimited budgets. Fresh panels use two inherited seats, and the consuming workflows use accepted role lists. Confirmed preferences remain unchanged. Help offers setup once when relevant and continues answering the original question. Seven archive fixtures prove retention, current-output regeneration, integrity failure before writes, and current-only invalidation after incompatible upstream changes. A separate regression pins the submitted rc.5 ZIP and checksum to their original bytes.
+
+These checks validate source contracts, packaging, and actual Python update behavior. They do not establish fresh native installation or model compliance with the changed instructions. Prior host evidence retains its recorded version and scope. The submitted rc.5 package remains unchanged and in review. This draft update does not authorize merge, release, marketplace upload, or publication.
 
 ### Submission candidate rc.5
 

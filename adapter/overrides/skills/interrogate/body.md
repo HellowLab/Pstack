@@ -31,6 +31,8 @@ Write one clear paragraph. If you're unsure about the intent, ask the user befor
 
 Use actual available, permitted independent reviewers. Model diversity is meaningful only when distinct supported models really run. Inherit the host's current model unless a supported override was requested. If independent or multi-model review was explicitly requested and cannot run, report that gate as blocked. A labeled single-agent critique is an alternative, never a substitute reported as independent review.
 
+Use accepted `interrogate reviewers` preferences from the current session or an authorized project document. An unconfigured role has two inherited entries. Run one permitted reviewer per entry and preserve confirmed panel lists. Repeated inherited models do not establish model diversity.
+
 Read `references/reviewer-prompt.md` and fill in the template with:
 1. The stated intent
 2. The diff or file contents

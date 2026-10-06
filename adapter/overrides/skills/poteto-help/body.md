@@ -4,11 +4,11 @@ Answer the user's question about pstack, hand them a prompt they can send, and l
 
 A message that asks for work, such as "use pstack to fix this bug", is not a help question. Read [`poteto-mode`](../poteto-mode/SKILL.md), do the work under it, and explain that persistence depends on the actual host.
 
-This file maps questions to the skills and guide pages that hold the answers. Those files own the details. Read the file you route to before you quote it, and trust it when it disagrees with this map. The links here point into the installed plugin, which the user may not be able to open, so give the user the file's public copy: `https://github.com/HellowLab/Pstack/blob/feat/chatgpt-skills-adaptation/` followed by its path.
+This file maps questions to the skills and guide pages that hold the answers. Those files own the details. Read the file you route to before you quote it, and trust it when it disagrees with this map. The links here point into the installed plugin, which the user may not be able to open, so give the user the file's public copy: `https://github.com/HellowLab/Pstack/blob/main/` followed by its path.
 
 ## Find out what they need
 
-Infer the need from the message and the conversation. A named situation, such as "which skill reviews a PR?", goes straight to its section. If the need is still unclear, ask one multiple-choice question with these options, then answer only the section they pick:
+Infer the need from the message and the conversation. A named situation, such as "which skill reviews a PR?", goes straight to its section. If the need is still unclear, ask one multiple-choice question with these options. Bundle it with the setup offer below when both are needed, then answer the section they pick:
 
 - Get set up
 - Start a task with `/poteto-mode`
@@ -18,7 +18,15 @@ Infer the need from the message and the conversation. A named situation, such as
 
 Check the state that changes the answer, and mention it only when it does:
 
+- Reuse confirmed role preferences from the current conversation or an explicitly identified, authorized project document. Do not search unrelated global configuration or infer that setup never ran because no preferences are available here.
 - No `verify-*` skill or other app harness in the project means agents have no scripted way to drive the app. Mention `/create-verification-skill` when the question is about proving a change works.
+
+When no role preferences are available and they affect the answer, offer setup at most once per chat. It matters when the user is new, asks about setup or cost, or needs to know which models run. Ask whether they want to choose role models and a reasoning budget now. Offer these choices:
+
+- Now. After acceptance, route to [`setup-pstack`](../setup-pstack/SKILL.md) and answer the original question too.
+- Later. Answer the original question and say that roles use the current inherited host settings until accepted preferences are available.
+
+Continue answering the original question while the offer is pending. Reuse confirmed preferences without repeating setup. The offer does not authorize changing models, writing preferences, or changing host settings.
 
 ## Get set up
 
@@ -30,7 +38,7 @@ Installing does not authorize an external action. Explicit-only skills run on in
 
 ## Start a task with `/poteto-mode`
 
-`/poteto-mode` matches the task to a playbook, copies the playbook's steps into the todo list, and runs the other skills as the steps need them. A step it skips stays in the list as `skip: <reason>`. A good prompt states the goal and how to tell it's done. It doesn't list skills, because a hand-written sequence tends to drop or reorder steps the playbook would keep. Read [`references/prompting.md`](references/prompting.md) before you help word one. [Guide page 2](https://github.com/cursor/plugins/blob/2cbf58508f40de470d7490b55c51d71241928fa2/pstack/docs/guide/02-poteto-mode.md) has examples.
+`/poteto-mode` matches the task to a playbook, copies the playbook's steps into the todo list, and runs the other skills as the steps need them. A step it skips stays in the list as `skip: <reason>`. A good prompt states the goal and how to tell it's done. It doesn't list skills, because a hand-written sequence tends to drop or reorder steps the playbook would keep. Read [`references/prompting.md`](references/prompting.md) before you help word one. [Guide page 2](https://github.com/cursor/plugins/blob/df581122cde17e6e27686b5a448bde23e4ad4318/pstack/docs/guide/02-poteto-mode.md) has examples.
 
 Native mode UI and persistent activation are not assumed. Invoke the skill for a new task, honor opt-out, and match a new playbook when the user changes tasks. There is no registered poteto-agent type; use only actual permitted host delegation.
 
@@ -92,11 +100,11 @@ Playbooks are step lists inside `/poteto-mode`, not skills, so they have no slas
 - "full autopilot on this queue" runs Autopilot-full. "stack them, don't ship" runs Autopilot-stack.
 - "run the eval playbook" runs Eval.
 
-Without `/poteto-mode`, a phrase such as "babysit this pr" can select another available workflow. The Playbooks section of [`poteto-mode`](../poteto-mode/SKILL.md) lists every playbook and when it applies. [Guide page 6](https://github.com/cursor/plugins/blob/2cbf58508f40de470d7490b55c51d71241928fa2/pstack/docs/guide/06-verify-and-ship.md) covers opening, babysitting, and landing a PR.
+Without `/poteto-mode`, a phrase such as "babysit this pr" can select another available workflow. The Playbooks section of [`poteto-mode`](../poteto-mode/SKILL.md) lists every playbook and when it applies. [Guide page 6](https://github.com/cursor/plugins/blob/df581122cde17e6e27686b5a448bde23e4ad4318/pstack/docs/guide/06-verify-and-ship.md) covers opening, babysitting, and landing a PR.
 
 pstack has no planning skill. Use the host's actual planning surface when available. For work that spans phases or stacked PRs, asking `/poteto-mode` for a plan runs the [Multi-phase plan playbook](../poteto-mode/playbooks/multi-phase-plan.md), which writes the plan and doesn't implement it. For a design question, the Prototype playbook or `/architect` settles it in code first.
 
-Principles are one-rule skills that `/poteto-mode` reads and cites in its replies. The user rarely invokes one. They steer with the names instead, as in "apply prove it works. show me the real output." Typing `/principle-<name>` still loads one on demand. [Guide page 8](https://github.com/cursor/plugins/blob/2cbf58508f40de470d7490b55c51d71241928fa2/pstack/docs/guide/08-principles.md) lists them.
+Principles are one-rule skills that `/poteto-mode` reads and cites in its replies. The user rarely invokes one. They steer with the names instead, as in "apply prove it works. show me the real output." Typing `/principle-<name>` still loads one on demand. [Guide page 8](https://github.com/cursor/plugins/blob/df581122cde17e6e27686b5a448bde23e4ad4318/pstack/docs/guide/08-principles.md) lists them.
 
 ## Fix a run that went wrong
 
@@ -108,10 +116,10 @@ Principles are one-rule skills that `/poteto-mode` reads and cites in its replie
 | Runs cost more than expected | See the cost paragraph under Get set up. |
 | A skill didn't load on its own | Only `/setup-pstack` loads from the user's words. The others load when the user types them or when `/poteto-mode` runs them, and it doesn't run every skill. |
 | Parallel agents overwrote each other | Give each writer its own worktree or other isolated output location. Verify the host's isolation; separate workers may share a filesystem. |
-| An overnight run moved but finished nothing | A supported authorized scheduler and a checkable predicate are required; this package does not supply background execution. See [guide page 7](https://github.com/cursor/plugins/blob/2cbf58508f40de470d7490b55c51d71241928fa2/pstack/docs/guide/07-overnight.md). |
+| An overnight run moved but finished nothing | A supported authorized scheduler and a checkable predicate are required; this package does not supply background execution. See [guide page 7](https://github.com/cursor/plugins/blob/df581122cde17e6e27686b5a448bde23e4ad4318/pstack/docs/guide/07-overnight.md). |
 | The reply claims success from a green build | Ask for the real command, flow, stored value, or profile. That's the prove-it-works principle. |
 
-For a run that drifts, [`references/prompting.md`](references/prompting.md) has one-line steers. [Guide page 10](https://github.com/cursor/plugins/blob/2cbf58508f40de470d7490b55c51d71241928fa2/pstack/docs/guide/10-recipes-and-pitfalls.md) has more pitfalls and the recipes worth copying.
+For a run that drifts, [`references/prompting.md`](references/prompting.md) has one-line steers. [Guide page 10](https://github.com/cursor/plugins/blob/df581122cde17e6e27686b5a448bde23e4ad4318/pstack/docs/guide/10-recipes-and-pitfalls.md) has more pitfalls and the recipes worth copying.
 
 ## Make pstack my own
 
@@ -120,7 +128,7 @@ For a run that drifts, [`references/prompting.md`](references/prompting.md) has 
 - `/poteto-mode write a skill for <workflow>` runs the authoring playbook. The eval playbook tests a skill change blind.
 - Fix a misbehaving skill in its own PR, not inside the feature work where it went wrong.
 
-[Guide page 9](https://github.com/cursor/plugins/blob/2cbf58508f40de470d7490b55c51d71241928fa2/pstack/docs/guide/09-make-it-yours.md) covers each of these.
+[Guide page 9](https://github.com/cursor/plugins/blob/df581122cde17e6e27686b5a448bde23e4ad4318/pstack/docs/guide/09-make-it-yours.md) covers each of these.
 
 ## Reply
 

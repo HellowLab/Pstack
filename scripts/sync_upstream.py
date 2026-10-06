@@ -11,7 +11,8 @@ import subprocess
 import tarfile
 import tempfile
 
-from build import ROOT, build, hashes, read_json, review_gaps
+from build import (ROOT, ArchiveIntegrityError, build, hashes, invalidate_current_archive,
+                   read_json, review_gaps, validate_archives)
 from maintenance_pr import BRANCH
 
 UPSTREAM = "https://github.com/cursor/plugins.git"
@@ -55,6 +56,7 @@ def sync(checkout, root=ROOT, existing_candidate_tree=None):
         return False, summary + " No subtree change."
     if tree == existing_candidate_tree:
         return False, summary + " This subtree is already staged on the maintenance branch. Preserved its review and timestamps."
+    validate_archives(root)
     with tempfile.TemporaryDirectory() as temp:
         staged = Path(temp) / "pstack"
         staged.mkdir()
@@ -83,13 +85,13 @@ def sync(checkout, root=ROOT, existing_candidate_tree=None):
     (root / "docs/upstream-update.md").write_text("\n".join(report) + "\n")
     try:
         build(root)
+    except ArchiveIntegrityError:
+        raise
     except (ValueError, KeyError, IndexError, FileNotFoundError) as error:
-        for artifact in (root / "dist").glob("*"):
-            if artifact.is_file():
-                artifact.unlink()
+        invalidate_current_archive(root)
         failure = "Generation blocked by incompatible upstream input. " + type(error).__name__
         with (root / "docs/upstream-update.md").open("a") as output:
-            output.write("\n" + failure + ". No ZIP is available for this candidate. Inspect the source diff and rerun the build locally for diagnostics.\n")
+            output.write("\n" + failure + ". No current candidate ZIP is available. Inspect the source diff and rerun the build locally for diagnostics.\n")
         return True, summary + " " + failure
     return True, summary + f" {len(review_gaps(root))} files require adaptation review."
 

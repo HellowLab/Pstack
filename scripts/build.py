@@ -141,15 +141,58 @@ def archive(files):
     return buffer.getvalue()
 
 
-def build(root=ROOT, check=False):
-    files = render(root)
+class ArchiveIntegrityError(ValueError):
+    """A retained archive cannot be safely preserved."""
+
+
+def current_archive(root=ROOT):
     manifest = read_json(root / "plugin.json")
-    zip_name = f"dist/{manifest['name']}-{manifest['version']}.zip"
+    return Path("dist") / f"{manifest['name']}-{manifest['version']}.zip"
+
+
+def validate_archives(root=ROOT):
+    current = current_archive(root)
+    directory = root / current.parent
+    if directory.is_symlink() or (directory.exists() and not directory.is_dir()):
+        raise ArchiveIntegrityError(f"Archive directory must be a regular directory: {directory}")
+    prefix = read_json(root / "plugin.json")["name"] + "-"
+    entries = {path.name: path for path in directory.glob("*")}
+    for name, path in entries.items():
+        zip_name = name.removesuffix(".sha256")
+        if (path.is_symlink() or not path.is_file() or not zip_name.startswith(prefix)
+                or not zip_name.endswith(".zip") or len(zip_name) <= len(prefix) + 4):
+            raise ArchiveIntegrityError(f"Unexpected archive entry: {path}")
+    for name, path in entries.items():
+        zip_name = name.removesuffix(".sha256")
+        if zip_name == current.name:
+            continue
+        checksum_name = zip_name + ".sha256"
+        if zip_name not in entries or checksum_name not in entries:
+            raise ArchiveIntegrityError(f"Retained archive pair is incomplete: {zip_name}")
+        if name != zip_name:
+            continue
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        expected = f"{digest}  {zip_name}\n".encode()
+        if entries[checksum_name].read_bytes() != expected:
+            raise ArchiveIntegrityError(f"Retained archive checksum differs: {zip_name}")
+
+
+def invalidate_current_archive(root=ROOT):
+    validate_archives(root)
+    path = root / current_archive(root)
+    path.unlink(missing_ok=True)
+    path.with_name(path.name + ".sha256").unlink(missing_ok=True)
+
+
+def build(root=ROOT, check=False):
+    validate_archives(root)
+    files = render(root)
+    zip_name = current_archive(root).as_posix()
     files[zip_name] = archive(files)
     digest = hashlib.sha256(files[zip_name]).hexdigest()
     files[zip_name + ".sha256"] = f"{digest}  {Path(zip_name).name}\n".encode()
     stale = []
-    generated = list((root / "skills").rglob("*")) + list((root / "dist").glob("*"))
+    generated = (root / "skills").rglob("*")
     for path in generated:
         if path.is_file() and path.relative_to(root).as_posix() not in files:
             if check:
