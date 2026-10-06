@@ -6,9 +6,9 @@ Ship faster. Build better.
 
 Bring Pstack’s engineering workflows to ChatGPT and Codex. Faithfully adapted from [Lauren Tan’s original](https://github.com/cursor/plugins/tree/main/pstack), with upstream tracking and reviewed updates to keep pace with Pstack as it evolves. Investigate, design, build, review, and verify with a consistent set of engineering practices. Independently maintained by HellowLab.
 
-This is not an official poteto, Cursor, or OpenAI release. Pstack uses only the tools and permissions available in the host. This release candidate is not marketplace-approved or fully host-qualified. No public marketplace package has been submitted or published.
+This is not an official poteto, Cursor, or OpenAI release. Pstack uses only the tools and permissions available in the host. The 0.1.1 candidate is not released or fully host-qualified. The submitted 0.1.0-rc.5 package remains in review and unchanged.
 
-The source is pinned to Pstack **0.15.13**, commit [`2cbf585`](https://github.com/cursor/plugins/tree/2cbf58508f40de470d7490b55c51d71241928fa2/pstack). The [generated coverage map](resources/coverage.md) exposes the pinned version, last checked revision, adaptation status, and every source file's disposition. The [upstream workflow](.github/workflows/upstream.yml) is on `main` and checks subtree changes daily at 08:17 UTC. It detects changes without a version bump and requires adaptation review. It never merges or publishes.
+The source is pinned to Pstack **0.15.15**, commit [`df58112`](https://github.com/cursor/plugins/tree/df581122cde17e6e27686b5a448bde23e4ad4318/pstack). The [generated coverage map](resources/coverage.md) exposes the pinned version, last checked revision, adaptation status, and every source file's disposition. The [upstream workflow](.github/workflows/upstream.yml) is on `main` and checks subtree changes daily at 08:17 UTC. It detects changes without a version bump and requires adaptation review. It never merges or publishes.
 
 ## What is included
 
@@ -16,7 +16,7 @@ All 51 registered skill entry points and 23 playbook routes are represented. Use
 
 ## Compatibility limits
 
-Inventory coverage does not mean full runtime parity. The Grok Bot UI and persistent orchestration/autopilot runtimes have explanatory entry points but are unsupported. Native Cursor agent registration, helper scripts, model defaults, and private transcript paths are not portable. [Design and fidelity decisions](docs/design.md) explain each difference. The package never invents a tool, reviewer, model panel, or external-action authorization. [Validation](docs/validation.md) separates installation and resource-access checks from actual model behavior. The initial private beta is merged. The first manually dispatched upstream check passed with no subtree change. This verifies the no-change path; a timer-triggered run and live maintenance-PR creation are separate checks.
+Inventory coverage does not mean full runtime parity. The Grok Bot UI and persistent orchestration/autopilot runtimes have explanatory entry points but are unsupported. Native Cursor agent registration, helper scripts, model defaults, and private transcript paths are not portable. [Design and fidelity decisions](docs/design.md) explain each difference. The package never invents a tool, reviewer, model panel, or external-action authorization. [Validation](docs/validation.md) separates installation and resource-access checks from actual model behavior. The initial private beta is merged. The first manual check passed with no subtree change. The [Oct 6 scheduled check](https://github.com/HellowLab/Pstack/actions/runs/37485323936) detected upstream 0.15.15 and opened [draft PR #4](https://github.com/HellowLab/Pstack/pull/4). Its expected review-gate failure required the adaptation in this candidate.
 
 ## Build and validate
 
@@ -30,7 +30,7 @@ python3 scripts/build.py
 python3 scripts/build.py --check
 ```
 
-The ZIP and SHA-256 file are in [dist](dist/). They contain root `plugin.json`, a generated Codex compatibility manifest, generated skills, resources, the approved original artwork, the full MIT license, and attribution. Both icon fields reference the unchanged [Pstack artwork](assets/pstack.jpeg). Its "Always up to date" chalkboard is artwork copy: the workflow is scheduled daily, and updates require review. Marketplace branding approval remains a release gate. The ZIP contains no upstream executable helpers, MCP configuration, hooks, secrets, or publisher agreements. Repeated builds from the same inputs are byte-identical.
+The current candidate ZIP and SHA-256 file are in [dist](dist/). Earlier archive pairs remain there with their original checksums, including the submitted rc.5 package. They contain root `plugin.json`, a generated Codex compatibility manifest, generated skills, resources, the approved original artwork, the full MIT license, and attribution. Both icon fields reference the unchanged [Pstack artwork](assets/pstack.jpeg). Its "Always up to date" chalkboard is artwork copy: the workflow is scheduled daily, and updates require review. Marketplace branding approval remains a release gate. The ZIP contains no upstream executable helpers, MCP configuration, hooks, secrets, or publisher agreements. Repeated builds from the same inputs are byte-identical.
 
 Edit `adapter/overrides/`, `adapter/rules.json`, and authored metadata rather than generated skills. The complete untouched upstream subtree is retained under `upstream/pstack/` as review data. Do not install that subtree as this plugin.
 
