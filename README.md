@@ -6,7 +6,7 @@ Ship faster. Build better.
 
 Bring Pstack’s engineering workflows to ChatGPT and Codex. Faithfully adapted from [Lauren Tan’s original](https://github.com/cursor/plugins/tree/main/pstack), with upstream tracking and reviewed updates to keep pace with Pstack as it evolves. Investigate, design, build, review, and verify with a consistent set of engineering practices. Independently maintained by HellowLab.
 
-This is not an official poteto, Cursor, or OpenAI release. Pstack uses only the tools and permissions available in the host. The 0.1.2 candidate is not released or fully host-qualified. The submitted 0.1.0-rc.5 package remains in review and unchanged.
+This is not an official poteto, Cursor, or OpenAI release. Pstack uses only the tools and permissions available in the host. Version 0.1.2 is distributed through GitHub releases and is not fully host-qualified. GitHub releases are separate from plugin marketplace approval. The submitted 0.1.0-rc.5 package remains in review and unchanged.
 
 The source is pinned to Pstack **0.15.23**, commit [`dbf4981`](https://github.com/cursor/plugins/tree/dbf49813a39c1a5389c5e28cb8e4c1c2379e2454/pstack). The [generated coverage map](resources/coverage.md) exposes the pinned version, last checked revision, adaptation status, and every source file's disposition. The [upstream workflow](.github/workflows/upstream.yml) is on `main` and checks subtree changes daily at 08:17 UTC. It detects changes without a version bump and requires adaptation review. It never merges or publishes.
 
@@ -55,3 +55,7 @@ Pstack is offered free, with availability requested in all OpenAI-supported coun
 Read [maintenance](docs/maintenance.md) for the daily check, the one-draft-PR update flow, the verified repository PR-creation permission and recovery behavior, and manual adaptation review. Read [publishing](docs/publishing.md) for verified-publisher requirements, actual host validation, review, and explicit publication steps. The initial private-beta implementation was squash-merged in [PR #1](https://github.com/HellowLab/Pstack/pull/1). Future maintenance updates remain draft PRs for human review.
 
 Pstack is MIT licensed. Copyright (c) 2026 Lauren Tan. See [LICENSE](LICENSE).
+
+## GitHub releases
+
+After a stable version reaches `main`, successful package validation publishes its `v<version>` GitHub release with the matching [changelog](CHANGELOG.md) section, ZIP, and checksum. The workflow verifies uploaded digests and marks the version Latest only when main and version checks are current. Existing tags and conflicting assets are never overwritten. See [release maintenance](docs/maintenance.md#github-release-publication) for retries and version rules.
