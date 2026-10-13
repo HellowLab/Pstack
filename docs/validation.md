@@ -25,11 +25,17 @@ Local Git fixtures exercise the actual update implementation. They prove that sa
 | Marketplace skill scan and publisher review | Not submitted | Not submitted |
 | Supplied branding asset | rc.4 installed copy verified; directory icon fallback unresolved; original retained | Original packaged; both icon paths resolved by host API; UI rendering pending |
 
+### Native Codex 0.1.2 installation check
+
+On 2026-10-13, Codex CLI 0.161.0 installed the exact 0.1.2 archive in a disposable local marketplace and state directory. A fresh app-server returned all 53 plugin skills through `skills/list`, with no loading errors, and resolved the plugin through `plugin/read`. Every one of the 172 installed files matched the ZIP. The host `fs/readFile` API returned byte-identical bytes for all 172 members, including both manifests, all skill-local contracts, nested resources, playbooks, and original artwork. Plugin removal and marketplace removal passed; the final plugin listing was empty. No credentials were copied or created.
+
+The archive SHA-256 remains `5149fc3d2db4fbed0a49de80b3941e1a4c6357061607b64a7ed91e7e3e978539`. This proves local native installation, fresh-process discovery, resource access, and removal. It does not prove visual rendering or changed-workflow model compliance. The private ChatGPT plugin was not updated; its 0.1.2 installation and model checks remain pending. The public rc.5 review was not changed.
+
 ### Prepared 0.1.2 adaptation
 
 On 2026-10-13, upstream 0.15.23 was inspected across all 65 changed files. The package contains 53 skills and 23 playbook routes. The 45 repository tests pass, including nine real bare-remote maintenance tests. The build check confirms byte-identical regeneration. SHA-256: `5149fc3d2db4fbed0a49de80b3941e1a4c6357061607b64a7ed91e7e3e978539`.
 
-Replaying the new maintenance fixtures against the previous script reproduced its refusal of the squash-merged human tree and its failure to protect human work beneath a bot tip. The fixed script passes both. The new maintenance fixtures verify squash-merged human history preservation, refusal of unmerged human work beneath a bot tip, active-draft protection, and rejection of a concurrent remote update. Four new workflow cases check the instruction contracts for catch-up without visual tools, goal restatement, missing seed data, and partial review pagination. These are static instruction assertions, not model evaluations. No new native installation, fresh-process discovery, visual rendering, or model-compliance pass is claimed for 0.1.2. Prior host evidence remains version-specific.
+Replaying the new maintenance fixtures against the previous script reproduced its refusal of the squash-merged human tree and its failure to protect human work beneath a bot tip. The fixed script passes both. The new maintenance fixtures verify squash-merged human history preservation, refusal of unmerged human work beneath a bot tip, active-draft protection, and rejection of a concurrent remote update. Four new workflow cases check the instruction contracts for catch-up without visual tools, goal restatement, missing seed data, and partial review pagination. These are static instruction assertions, not model evaluations. The preparation run did not establish native installation, fresh-process discovery, visual rendering, or model compliance. The later native Codex check above closes installation, discovery, resource access, and removal only. Prior host evidence remains version-specific.
 
 The rc.5 and 0.1.1 archives retain their committed bytes. A read-only publisher-dashboard inspection on 2026-10-13 still showed rc.5 in review and not published. No upload, cancellation, submission, or publication occurred during this repository update.
 

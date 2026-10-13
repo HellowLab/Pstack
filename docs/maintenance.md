@@ -36,3 +36,17 @@ The merge and successful manual run above establish workflow availability and th
 6. Request human review. Merge and publication remain separate decisions. Neither a bot draft nor a green check grants them.
 
 For a local read-only no-change check, run `python3 scripts/sync_upstream.py --checkout /path/to/canonical-checkout`. This command writes candidate files if the subtree changed; use a clean adaptation branch. The ordinary command fetches the canonical source itself.
+
+## GitHub release publication
+
+`Validate package` publishes GitHub releases only after its validation job succeeds on a main push or a manual run on main. PR and other-branch runs cannot enter the release job. That job alone receives `contents: write`, with the existing job-scoped GitHub token; the workflow default stays read-only. Release writes are serialized without cancelling an active publication.
+
+Use a stable `major.minor.patch` in `plugin.json` and exactly one nonempty `## [version]` section in `CHANGELOG.md`. Bump the version for new release source. The script rechecks source hashes, reproducible package bytes, the exact workflow checkout, current main, and all published stable release versions before publishing. A new tag is created only at the validated source commit. Annotated tags are resolved, never retargeted. A tag at a different commit is preserved and the run reports a version conflict. An ordinary later main merge without a version bump therefore leaves the existing release untouched.
+
+The release starts as a draft. It receives only that version's ZIP and checksum file. Existing matching assets are reused, missing assets are uploaded, and conflicting or unverifiable assets stop publication without replacement. The script verifies GitHub's upload digests, rechecks main and version ordering, then publishes with the exact changelog section and `make_latest: true`. It reads back both the body and Latest designation. A newer published version prevents a lower one becoming Latest, even if an older run is retried.
+
+Rerun a failed workflow on the same current main commit to recover an interrupted tag creation, draft, upload, or publication. Completed objects are reused. API errors other than an explicit missing-tag 404 fail closed. If main advanced, the run stops without updating Latest. If a partial tag/draft belongs to a different commit, preserve it and use a new version rather than move the tag. Review the job summary before retrying. Do not repair failures by deleting historical releases or replacing assets.
+
+These conventions follow the repository's existing project release patterns: version tags, matching changelog notes, and a visible Latest release. The GitHub release distributes repository-validated bytes. It is not a plugin marketplace submission, review approval, or native model-behavior qualification. The public rc.5 review remains separate and untouched.
+
+API contracts: [GitHub releases](https://docs.github.com/en/rest/releases/releases), [release assets](https://docs.github.com/en/rest/releases/assets), and [asset digests](https://github.blog/changelog/2025-06-03-releases-now-expose-digests-for-release-assets/).
