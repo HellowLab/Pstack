@@ -59,6 +59,8 @@ The default answer is `/poteto-mode`, which runs most of the others when its ste
 | The user wants to | Skill |
 |---|---|
 | Do any non-trivial task with rigor | [`/poteto-mode`](../poteto-mode/SKILL.md) |
+| Check that the agent understood the goal before work begins | [`/in-your-own-words`](../in-your-own-words/SKILL.md) |
+| Catch up on changes in this chat with visuals | [`/ketchup`](../ketchup/SKILL.md) |
 | Know how code works now, or where new code should live | [`/how`](../how/SKILL.md) |
 | Know why code is shaped this way, or where a number came from | [`/why`](../why/SKILL.md) |
 | Understand a change or subsystem, explained plainly | [`/teach`](../teach/SKILL.md) |
@@ -86,7 +88,7 @@ The default answer is `/poteto-mode`, which runs most of the others when its ste
 | Explain the unsupported bot/webhook runtime and required dependencies | [`/make-bot-ui`](../make-bot-ui/SKILL.md) |
 | Find their way around pstack | `/poteto-help` |
 
-If a skill directory next to this one is missing from the table, read its frontmatter and route by its description. The `principle-*` directories are covered under principles below.
+If an exposed skill is missing from the table, discover it through the host's skill catalog or documented local skill directory, read its frontmatter, and route by its description. Do not assume cloud resources are sibling filesystem paths. The `principle-*` directories are covered under principles below.
 
 Close calls:
 

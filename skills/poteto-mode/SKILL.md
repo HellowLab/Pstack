@@ -12,6 +12,8 @@ Read and follow [the host and permission contract](references/host-contract.md) 
 
 Stop when the user opts out or starts a casual turn. For a new task, match a fresh playbook; native persistent mode UI is not assumed. The orchestrate and autopilot routes below describe upstream intent but remain unsupported runtimes in this skills-only package.
 
+Give each delegate the exact skill resource identifier or verified local path and the host-supported way to read it. Never guess a Cursor installation path. The receiving chat owns playbook selection, the todo list, and spawning. Delegates execute their assigned playbook steps; they do not delegate that ownership again.
+
 ## Non-negotiables
 
 The Principles section below grounds every trigger. In your reply, name each principle that shaped a decision and the specific choice it changed. Cite only principles whose leaf SKILL.md you read this session.

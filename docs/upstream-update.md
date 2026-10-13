@@ -1,42 +1,89 @@
-# Reviewed upstream 0.15.15 adaptation
+# Reviewed upstream 0.15.23 adaptation
 
-[The Oct 6 scheduled run](https://github.com/HellowLab/Pstack/actions/runs/37485323936) detected Pstack 0.15.15 and opened [draft PR #4](https://github.com/HellowLab/Pstack/pull/4). The cron is 08:17 UTC; the run started at 15:11:32 UTC. Sync, draft creation, and preview upload succeeded. Candidate validation reported seven failures and the final review gate deliberately failed.
+Reviewed on 2026-10-13 against upstream 0.15.15 at `df581122cde17e6e27686b5a448bde23e4ad4318`.
+New snapshot: `dbf49813a39c1a5389c5e28cb8e4c1c2379e2454`, subtree `fafe54a3bb94d4e5e6eee5070d97cb416e0f30ff`.
+[Source comparison](https://github.com/cursor/plugins/compare/df581122cde17e6e27686b5a448bde23e4ad4318...dbf49813a39c1a5389c5e28cb8e4c1c2379e2454).
 
-Six failures withheld changed skills and resources pending review. The seventh came from a test that assumed upstream version 0.15.13. This update preserves the review gate and makes that test independent of the pinned version.
+An independent source reviewer inspected all 65 changed or added files, including the source-only helpers and tests. No vendored helper was executed. Existing file modes did not change. Reviewed hashes were updated only after this inspection and the adaptations below.
 
-The reviewed comparison is [2cbf585 to df58112](https://github.com/cursor/plugins/compare/2cbf58508f40de470d7490b55c51d71241928fa2...df581122cde17e6e27686b5a448bde23e4ad4318). The candidate subtree is `9d9cb20f79203a97c925de402c66183d0fa26c42`. Every changed file remains mode 100644.
+## Adaptation decisions
 
-## Source review
+- Add explicit-only `in-your-own-words` and `ketchup`, bringing the inventory to 53 skills. Ketchup stays within the current chat, checks actual status, and provides an honest text fallback when visual capabilities are absent. Help and recipes expose both workflows.
+- Require usable startup from an empty data directory, migrations and seed data, failed journeys for missing prerequisites, and disclosure of stand-in versus real-target gaps.
+- Pass actual host-accessible skill references to delegates. Keep playbook and task-list ownership in the receiving chat. Preserve explicit resource links rather than infer installation paths from titles.
+- Inspect every review-thread page before a clear verdict. Incomplete status stays unknown. Require actual PR base information for worktree cleanup. Keep authorization and recoverability boundaries.
+- Carry fenced-code semantics into the portable plan-validation contract. The Node implementation and its new tests remain source-only.
+- Preserve complete standalone guidance for design exploration, structural lesson encoding, and the laziness principle through overrides. Upstream compression removed core guidance, including almost the entire design-exploration body. Existing richer explorer, source-investigation, reflection, and authorization overrides remain deliberate adaptations. Portable direct-copy principle and reference revisions receive reviewed upstream prose, including the diagnostic-signal suggestion in fix-root-causes.
+- Retain adapter-owned metadata. The new upstream root manifest and Cursor agent definitions remain source-only. No vendor model defaults, native agent types, transcript scanning, forced ready-state behavior, automatic issue posting, or persistent orchestration claims enter the package.
 
-Each changed file was inspected as source data. Vendored helpers were not executed.
+The maintained branch guard now distinguishes unmerged human work from a closed branch with the same complete tree as main. Updates preserve the old tip as an ancestor and use a normal push. Real bare-remote fixtures cover squash reconciliation, hidden human commits, active drafts, concurrent pushes, normal updates, and PR recovery.
 
-| Source | Review disposition |
-|---|---|
-| `.cursor-plugin/plugin.json` | Version becomes 0.15.15. Cursor registration remains unsupported. |
-| `README.md` | Fresh vendor panels shrink to two; migration guidance becomes generic. Confirmed preferences remain unchanged. |
-| `docs/guide/01-setup.md` | Unlimited requests maximum supported reasoning; large means xhigh. Adapted with observed host controls and inherited defaults. |
-| `docs/guide/04-design.md` | Reviewer wording changes. Actual independent review remains required when requested. |
-| `skills/architect/SKILL.md` | Fresh panel defaults become two. Keep at least two distinct designs and host inheritance. |
-| `skills/architect/references/runner-prompt.md` | Parallel-runner wording changes. Existing honest independence disclosure remains appropriate. |
-| `skills/arena/SKILL.md` | Vendor defaults and fallback families change. Only observed, accepted host model choices are usable. |
-| `skills/blast-radius/SKILL.md` | Multiple-model wording changes. Existing host capability limits remain appropriate. |
-| `skills/how/SKILL.md` | Vendor explainer default changes effort. Existing inherited model policy remains appropriate. |
-| `skills/interrogate/SKILL.md` | Fresh reviewer panel becomes two. Preserve actual independence and confirmed panel lists. |
-| `skills/poteto-help/SKILL.md` | Add a relevant setup offer once per chat while answering the original question. Use authorized preference sources. |
-| `skills/poteto-mode/SKILL.md` | Vendor judgment default changes effort. Existing host inheritance and accepted preferences remain appropriate. |
-| `skills/poteto-mode/scripts/orch/orch.test.ts` | Fixture verifier changes. The orchestration runtime remains unsupported and excluded. |
-| `skills/reflect/SKILL.md` | Vendor assignments change. Keep three distinct lenses and host inheritance. |
-| `skills/setup-pstack/SKILL.md` | Adapt max-target semantics and fresh two-seat panels. Never migrate confirmed preferences silently. |
-| `skills/why/SKILL.md` | Vendor synthesizer default changes effort. Existing inherited model policy remains appropriate. |
+The 0.1.2 ZIP is a repository-validated candidate. Native installation and model-behavior qualification were not rerun. The submitted rc.5 and previous 0.1.1 archives remain byte-identical. GitHub checks do not establish plugin publication.
 
-Reviewed hashes and the subtree assertion are deliberate review records. Automation still cannot approve future source changes.
+Changed files:
 
-## Candidate and limits
-
-The adapted package is prepared as stable version 0.1.1. It is an unreleased candidate, not a marketplace update. The submitted 0.1.0-rc.5 ZIP and checksum remain byte-identical. Builds retain and validate earlier archive pairs; failed upstream generation removes only the current candidate pair.
-
-Vendor-specific model defaults, Cursor global rules and native agent registration, orchestration helpers, unattended persistence, and webhook hosting remain unsupported. No credentials, security settings, publisher details, or saved user preferences changed.
-
-Repository tests cover real local Git update behavior and archive preservation. Skill contract assertions are static checks, not proof of model compliance. Prior installation and behavior evidence retains its original version and scope. Fresh native installation and full host behavior qualification of 0.1.1 remain separate work.
-
-Merge, release, marketplace upload, and publication require separate authorization.
+- `.cursor-plugin/plugin.json`
+- `README.md`
+- `agents/comment-sicko.md`
+- `agents/poteto-agent.md`
+- `plugin.json`
+- `skills/architect/SKILL.md`
+- `skills/arena/SKILL.md`
+- `skills/benchmark-checklist/SKILL.md`
+- `skills/create-verification-skill/SKILL.md`
+- `skills/figure-it-out/SKILL.md`
+- `skills/how/SKILL.md`
+- `skills/how/references/explorer-prompt.md`
+- `skills/in-your-own-words/SKILL.md`
+- `skills/interrogate/SKILL.md`
+- `skills/interrogate/references/reviewer-prompt.md`
+- `skills/interrogate/references/rubric.md`
+- `skills/ketchup/SKILL.md`
+- `skills/no-comments/SKILL.md`
+- `skills/poteto-help/SKILL.md`
+- `skills/poteto-help/references/recipes.md`
+- `skills/poteto-mode/SKILL.md`
+- `skills/poteto-mode/playbooks/babysit.md`
+- `skills/poteto-mode/playbooks/opening-a-pr.md`
+- `skills/poteto-mode/playbooks/trace-forensics.md`
+- `skills/poteto-mode/playbooks/worktree-cleanup.md`
+- `skills/poteto-mode/scripts/check-plan.mjs`
+- `skills/poteto-mode/scripts/check-plan.test.ts`
+- `skills/poteto-mode/scripts/package.json`
+- `skills/poteto-mode/scripts/watch-pr/fakes.test-helper.ts`
+- `skills/poteto-mode/scripts/watch-pr/github.test.ts`
+- `skills/poteto-mode/scripts/watch-pr/github.ts`
+- `skills/poteto-mode/scripts/watch-pr/policy.test.ts`
+- `skills/poteto-mode/scripts/watch-pr/policy.ts`
+- `skills/poteto-mode/scripts/watch-pr/types.ts`
+- `skills/poteto-mode/scripts/worktree-audit.sh`
+- `skills/principle-build-the-lever/SKILL.md`
+- `skills/principle-encode-lessons-in-structure/SKILL.md`
+- `skills/principle-exhaust-the-design-space/SKILL.md`
+- `skills/principle-explain-the-number/SKILL.md`
+- `skills/principle-fix-root-causes/SKILL.md`
+- `skills/principle-guard-the-context-window/SKILL.md`
+- `skills/principle-laziness-protocol/SKILL.md`
+- `skills/principle-minimize-reader-load/SKILL.md`
+- `skills/principle-model-the-domain/SKILL.md`
+- `skills/principle-never-block-on-the-human/SKILL.md`
+- `skills/principle-redesign-from-first-principles/SKILL.md`
+- `skills/principle-subtract-before-you-add/SKILL.md`
+- `skills/principle-test-behavior-not-implementation/SKILL.md`
+- `skills/principle-type-system-discipline/SKILL.md`
+- `skills/reflect/SKILL.md`
+- `skills/reflect/references/divergent-reviewer.md`
+- `skills/reflect/references/judgment-reviewer.md`
+- `skills/reflect/references/synthesizer.md`
+- `skills/reflect/references/tooling-reviewer.md`
+- `skills/technical-writing/SKILL.md`
+- `skills/unslop/SKILL.md`
+- `skills/why/SKILL.md`
+- `skills/why/references/epistemics.md`
+- `skills/why/references/investigator-prompt.md`
+- `skills/why/references/sources/code-archaeology.md`
+- `skills/why/references/sources/datadog.md`
+- `skills/why/references/sources/incident-postmortem.md`
+- `skills/why/references/sources/sentry.md`
+- `skills/why/references/sources/slack.md`
+- `skills/why/references/synthesizer-prompt.md`

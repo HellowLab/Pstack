@@ -2,6 +2,8 @@
 
 Apply this structural review to the completed plan, not to the unfilled skeleton. These checks adapt the upstream check-plan helper without requiring Node, a particular repository layout, a vendor model, or a scheduler. Record PASS or a line/section-specific finding for every item. Do not claim an executable check ran unless an actual inspected checker ran.
 
+Ignore fenced code when counting headings and checkboxes. Recognize backtick and tilde fences with up to three leading spaces. A closing fence must use the same character and at least the opening length; shorter or mismatched fences remain code.
+
 1. **Document shape.** Require one H1 title, an introduction under ten nonblank lines, then How to read this, Program checklist, at least one PR section, Close the program, and appendices. Anything after Close the program is an appendix; include Prototype evidence.
 2. **Reading contract.** Explain that one box is one unit of work, every box names its evidence, and only existing evidence checks a box. Name the actual installed execution resources and their versions. Include the verification rule below.
 3. **Program order.** Preserve Arm the program, Spawn owners, PR mechanics, Verdict and merge, and Boot recipe in that order. Record actual installed-resource access, authorized audit capability or its absence, and status reporting. Never assume plugin files are in project trunk.

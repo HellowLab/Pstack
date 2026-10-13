@@ -7,3 +7,5 @@ Read [the host contract](../references/host-contract.md) before acting.
 3. Present concrete removal candidates and retained work. Preserve recoverable snapshots where the host supports them. Deletion requires the user's applicable authorization; a cleanup skill is not permission.
 4. Remove only confirmed, authorized, inactive worktrees through the supported host cleanup API or Git. Never force removal to bypass dirty-state checks and never broadly delete app data, caches, or simulator state.
 5. Re-list and measure actual reclaimed space. Report removed paths, retained candidates and reasons, and any missing safety evidence. Simulator cleanup is separate host-specific work.
+
+Assess whether work merged against its actual PR target/base branch, which may differ from the default branch. If the base or PR state cannot be established, hold the worktree. Never treat a failed status lookup as proof that deletion is safe.
