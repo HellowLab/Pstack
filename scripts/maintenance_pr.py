@@ -7,6 +7,7 @@ from pathlib import Path
 import subprocess
 
 BRANCH = "maintenance/pstack-upstream"
+BOT_EMAIL = "41898282+github-actions[bot]@users.noreply.github.com"
 
 
 def run(*args):
@@ -29,22 +30,29 @@ def main(existing_only=False):
     if existing_only and not expected:
         return
     if expected:
+        if run("git", "rev-parse", "--is-shallow-repository") == "true":
+            run("git", "fetch", "--unshallow", "origin")
         run("git", "fetch", "origin", BRANCH)
-        author = run("git", "show", "-s", "--format=%ae", "FETCH_HEAD")
-        if author != "41898282+github-actions[bot]@users.noreply.github.com":
-            raise SystemExit("Maintenance branch has a human commit. Refusing to overwrite it.")
+        if run("git", "rev-parse", "FETCH_HEAD") != expected:
+            raise SystemExit("Maintenance branch moved during inspection. Retry without changing it.")
+        authors = run("git", "log", "--format=%ae", f"HEAD..{expected}").splitlines()
+        same_tree = run("git", "rev-parse", f"{expected}^{{tree}}") == run("git", "rev-parse", "HEAD^{tree}")
+        if any(author != BOT_EMAIL for author in authors) and (prs or not same_tree):
+            raise SystemExit("Maintenance branch has an unmerged human commit. Refusing to overwrite it.")
     if existing_only:
         report = run("git", "show", "FETCH_HEAD:docs/upstream-update.md")
     else:
         run("git", "config", "user.name", "github-actions[bot]")
-        run("git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
+        run("git", "config", "user.email", BOT_EMAIL)
         run("git", "switch", "-C", BRANCH)
         run("git", "add", "upstream", "skills", "resources/coverage.json", "resources/coverage.md",
             "dist", "docs/upstream-update.md")
         if not run("git", "diff", "--cached", "--name-only"):
             return
         run("git", "commit", "-m", "chore(upstream): stage Pstack update for adaptation review")
-        run("git", "push", f"--force-with-lease=refs/heads/{BRANCH}:{expected}", "origin", f"HEAD:refs/heads/{BRANCH}")
+        if expected:
+            run("git", "merge", "--strategy=ours", "--no-edit", expected)
+        run("git", "push", "origin", f"HEAD:refs/heads/{BRANCH}")
         report = Path("docs/upstream-update.md").read_text()
     body = Path(".build/maintenance-pr.md")
     body.parent.mkdir(exist_ok=True)

@@ -83,7 +83,7 @@ Each source investigation uses:
 4. The code anchor from Step 2 (file paths, symbols, commit hashes, PR numbers, ticket IDs)
 5. The user's original question
 
-### Investigator roster. One per available evidence category
+### Investigator roster, one per available evidence category
 
 Spawn one investigator per category that has a matching MCP. Each owns exactly one tool or MCP.
 

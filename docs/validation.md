@@ -8,7 +8,7 @@ Run the commands in the root README. The suite validates metadata against the sa
 
 Local Git fixtures exercise the actual update implementation. They prove that same-version and mode-only subtree changes are detected, unrelated monorepo changes are ignored, unknown skills are withheld, symlinks are rejected before replacement, and snapshot tampering fails the build. Incompatible metadata preserves the review candidate while removing the current ZIP and checksum. Earlier archive pairs remain unchanged; corruption or an incomplete pair blocks writes. Local bare-remotes exercise branch creation and update, preservation of main, refusal to overwrite human work, policy-error reporting, and recovery after a successful push followed by failed PR creation, with mocked forge responses. Source hashes are never auto-approved. Changed skills and reference resources receive a pending-review placeholder rather than newly imported executable instructions. These are behavioral tests of the build/update code.
 
-`tests/workflow-cases.json` contains eleven positive, negative, and unavailable-capability scenarios. Automated assertions check that the necessary instruction contracts exist. They do not run a model or prove compliance. The cases are also the manual host evaluation checklist.
+`tests/workflow-cases.json` contains fifteen positive, negative, and unavailable-capability scenarios. Automated assertions check that the necessary instruction contracts exist. They do not run a model or prove compliance. The cases are also the manual host evaluation checklist.
 
 ## Host matrix
 
@@ -24,6 +24,14 @@ Local Git fixtures exercise the actual update implementation. They prove that sa
 | Independent reviewer and missing-tool behavior | Native-cloud coding replay passed independent review; missing-tool evidence remains limited | Contract checked, live evaluation pending |
 | Marketplace skill scan and publisher review | Not submitted | Not submitted |
 | Supplied branding asset | rc.4 installed copy verified; directory icon fallback unresolved; original retained | Original packaged; both icon paths resolved by host API; UI rendering pending |
+
+### Prepared 0.1.2 adaptation
+
+On 2026-10-13, upstream 0.15.23 was inspected across all 65 changed files. The package contains 53 skills and 23 playbook routes. The 45 repository tests pass, including nine real bare-remote maintenance tests. The build check confirms byte-identical regeneration. SHA-256: `5149fc3d2db4fbed0a49de80b3941e1a4c6357061607b64a7ed91e7e3e978539`.
+
+Replaying the new maintenance fixtures against the previous script reproduced its refusal of the squash-merged human tree and its failure to protect human work beneath a bot tip. The fixed script passes both. The new maintenance fixtures verify squash-merged human history preservation, refusal of unmerged human work beneath a bot tip, active-draft protection, and rejection of a concurrent remote update. Four new workflow cases check the instruction contracts for catch-up without visual tools, goal restatement, missing seed data, and partial review pagination. These are static instruction assertions, not model evaluations. No new native installation, fresh-process discovery, visual rendering, or model-compliance pass is claimed for 0.1.2. Prior host evidence remains version-specific.
+
+The rc.5 and 0.1.1 archives retain their committed bytes. A read-only publisher-dashboard inspection on 2026-10-13 still showed rc.5 in review and not published. No upload, cancellation, submission, or publication occurred during this repository update.
 
 ### Prepared 0.1.1 adaptation
 

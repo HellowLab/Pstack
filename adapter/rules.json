@@ -78,11 +78,11 @@
       "support": "adapted"
     },
     "principle-encode-lessons-in-structure": {
-      "body": "upstream",
+      "body": "override",
       "support": "adapted"
     },
     "principle-exhaust-the-design-space": {
-      "body": "upstream",
+      "body": "override",
       "support": "adapted"
     },
     "principle-experience-first": {
@@ -106,7 +106,7 @@
       "support": "adapted"
     },
     "principle-laziness-protocol": {
-      "body": "upstream",
+      "body": "override",
       "support": "adapted"
     },
     "principle-make-operations-idempotent": {
@@ -204,6 +204,12 @@
     "why": {
       "body": "override",
       "support": "adapted"
+    },
+    "in-your-own-words": {
+      "body": "upstream"
+    },
+    "ketchup": {
+      "body": "override"
     }
   },
   "files": {
@@ -721,12 +727,12 @@
     "skills/principle-encode-lessons-in-structure/SKILL.md": {
       "status": "adapted",
       "destination": "skills/principle-encode-lessons-in-structure/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added."
+      "reason": "Retain prior portable standalone guidance removed by upstream condensation; preserve the complete principle rather than ship a fragment."
     },
     "skills/principle-exhaust-the-design-space/SKILL.md": {
       "status": "adapted",
       "destination": "skills/principle-exhaust-the-design-space/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added."
+      "reason": "Retain prior portable standalone guidance removed by upstream condensation; preserve the complete principle rather than ship a fragment."
     },
     "skills/principle-experience-first/SKILL.md": {
       "status": "adapted",
@@ -756,7 +762,7 @@
     "skills/principle-laziness-protocol/SKILL.md": {
       "status": "adapted",
       "destination": "skills/principle-laziness-protocol/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added."
+      "reason": "Retain prior portable standalone guidance removed by upstream condensation; preserve the complete principle rather than ship a fragment."
     },
     "skills/principle-make-operations-idempotent/SKILL.md": {
       "status": "adapted",
@@ -971,6 +977,24 @@
       "status": "adapted",
       "destination": "skills/why/references/synthesizer-prompt.md",
       "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections."
+    },
+    "skills/in-your-own-words/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/in-your-own-words/SKILL.md",
+      "reason": "Explicit-only portable workflow with host capability and permission guards."
+    },
+    "skills/ketchup/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/ketchup/SKILL.md",
+      "reason": "Explicit-only portable workflow with host capability and permission guards."
+    },
+    "plugin.json": {
+      "status": "unsupported",
+      "reason": "Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests."
+    },
+    "skills/poteto-mode/scripts/check-plan.test.ts": {
+      "status": "unsupported",
+      "reason": "Source-only Node helper tests. The portable plan-validation contract carries supported semantics; no vendored helper is executed or packaged."
     }
   }
 }

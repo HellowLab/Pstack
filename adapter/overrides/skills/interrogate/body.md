@@ -6,7 +6,7 @@ Assign independent reviewers when the host supports them to adversarially review
 
 The deliverable is a synthesized verdict. Do NOT auto-apply changes.
 
-## Step 1, Determine Scope
+## Step 1, Scope
 
 Identify what to review from context:
 
@@ -16,7 +16,7 @@ Identify what to review from context:
 
 Package the diff (or file contents) plus any surrounding context files the reviewers need to understand the code.
 
-## Step 2, State the Intent
+## Step 2, Intent
 
 Before spawning reviewers, state the intent explicitly. Derive this from:
 

@@ -116,12 +116,86 @@ class MaintenanceTests(unittest.TestCase):
         self.assertFalse(self.real_run("git", "ls-remote", "origin", "refs/heads/" + maintenance_pr.BRANCH))
 
     def test_human_owned_branch_is_not_overwritten(self):
+        Path("docs/fixture").write_text("unmerged human work")
+        self.real_run("git", "add", ".")
+        self.real_run("git", "commit", "-qm", "human work")
+        human = self.real_run("git", "rev-parse", "HEAD")
         self.real_run("git", "push", "-q", "origin", "HEAD:refs/heads/" + maintenance_pr.BRANCH)
+        self.real_run("git", "switch", "--detach", self.base)
         self.candidate("not pushed")
         with self.assertRaisesRegex(SystemExit, "human commit"):
             self.invoke()
-        self.assertEqual(self.real_run("git", "ls-remote", "origin", "refs/heads/" + maintenance_pr.BRANCH).split()[0], self.base)
+        self.assertEqual(self.real_run("git", "ls-remote", "origin", "refs/heads/" + maintenance_pr.BRANCH).split()[0], human)
 
+
+    def test_squash_merged_human_tree_is_preserved_as_ancestor(self):
+        self.real_run("git", "switch", "-c", "human")
+        Path("docs/fixture").write_text("reviewed work")
+        self.real_run("git", "add", ".")
+        self.real_run("git", "commit", "-qm", "human review")
+        human = self.real_run("git", "rev-parse", "HEAD")
+        self.real_run("git", "push", "-q", "origin", "HEAD:refs/heads/" + maintenance_pr.BRANCH)
+        self.real_run("git", "switch", "main")
+        self.real_run("git", "merge", "--squash", "human")
+        self.real_run("git", "commit", "-qm", "squash reviewed work")
+        main = self.real_run("git", "rev-parse", "HEAD")
+        self.real_run("git", "push", "-q", "origin", "main")
+        self.candidate("next candidate")
+        self.invoke()
+        self.real_run("git", "merge-base", "--is-ancestor", human, "HEAD")
+        self.real_run("git", "merge-base", "--is-ancestor", main, "HEAD")
+        self.assertEqual(Path("docs/fixture").read_text(), "reviewed work")
+        self.assertEqual(Path("docs/upstream-update.md").read_text(), "next candidate")
+        self.assertEqual(self.real_run("git", "ls-remote", "origin", "refs/heads/main").split()[0], main)
+
+    def test_bot_tip_cannot_hide_unmerged_human_work(self):
+        Path("docs/fixture").write_text("human work")
+        self.real_run("git", "add", ".")
+        self.real_run("git", "commit", "-qm", "human change")
+        self.real_run("git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
+        self.real_run("git", "commit", "--allow-empty", "-qm", "bot tip")
+        tip = self.real_run("git", "rev-parse", "HEAD")
+        self.real_run("git", "push", "-q", "origin", "HEAD:refs/heads/" + maintenance_pr.BRANCH)
+        self.real_run("git", "switch", "--detach", self.base)
+        self.candidate("not pushed")
+        with self.assertRaisesRegex(SystemExit, "human commit"):
+            self.invoke()
+        self.assertEqual(self.real_run("git", "ls-remote", "origin", "refs/heads/" + maintenance_pr.BRANCH).split()[0], tip)
+
+
+    def test_concurrent_remote_commit_rejects_push_without_losing_work(self):
+        self.candidate("first update")
+        self.invoke()
+        self.real_run("git", "switch", "main")
+        self.candidate("second update")
+        normal_command = self.command
+        raced = []
+        def race(*args):
+            if args[:2] == ("git", "push"):
+                old = self.real_run("git", "--git-dir", str(self.remote), "rev-parse", maintenance_pr.BRANCH)
+                tree = self.real_run("git", "--git-dir", str(self.remote), "rev-parse", old + "^{tree}")
+                new = self.real_run("git", "--git-dir", str(self.remote), "-c", "user.name=Human",
+                                    "-c", "user.email=human@example.invalid", "commit-tree", tree,
+                                    "-p", old, "-m", "concurrent human work")
+                self.real_run("git", "--git-dir", str(self.remote), "update-ref", "refs/heads/" + maintenance_pr.BRANCH, new, old)
+                raced.append(new)
+            return normal_command(*args)
+        with patch.dict(os.environ, {"GITHUB_REPOSITORY": "fixture/project", "DEFAULT_BRANCH": "main"}), patch.object(maintenance_pr, "run", side_effect=race):
+            with self.assertRaises(subprocess.CalledProcessError):
+                maintenance_pr.main()
+        self.assertEqual(self.real_run("git", "ls-remote", "origin", "refs/heads/" + maintenance_pr.BRANCH).split()[0], raced[0])
+        self.assertEqual(sum(call[1:3] == ("pr", "edit") for call in self.calls), 0)
+
+    def test_active_draft_preserves_human_commit_even_with_equivalent_tree(self):
+        self.real_run("git", "commit", "--allow-empty", "-qm", "human review notes")
+        human = self.real_run("git", "rev-parse", "HEAD")
+        self.real_run("git", "push", "-q", "origin", "HEAD:refs/heads/" + maintenance_pr.BRANCH)
+        self.real_run("git", "switch", "--detach", self.base)
+        self.prs = [{"number": 1, "isDraft": True}]
+        self.candidate("not pushed")
+        with self.assertRaisesRegex(SystemExit, "human commit"):
+            self.invoke()
+        self.assertEqual(self.real_run("git", "ls-remote", "origin", "refs/heads/" + maintenance_pr.BRANCH).split()[0], human)
 
 if __name__ == "__main__":
     unittest.main()

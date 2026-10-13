@@ -52,7 +52,7 @@ class PackageTests(unittest.TestCase):
 
     def test_all_registered_skills_and_invocation_semantics(self):
         upstream = sorted((ROOT / "upstream/pstack/skills").glob("*/SKILL.md"))
-        self.assertEqual(len(upstream), 51)
+        self.assertEqual(len(upstream), 53)
         self.assertEqual({p.parent.name for p in upstream}, set(self.rules["skills"]))
         for path in upstream:
             source = yaml.safe_load(path.read_text().split("---", 2)[1])
@@ -207,7 +207,7 @@ class PackageTests(unittest.TestCase):
             "why/SKILL.md": ["references/epistemics.md", "references/synthesizer-prompt.md"],
             "why/references/epistemics.md": ["### 1. Direct", "### 2. Supported",
                 "### 3. Inferred", "### 4. Speculative", "### 5. Unknown",
-                "## When Evidence Contradicts", "## Calibration Check Before Finalizing"],
+                "## When Evidence Contradicts", "## Before Finalizing"],
             "reflect/SKILL.md": ["references/judgment-reviewer.md",
                 "references/tooling-reviewer.md", "references/divergent-reviewer.md",
                 "references/synthesizer.md", "Accepted / Rejected / Backlog"],
@@ -283,8 +283,8 @@ class PackageTests(unittest.TestCase):
                         self.assertRegex(step["uses"], r"@[a-f0-9]{40}$")
         updater = (ROOT / "scripts/maintenance_pr.py").read_text()
         self.assertIn('"--draft"', updater)
-        self.assertIn("--force-with-lease=refs/heads/", updater)
-        self.assertNotIn('"merge"', updater)
+        self.assertNotIn("--force", updater)
+        self.assertNotIn('run("gh", "pr", "merge"', updater)
         self.assertNotIn('"release"', updater)
 
     def test_restored_workflows_do_not_call_excluded_runtime_helpers(self):

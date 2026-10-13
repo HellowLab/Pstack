@@ -1,10 +1,10 @@
 {
-  "package_version": "0.1.1",
-  "upstream_commit": "df581122cde17e6e27686b5a448bde23e4ad4318",
-  "upstream_tree": "9d9cb20f79203a97c925de402c66183d0fa26c42",
-  "upstream_version": "0.15.15",
-  "latest_checked_commit": "df581122cde17e6e27686b5a448bde23e4ad4318",
-  "checked_at": "2026-10-06",
+  "package_version": "0.1.2",
+  "upstream_commit": "dbf49813a39c1a5389c5e28cb8e4c1c2379e2454",
+  "upstream_tree": "fafe54a3bb94d4e5e6eee5070d97cb416e0f30ff",
+  "upstream_version": "0.15.23",
+  "latest_checked_commit": "dbf49813a39c1a5389c5e28cb8e4c1c2379e2454",
+  "checked_at": "2026-10-13",
   "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
   "pending_files": [],
@@ -227,6 +227,12 @@
       "review": "reviewed"
     },
     {
+      "source": "plugin.json",
+      "status": "unsupported",
+      "reason": "Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests.",
+      "review": "reviewed"
+    },
+    {
       "source": "skills/architect/SKILL.md",
       "status": "adapted",
       "destination": "skills/architect/SKILL.md",
@@ -353,6 +359,13 @@
       "review": "reviewed"
     },
     {
+      "source": "skills/in-your-own-words/SKILL.md",
+      "status": "adapted",
+      "destination": "skills/in-your-own-words/SKILL.md",
+      "reason": "Explicit-only portable workflow with host capability and permission guards.",
+      "review": "reviewed"
+    },
+    {
       "source": "skills/interrogate/SKILL.md",
       "status": "adapted",
       "destination": "skills/interrogate/SKILL.md",
@@ -385,6 +398,13 @@
       "status": "unchanged",
       "destination": "skills/interrogate/references/rubric.md",
       "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/ketchup/SKILL.md",
+      "status": "adapted",
+      "destination": "skills/ketchup/SKILL.md",
+      "reason": "Explicit-only portable workflow with host capability and permission guards.",
       "review": "reviewed"
     },
     {
@@ -624,6 +644,12 @@
       "review": "reviewed"
     },
     {
+      "source": "skills/poteto-mode/scripts/check-plan.test.ts",
+      "status": "unsupported",
+      "reason": "Source-only Node helper tests. The portable plan-validation contract carries supported semantics; no vendored helper is executed or packaged.",
+      "review": "reviewed"
+    },
+    {
       "source": "skills/poteto-mode/scripts/orch/orch.test.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
@@ -750,14 +776,14 @@
       "source": "skills/principle-encode-lessons-in-structure/SKILL.md",
       "status": "adapted",
       "destination": "skills/principle-encode-lessons-in-structure/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added.",
+      "reason": "Retain prior portable standalone guidance removed by upstream condensation; preserve the complete principle rather than ship a fragment.",
       "review": "reviewed"
     },
     {
       "source": "skills/principle-exhaust-the-design-space/SKILL.md",
       "status": "adapted",
       "destination": "skills/principle-exhaust-the-design-space/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added.",
+      "reason": "Retain prior portable standalone guidance removed by upstream condensation; preserve the complete principle rather than ship a fragment.",
       "review": "reviewed"
     },
     {
@@ -799,7 +825,7 @@
       "source": "skills/principle-laziness-protocol/SKILL.md",
       "status": "adapted",
       "destination": "skills/principle-laziness-protocol/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added.",
+      "reason": "Retain prior portable standalone guidance removed by upstream condensation; preserve the complete principle rather than ship a fragment.",
       "review": "reviewed"
     },
     {

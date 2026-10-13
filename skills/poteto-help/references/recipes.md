@@ -49,3 +49,7 @@ This recipe does not provide unattended execution. If the host cannot persist or
 - `/poteto-mode autopilot these changes but stack them, don't ship. i'll land the stack.`
 - `/reflect capture what we learned so the next run doesn't repeat it.` Approve only edits that change a future decision.
 - `/bro` restates the last reply in plain words.
+
+## Catch up on this chat
+
+Use `/ketchup` for a read-only summary of what changed since your previous message, with supported visuals and decisions only you can make. Use `/in-your-own-words` to check the agent understood your goal before work begins.
