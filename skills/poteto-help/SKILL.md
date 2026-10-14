@@ -60,6 +60,7 @@ The default answer is `/poteto-mode`, which runs most of the others when its ste
 |---|---|
 | Do any non-trivial task with rigor | [`/poteto-mode`](../poteto-mode/SKILL.md) |
 | Check that the agent understood the goal before work begins | [`/in-your-own-words`](../in-your-own-words/SKILL.md) |
+| Approach a task with primary sources, an appropriate method, and an outside check | [`/sharpen`](../sharpen/SKILL.md) |
 | Catch up on changes in this chat with visuals | [`/ketchup`](../ketchup/SKILL.md) |
 | Know how code works now, or where new code should live | [`/how`](../how/SKILL.md) |
 | Know why code is shaped this way, or where a number came from | [`/why`](../why/SKILL.md) |

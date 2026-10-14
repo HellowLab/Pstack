@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.3] - 2026-10-14
+
+- Adapt reviewed upstream Pstack 0.15.24 with 54 skills and 23 playbook routes.
+- Add explicit Sharpen task framing with primary sources, outside verification, and preserved user constraints.
+- Make catchups shorter and clearer, with bounded visuals, honest unknown ownership, and no invented action items.
+- Preserve inherited model settings and require supported, authorized worker options.
+- Require actual trunk landing confirmation and one owner for chain topology.
+- Preserve previously released archives and the submitted public rc.5 artifact.
+
+This repository-validated release is separate from marketplace approval. Native installation, 54-skill discovery, 174 installed-file/resource comparisons, and cleanup passed. Full native model-behavior qualification remains incomplete. Public review status was last confirmed on October 13; no review is replaced or cancelled by this release.
+
 ## [0.1.2] - 2026-10-13
 
 - Adapt reviewed upstream Pstack 0.15.23 with 53 skills and 23 playbook routes.

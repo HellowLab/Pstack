@@ -1,7 +1,7 @@
 # Capability coverage
 
-Upstream 0.15.23 at `dbf49813a39c1a5389c5e28cb8e4c1c2379e2454`.
-Subtree `fafe54a3bb94d4e5e6eee5070d97cb416e0f30ff`. Latest checked commit `dbf49813a39c1a5389c5e28cb8e4c1c2379e2454` on 2026-10-13.
+Upstream 0.15.24 at `1e5c90a4b6f249917bd21fe361b3a2a7deb741b8`.
+Subtree `7bd1e77c112fab2bac404ccc939a95f0c57820aa`. Latest checked commit `1e5c90a4b6f249917bd21fe361b3a2a7deb741b8` on 2026-10-14.
 Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
@@ -155,6 +155,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/reflect/references/synthesizer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/reflect/references/tooling-reviewer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/setup-pstack/SKILL.md` | adapted | Preserve all seven setup stages, four budget choices, and 17 role entries; use observed host model controls and authorized project persistence rather than vendor defaults or a global rule. | reviewed |
+| `skills/sharpen/SKILL.md` | adapted | Explicit task framing with preserved user constraints, scope, and actual outside verification. | reviewed |
 | `skills/show-me-your-work/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/show-me-your-work/references/decision-log-template.tsv` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/show-me-your-work/scripts/log.sh` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |

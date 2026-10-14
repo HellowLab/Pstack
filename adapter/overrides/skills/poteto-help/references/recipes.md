@@ -53,3 +53,5 @@ This recipe does not provide unattended execution. If the host cannot persist or
 ## Catch up on this chat
 
 Use `/ketchup` for a read-only summary of what changed since your previous message, with supported visuals and decisions only you can make. Use `/in-your-own-words` to check the agent understood your goal before work begins.
+
+Use `/sharpen` to improve the approach to a requested task and verify its result, while preserving explicit constraints and choices that belong to you.
