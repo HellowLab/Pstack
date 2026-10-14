@@ -200,3 +200,9 @@ Start with the [behavioral qualification plan](behavioral-qualification.md), whi
 6. Have a maintainer review the fidelity differences in `docs/design.md`, including the remaining host-specific setup, comment-agent, cleanup, and persistent-runtime differences. Record accepted gaps or implement and test a real adapter before claiming parity.
 
 Do not change `host_validation: not-qualified` merely because static tests pass. Public release remains blocked until this evidence and publisher review exist.
+
+## October 14 candidate 0.1.3
+
+Source review covers all 42 changed upstream files and subtree modes from 0.15.24. New Sharpen preserves explicit constraints; Ketchup uses the shorter total word budget and bounded visuals; shipping confirms actual trunk landing; owner approval remains unmet. All prior archives are preserved. Repository tests and reproducible packaging are separate from host behavior. Yesterday's private 0.1.2 update was read back successfully and four fresh answers passed bounded content review, but missing worker tool traces prevent treating those as complete behavioral passes. No such pass is claimed for 0.1.3.
+
+Candidate ZIP SHA-256: `5b219eb576c87c778dec376a4a68037be8d3620c5790322669c1ae617e30c179`. All 57 repository tests and reproducible build check passed. Disposable Codex CLI 0.161.0 installation, native plugin/read and skills/list (54 enabled Pstack skills, no loading errors), all 174 installed-file and host fs/readFile byte comparisons, plugin removal, marketplace removal, and empty final plugin inventory passed. No credentials were copied. The isolated profile reports Not logged in, so native model execution was not run. The available collaboration interface still exposes results without full worker tool transcripts; no content-only response is promoted to a behavioral qualification pass.

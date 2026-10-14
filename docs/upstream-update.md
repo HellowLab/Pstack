@@ -1,12 +1,19 @@
-# Pending upstream adaptation
+# Reviewed upstream adaptation, 2026-10-14
 
-Previous snapshot: `dbf49813a39c1a5389c5e28cb8e4c1c2379e2454`.
-Candidate snapshot: `1e5c90a4b6f249917bd21fe361b3a2a7deb741b8`. Version: 0.15.24.
-[Upstream comparison](https://github.com/cursor/plugins/compare/dbf49813a39c1a5389c5e28cb8e4c1c2379e2454...1e5c90a4b6f249917bd21fe361b3a2a7deb741b8)
+Pstack 0.15.23 to 0.15.24: `dbf49813a39c1a5389c5e28cb8e4c1c2379e2454` to `1e5c90a4b6f249917bd21fe361b3a2a7deb741b8`.
 
-The snapshot changed even if the version did not. Source hashes were NOT approved.
-Inspect the subtree diff in this PR, update adapters and tests, then deliberately update reviewed hashes.
-The generated ZIP is an unqualified preview. No auto-merge or publication.
+All 42 changed source files and subtree modes were inspected, including an independent source review. The 43rd review gap was the subtree identity assertion, not another file. No vendored helper was executed.
+
+- Register explicit Sharpen with primary sources, an appropriate method, and an outside check. Loosen only agent-introduced assumptions, never explicit constraints or host permissions.
+- Adapt Ketchup's shorter total word budget and bounded visuals; retain current-chat/read-only scope, truthful unknown state and responsibility, and renderer fallback.
+- Keep inherited models and user-confirmed host settings. The repeated effort/speed hints and Composer/Grok slug fallbacks do not grant capability or authority to change models or billing.
+- Confirm actual merged state with trunk base, preserve one topology writer and current-patch verification. Retain the stricter no-build-noise-reuse rule rather than claim full upstream parity.
+- Distinguish verified owner-approval gates from repairable CI failures, without passing or bypassing them.
+- Keep autopilot and persistent orchestration unsupported. New gh/Origin helper parsing, worker retries, and single-verifier allowances do not establish a portable runtime. Source helpers remain excluded.
+- Keep worktree cleanup conservative: actual PR base, active usage, dirty/ignored work, recoverability and authorization must be established. Author-filtered or failed lookups cannot prove safety.
+- Root source manifests and README are attribution/source inputs, not the package's listing metadata.
+
+The bot draft's placeholder archive is replaced only for the new 0.1.3 candidate. All previous release archives, including 0.1.2 and submitted rc.5, are restored/preserved exactly. Full model-behavior qualification is not inferred from source review or static checks.
 
 Changed files:
 

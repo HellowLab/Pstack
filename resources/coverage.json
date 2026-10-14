@@ -1,63 +1,19 @@
 {
-  "package_version": "0.1.2",
+  "package_version": "0.1.3",
   "upstream_commit": "1e5c90a4b6f249917bd21fe361b3a2a7deb741b8",
   "upstream_tree": "7bd1e77c112fab2bac404ccc939a95f0c57820aa",
   "upstream_version": "0.15.24",
   "latest_checked_commit": "1e5c90a4b6f249917bd21fe361b3a2a7deb741b8",
   "checked_at": "2026-10-14",
-  "adaptation_status": "pending",
+  "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
-  "pending_files": [
-    ".cursor-plugin/plugin.json",
-    "README.md",
-    "plugin.json",
-    "skills/arena/SKILL.md",
-    "skills/automate-me/SKILL.md",
-    "skills/figure-it-out/SKILL.md",
-    "skills/how/SKILL.md",
-    "skills/interrogate/SKILL.md",
-    "skills/ketchup/SKILL.md",
-    "skills/no-comments/SKILL.md",
-    "skills/poteto-help/SKILL.md",
-    "skills/poteto-help/references/recipes.md",
-    "skills/poteto-mode/SKILL.md",
-    "skills/poteto-mode/playbooks/autonomous-run.md",
-    "skills/poteto-mode/playbooks/autopilot-full.md",
-    "skills/poteto-mode/playbooks/autopilot-stack.md",
-    "skills/poteto-mode/playbooks/bug-fix.md",
-    "skills/poteto-mode/playbooks/eval.md",
-    "skills/poteto-mode/playbooks/feature.md",
-    "skills/poteto-mode/playbooks/hillclimb.md",
-    "skills/poteto-mode/playbooks/multi-phase-plan.md",
-    "skills/poteto-mode/playbooks/opening-a-pr.md",
-    "skills/poteto-mode/playbooks/orchestrate.md",
-    "skills/poteto-mode/playbooks/perf-issue.md",
-    "skills/poteto-mode/playbooks/refactoring.md",
-    "skills/poteto-mode/playbooks/runtime-forensics.md",
-    "skills/poteto-mode/playbooks/session-pickup.md",
-    "skills/poteto-mode/playbooks/shipping.md",
-    "skills/poteto-mode/playbooks/trace-forensics.md",
-    "skills/poteto-mode/playbooks/worktree-cleanup.md",
-    "skills/poteto-mode/scripts/orch/orch.test.ts",
-    "skills/poteto-mode/scripts/orch/orch.ts",
-    "skills/poteto-mode/scripts/orch/store.ts",
-    "skills/poteto-mode/scripts/watch-pr/github.test.ts",
-    "skills/poteto-mode/scripts/watch-pr/github.ts",
-    "skills/poteto-mode/scripts/worktree-audit.sh",
-    "skills/recall/SKILL.md",
-    "skills/reflect/SKILL.md",
-    "skills/sharpen/SKILL.md",
-    "skills/show-me-your-work/SKILL.md",
-    "skills/swarm/SKILL.md",
-    "skills/why/SKILL.md",
-    "<subtree tree, including file modes>"
-  ],
+  "pending_files": [],
   "files": [
     {
       "source": ".cursor-plugin/plugin.json",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": ".gitignore",
@@ -75,7 +31,7 @@
       "source": "README.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "agents/comment-sicko.md",
@@ -274,7 +230,7 @@
       "source": "plugin.json",
       "status": "unsupported",
       "reason": "Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/architect/SKILL.md",
@@ -309,14 +265,14 @@
       "status": "adapted",
       "destination": "skills/arena/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/automate-me/SKILL.md",
       "status": "adapted",
       "destination": "skills/automate-me/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/benchmark-checklist/SKILL.md",
@@ -379,14 +335,14 @@
       "status": "adapted",
       "destination": "skills/figure-it-out/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/how/SKILL.md",
       "status": "adapted",
       "destination": "skills/how/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/how/references/explainer-prompt.md",
@@ -414,7 +370,7 @@
       "status": "adapted",
       "destination": "skills/interrogate/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/interrogate/references/code-quality-review.md",
@@ -449,7 +405,7 @@
       "status": "adapted",
       "destination": "skills/ketchup/SKILL.md",
       "reason": "Explicit-only portable workflow with host capability and permission guards.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/maintain-verification-skill/SKILL.md",
@@ -470,14 +426,14 @@
       "status": "adapted",
       "destination": "skills/no-comments/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-help/SKILL.md",
       "status": "adapted",
       "destination": "skills/poteto-help/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-help/references/prompting.md",
@@ -491,14 +447,14 @@
       "status": "adapted",
       "destination": "skills/poteto-help/references/recipes.md",
       "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/SKILL.md",
       "status": "adapted",
       "destination": "skills/poteto-mode/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/authoring-a-skill.md",
@@ -512,21 +468,21 @@
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/autonomous-run.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/autopilot-full.md",
       "status": "unsupported",
       "destination": "skills/poteto-mode/playbooks/autopilot-full.md",
       "reason": "Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/autopilot-stack.md",
       "status": "unsupported",
       "destination": "skills/poteto-mode/playbooks/autopilot-stack.md",
       "reason": "Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/babysit.md",
@@ -540,28 +496,28 @@
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/bug-fix.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/eval.md",
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/eval.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/feature.md",
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/feature.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/hillclimb.md",
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/hillclimb.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/investigation.md",
@@ -575,21 +531,21 @@
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/multi-phase-plan.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/opening-a-pr.md",
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/opening-a-pr.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/orchestrate.md",
       "status": "unsupported",
       "destination": "skills/poteto-mode/playbooks/orchestrate.md",
       "reason": "Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/pause-safely.md",
@@ -603,7 +559,7 @@
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/perf-issue.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/prototype.md",
@@ -617,35 +573,35 @@
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/refactoring.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/runtime-forensics.md",
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/runtime-forensics.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/session-pickup.md",
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/session-pickup.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/shipping.md",
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/shipping.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/trace-forensics.md",
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/trace-forensics.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/visual-parity.md",
@@ -659,7 +615,7 @@
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/worktree-cleanup.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/references/bugbot-triage.md",
@@ -697,19 +653,19 @@
       "source": "skills/poteto-mode/scripts/orch/orch.test.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/scripts/orch/orch.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/scripts/orch/store.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/scripts/package.json",
@@ -739,13 +695,13 @@
       "source": "skills/poteto-mode/scripts/watch-pr/github.test.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/scripts/watch-pr/github.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/scripts/watch-pr/policy.test.ts",
@@ -793,7 +749,7 @@
       "source": "skills/poteto-mode/scripts/worktree-audit.sh",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/principle-attack-the-premise/SKILL.md",
@@ -968,14 +924,14 @@
       "status": "adapted",
       "destination": "skills/recall/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/reflect/SKILL.md",
       "status": "adapted",
       "destination": "skills/reflect/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/reflect/references/divergent-reviewer.md",
@@ -1014,16 +970,17 @@
     },
     {
       "source": "skills/sharpen/SKILL.md",
-      "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "status": "adapted",
+      "destination": "skills/sharpen/SKILL.md",
+      "reason": "Explicit task framing with preserved user constraints, scope, and actual outside verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/show-me-your-work/SKILL.md",
       "status": "adapted",
       "destination": "skills/show-me-your-work/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/show-me-your-work/references/decision-log-template.tsv",
@@ -1043,7 +1000,7 @@
       "status": "adapted",
       "destination": "skills/swarm/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/tdd/SKILL.md",
@@ -1092,7 +1049,7 @@
       "status": "adapted",
       "destination": "skills/why/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/why/references/epistemics.md",

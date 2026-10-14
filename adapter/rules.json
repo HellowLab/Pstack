@@ -210,6 +210,10 @@
     },
     "ketchup": {
       "body": "override"
+    },
+    "sharpen": {
+      "body": "override",
+      "support": "adapted"
     }
   },
   "files": {
@@ -995,6 +999,11 @@
     "skills/poteto-mode/scripts/check-plan.test.ts": {
       "status": "unsupported",
       "reason": "Source-only Node helper tests. The portable plan-validation contract carries supported semantics; no vendored helper is executed or packaged."
+    },
+    "skills/sharpen/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/sharpen/SKILL.md",
+      "reason": "Explicit task framing with preserved user constraints, scope, and actual outside verification."
     }
   }
 }

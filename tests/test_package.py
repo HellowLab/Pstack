@@ -52,7 +52,7 @@ class PackageTests(unittest.TestCase):
 
     def test_all_registered_skills_and_invocation_semantics(self):
         upstream = sorted((ROOT / "upstream/pstack/skills").glob("*/SKILL.md"))
-        self.assertEqual(len(upstream), 53)
+        self.assertEqual(len(upstream), 54)
         self.assertEqual({p.parent.name for p in upstream}, set(self.rules["skills"]))
         for path in upstream:
             source = yaml.safe_load(path.read_text().split("---", 2)[1])

@@ -1,6 +1,7 @@
 # Prepare public distribution
 
-The rc.4 private beta remains privately installed. The submitted rc.5 candidate includes approved publisher and privacy metadata and remains in review. The latest repository candidate, 0.1.2, adapts upstream 0.15.23 and remains unpublished in the plugin marketplace. GitHub release distribution is a separate automated repository step. The previous 0.1.1 archive is preserved. A read-only dashboard check on 2026-10-13 confirmed rc.5 remains in review and not published. Preserve that review; do not replace or cancel it. No marketplace publication is authorized by this update.
+The private plugin was updated to 0.1.2 on October 13 with its identity and private audience preserved. The submitted public rc.5 artifact is unchanged; its last verified status on October 13 was in review and not published. The latest repository candidate, 0.1.3, adapts upstream 0.15.24. GitHub release distribution is separate from marketplace approval. Recheck the actual public status before any private update or public submission; stop automatic private replacement after public approval, and never replace or cancel an existing review.
+
 
 The root portable manifest follows [OpenAI packaging guidance](https://developers.openai.com/plugins/build/plugins). The distribution process follows [OpenAI submission guidance](https://developers.openai.com/plugins/deploy/submission), checked on 2026-10-06. Recheck those pages before submission because requirements can change.
 
