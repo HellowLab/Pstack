@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.4] - 2026-10-15
+
+- Adapt reviewed upstream Pstack 0.15.25 with 54 skills and 23 playbook routes.
+- Explain changes with useful diagrams and captured visuals; keep status and action items as plain bullets.
+- Test failed premises directly and distinguish legitimate missing-state handling from guards that hide faults.
+- Define idempotency around observed state and crash recovery, without assuming PID-only locks are sufficient.
+- Evaluate tests against broken behavior and unchanged-behavior refactors, including meaningful absence and external-effect assertions.
+- Preserve all prior release archives and the submitted public rc.5 artifact.
+
+This repository-validated release is separate from marketplace approval. Native installation, 54-skill discovery, 174 file/resource comparisons, and cleanup passed. Full native model-behavior qualification remains incomplete. Public review status was last confirmed on October 13; no review is replaced or cancelled by this release.
+
 ## [0.1.3] - 2026-10-14
 
 - Adapt reviewed upstream Pstack 0.15.24 with 54 skills and 23 playbook routes.

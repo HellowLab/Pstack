@@ -121,9 +121,11 @@
       "not checked, not done",
       "concise text status",
       "Never invent a number",
-      "well under 150 words"
+      "well under 150 words",
+      "Never draw a status list",
+      "plain bullets"
     ],
-    "expected": "Summarize current-chat evidence well under 150 words including visuals and tables, label PR status unverified, disclose the visual gap, and make no external writes or job launches."
+    "expected": "Summarize current-chat evidence well under 150 words excluding visuals, label PR status unverified, disclose the visual gap, and make no external writes or job launches."
   },
   {
     "id": "goal-restatement-only",
@@ -178,5 +180,39 @@
       "Other ACTION_REQUIRED"
     ],
     "expected": "Keep owner approval unmet; do not bypass it or report ready, and do not assume every action-required check is owner approval."
+  },
+  {
+    "id": "premise-direct-check",
+    "prompt": "Two fixes assumed cache skew but both failed. Apply attack-the-premise before another fix.",
+    "entry": "skills/principle-attack-the-premise/SKILL.md",
+    "required_contracts": [
+      "Test the premise before the next fix",
+      "If it confirms the premise",
+      "written down and tested"
+    ],
+    "expected": "State and test the common premise directly; use contrary or confirming evidence to choose the next investigation instead of assuming uneven actors."
+  },
+  {
+    "id": "legitimate-state-guard",
+    "prompt": "Use fix-root-causes: an empty search result is valid but the caller crashes when there is no first result.",
+    "entry": "skills/principle-fix-root-causes/SKILL.md",
+    "required_contracts": [
+      "whether the state",
+      "legitimate",
+      "handling the state there is the fix"
+    ],
+    "expected": "Allow a guard for legitimate empty state while tracing invalid state to its producer; do not reject guards categorically."
+  },
+  {
+    "id": "observable-absence-test",
+    "prompt": "Use test-behavior-not-implementation: empty carts must never charge, and populated carts must charge once.",
+    "entry": "skills/principle-test-behavior-not-implementation/SKILL.md",
+    "required_contracts": [
+      "Break the behavior",
+      "Change the internals",
+      "The contract decides",
+      "Pair it with a case"
+    ],
+    "expected": "Verify externally observable absence alongside a positive charge and payload case; do not reject zero-call assertions categorically."
   }
 ]
