@@ -2,7 +2,7 @@
 
 Upstream 0.15.25 at `e5136d82418d2db3165ea1050d17577cd618cc05`.
 Subtree `de8e53ebbeca0fe9351e950095e720655da08349`. Latest checked commit `e5136d82418d2db3165ea1050d17577cd618cc05` on 2026-10-15.
-Adaptation status: pending. Host qualification remains incomplete.
+Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
 
@@ -10,10 +10,10 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 
 | Upstream file | Status | Adaptation or limitation | Review |
 |---|---|---|---|
-| `.cursor-plugin/plugin.json` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `.cursor-plugin/plugin.json` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `.gitignore` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `LICENSE` | unchanged | Complete MIT license preserved at repository and package root. | reviewed |
-| `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `agents/comment-sicko.md` | adapted | Complete comment-review role preserved as a prompt resource; no native agent registration. Uncertain constraints remain until resolved rather than being deleted on ambiguity. | reviewed |
 | `agents/poteto-agent.md` | unsupported | Native agent registration unsupported; poteto-mode and no-comments adapt the workflow without a fictitious agent type. | reviewed |
 | `assets/logo.png` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
@@ -36,7 +36,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `docs/guide/05-build-and-clean.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/06-verify-and-ship.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/07-overnight.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/08-principles.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/08-principles.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/09-make-it-yours.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/10-recipes-and-pitfalls.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
@@ -46,7 +46,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `docs/guide/images/router.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/understanding.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/verification.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | pending |
+| `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | reviewed |
 | `skills/architect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/architect/references/design-red-flags.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/architect/references/rationale-template.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
@@ -56,7 +56,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/benchmark-checklist/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/blast-radius/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/bro/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
-| `skills/correct/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | pending |
+| `skills/correct/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/create-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/create-verification-skill/references/feature-map-example/README.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/create-verification-skill/references/feature-map-example/create-note.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
@@ -71,14 +71,14 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/interrogate/references/lead-judgment.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/interrogate/references/reviewer-prompt.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/interrogate/references/rubric.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
-| `skills/ketchup/SKILL.md` | adapted | Explicit-only portable workflow with host capability and permission guards. | pending |
+| `skills/ketchup/SKILL.md` | adapted | Explicit-only portable workflow with host capability and permission guards. | reviewed |
 | `skills/maintain-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/make-bot-ui/SKILL.md` | unsupported | Explanatory entry point only; Grok Bot webhook runtime is not supplied. | reviewed |
 | `skills/no-comments/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/poteto-help/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/poteto-help/references/prompting.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/poteto-help/references/recipes.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/poteto-mode/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | pending |
+| `skills/poteto-mode/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/poteto-mode/playbooks/authoring-a-skill.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/autonomous-run.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/autopilot-full.md` | unsupported | Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied. | reviewed |
@@ -124,18 +124,18 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/poteto-mode/scripts/watch-pr/types.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/watch-pr/watch-pr` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/worktree-audit.sh` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
-| `skills/principle-attack-the-premise/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | pending |
+| `skills/principle-attack-the-premise/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-boundary-discipline/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-build-the-lever/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-encode-lessons-in-structure/SKILL.md` | adapted | Retain prior portable standalone guidance removed by upstream condensation; preserve the complete principle rather than ship a fragment. | reviewed |
 | `skills/principle-exhaust-the-design-space/SKILL.md` | adapted | Retain prior portable standalone guidance removed by upstream condensation; preserve the complete principle rather than ship a fragment. | reviewed |
 | `skills/principle-experience-first/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-explain-the-number/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
-| `skills/principle-fix-root-causes/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | pending |
+| `skills/principle-fix-root-causes/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-foundational-thinking/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-guard-the-context-window/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/principle-laziness-protocol/SKILL.md` | adapted | Retain prior portable standalone guidance removed by upstream condensation; preserve the complete principle rather than ship a fragment. | reviewed |
-| `skills/principle-make-operations-idempotent/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | pending |
+| `skills/principle-make-operations-idempotent/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-minimize-reader-load/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-model-the-domain/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
@@ -146,7 +146,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/principle-separate-before-serializing-shared-state/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-sequence-verifiable-units/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-subtract-before-you-add/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
-| `skills/principle-test-behavior-not-implementation/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | pending |
+| `skills/principle-test-behavior-not-implementation/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-type-system-discipline/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/recall/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/reflect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
