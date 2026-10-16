@@ -214,5 +214,27 @@
       "Pair it with a case"
     ],
     "expected": "Verify externally observable absence alongside a positive charge and payload case; do not reject zero-call assertions categorically."
+  },
+  {
+    "id": "standalone-caller-migration",
+    "prompt": "Apply migrate-callers-then-delete-legacy-apis to replace an internal API.",
+    "entry": "skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+    "required_contracts": [
+      "Inventory callers, migrate them",
+      "No external users depend on backward compatibility",
+      "time-boxed"
+    ],
+    "expected": "Inventory and migrate callers, remove the old API only within the stated compatibility preconditions; do not keep a permanent parallel path."
+  },
+  {
+    "id": "standalone-type-safety",
+    "prompt": "Apply type-system-discipline to model open versus completed work.",
+    "entry": "skills/principle-type-system-discipline/SKILL.md",
+    "required_contracts": [
+      "Make illegal states unrepresentable",
+      "Exhaustive matching",
+      "Strengthen a type only where partiality appears"
+    ],
+    "expected": "Construct valid variants and exhaust them; do not cast away uncertainty or strengthen types without actual partiality."
   }
 ]

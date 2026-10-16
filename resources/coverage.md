@@ -1,7 +1,7 @@
 # Capability coverage
 
-Upstream 0.15.25 at `e5136d82418d2db3165ea1050d17577cd618cc05`.
-Subtree `de8e53ebbeca0fe9351e950095e720655da08349`. Latest checked commit `e5136d82418d2db3165ea1050d17577cd618cc05` on 2026-10-15.
+Upstream 0.15.25 at `f713f14203cd6420cec13cd7c55c32d598dbab68`.
+Subtree `0d5fd349cbc77d054eed60f0e8cdfbea86321ff9`. Latest checked commit `f713f14203cd6420cec13cd7c55c32d598dbab68` on 2026-10-16.
 Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
@@ -136,7 +136,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/principle-guard-the-context-window/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/principle-laziness-protocol/SKILL.md` | adapted | Retain prior portable standalone guidance removed by upstream condensation; preserve the complete principle rather than ship a fragment. | reviewed |
 | `skills/principle-make-operations-idempotent/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
-| `skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
+| `skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md` | adapted | Retain complete standalone guidance removed by upstream condensation; preserve compatibility preconditions and host contract. | reviewed |
 | `skills/principle-minimize-reader-load/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-model-the-domain/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-never-block-on-the-human/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
@@ -147,7 +147,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/principle-sequence-verifiable-units/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-subtract-before-you-add/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-test-behavior-not-implementation/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
-| `skills/principle-type-system-discipline/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
+| `skills/principle-type-system-discipline/SKILL.md` | adapted | Retain complete standalone guidance removed by upstream condensation; preserve compatibility preconditions and host contract. | reviewed |
 | `skills/recall/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/reflect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/reflect/references/divergent-reviewer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |

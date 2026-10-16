@@ -1,10 +1,10 @@
 {
-  "package_version": "0.1.4",
-  "upstream_commit": "e5136d82418d2db3165ea1050d17577cd618cc05",
-  "upstream_tree": "de8e53ebbeca0fe9351e950095e720655da08349",
+  "package_version": "0.1.5",
+  "upstream_commit": "f713f14203cd6420cec13cd7c55c32d598dbab68",
+  "upstream_tree": "0d5fd349cbc77d054eed60f0e8cdfbea86321ff9",
   "upstream_version": "0.15.25",
-  "latest_checked_commit": "e5136d82418d2db3165ea1050d17577cd618cc05",
-  "checked_at": "2026-10-15",
+  "latest_checked_commit": "f713f14203cd6420cec13cd7c55c32d598dbab68",
+  "checked_at": "2026-10-16",
   "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
   "pending_files": [],
@@ -839,7 +839,7 @@
       "source": "skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
       "status": "adapted",
       "destination": "skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added.",
+      "reason": "Retain complete standalone guidance removed by upstream condensation; preserve compatibility preconditions and host contract.",
       "review": "reviewed"
     },
     {
@@ -916,7 +916,7 @@
       "source": "skills/principle-type-system-discipline/SKILL.md",
       "status": "adapted",
       "destination": "skills/principle-type-system-discipline/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added.",
+      "reason": "Retain complete standalone guidance removed by upstream condensation; preserve compatibility preconditions and host contract.",
       "review": "reviewed"
     },
     {

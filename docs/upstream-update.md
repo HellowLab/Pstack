@@ -1,29 +1,19 @@
-# Reviewed upstream adaptation, October 15
+# Reviewed upstream adaptation, October 16
 
-Pstack 0.15.24 to 0.15.25, commit `e5136d82418d2db3165ea1050d17577cd618cc05`. All 11 changed source files and the subtree identity were inspected. The twelfth review gap is the tree assertion, not another file. No vendored helper was executed.
+Upstream remains 0.15.25 but its source changed from `e5136d82418d2db3165ea1050d17577cd618cc05` to `f713f14203cd6420cec13cd7c55c32d598dbab68`. All five file changes and subtree identity/modes were inspected. No vendored code was executed.
 
-- Source manifests only change the upstream version; package listing metadata remains adapter-owned.
-- README and principle-guide summaries align with the revised principles, not new host capabilities.
-- Correct now judges tests against observable behavior and internal refactors rather than a blanket undefined-return heuristic; preserve its portable source body.
-- Ketchup explains changes with captured visuals and relationship diagrams, not disconnected status boxes. Its text budget excludes visuals; status and action items remain plain bullets. Keep current-chat/read-only scope, actual evidence, unknown-responsibility honesty and unavailable-renderer fallback.
-- Poteto-mode's principle index matches the revised leaf skills.
-- Attack the Premise tests a falsifiable observation directly before another fix, distinguishing contrary and confirming evidence rather than assuming per-actor skew is always the cause.
-- Fix Root Causes distinguishes legitimate state needing handling from invalid state whose producer must be fixed. Keep reproduction, instrumentation, and actual-state evidence.
-- Make Operations Idempotent derives actions from observed state and requires reliable stale-artifact evidence across interruption points, replacing the overly specific PID-only-lock prescription.
-- Test Behavior evaluates both broken-behavior and internals-only edits. External side effects, absence paired with a positive case, and invariant checks can be meaningful contracts; internal helper calls are not equivalent evidence.
+- README removes one type-discipline summary phrase; it is source documentation, not package listing metadata.
+- Interrogate lead judgment removes repeated introduction and arbitrary five-finding calibration. Adopt the shorter reference; the main skill still requires synthesis, concrete findings, and explained dismissals.
+- Caller migration loses its actual inventory/migrate/delete instructions upstream. Preserve complete standalone guidance as a reviewed override, including external-compatibility preconditions and exceptional time-boxed adapters.
+- Type discipline loses illegal-state construction, narrowing, exhaustive matching, and calibrated partiality guidance upstream. Preserve the complete standalone body as a reviewed override, using the updated source description.
+- Swarm removes worker-count selection and redundant reporting prose. Retain explicit total-worker versus concurrency distinction and evidenced reporting in the existing host adaptation; no Cursor runtime or model defaults are imported.
 
-All changed skills preserve explicit invocation and local host contracts. New workflow cases are static content-contract checks, not model-behavior qualification. Persistent runtimes and helpers remain excluded. All previously released ZIPs/checksums and submitted rc.5 are preserved exactly; only the new 0.1.4 archive is generated.
+This intentionally retains useful guidance rather than claiming text identity with the condensed upstream. All invocation guards, original attribution, and unsupported-runtime disclosures remain. Previous archives are unchanged; only 0.1.5 is generated. Content-contract tests do not qualify model behavior.
 
 Changed files:
 
-- `.cursor-plugin/plugin.json`
 - `README.md`
-- `docs/guide/08-principles.md`
-- `plugin.json`
-- `skills/correct/SKILL.md`
-- `skills/ketchup/SKILL.md`
-- `skills/poteto-mode/SKILL.md`
-- `skills/principle-attack-the-premise/SKILL.md`
-- `skills/principle-fix-root-causes/SKILL.md`
-- `skills/principle-make-operations-idempotent/SKILL.md`
-- `skills/principle-test-behavior-not-implementation/SKILL.md`
+- `skills/interrogate/references/lead-judgment.md`
+- `skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md`
+- `skills/principle-type-system-discipline/SKILL.md`
+- `skills/swarm/SKILL.md`
