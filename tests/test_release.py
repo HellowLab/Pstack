@@ -80,6 +80,7 @@ class ReleaseTests(unittest.TestCase):
         self.assertIn('Published v0.1.2', self.publish())
         row = self.api.rows[0]
         self.assertEqual(self.api.tag, SHA)
+        self.assertEqual(row['name'], 'v0.1.2')
         self.assertEqual(row['body'], self.args['notes'])
         self.assertFalse(row['draft'])
         self.assertFalse(row['prerelease'])
@@ -95,6 +96,7 @@ class ReleaseTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, 'interrupted'):
             self.publish()
         self.assertTrue(self.api.rows[0]['draft'])
+        self.assertEqual(self.api.rows[0]['name'], 'v0.1.2')
         self.assertIsNone(self.api.latest)
         self.publish()
         self.assertEqual(len(self.api.rows), 1)
