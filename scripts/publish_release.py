@@ -95,7 +95,7 @@ def publish(api, *, sha, version, notes, assets):
         raise ValueError("Tag changed during publication")
     if release is None:
         release = api("POST", "releases", {
-            "tag_name": tag, "target_commitish": sha, "name": f"Pstack {tag}",
+            "tag_name": tag, "target_commitish": sha, "name": tag,
             "body": notes, "draft": True, "prerelease": False, "make_latest": "false",
         })
     release_id = release["id"]
@@ -115,7 +115,7 @@ def publish(api, *, sha, version, notes, assets):
     if tag_commit(api, tag) != sha:
         raise ValueError("Tag changed before publication")
     api("PATCH", f"releases/{release_id}", {
-        "name": f"Pstack {tag}", "body": notes, "draft": False,
+        "name": tag, "body": notes, "draft": False,
         "prerelease": False, "make_latest": "true",
     })
     verified = api("GET", f"releases/{release_id}")
