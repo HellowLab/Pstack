@@ -114,7 +114,7 @@
       "support": "adapted"
     },
     "principle-migrate-callers-then-delete-legacy-apis": {
-      "body": "upstream",
+      "body": "override",
       "support": "adapted"
     },
     "principle-minimize-reader-load": {
@@ -158,7 +158,7 @@
       "support": "adapted"
     },
     "principle-type-system-discipline": {
-      "body": "upstream",
+      "body": "override",
       "support": "adapted"
     },
     "recall": {
@@ -776,7 +776,7 @@
     "skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md": {
       "status": "adapted",
       "destination": "skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added."
+      "reason": "Retain complete standalone guidance removed by upstream condensation; preserve compatibility preconditions and host contract."
     },
     "skills/principle-minimize-reader-load/SKILL.md": {
       "status": "adapted",
@@ -831,7 +831,7 @@
     "skills/principle-type-system-discipline/SKILL.md": {
       "status": "adapted",
       "destination": "skills/principle-type-system-discipline/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added."
+      "reason": "Retain complete standalone guidance removed by upstream condensation; preserve compatibility preconditions and host contract."
     },
     "skills/recall/SKILL.md": {
       "status": "adapted",

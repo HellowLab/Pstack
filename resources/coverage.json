@@ -1,20 +1,13 @@
 {
-  "package_version": "0.1.4",
+  "package_version": "0.1.5",
   "upstream_commit": "f713f14203cd6420cec13cd7c55c32d598dbab68",
   "upstream_tree": "0d5fd349cbc77d054eed60f0e8cdfbea86321ff9",
   "upstream_version": "0.15.25",
   "latest_checked_commit": "f713f14203cd6420cec13cd7c55c32d598dbab68",
   "checked_at": "2026-10-16",
-  "adaptation_status": "pending",
+  "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
-  "pending_files": [
-    "README.md",
-    "skills/interrogate/references/lead-judgment.md",
-    "skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
-    "skills/principle-type-system-discipline/SKILL.md",
-    "skills/swarm/SKILL.md",
-    "<subtree tree, including file modes>"
-  ],
+  "pending_files": [],
   "files": [
     {
       "source": ".cursor-plugin/plugin.json",
@@ -38,7 +31,7 @@
       "source": "README.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "agents/comment-sicko.md",
@@ -391,7 +384,7 @@
       "status": "unchanged",
       "destination": "skills/interrogate/references/lead-judgment.md",
       "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/interrogate/references/reviewer-prompt.md",
@@ -846,8 +839,8 @@
       "source": "skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
       "status": "adapted",
       "destination": "skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added.",
-      "review": "pending"
+      "reason": "Retain complete standalone guidance removed by upstream condensation; preserve compatibility preconditions and host contract.",
+      "review": "reviewed"
     },
     {
       "source": "skills/principle-minimize-reader-load/SKILL.md",
@@ -923,8 +916,8 @@
       "source": "skills/principle-type-system-discipline/SKILL.md",
       "status": "adapted",
       "destination": "skills/principle-type-system-discipline/SKILL.md",
-      "reason": "Upstream body retained; invocation and host/permission guards added.",
-      "review": "pending"
+      "reason": "Retain complete standalone guidance removed by upstream condensation; preserve compatibility preconditions and host contract.",
+      "review": "reviewed"
     },
     {
       "source": "skills/recall/SKILL.md",
@@ -1007,7 +1000,7 @@
       "status": "adapted",
       "destination": "skills/swarm/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/tdd/SKILL.md",

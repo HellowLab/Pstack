@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.5] - 2026-10-16
+
+- Review the latest Pstack 0.15.25 source revision, including changes without an upstream version bump.
+- Retain standalone caller-migration steps, compatibility preconditions, and complete type-safety guidance despite upstream condensation.
+- Preserve explicit worker counts, evidenced result reporting, and host capability boundaries.
+- Adopt the leaner review-judgment reference without the arbitrary five-finding calibration heuristic.
+- Preserve all previously released archives and the submitted public rc.5 artifact.
+
+This repository-validated release is separate from marketplace approval. Native installation, 54-skill discovery, all 174 file/resource comparisons, and cleanup passed. Full model-behavior qualification remains incomplete; static checks are not behavioral passes.
+
 ## [0.1.4] - 2026-10-15
 
 - Adapt reviewed upstream Pstack 0.15.25 with 54 skills and 23 playbook routes.
