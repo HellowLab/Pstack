@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.6] - 2026-10-17
+
+- Review both changed source files in the latest upstream 0.15.25 revision, which did not bump its version.
+- Classify the new Claude Code harness as unsupported source-only documentation; do not import its tool, model, path, or transcript mappings into ChatGPT/Codex skills.
+- Preserve the existing 54 skills, 23 routes, host contracts, attribution, historical archives, and version-only GitHub release titles.
+
+GitHub distribution remains separate from marketplace approval. Full model-behavior qualification remains incomplete; static checks are not behavioral passes.
+
 ## [0.1.5] - 2026-10-16
 
 - Review the latest Pstack 0.15.25 source revision, including changes without an upstream version bump.

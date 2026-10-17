@@ -216,3 +216,10 @@ All 57 repository tests and reproducible build passed. Exact ZIP SHA-256 `040f3a
 ## October 16 candidate 0.1.5
 
 All five upstream file changes and the tree assertion were reviewed at unchanged upstream version 0.15.25. Standalone migration/type guidance and worker counts are intentionally retained; the lead-judgment reference is condensed. All 57 repository tests and reproducible build passed. Exact archive SHA-256: `9b52eb87cecc3719b80961ffd334a87c21ef2690eb505430daad052e4c0c8ac7`. Disposable native installation loaded all 54 Pstack skills without errors, all 174 installed files and actual host resource reads matched the archive, and plugin/marketplace cleanup left an empty inventory. No credentials were copied. The isolated profile reports Not logged in; native model behavior remains unqualified.
+
+
+## October 17 candidate 0.1.6
+
+All 57 tests and reproducible build passed. The new Claude Code harness is explicitly unsupported and absent from the archive. All six previous ZIP/checksum pairs remain byte-identical. Disposable native installation, plugin/read, and skills/list succeeded; all 174 installed files and actual fs/readFile resource reads match the archive. Plugin/marketplace removal left an empty inventory. No model turn ran: the isolated profile is unauthenticated, and no credentials were copied. Full model-behavior qualification remains incomplete.
+
+Archive SHA-256: `77b4365e307d0e073b89f43033513be99b6bf4c051ea0e29ab420e32a061a5c1`. The October 17 upstream check used Ubuntu 24.04.5; Ubuntu 26.04 still requires the separate October 19 checkpoint.

@@ -1,10 +1,10 @@
 {
-  "package_version": "0.1.5",
-  "upstream_commit": "f713f14203cd6420cec13cd7c55c32d598dbab68",
-  "upstream_tree": "0d5fd349cbc77d054eed60f0e8cdfbea86321ff9",
+  "package_version": "0.1.6",
+  "upstream_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
+  "upstream_tree": "54ac5265638c4455ec3d04d496a379b5afc6aac2",
   "upstream_version": "0.15.25",
-  "latest_checked_commit": "f713f14203cd6420cec13cd7c55c32d598dbab68",
-  "checked_at": "2026-10-16",
+  "latest_checked_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
+  "checked_at": "2026-10-17",
   "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
   "pending_files": [],
@@ -224,6 +224,12 @@
       "source": "docs/guide/images/verification.jpg",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
+      "review": "reviewed"
+    },
+    {
+      "source": "docs/harness/claude-code.md",
+      "status": "unsupported",
+      "reason": "Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness.",
       "review": "reviewed"
     },
     {
