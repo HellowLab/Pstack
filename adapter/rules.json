@@ -1004,6 +1004,10 @@
       "status": "adapted",
       "destination": "skills/sharpen/SKILL.md",
       "reason": "Explicit task framing with preserved user constraints, scope, and actual outside verification."
+    },
+    "docs/harness/claude-code.md": {
+      "status": "unsupported",
+      "reason": "Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness."
     }
   }
 }
