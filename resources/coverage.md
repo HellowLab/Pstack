@@ -1,8 +1,8 @@
 # Capability coverage
 
-Upstream 0.15.25 at `f713f14203cd6420cec13cd7c55c32d598dbab68`.
-Subtree `0d5fd349cbc77d054eed60f0e8cdfbea86321ff9`. Latest checked commit `f713f14203cd6420cec13cd7c55c32d598dbab68` on 2026-10-16.
-Adaptation status: reviewed. Host qualification remains incomplete.
+Upstream 0.15.25 at `101b274dd991f694e1f7024be2157e5f3adf07de`.
+Subtree `54ac5265638c4455ec3d04d496a379b5afc6aac2`. Latest checked commit `101b274dd991f694e1f7024be2157e5f3adf07de` on 2026-10-17.
+Adaptation status: pending. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
 
@@ -13,7 +13,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `.cursor-plugin/plugin.json` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `.gitignore` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `LICENSE` | unchanged | Complete MIT license preserved at repository and package root. | reviewed |
-| `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
+| `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
 | `agents/comment-sicko.md` | adapted | Complete comment-review role preserved as a prompt resource; no native agent registration. Uncertain constraints remain until resolved rather than being deleted on ambiguity. | reviewed |
 | `agents/poteto-agent.md` | unsupported | Native agent registration unsupported; poteto-mode and no-comments adapt the workflow without a fictitious agent type. | reviewed |
 | `assets/logo.png` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
@@ -46,6 +46,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `docs/guide/images/router.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/understanding.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/verification.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
+| `docs/harness/claude-code.md` | unsupported | Unclassified new upstream file; review required. | pending |
 | `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | reviewed |
 | `skills/architect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/architect/references/design-red-flags.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
