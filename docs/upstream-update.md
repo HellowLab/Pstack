@@ -1,14 +1,33 @@
-# Reviewed upstream adaptation
+# Pending upstream adaptation
 
-Reviewed upstream Pstack 0.15.25 at `101b274dd991f694e1f7024be2157e5f3adf07de` for adaptation 0.1.6 on October 17.
+Previous snapshot: `101b274dd991f694e1f7024be2157e5f3adf07de`.
+Candidate snapshot: `0b8e952052d482ee6de06deebf14d590d77b1b34`. Version: 0.15.26.
+[Upstream comparison](https://github.com/cursor/plugins/compare/101b274dd991f694e1f7024be2157e5f3adf07de...0b8e952052d482ee6de06deebf14d590d77b1b34)
 
-[Source comparison](https://github.com/cursor/plugins/compare/f713f14203cd6420cec13cd7c55c32d598dbab68...101b274dd991f694e1f7024be2157e5f3adf07de)
+The snapshot changed even if the version did not. Source hashes were NOT approved.
+Inspect the subtree diff in this PR, update adapters and tests, then deliberately update reviewed hashes.
+The generated ZIP is an unqualified preview. No auto-merge or publication.
 
-Two source files changed; subtree identity is separate review metadata, not a third source file:
+Changed files:
 
-- `README.md`: new Claude Code installation/generation directions and explicit Cursor-only Benny disclosure. Retain as attributed upstream source; the adaptation keeps its own installation and runtime disclosures. No upstream generator was executed.
-- `docs/harness/claude-code.md`: new Claude Code-specific tools, subagents, model names, filesystem paths, transcript discovery, and unsupported-feature table. Classify as unsupported source-only material. Do not package its mappings or treat them as ChatGPT/Codex capabilities; the existing host contracts remain authoritative for supported workflows.
-
-Reviewed hashes and subtree identity were updated only after inspecting both complete changes. The source-coverage failure and pending-adaptation gate correctly required this classification; neither was a regression in released 0.1.5. All prior archive/checksum pairs, including submitted rc.5, are preserved.
-
-The October 17 upstream check ran on Ubuntu 24.04.5. It does not satisfy the separate October 19 Ubuntu 26.04 migration checkpoint.
+- `.cursor-plugin/plugin.json`
+- `README.md`
+- `docs/guide/01-setup.md`
+- `docs/guide/02-poteto-mode.md`
+- `docs/guide/03-understand.md`
+- `docs/guide/04-design.md`
+- `docs/guide/05-build-and-clean.md`
+- `docs/guide/06-verify-and-ship.md`
+- `docs/guide/07-overnight.md`
+- `docs/guide/08-principles.md`
+- `docs/guide/09-make-it-yours.md`
+- `docs/guide/10-recipes-and-pitfalls.md`
+- `docs/harness/claude-code.md`
+- `plugin.json`
+- `skills/create-formal-verification-skill/SKILL.md`
+- `skills/ketchup/SKILL.md`
+- `skills/make-bot-ui/SKILL.md`
+- `skills/poteto-help/SKILL.md`
+- `skills/poteto-mode/SKILL.md`
+- `skills/typescript-best-practices/SKILL.md`
+- `skills/typescript-best-practices/references/patterns.md`

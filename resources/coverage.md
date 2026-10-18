@@ -1,8 +1,8 @@
 # Capability coverage
 
-Upstream 0.15.25 at `101b274dd991f694e1f7024be2157e5f3adf07de`.
-Subtree `54ac5265638c4455ec3d04d496a379b5afc6aac2`. Latest checked commit `101b274dd991f694e1f7024be2157e5f3adf07de` on 2026-10-17.
-Adaptation status: reviewed. Host qualification remains incomplete.
+Upstream 0.15.26 at `0b8e952052d482ee6de06deebf14d590d77b1b34`.
+Subtree `6951483c3b468140e611b81a65eb9c159319656b`. Latest checked commit `0b8e952052d482ee6de06deebf14d590d77b1b34` on 2026-10-18.
+Adaptation status: pending. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
 
@@ -10,10 +10,10 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 
 | Upstream file | Status | Adaptation or limitation | Review |
 |---|---|---|---|
-| `.cursor-plugin/plugin.json` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
+| `.cursor-plugin/plugin.json` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
 | `.gitignore` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `LICENSE` | unchanged | Complete MIT license preserved at repository and package root. | reviewed |
-| `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
+| `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
 | `agents/comment-sicko.md` | adapted | Complete comment-review role preserved as a prompt resource; no native agent registration. Uncertain constraints remain until resolved rather than being deleted on ambiguity. | reviewed |
 | `agents/poteto-agent.md` | unsupported | Native agent registration unsupported; poteto-mode and no-comments adapt the workflow without a fictitious agent type. | reviewed |
 | `assets/logo.png` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
@@ -29,16 +29,16 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `automations/benny/templates/configuration.example.yaml` | unsupported | Benny external issue automation is outside the skills-only runtime; no automatic external actions. | reviewed |
 | `automations/benny/templates/reproduce-automation-prompt.md` | unsupported | Benny external issue automation is outside the skills-only runtime; no automatic external actions. | reviewed |
 | `automations/benny/templates/triage-automation-prompt.md` | unsupported | Benny external issue automation is outside the skills-only runtime; no automatic external actions. | reviewed |
-| `docs/guide/01-setup.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/02-poteto-mode.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/03-understand.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/04-design.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/05-build-and-clean.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/06-verify-and-ship.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/07-overnight.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/08-principles.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/09-make-it-yours.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/10-recipes-and-pitfalls.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
+| `docs/guide/01-setup.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/02-poteto-mode.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/03-understand.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/04-design.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/05-build-and-clean.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/06-verify-and-ship.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/07-overnight.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/08-principles.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/09-make-it-yours.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/10-recipes-and-pitfalls.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
 | `docs/guide/README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/design.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/overnight.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
@@ -46,8 +46,8 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `docs/guide/images/router.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/understanding.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/verification.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/harness/claude-code.md` | unsupported | Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness. | reviewed |
-| `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | reviewed |
+| `docs/harness/claude-code.md` | unsupported | Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness. | pending |
+| `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | pending |
 | `skills/architect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/architect/references/design-red-flags.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/architect/references/rationale-template.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
@@ -58,6 +58,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/blast-radius/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/bro/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/correct/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
+| `skills/create-formal-verification-skill/SKILL.md` | unsupported | Unclassified new upstream file; review required. | pending |
 | `skills/create-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/create-verification-skill/references/feature-map-example/README.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/create-verification-skill/references/feature-map-example/create-note.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
@@ -72,14 +73,14 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/interrogate/references/lead-judgment.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/interrogate/references/reviewer-prompt.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/interrogate/references/rubric.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
-| `skills/ketchup/SKILL.md` | adapted | Explicit-only portable workflow with host capability and permission guards. | reviewed |
+| `skills/ketchup/SKILL.md` | adapted | Explicit-only portable workflow with host capability and permission guards. | pending |
 | `skills/maintain-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/make-bot-ui/SKILL.md` | unsupported | Explanatory entry point only; Grok Bot webhook runtime is not supplied. | reviewed |
+| `skills/make-bot-ui/SKILL.md` | unsupported | Explanatory entry point only; Grok Bot webhook runtime is not supplied. | pending |
 | `skills/no-comments/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/poteto-help/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
+| `skills/poteto-help/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | pending |
 | `skills/poteto-help/references/prompting.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/poteto-help/references/recipes.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/poteto-mode/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
+| `skills/poteto-mode/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | pending |
 | `skills/poteto-mode/playbooks/authoring-a-skill.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/autonomous-run.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/autopilot-full.md` | unsupported | Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied. | reviewed |
@@ -164,8 +165,8 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/tdd/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/teach/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/technical-writing/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
-| `skills/typescript-best-practices/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
-| `skills/typescript-best-practices/references/patterns.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
+| `skills/typescript-best-practices/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | pending |
+| `skills/typescript-best-practices/references/patterns.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | pending |
 | `skills/unslop/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/why/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/why/references/epistemics.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
