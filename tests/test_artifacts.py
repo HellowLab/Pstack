@@ -136,6 +136,7 @@ class ArtifactTests(unittest.TestCase):
 
     def test_incompatible_sync_invalidates_only_current_archive(self):
         build(self.root)
+        original = hashes(self.root / "dist")
         repo = self.source_repo()
         changed, summary = sync(repo, self.root)
         self.assertTrue(changed)
@@ -144,10 +145,31 @@ class ArtifactTests(unittest.TestCase):
         self.assertFalse(current.exists())
         self.assertFalse(current.with_name(current.name + ".sha256").exists())
         self.assert_retained_bytes()
+        self.assertEqual(hashes(self.root / "dist"), original)
         self.assertIn("No current candidate ZIP is available",
                       (self.root / "docs/upstream-update.md").read_text())
         self.assertEqual((self.root / "upstream/pstack/skills/how/SKILL.md").read_text(),
                          "New incompatible registration format")
+
+    def test_pending_sync_preserves_stable_archive_at_same_version(self):
+        build(self.root)
+        stable = self.root / current_archive(self.root)
+        original = hashes(self.root / "dist")
+        repo = self.source_repo()
+        path = repo / "pstack/skills/how/SKILL.md"
+        path.write_text((self.root / "upstream/pstack/skills/how/SKILL.md").read_text()
+                        + "\nA new source revision.\n")
+        subprocess.run(["git", "-C", str(repo), "add", "."], check=True)
+        subprocess.run(["git", "-C", str(repo), "commit", "-qm", "compatible change"], check=True)
+        changed, _ = sync(repo, self.root)
+        self.assertTrue(changed)
+        preview = self.root / current_archive(self.root)
+        self.assertNotEqual(preview, stable)
+        self.assertIn("-upstream-", preview.name)
+        self.assertTrue(preview.exists())
+        for name, digest in original.items():
+            self.assertEqual(hashes(self.root / "dist")[name], digest, name)
+        build(self.root, check=True)
 
     def test_corrupt_retained_archive_blocks_sync_before_snapshot_replacement(self):
         build(self.root)

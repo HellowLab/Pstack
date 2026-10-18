@@ -214,6 +214,10 @@
     "sharpen": {
       "body": "override",
       "support": "adapted"
+    },
+    "create-formal-verification-skill": {
+      "body": "override",
+      "support": "adapted"
     }
   },
   "files": {
@@ -1008,6 +1012,11 @@
     "docs/harness/claude-code.md": {
       "status": "unsupported",
       "reason": "Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness."
+    },
+    "skills/create-formal-verification-skill/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/create-formal-verification-skill/SKILL.md",
+      "reason": "Portable formal-verification workflow with explicit tool, scope, scratch-isolation, and host registration limits."
     }
   }
 }

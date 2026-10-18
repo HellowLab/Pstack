@@ -1,10 +1,10 @@
 {
-  "package_version": "0.1.6",
-  "upstream_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
-  "upstream_tree": "54ac5265638c4455ec3d04d496a379b5afc6aac2",
-  "upstream_version": "0.15.25",
-  "latest_checked_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
-  "checked_at": "2026-10-17",
+  "package_version": "0.1.7",
+  "upstream_commit": "0b8e952052d482ee6de06deebf14d590d77b1b34",
+  "upstream_tree": "6951483c3b468140e611b81a65eb9c159319656b",
+  "upstream_version": "0.15.26",
+  "latest_checked_commit": "0b8e952052d482ee6de06deebf14d590d77b1b34",
+  "checked_at": "2026-10-18",
   "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
   "pending_files": [],
@@ -306,6 +306,13 @@
       "status": "adapted",
       "destination": "skills/correct/SKILL.md",
       "reason": "Upstream body retained; invocation and host/permission guards added.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/create-formal-verification-skill/SKILL.md",
+      "status": "adapted",
+      "destination": "skills/create-formal-verification-skill/SKILL.md",
+      "reason": "Portable formal-verification workflow with explicit tool, scope, scratch-isolation, and host registration limits.",
       "review": "reviewed"
     },
     {

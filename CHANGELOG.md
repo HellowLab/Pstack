@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.7] - 2026-10-18
+
+- Review all 21 changed upstream source files for Pstack 0.15.26 and preserve Lauren Tan’s attribution.
+- Add the explicit formal-verification skill with bounded proof claims, isolated negative controls, and honest missing-tool and registration limits; 55 skill entry points and 23 routes are represented.
+- Expand catch-up summaries to cover every pending decision with evidence and risk, and adopt validating TypeScript brand guards.
+- Preserve unsupported Cursor, Claude Code, webhook, and persistent-runtime boundaries.
+- Give pending upstream archives distinct tree-qualified names so scheduled previews cannot overwrite released artifacts. Restore and preserve the exact v0.1.6 ZIP and checksum alongside all earlier archives.
+
+GitHub distribution remains separate from plugin marketplace approval. Native installation and model-behavior checks were not run for this release; full host qualification remains incomplete.
+
 ## [0.1.6] - 2026-10-17
 
 - Review both changed source files in the latest upstream 0.15.25 revision, which did not bump its version.

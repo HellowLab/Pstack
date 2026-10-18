@@ -223,3 +223,9 @@ All five upstream file changes and the tree assertion were reviewed at unchanged
 All 57 tests and reproducible build passed. The new Claude Code harness is explicitly unsupported and absent from the archive. All six previous ZIP/checksum pairs remain byte-identical. Disposable native installation, plugin/read, and skills/list succeeded; all 174 installed files and actual fs/readFile resource reads match the archive. Plugin/marketplace removal left an empty inventory. No model turn ran: the isolated profile is unauthenticated, and no credentials were copied. Full model-behavior qualification remains incomplete.
 
 Archive SHA-256: `77b4365e307d0e073b89f43033513be99b6bf4c051ea0e29ab420e32a061a5c1`. The October 17 upstream check used Ubuntu 24.04.5; Ubuntu 26.04 still requires the separate October 19 checkpoint.
+
+## October 18 candidate 0.1.7
+
+All 21 upstream source changes and the subtree identity were reviewed. All 59 repository tests pass, including preservation of same-version stable archives during successful and incompatible upstream sync, released v0.1.6 digest protection, and formal-verification and complete catch-up semantic contracts. Reproducible build checks pass. All 14 historical archive/checksum files match tag v0.1.6 byte-for-byte. Disposable archive staging and all 176 extracted-file comparisons passed; this is not native plugin installation or host resource access.
+
+No native installation or model turn was run for this candidate. Full host/model qualification remains incomplete. The separate October 19 Ubuntu checkpoint remains outstanding. PR CI at the initial bot head awaited maintainer approval without running any jobs; that platform gate is separate from the six reproduced pending-adaptation failures.

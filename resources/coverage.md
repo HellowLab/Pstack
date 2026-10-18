@@ -1,7 +1,7 @@
 # Capability coverage
 
-Upstream 0.15.25 at `101b274dd991f694e1f7024be2157e5f3adf07de`.
-Subtree `54ac5265638c4455ec3d04d496a379b5afc6aac2`. Latest checked commit `101b274dd991f694e1f7024be2157e5f3adf07de` on 2026-10-17.
+Upstream 0.15.26 at `0b8e952052d482ee6de06deebf14d590d77b1b34`.
+Subtree `6951483c3b468140e611b81a65eb9c159319656b`. Latest checked commit `0b8e952052d482ee6de06deebf14d590d77b1b34` on 2026-10-18.
 Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
@@ -58,6 +58,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/blast-radius/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/bro/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/correct/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
+| `skills/create-formal-verification-skill/SKILL.md` | adapted | Portable formal-verification workflow with explicit tool, scope, scratch-isolation, and host registration limits. | reviewed |
 | `skills/create-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/create-verification-skill/references/feature-map-example/README.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/create-verification-skill/references/feature-map-example/create-note.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
