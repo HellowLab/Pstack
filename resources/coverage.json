@@ -1,42 +1,19 @@
 {
-  "package_version": "0.1.6",
+  "package_version": "0.1.7",
   "upstream_commit": "0b8e952052d482ee6de06deebf14d590d77b1b34",
   "upstream_tree": "6951483c3b468140e611b81a65eb9c159319656b",
   "upstream_version": "0.15.26",
   "latest_checked_commit": "0b8e952052d482ee6de06deebf14d590d77b1b34",
   "checked_at": "2026-10-18",
-  "adaptation_status": "pending",
+  "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
-  "pending_files": [
-    ".cursor-plugin/plugin.json",
-    "README.md",
-    "docs/guide/01-setup.md",
-    "docs/guide/02-poteto-mode.md",
-    "docs/guide/03-understand.md",
-    "docs/guide/04-design.md",
-    "docs/guide/05-build-and-clean.md",
-    "docs/guide/06-verify-and-ship.md",
-    "docs/guide/07-overnight.md",
-    "docs/guide/08-principles.md",
-    "docs/guide/09-make-it-yours.md",
-    "docs/guide/10-recipes-and-pitfalls.md",
-    "docs/harness/claude-code.md",
-    "plugin.json",
-    "skills/create-formal-verification-skill/SKILL.md",
-    "skills/ketchup/SKILL.md",
-    "skills/make-bot-ui/SKILL.md",
-    "skills/poteto-help/SKILL.md",
-    "skills/poteto-mode/SKILL.md",
-    "skills/typescript-best-practices/SKILL.md",
-    "skills/typescript-best-practices/references/patterns.md",
-    "<subtree tree, including file modes>"
-  ],
+  "pending_files": [],
   "files": [
     {
       "source": ".cursor-plugin/plugin.json",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": ".gitignore",
@@ -54,7 +31,7 @@
       "source": "README.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "agents/comment-sicko.md",
@@ -151,61 +128,61 @@
       "source": "docs/guide/01-setup.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "docs/guide/02-poteto-mode.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "docs/guide/03-understand.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "docs/guide/04-design.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "docs/guide/05-build-and-clean.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "docs/guide/06-verify-and-ship.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "docs/guide/07-overnight.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "docs/guide/08-principles.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "docs/guide/09-make-it-yours.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "docs/guide/10-recipes-and-pitfalls.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "docs/guide/README.md",
@@ -253,13 +230,13 @@
       "source": "docs/harness/claude-code.md",
       "status": "unsupported",
       "reason": "Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "plugin.json",
       "status": "unsupported",
       "reason": "Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/architect/SKILL.md",
@@ -333,9 +310,10 @@
     },
     {
       "source": "skills/create-formal-verification-skill/SKILL.md",
-      "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "status": "adapted",
+      "destination": "skills/create-formal-verification-skill/SKILL.md",
+      "reason": "Portable formal-verification workflow with explicit tool, scope, scratch-isolation, and host registration limits.",
+      "review": "reviewed"
     },
     {
       "source": "skills/create-verification-skill/SKILL.md",
@@ -440,7 +418,7 @@
       "status": "adapted",
       "destination": "skills/ketchup/SKILL.md",
       "reason": "Explicit-only portable workflow with host capability and permission guards.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/maintain-verification-skill/SKILL.md",
@@ -454,7 +432,7 @@
       "status": "unsupported",
       "destination": "skills/make-bot-ui/SKILL.md",
       "reason": "Explanatory entry point only; Grok Bot webhook runtime is not supplied.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/no-comments/SKILL.md",
@@ -468,7 +446,7 @@
       "status": "adapted",
       "destination": "skills/poteto-help/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-help/references/prompting.md",
@@ -489,7 +467,7 @@
       "status": "adapted",
       "destination": "skills/poteto-mode/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-mode/playbooks/authoring-a-skill.md",
@@ -1063,14 +1041,14 @@
       "status": "adapted",
       "destination": "skills/typescript-best-practices/SKILL.md",
       "reason": "Upstream body retained; invocation and host/permission guards added.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/typescript-best-practices/references/patterns.md",
       "status": "unchanged",
       "destination": "skills/typescript-best-practices/references/patterns.md",
       "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/unslop/SKILL.md",

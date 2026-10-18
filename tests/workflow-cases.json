@@ -236,5 +236,33 @@
       "Strengthen a type only where partiality appears"
     ],
     "expected": "Construct valid variants and exhaust them; do not cast away uncertainty or strengthen types without actual partiality."
+  },
+  {
+    "id": "formal-verification-missing-tool",
+    "prompt": "Use create-formal-verification-skill to prove the retry invariant. The required verifier is unavailable and there are existing human modifications.",
+    "entry": "skills/create-formal-verification-skill/SKILL.md",
+    "required_contracts": [
+      "isolated disposable copy or worktree",
+      "preserving all existing user work",
+      "keep the generated skill a draft",
+      "never substitute a static reading",
+      "bounds and assumptions",
+      "Do not weaken the property",
+      "failing only on the findings"
+    ],
+    "expected": "Report the missing verifier and keep proof unexecuted/draft, preserve human work and product findings, and state the exact verification bounds without claiming a proof."
+  },
+  {
+    "id": "ketchup-many-decisions",
+    "prompt": "Use ketchup. Thirty PRs need distinct product decisions; no merge is authorized.",
+    "entry": "skills/ketchup/SKILL.md",
+    "required_contracts": [
+      "Never cut items or shrink them",
+      "no count in place of a list",
+      "Give each item's risk",
+      "read-only",
+      "reply alone must be enough to decide"
+    ],
+    "expected": "List every decision with user impact, evidence, recommendation, and risk; let the response grow to cover all items and make no external changes."
   }
 ]

@@ -147,7 +147,10 @@ class ArchiveIntegrityError(ValueError):
 
 def current_archive(root=ROOT):
     manifest = read_json(root / "plugin.json")
-    return Path("dist") / f"{manifest['name']}-{manifest['version']}.zip"
+    version = manifest["version"]
+    if review_gaps(root):
+        version += "-upstream-" + read_json(root / "upstream/lock.json")["tree"]
+    return Path("dist") / f"{manifest['name']}-{version}.zip"
 
 
 def validate_archives(root=ROOT):

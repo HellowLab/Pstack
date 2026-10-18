@@ -15,7 +15,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from build import archive, build, hashes, read_json, render, review_gaps
+from build import archive, build, current_archive, hashes, read_json, render, review_gaps
 from sync_upstream import export_snapshot, sync
 
 
@@ -42,6 +42,13 @@ class PackageTests(unittest.TestCase):
             self.assertEqual(interface[field], "./assets/pstack.jpeg")
             self.assertIn(interface[field].removeprefix("./"), self.files)
 
+    def test_released_016_archive_remains_unchanged(self):
+        digest = "77b4365e307d0e073b89f43033513be99b6bf4c051ea0e29ab420e32a061a5c1"
+        archive = ROOT / "dist/pstack-0.1.6.zip"
+        self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(), digest)
+        self.assertEqual(archive.with_name(archive.name + ".sha256").read_text(),
+                         f"{digest}  {archive.name}\n")
+
     def test_approved_artwork_is_packaged_without_changes(self):
         original = (ROOT / "assets/pstack.jpeg").read_bytes()
         self.assertEqual(len(original), 723089)
@@ -52,7 +59,7 @@ class PackageTests(unittest.TestCase):
 
     def test_all_registered_skills_and_invocation_semantics(self):
         upstream = sorted((ROOT / "upstream/pstack/skills").glob("*/SKILL.md"))
-        self.assertEqual(len(upstream), 54)
+        self.assertEqual(len(upstream), 55)
         self.assertEqual({p.parent.name for p in upstream}, set(self.rules["skills"]))
         for path in upstream:
             source = yaml.safe_load(path.read_text().split("---", 2)[1])
@@ -421,18 +428,15 @@ class UpstreamTests(unittest.TestCase):
         self.assertIn("<subtree tree, including file modes>", review_gaps(self.root))
 
     def test_incompatible_metadata_keeps_candidate_without_stale_zip(self):
-        manifest = read_json(self.root / "plugin.json")
-        current = f"{manifest['name']}-{manifest['version']}.zip"
-        previous = {name: digest for name, digest in hashes(self.root / "dist").items()
-                    if name not in {current, current + ".sha256"}}
+        previous = hashes(self.root / "dist")
         path = self.repo / "pstack/skills/how/SKILL.md"
         path.write_text("New incompatible registration format")
         self.commit()
         changed, summary = sync(self.repo, self.root)
         self.assertTrue(changed)
         self.assertIn("Generation blocked", summary)
-        self.assertFalse((self.root / "dist" / current).exists())
-        self.assertFalse((self.root / "dist" / (current + ".sha256")).exists())
+        self.assertFalse((self.root / current_archive(self.root)).exists())
+        self.assertFalse((self.root / (str(current_archive(self.root)) + ".sha256")).exists())
         self.assertEqual(hashes(self.root / "dist"), previous)
         self.assertIn("No current candidate ZIP is available", (self.root / "docs/upstream-update.md").read_text())
         self.assertIn("skills/how/SKILL.md", review_gaps(self.root))
