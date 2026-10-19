@@ -81,3 +81,7 @@ Report the accepted budget and role choices, any blocked roles, and the exact sa
 ### 7. Offer a verification skill (optional)
 
 Inspect the project's existing verification skills or test harness. If none can drive the real app, offer once to create a project-local verification skill. On acceptance, route to [create-verification-skill](../create-verification-skill/SKILL.md). On refusal, continue without repeating the offer.
+
+### 8. Offer a formal verification skill (optional)
+
+Inspect discoverable project-local formal verification skills and existing verifier harnesses. If none covers the project, offer once to create a formal verification skill for a key property within stated bounds and assumptions. Explain that generated-input testing is not formal proof and tools may be unavailable. On acceptance, route to [create-formal-verification-skill](../create-formal-verification-skill/SKILL.md). On refusal, continue without repeating the offer. The offer alone does not authorize generation, installation, configuration writes, or product edits.

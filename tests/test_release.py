@@ -177,6 +177,12 @@ class ReleaseTests(unittest.TestCase):
     def test_workflow_gates_write_permission_on_main_validation(self):
         import yaml
         workflow = yaml.safe_load((release.ROOT / '.github/workflows/ci.yml').read_text())
+        validation = workflow['jobs']['validate']
+        self.assertEqual(validation['strategy']['matrix']['os'], ['ubuntu-24.04', 'ubuntu-26.04'])
+        self.assertFalse(validation['strategy']['fail-fast'])
+        self.assertEqual(validation['runs-on'], '${{ matrix.os }}')
+        uploads = [step for step in validation['steps'] if step.get('uses', '').startswith('actions/upload-artifact@')]
+        self.assertEqual(uploads[0]['with']['name'], 'pstack-release-candidate-${{ matrix.os }}')
         job = workflow['jobs']['release']
         self.assertEqual(job['needs'], 'validate')
         self.assertIn("github.ref == 'refs/heads/main'", job['if'])

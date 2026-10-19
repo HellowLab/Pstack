@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.8] - 2026-10-19
+
+- Review all 16 changed source files from upstream Pstack 0.15.28, preserving attribution and unsupported-host boundaries.
+- Add explicit formal-verification maintenance with baseline execution, code-drift review, isolated negative controls, evidence-backed bug reporting and guarded sync commits.
+- Record covered code and sync commits during formal-verification creation; distinguish generated-input testing from formal proof.
+- Offer formal-verification setup only after acceptance, and add discovery and help recipes. The package now includes 56 skills and 23 routes, with no removals.
+- Validate on explicit Ubuntu 24.04 and 26.04 runners, requiring both before release and keeping their uploaded artifacts separate.
+- Preserve every historical release archive and checksum, immutable tags and stale-run release safeguards.
+
+GitHub distribution is separate from plugin marketplace approval. Native installation and actual model execution were not run for this release; full host/model qualification remains incomplete.
+
 ## [0.1.7] - 2026-10-18
 
 - Review all 21 changed upstream source files for Pstack 0.15.26 and preserve Lauren Tan’s attribution.

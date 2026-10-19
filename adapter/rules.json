@@ -218,6 +218,10 @@
     "create-formal-verification-skill": {
       "body": "override",
       "support": "adapted"
+    },
+    "maintain-formal-verification-skill": {
+      "body": "override",
+      "support": "adapted"
     }
   },
   "files": {
@@ -1017,6 +1021,11 @@
       "status": "adapted",
       "destination": "skills/create-formal-verification-skill/SKILL.md",
       "reason": "Portable formal-verification workflow with explicit tool, scope, scratch-isolation, and host registration limits."
+    },
+    "skills/maintain-formal-verification-skill/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/maintain-formal-verification-skill/SKILL.md",
+      "reason": "Formal verification drift review with isolated negative controls, dirty-worktree coverage, evidence-based outcomes and guarded sync advancement."
     }
   }
 }
