@@ -279,9 +279,10 @@
       "isolated disposable copy or worktree",
       "rerun the baseline",
       "Do not move the sync commit for a blocked check",
-      "If this replay fails, leave the sync commit unchanged",
+      "If this replay cannot complete",
       "do not weaken the property",
-      "only when evidence establishes it"
+      "only when evidence establishes it",
+      "reproduces an already established product bug retains the bug outcome"
     ],
     "expected": "Inspect committed and dirty covered code, distinguish model drift from real bugs, preserve user work, run isolated negative controls, and advance sync only after successful replay; report missing history/tools as blocked."
   },
