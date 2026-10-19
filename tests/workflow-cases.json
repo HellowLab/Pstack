@@ -166,7 +166,7 @@
     "required_contracts": [
       "Do not loosen explicit user constraints",
       "outside check",
-      "Do not hand back a rewritten prompt"
+      "then do the authorized work"
     ],
     "expected": "Improve the authorized approach without overriding constraints, inventing outside verification, or replacing task execution with a prompt rewrite."
   },
@@ -264,5 +264,50 @@
       "reply alone must be enough to decide"
     ],
     "expected": "List every decision with user impact, evidence, recommendation, and risk; let the response grow to cover all items and make no external changes."
+  },
+  {
+    "id": "maintain-formal-drift-and-dirty-code",
+    "prompt": "Use maintain-formal-verification-skill. The old model passes, but committed and uncommitted code changed the guarded state. Preserve my unrelated edits.",
+    "entry": "skills/maintain-formal-verification-skill/SKILL.md",
+    "required_contracts": [
+      "**in sync**",
+      "**updated**",
+      "**bug**",
+      "**blocked**",
+      "**Run it as it is.**",
+      "staged, unstaged, and relevant untracked",
+      "isolated disposable copy or worktree",
+      "rerun the baseline",
+      "Do not move the sync commit for a blocked check",
+      "If this replay fails, leave the sync commit unchanged",
+      "do not weaken the property",
+      "only when evidence establishes it"
+    ],
+    "expected": "Inspect committed and dirty covered code, distinguish model drift from real bugs, preserve user work, run isolated negative controls, and advance sync only after successful replay; report missing history/tools as blocked."
+  },
+  {
+    "id": "formal-testing-fallback",
+    "prompt": "Use create-formal-verification-skill for a language without a suitable verifier. A generated-input test runner is available.",
+    "entry": "skills/create-formal-verification-skill/SKILL.md",
+    "required_contracts": [
+      "test the real code with generated inputs",
+      "testing fallback, not a formal proof",
+      "Never describe a sampled test pass as proof",
+      "coverage record and the sync commit",
+      "uncommitted covered changes separately"
+    ],
+    "expected": "Use available generated-input tests as testing evidence, not formal proof; record actual scope and covered code, and leave unexecuted proof claims draft."
+  },
+  {
+    "id": "setup-formal-offer-declined",
+    "prompt": "Use setup-pstack. Keep the accepted model preferences and decline formal verification generation.",
+    "entry": "skills/setup-pstack/SKILL.md",
+    "required_contracts": [
+      "### 8. Offer a formal verification skill (optional)",
+      "On acceptance",
+      "On refusal, continue without repeating the offer",
+      "offer alone does not authorize generation"
+    ],
+    "expected": "Preserve accepted setup preferences, inspect existing verification workflows, and respect the refusal without generating files or installing tools."
   }
 ]

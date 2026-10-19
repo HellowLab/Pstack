@@ -1,10 +1,10 @@
 {
-  "package_version": "0.1.7",
-  "upstream_commit": "0b8e952052d482ee6de06deebf14d590d77b1b34",
-  "upstream_tree": "6951483c3b468140e611b81a65eb9c159319656b",
-  "upstream_version": "0.15.26",
-  "latest_checked_commit": "0b8e952052d482ee6de06deebf14d590d77b1b34",
-  "checked_at": "2026-10-18",
+  "package_version": "0.1.8",
+  "upstream_commit": "d457567332aa6989e753ea289f30ea2bfbc80bc0",
+  "upstream_tree": "06803099e18ed488c8c2a2fda118ce772b4e2a77",
+  "upstream_version": "0.15.28",
+  "latest_checked_commit": "d457567332aa6989e753ea289f30ea2bfbc80bc0",
+  "checked_at": "2026-10-19",
   "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
   "pending_files": [],
@@ -418,6 +418,13 @@
       "status": "adapted",
       "destination": "skills/ketchup/SKILL.md",
       "reason": "Explicit-only portable workflow with host capability and permission guards.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/maintain-formal-verification-skill/SKILL.md",
+      "status": "adapted",
+      "destination": "skills/maintain-formal-verification-skill/SKILL.md",
+      "reason": "Formal verification drift review with isolated negative controls, dirty-worktree coverage, evidence-based outcomes and guarded sync advancement.",
       "review": "reviewed"
     },
     {

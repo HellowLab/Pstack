@@ -50,3 +50,9 @@ Rerun a failed workflow on the same current main commit to recover an interrupte
 These conventions follow the repository's existing project release patterns: version tags, matching changelog notes, and a visible Latest release. The GitHub release distributes repository-validated bytes. It is not a plugin marketplace submission, review approval, or native model-behavior qualification. The public rc.5 review remains separate and untouched.
 
 API contracts: [GitHub releases](https://docs.github.com/en/rest/releases/releases), [release assets](https://docs.github.com/en/rest/releases/assets), and [asset digests](https://github.blog/changelog/2025-06-03-releases-now-expose-digests-for-release-assets/).
+
+## Ubuntu compatibility
+
+Validation runs on explicit `ubuntu-24.04` and `ubuntu-26.04` runners with Python 3.12. Both must pass before the main-only release job can run. Matrix artifact names include the OS. This tests package construction and repository behavior; it does not qualify native plugin installation or model behavior.
+
+GitHub announced [26.04 general availability](https://github.com/actions/runner-images/issues/14747) and an [October 19–November 19 ubuntu-latest migration](https://github.com/actions/runner-images/issues/14748). A successful `ubuntu-latest` job alone does not identify which OS ran; inspect the job's runner image evidence.

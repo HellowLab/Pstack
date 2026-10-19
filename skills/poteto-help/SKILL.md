@@ -31,6 +31,8 @@ Check the state that changes the answer, and mention it only when it does:
 - Reuse confirmed role preferences from the current conversation or an explicitly identified, authorized project document. Do not search unrelated global configuration or infer that setup never ran because no preferences are available here.
 - No `verify-*` skill or other app harness in the project means agents have no scripted way to drive the app. Mention `/create-verification-skill` when the question is about proving a change works.
 
+When the question concerns races, invariants, or cases ordinary tests rarely reach, inspect discoverable project-local formal verification skills and verifier harnesses. If none is available, mention `/create-formal-verification-skill`; absence of a skill does not prove no formal checks exist. If covered code changed since the recorded sync commit, including uncommitted changes, mention `/maintain-formal-verification-skill`.
+
 When no role preferences are available and they affect the answer, offer setup at most once per chat. It matters when the user is new, asks about setup or cost, or needs to know which models run. Ask whether they want to choose role models and a reasoning budget now. Offer these choices:
 
 - Now. After acceptance, route to [`setup-pstack`](../setup-pstack/SKILL.md) and answer the original question too.
@@ -43,6 +45,8 @@ Continue answering the original question while the offer is pending. Reuse confi
 1. Install Pstack only through a supported host plugin installation surface. This is an independent adaptation, not the official Cursor release. Native compatibility must be verified; no marketplace listing is published by these instructions.
 2. Run [`/setup-pstack`](../setup-pstack/SKILL.md) to choose a reasoning budget and model preferences for each role using the host's available controls. Review and accept the proposed settings before saving them. Defaults inherit the current model; saved preferences apply in future sessions only when the host's loading mechanism has been verified.
 3. Start a real task with `/poteto-mode`, a goal, and a check that can pass or fail.
+
+Setup offers once each to generate an app verification skill and a formal verification skill when the project lacks a suitable workflow. Generation requires acceptance; a declined offer is not repeated.
 
 Installing does not authorize an external action. Explicit-only skills run on invocation or a route from an invoked workflow; setup retains upstream's automatic eligibility. Read [`references/prompting.md`](references/prompting.md) to word the first prompt. Extra candidates and independent reviewers consume time and tokens; use only actual available workers and inherit model settings unless a supported override was requested. Missing independent review remains a gap.
 
@@ -80,6 +84,7 @@ The default answer is `/poteto-mode`, which runs most of the others when its ste
 | Give agents a scripted way to drive the app and prove behavior | [`/create-verification-skill`](../create-verification-skill/SKILL.md) |
 | Bring a verification skill and its feature map back in line with the app | [`/maintain-verification-skill`](../maintain-verification-skill/SKILL.md) |
 | Formally verify a race, invariant, or other property that tests rarely reach | [`/create-formal-verification-skill`](../create-formal-verification-skill/SKILL.md) |
+| Bring formal verification back in line with changed code and distinguish drift from bugs | [`/maintain-formal-verification-skill`](../maintain-formal-verification-skill/SKILL.md) |
 | Vet a performance number before reporting or acting on it | [`/benchmark-checklist`](../benchmark-checklist/SKILL.md) |
 | Run a large or cross-cutting change, or one to review after stepping away | [`/figure-it-out`](../figure-it-out/SKILL.md) |
 | Keep a decision log during a run, and review it afterward | [`/show-me-your-work`](../show-me-your-work/SKILL.md) |

@@ -10,7 +10,7 @@ A good target is a promise the code makes, where a break harms users and tests r
 
 ## Let the question choose the tool
 
-Pick the tool that answers the question at the lowest cost: a model checker, a proof assistant, an SMT-backed verifier, or another tool. Whether events can happen in a bad order usually suits a model checker over a small model of the design. Whether the code itself behaves for every input, as with memory safety, overflow, or a data-structure invariant, usually suits a verifier that runs on the code. A property that must hold at every size, where a bound is not enough, can need a proof. For concurrent and distributed designs, TLA+ is often the most useful place to start. Prefer a tool that the repo's developers can install and run, and tell the user why you chose it.
+Pick the tool that answers the question at the lowest cost: a model checker, a proof assistant, an SMT-backed verifier, or another tool. Whether events can happen in a bad order usually suits a model checker over a small model of the design, and TLA+ is the default for that in any language. Whether the code itself behaves for every input, as with memory safety, overflow, or a data-structure invariant, usually suits a verifier that runs on the code. If no verifier runs on this language, say so, and test the real code with generated inputs, not a hand model of the function. A property that must hold at every size, where a bound is not enough, can need a proof. Prefer a tool that the repo's developers can install and run, and tell the user why you chose it.
 
 ## What makes it good
 
@@ -20,11 +20,11 @@ Pick the tool that answers the question at the lowest cost: a model checker, a p
 - **Honest about scope.** Say what is verified, under which bounds and assumptions, and what is left out. A pass covers the model or the bound, not the whole system.
 - **Readable without the tool.** State the property and the harm in one plain sentence each. Tell a counterexample as a short sequence of steps in the code's words.
 - **Cheap to rerun.** One command, a reproducible tool version, and a run short enough that the next agent will use it on every relevant change.
-- **Kept in step with the code.** When verified code changes, something tells the next agent that the verification needs another look.
+- **Kept in step with the code.** Record which files and functions each check covers, and the commit at which you last confirmed that the verification describes them. When the covered code changes after that commit, the next agent can see that the verification needs another look.
 
 ## Generate the verify skill
 
-Write a project-local skill with frontmatter that names the area and says when to use it. Use the host-supported project skill location and metadata format discovered in this repository; frontmatter alone does not guarantee host registration. If registration cannot be checked, say so. From the skill alone, the next agent must be able to tell whether a change touches the verified code, run the check, tell a real bug from a modeling error, and update the verification when a change is intended. Use this repo's real commands, paths, and nouns, and leave no placeholders.
+Write a project-local skill with frontmatter that names the area and says when to use it. Use the host-supported project skill location and metadata format discovered in this repository; frontmatter alone does not guarantee host registration. If registration cannot be checked, say so. From the skill alone, the next agent must be able to tell whether a change touches the verified code, run the check, tell a real bug from a modeling error, and update the verification when a change is intended. Put the coverage record and the sync commit in the skill. Move the sync commit forward only after confirming that the verification describes the code at that commit. Record any uncommitted covered changes separately; a commit alone does not describe them. Use this repo's real commands, paths, and nouns, and leave no placeholders.
 
 ## Prove it before you hand off
 
@@ -32,6 +32,8 @@ Use an isolated disposable copy or worktree, preserving all existing user work. 
 
 ## Hand off
 
-Tell the user what you verified, which tool you used and why, the bounds, what the check found in plain words, how to run it, and what it does not cover. Suggest a second target only if you found a close one.
+Tell the user what you verified, which tool you used and why, the bounds, what the check found in plain words, how to run it, and what it does not cover. Suggest a second target only if you found a close one. Point the user at `/maintain-formal-verification-skill` for bringing the verification back in line after changes that did not recheck it.
 
 Use only installed or explicitly authorized verification tools. If the required verifier is unavailable, report the exact missing tool and keep the generated skill a draft; never substitute a static reading for an executed proof. Do not change product code or install tools without authorization. Record tool version, command, output, bounds, assumptions, and counterexample evidence. Clean up only your own scratch changes.
+
+Generated-input testing is a testing fallback, not a formal proof. State the exercised inputs and limits, and keep any unexecuted formal-verification claim a draft. Never describe a sampled test pass as proof over all inputs.

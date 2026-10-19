@@ -1,7 +1,7 @@
 # Capability coverage
 
-Upstream 0.15.26 at `0b8e952052d482ee6de06deebf14d590d77b1b34`.
-Subtree `6951483c3b468140e611b81a65eb9c159319656b`. Latest checked commit `0b8e952052d482ee6de06deebf14d590d77b1b34` on 2026-10-18.
+Upstream 0.15.28 at `d457567332aa6989e753ea289f30ea2bfbc80bc0`.
+Subtree `06803099e18ed488c8c2a2fda118ce772b4e2a77`. Latest checked commit `d457567332aa6989e753ea289f30ea2bfbc80bc0` on 2026-10-19.
 Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
@@ -74,6 +74,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/interrogate/references/reviewer-prompt.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/interrogate/references/rubric.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/ketchup/SKILL.md` | adapted | Explicit-only portable workflow with host capability and permission guards. | reviewed |
+| `skills/maintain-formal-verification-skill/SKILL.md` | adapted | Formal verification drift review with isolated negative controls, dirty-worktree coverage, evidence-based outcomes and guarded sync advancement. | reviewed |
 | `skills/maintain-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/make-bot-ui/SKILL.md` | unsupported | Explanatory entry point only; Grok Bot webhook runtime is not supplied. | reviewed |
 | `skills/no-comments/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |

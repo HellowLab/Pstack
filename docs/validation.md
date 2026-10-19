@@ -229,3 +229,11 @@ Archive SHA-256: `77b4365e307d0e073b89f43033513be99b6bf4c051ea0e29ab420e32a061a5
 All 21 upstream source changes and the subtree identity were reviewed. All 59 repository tests pass, including preservation of same-version stable archives during successful and incompatible upstream sync, released v0.1.6 digest protection, and formal-verification and complete catch-up semantic contracts. Reproducible build checks pass. All 14 historical archive/checksum files match tag v0.1.6 byte-for-byte. Disposable archive staging and all 176 extracted-file comparisons passed; this is not native plugin installation or host resource access.
 
 No native installation or model turn was run for this candidate. Full host/model qualification remains incomplete. The separate October 19 Ubuntu checkpoint remains outstanding. PR CI at the initial bot head awaited maintainer approval without running any jobs; that platform gate is separate from the six reproduced pending-adaptation failures.
+
+## October 19 candidate 0.1.8
+
+All 16 upstream 0.15.28 source changes and subtree identity were reviewed. The package includes 56 explicit/eligible skill entry points and 23 routes. Formal verification maintenance preserves baseline execution, drift-versus-bug findings, isolated negative controls, uncommitted-code coverage and guarded sync commits. Static contract cases exercise these obligations but do not establish actual model behavior.
+
+All 59 repository tests and the reproducible build check pass in the Debian 13 cloud workspace. All 16 historical ZIP/checksum files remain byte-identical to tag v0.1.7. Native installation and actual model execution were not run; no plugin publication is part of these checks.
+
+The October 19 compatibility checkpoint requires successful explicit Ubuntu 24.04 and 26.04 CI jobs. CI now tests both, with unique artifact names and aggregate success required before publication. Consult the PR checks and their actual runner-image logs for the runtime result; a local Debian pass or a moving ubuntu-latest label is not Ubuntu 26.04 evidence.
