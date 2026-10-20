@@ -41,6 +41,7 @@ class MaintenanceTests(unittest.TestCase):
         self.real_run("git", "remote", "add", "origin", str(self.remote))
         self.real_run("git", "push", "-q", "origin", "main")
         self.prs = []
+        self.merged_prs = []
         self.calls = []
         self.block_create = False
 
@@ -49,6 +50,10 @@ class MaintenanceTests(unittest.TestCase):
             return self.real_run(*args)
         self.calls.append(args)
         if args[1:3] == ("pr", "list"):
+            if args[args.index("--state") + 1] == "merged":
+                self.assertIn("--base", args)
+                self.assertEqual(args[args.index("--base") + 1], "main")
+                return json.dumps(self.merged_prs)
             return json.dumps(self.prs)
         if args[1:3] == ("pr", "create"):
             if self.block_create:
@@ -147,6 +152,80 @@ class MaintenanceTests(unittest.TestCase):
         self.assertEqual(Path("docs/fixture").read_text(), "reviewed work")
         self.assertEqual(Path("docs/upstream-update.md").read_text(), "next candidate")
         self.assertEqual(self.real_run("git", "ls-remote", "origin", "refs/heads/main").split()[0], main)
+
+    def advanced_main_after_squash(self):
+        self.real_run("git", "switch", "-c", "human")
+        Path("docs/fixture").write_text("reviewed work")
+        self.real_run("git", "add", ".")
+        self.real_run("git", "commit", "-qm", "human review")
+        human = self.real_run("git", "rev-parse", "HEAD")
+        self.real_run("git", "push", "-q", "origin", "HEAD:refs/heads/" + maintenance_pr.BRANCH)
+        self.real_run("git", "switch", "main")
+        self.real_run("git", "merge", "--squash", "human")
+        self.real_run("git", "commit", "-qm", "squash reviewed work")
+        merged = self.real_run("git", "rev-parse", "HEAD")
+        Path("docs/fixture").write_text("later main work")
+        self.real_run("git", "add", ".")
+        self.real_run("git", "commit", "-qm", "advance main")
+        main = self.real_run("git", "rev-parse", "HEAD")
+        self.real_run("git", "push", "-q", "origin", "main")
+        self.merged_prs = [{"headRefOid": human, "mergeCommit": {"oid": merged}}]
+        self.candidate("next candidate")
+        return human, main
+
+    def assert_candidate_refused(self, expected):
+        with self.assertRaisesRegex(SystemExit, "human commit"):
+            self.invoke()
+        self.assertEqual(self.real_run("git", "ls-remote", "origin", "refs/heads/" + maintenance_pr.BRANCH).split()[0], expected)
+        self.assertFalse(any(call[1:3] in (("pr", "create"), ("pr", "edit")) for call in self.calls))
+
+    def test_verified_squash_preserves_original_commits_after_main_advances(self):
+        human, main = self.advanced_main_after_squash()
+        self.invoke()
+        self.real_run("git", "merge-base", "--is-ancestor", human, "HEAD")
+        self.real_run("git", "merge-base", "--is-ancestor", main, "HEAD")
+        self.assertEqual(Path("docs/fixture").read_text(), "later main work")
+        self.assertEqual(Path("docs/upstream-update.md").read_text(), "next candidate")
+        self.assertEqual(self.real_run("git", "ls-remote", "origin", "refs/heads/main").split()[0], main)
+        self.assertEqual(self.prs, [{"number": 1, "isDraft": True}])
+
+    def test_historical_tree_without_merged_pr_is_not_enough(self):
+        human, _ = self.advanced_main_after_squash()
+        self.merged_prs = []
+        self.assert_candidate_refused(human)
+
+    def test_merged_pr_must_cover_exact_observed_tip(self):
+        human, _ = self.advanced_main_after_squash()
+        self.merged_prs[0]["headRefOid"] = self.base
+        self.assert_candidate_refused(human)
+
+    def test_merged_commit_must_have_same_complete_tree(self):
+        human, main = self.advanced_main_after_squash()
+        self.merged_prs[0]["mergeCommit"]["oid"] = main
+        self.assert_candidate_refused(human)
+
+    def test_merged_commit_must_be_ancestor_of_checked_out_main(self):
+        human, _ = self.advanced_main_after_squash()
+        self.merged_prs[0]["mergeCommit"]["oid"] = human
+        self.assert_candidate_refused(human)
+
+    def test_merged_history_cannot_override_active_human_draft(self):
+        human, _ = self.advanced_main_after_squash()
+        self.prs = [{"number": 1, "isDraft": True}]
+        self.assert_candidate_refused(human)
+        self.assertFalse(any("merged" in call for call in self.calls))
+
+    def test_merged_pr_lookup_failure_does_not_change_branch(self):
+        human, _ = self.advanced_main_after_squash()
+        normal_command = self.command
+        def fail_lookup(*args):
+            if args[:3] == ("gh", "pr", "list") and "merged" in args:
+                raise subprocess.CalledProcessError(1, args)
+            return normal_command(*args)
+        with patch.dict(os.environ, {"GITHUB_REPOSITORY": "fixture/project", "DEFAULT_BRANCH": "main"}), patch.object(maintenance_pr, "run", side_effect=fail_lookup):
+            with self.assertRaises(subprocess.CalledProcessError):
+                maintenance_pr.main()
+        self.assertEqual(self.real_run("git", "ls-remote", "origin", "refs/heads/" + maintenance_pr.BRANCH).split()[0], human)
 
     def test_bot_tip_cannot_hide_unmerged_human_work(self):
         Path("docs/fixture").write_text("human work")
