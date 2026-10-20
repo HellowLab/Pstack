@@ -56,4 +56,4 @@ This recipe does not provide unattended execution. If the host cannot persist or
 
 Use `/ketchup` for a read-only summary of what changed since your previous message, with supported visuals and decisions only you can make. Use `/in-your-own-words` to check the agent understood your goal before work begins.
 
-Use `/sharpen` to improve the approach to a requested task and verify its result, while preserving explicit constraints and choices that belong to you.
+Use `/sharpen <the prompt you're about to send>` to rewrite a prompt with an expert approach, raw material, specific methods, and an outside check, while preserving explicit constraints and choices that belong to you. It returns the rewritten prompt without executing the task. Send the rewrite separately when ready.
