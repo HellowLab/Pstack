@@ -14,6 +14,25 @@ def run(*args):
     return subprocess.check_output(args, text=True).strip()
 
 
+def previously_merged(repository, base, expected):
+    merged_prs = json.loads(run(
+        "gh", "pr", "list", "--repo", repository, "--head", BRANCH, "--base", base,
+        "--state", "merged", "--limit", "100", "--json", "headRefOid,mergeCommit"))
+    for pr in merged_prs:
+        if pr["headRefOid"] != expected or not pr["mergeCommit"]:
+            continue
+        merged = pr["mergeCommit"]["oid"]
+        try:
+            run("git", "merge-base", "--is-ancestor", merged, "HEAD")
+        except subprocess.CalledProcessError as error:
+            if error.returncode == 1:
+                continue
+            raise
+        if run("git", "rev-parse", f"{expected}^{{tree}}") == run("git", "rev-parse", f"{merged}^{{tree}}"):
+            return True
+    return False
+
+
 def main(existing_only=False):
     repository = os.environ["GITHUB_REPOSITORY"]
     base = os.environ["DEFAULT_BRANCH"]
@@ -37,8 +56,9 @@ def main(existing_only=False):
             raise SystemExit("Maintenance branch moved during inspection. Retry without changing it.")
         authors = run("git", "log", "--format=%ae", f"HEAD..{expected}").splitlines()
         same_tree = run("git", "rev-parse", f"{expected}^{{tree}}") == run("git", "rev-parse", "HEAD^{tree}")
-        if any(author != BOT_EMAIL for author in authors) and (prs or not same_tree):
-            raise SystemExit("Maintenance branch has an unmerged human commit. Refusing to overwrite it.")
+        if any(author != BOT_EMAIL for author in authors):
+            if prs or not (same_tree or previously_merged(repository, base, expected)):
+                raise SystemExit("Maintenance branch has an unmerged human commit. Refusing to overwrite it.")
     if existing_only:
         report = run("git", "show", "FETCH_HEAD:docs/upstream-update.md")
     else:
