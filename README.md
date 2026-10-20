@@ -6,9 +6,9 @@ Ship faster. Build better.
 
 Bring Pstack’s engineering workflows to ChatGPT and Codex. Faithfully adapted from [Lauren Tan’s original](https://github.com/cursor/plugins/tree/main/pstack), with upstream tracking and reviewed updates to keep pace with Pstack as it evolves. Investigate, design, build, review, and verify with a consistent set of engineering practices. Independently maintained by HellowLab.
 
-This is not an official poteto, Cursor, or OpenAI release. Pstack uses only the tools and permissions available in the host. Version 0.1.8 is distributed through GitHub releases and is not fully host-qualified. GitHub releases are separate from plugin marketplace approval. The submitted 0.1.0-rc.5 package is preserved; its last verified review state on October 13 was in review.
+This is not an official poteto, Cursor, or OpenAI release. Pstack uses only the tools and permissions available in the host. Version 0.1.9 is distributed through GitHub releases and is not fully host-qualified. GitHub releases are separate from plugin marketplace approval. The submitted 0.1.0-rc.5 package is preserved; its last verified review state on October 13 was in review.
 
-The source is pinned to Pstack **0.15.28**, commit [`d457567`](https://github.com/cursor/plugins/tree/d457567332aa6989e753ea289f30ea2bfbc80bc0/pstack). The [generated coverage map](resources/coverage.md) exposes the pinned version, last checked revision, adaptation status, and every source file's disposition. The [upstream workflow](.github/workflows/upstream.yml) is on `main` and checks subtree changes daily at 08:17 UTC. It detects changes without a version bump and requires adaptation review. It never merges or publishes.
+The source is pinned to Pstack **0.15.29**, commit [`88d4751`](https://github.com/cursor/plugins/tree/88d47514b82e7c44f00f2b2a72ff6dd12158038c/pstack). The [generated coverage map](resources/coverage.md) exposes the pinned version, last checked revision, adaptation status, and every source file's disposition. The [upstream workflow](.github/workflows/upstream.yml) is on `main` and checks subtree changes daily at 08:17 UTC. It detects changes without a version bump and requires adaptation review. It never merges or publishes.
 
 ## What is included
 

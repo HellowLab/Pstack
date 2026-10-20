@@ -1,10 +1,10 @@
 {
-  "package_version": "0.1.8",
-  "upstream_commit": "d457567332aa6989e753ea289f30ea2bfbc80bc0",
-  "upstream_tree": "06803099e18ed488c8c2a2fda118ce772b4e2a77",
-  "upstream_version": "0.15.28",
-  "latest_checked_commit": "d457567332aa6989e753ea289f30ea2bfbc80bc0",
-  "checked_at": "2026-10-19",
+  "package_version": "0.1.9",
+  "upstream_commit": "88d47514b82e7c44f00f2b2a72ff6dd12158038c",
+  "upstream_tree": "34a0b817e5ea92375bb10f20b15cf750d4e8095a",
+  "upstream_version": "0.15.29",
+  "latest_checked_commit": "88d47514b82e7c44f00f2b2a72ff6dd12158038c",
+  "checked_at": "2026-10-20",
   "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
   "pending_files": [],
@@ -992,7 +992,7 @@
       "source": "skills/sharpen/SKILL.md",
       "status": "adapted",
       "destination": "skills/sharpen/SKILL.md",
-      "reason": "Explicit task framing with preserved user constraints, scope, and actual outside verification.",
+      "reason": "Explicit prompt rewriting with four expert recommendations, preserved user constraints and choices, and no underlying task execution.",
       "review": "reviewed"
     },
     {

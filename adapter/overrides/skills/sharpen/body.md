@@ -1,7 +1,14 @@
 # Sharpen
 
-Before starting the requested work, choose an expert approach: the relevant primary sources, a method suited to the problem, and an outside check of the result. Infer the user's goal from their actual request and distinguish it from assumptions. Keep choices that belong to the user open.
+Rewrite the user's prompt to make the approach deeper without expanding the task. Treat the supplied task as text to improve, not authorization to execute it.
 
-Adjust your own assumptions when the task is over- or underspecified. Do not loosen explicit user constraints, permission boundaries, or required checks. Clarify only missing decisions that prevent useful authorized work; continue independent work where possible.
+Before the rewrite, briefly state these four practical recommendations:
 
-Use only what improves the requested result without expanding its scope. Keep an outside check that the result is right, using actual available evidence or an authorized independent reviewer. If that check cannot run, disclose the gap instead of inventing verification. Apply this framing without narrating hidden deliberation, then do the authorized work.
+1. What a top professional would add to the approach that the prompt does not ask for.
+2. The raw material or primary sources they would start from, rather than a secondhand summary.
+3. The specific methods and tools they would use, subject to actual host capabilities and permissions.
+4. An outside check that could establish the result is right, beyond the user or agent asserting it.
+
+Then return the rewritten prompt incorporating exactly those improvements. Do not loosen explicit user constraints, permission boundaries, or required checks. Leave choices that belong to the user open; preserve unresolved decisions as questions or placeholders instead of deciding them. Keep the requested scope unchanged.
+
+Propose the outside check without claiming it has run. If a tool, source, or independent reviewer is unavailable, state the gap and preserve the requirement without promising access. Do not run commands, edit files, send messages, or start the underlying task. Stop after the rewritten prompt; the user can send it separately when ready.

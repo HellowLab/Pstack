@@ -241,3 +241,11 @@ The October 19 compatibility checkpoint requires successful explicit Ubuntu 24.0
 Checkpoint evidence: [PR #13 run 39271886139](https://github.com/HellowLab/Pstack/actions/runs/39271886139) passed all 59 tests, the reproducible build check and artifact upload on both explicit runners at head `c18b398788678b7a6af81dc1ea766f23c3f0002c`. Its logs identify Ubuntu 26.04.1 image `20261012.163.1` and Ubuntu 24.04.5 image `20261012.334.1`. This establishes the October 19 repository/runner compatibility checkpoint. Every later head still requires a fresh green matrix before merge; it does not inherit package qualification from this earlier run.
 
 Independent adaptation review found and corrected an ambiguity between an expected product-bug replay and a blocked verification run. A completed replay reproducing an established bug now retains the bug outcome; only unavailable execution or unexplained failure blocks sync advancement. No native installation or actual model-behavior pass is claimed.
+
+## October 20 candidate 0.1.9
+
+All eight upstream 0.15.29 source changes and subtree identity were reviewed. Sharpen now gives four concise expert recommendations and returns a rewritten prompt without performing the underlying task. Help and recipes agree. Explicit constraints, open user choices, scope limits and unavailable outside-check disclosure remain required. Static contracts include negative checks against the former execution directive; these are not actual model-behavior results.
+
+All 67 repository tests and the reproducible build check passed in the cloud workspace. All 18 historical ZIP/checksum files match tag v0.1.8 byte-for-byte. Disposable ZIP extraction matched all 178 rendered files. No native installation, host resource access or actual model execution was tested. Full host/model qualification remains incomplete.
+
+The candidate ZIP is 1,462,844 bytes, SHA-256 `23d5318aa5e02e82bc41200b45fbd3dca205701b20f0fcfee487353d5cb12058`. Both explicit Ubuntu CI jobs and independent review must pass on the final head before merge; consult the PR and main run for their exact source revisions and results. GitHub publication is separate from plugin marketplace submission or approval.

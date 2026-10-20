@@ -1011,7 +1011,7 @@
     "skills/sharpen/SKILL.md": {
       "status": "adapted",
       "destination": "skills/sharpen/SKILL.md",
-      "reason": "Explicit task framing with preserved user constraints, scope, and actual outside verification."
+      "reason": "Explicit prompt rewriting with four expert recommendations, preserved user constraints and choices, and no underlying task execution."
     },
     "docs/harness/claude-code.md": {
       "status": "unsupported",

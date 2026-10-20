@@ -269,6 +269,21 @@ class PackageTests(unittest.TestCase):
                        "inherited host settings"):
             self.assertIn(clause, adapted)
 
+    def test_sharpen_and_help_agree_on_rewrite_only_semantics(self):
+        sharpen = self.files["skills/sharpen/SKILL.md"].decode()
+        metadata = yaml.safe_load(sharpen.split("---", 2)[1])
+        self.assertTrue(metadata["disable-model-invocation"])
+        self.assertIn("rewrite the prompt", metadata["description"])
+        for clause in ("top professional", "raw material", "specific methods and tools",
+                       "outside check", "Stop after the rewritten prompt"):
+            self.assertIn(clause, sharpen)
+        for old in ("then do the authorized work", "then do the work",
+                    "continue independent work"):
+            self.assertNotIn(old, sharpen)
+        for path in ("skills/poteto-help/SKILL.md",
+                     "skills/poteto-help/references/recipes.md"):
+            self.assertIn("without executing the task", self.files[path].decode())
+
     def test_setup_host_contract_retains_role_settings(self):
         contract = self.files["resources/host-contract.md"].decode()
         self.assertIn("revalidate them against actual host capabilities", contract)

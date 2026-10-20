@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.9] - 2026-10-20
+
+- Review all eight changed upstream Pstack 0.15.29 source files and subtree identity, preserving Lauren Tan's attribution and existing host boundaries.
+- Make explicit `/sharpen` invocation return four expert recommendations and a rewritten prompt without executing the underlying task. Preserve user constraints, unresolved choices, scope and honest outside-check requirements.
+- Align help routing and recipes with prompt rewriting, and add static regression coverage for execution boundaries and unavailable verification.
+- Recognize verified previously squash-merged maintenance work after main advances, retaining original commits, genuine unmerged-human-work refusals and branch-race checks.
+- Preserve all historical archives, immutable release tags and stale-run publication safeguards. The package retains 56 skill entry points and 23 routes.
+
+GitHub distribution is separate from plugin marketplace approval. Native installation and actual model execution were not run for this release; full host/model qualification remains incomplete.
+
 ## [0.1.8] - 2026-10-19
 
 - Review all 16 changed source files from upstream Pstack 0.15.28, preserving attribution and unsupported-host boundaries.
