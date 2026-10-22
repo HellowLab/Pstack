@@ -222,6 +222,10 @@
     "maintain-formal-verification-skill": {
       "body": "override",
       "support": "adapted"
+    },
+    "statechart": {
+      "body": "override",
+      "support": "adapted"
     }
   },
   "files": {
@@ -1026,6 +1030,55 @@
       "status": "adapted",
       "destination": "skills/maintain-formal-verification-skill/SKILL.md",
       "reason": "Formal verification drift review with isolated negative controls, dirty-worktree coverage, evidence-based outcomes and guarded sync advancement."
+    },
+    "skills/statechart/SKILL.md": {
+      "status": "adapted",
+      "destination": "skills/statechart/SKILL.md",
+      "reason": "Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported."
+    },
+    "skills/statechart/scripts/chart-to-tla.mjs": {
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification."
+    },
+    "skills/statechart/scripts/compare-charts.mjs": {
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification."
+    },
+    "skills/statechart/scripts/lib.mjs": {
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification."
+    },
+    "skills/statechart/scripts/model/OutputFolder.cfg": {
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification."
+    },
+    "skills/statechart/scripts/model/OutputFolder.map.mjs": {
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification."
+    },
+    "skills/statechart/scripts/model/OutputFolder.tla": {
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification."
+    },
+    "skills/statechart/scripts/statechart.mjs": {
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification."
+    },
+    "skills/statechart/scripts/test/statechart.test.mjs": {
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification."
+    },
+    "skills/statechart/scripts/test/sync.mmd": {
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification."
+    },
+    "skills/statechart/scripts/test/upload.mmd": {
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification."
+    },
+    "skills/statechart/scripts/tlc-to-chart.mjs": {
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification."
     }
   }
 }

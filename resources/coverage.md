@@ -1,7 +1,7 @@
 # Capability coverage
 
-Upstream 0.15.29 at `88d47514b82e7c44f00f2b2a72ff6dd12158038c`.
-Subtree `34a0b817e5ea92375bb10f20b15cf750d4e8095a`. Latest checked commit `88d47514b82e7c44f00f2b2a72ff6dd12158038c` on 2026-10-20.
+Upstream 0.15.30 at `eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10`.
+Subtree `d08bf3a76c8f3bdaeb9af65c98344c85a304fb63`. Latest checked commit `eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10` on 2026-10-22.
 Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
@@ -162,6 +162,18 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/show-me-your-work/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/show-me-your-work/references/decision-log-template.tsv` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/show-me-your-work/scripts/log.sh` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
+| `skills/statechart/SKILL.md` | adapted | Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported. | reviewed |
+| `skills/statechart/scripts/chart-to-tla.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/compare-charts.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/lib.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/model/OutputFolder.cfg` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/model/OutputFolder.map.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/model/OutputFolder.tla` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/statechart.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/test/statechart.test.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/test/sync.mmd` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/test/upload.mmd` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/tlc-to-chart.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
 | `skills/swarm/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/tdd/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/teach/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |

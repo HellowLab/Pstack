@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.10] - 2026-10-22
+
+- Review all 17 upstream Pstack 0.15.30 source changes and subtree identity, preserving attribution and unsupported-host boundaries.
+- Add explicit statechart guidance for user-visible behavior, model-to-chart and chart-to-model review, unchanged-spec comparison, invariant preservation and real-code counterexample replay.
+- Keep upstream Node generators, executable mappings, Java/TLC integration, renderer and test harness source-only; the package does not install or execute them. Missing tools produce clearly unverified sketches rather than proof, fix or rendering claims.
+- Add statechart help routing and regression contracts for unavailable tools, model/replay mismatches, user decisions and truthful evidence. The package now represents 57 skill entry points and 23 routes.
+- Preserve historical release archives, immutable tags and stale-run publishing guards.
+
+Native installation and actual model execution were not run for this release. GitHub distribution is separate from marketplace approval and full host/model qualification remains incomplete.
+
 ## [0.1.9] - 2026-10-20
 
 - Review all eight changed upstream Pstack 0.15.29 source files and subtree identity, preserving Lauren Tan's attribution and existing host boundaries.
