@@ -2,7 +2,7 @@
 
 Upstream 0.15.30 at `eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10`.
 Subtree `d08bf3a76c8f3bdaeb9af65c98344c85a304fb63`. Latest checked commit `eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10` on 2026-10-22.
-Adaptation status: pending. Host qualification remains incomplete.
+Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
 
@@ -10,10 +10,10 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 
 | Upstream file | Status | Adaptation or limitation | Review |
 |---|---|---|---|
-| `.cursor-plugin/plugin.json` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `.cursor-plugin/plugin.json` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `.gitignore` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `LICENSE` | unchanged | Complete MIT license preserved at repository and package root. | reviewed |
-| `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `agents/comment-sicko.md` | adapted | Complete comment-review role preserved as a prompt resource; no native agent registration. Uncertain constraints remain until resolved rather than being deleted on ambiguity. | reviewed |
 | `agents/poteto-agent.md` | unsupported | Native agent registration unsupported; poteto-mode and no-comments adapt the workflow without a fictitious agent type. | reviewed |
 | `assets/logo.png` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
@@ -34,7 +34,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `docs/guide/03-understand.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/04-design.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/05-build-and-clean.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/06-verify-and-ship.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/06-verify-and-ship.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/07-overnight.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/08-principles.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/09-make-it-yours.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
@@ -47,7 +47,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `docs/guide/images/understanding.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/verification.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/harness/claude-code.md` | unsupported | Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness. | reviewed |
-| `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | pending |
+| `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | reviewed |
 | `skills/architect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/architect/references/design-red-flags.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/architect/references/rationale-template.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
@@ -78,7 +78,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/maintain-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/make-bot-ui/SKILL.md` | unsupported | Explanatory entry point only; Grok Bot webhook runtime is not supplied. | reviewed |
 | `skills/no-comments/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/poteto-help/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | pending |
+| `skills/poteto-help/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/poteto-help/references/prompting.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/poteto-help/references/recipes.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/poteto-mode/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
@@ -162,18 +162,18 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/show-me-your-work/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/show-me-your-work/references/decision-log-template.tsv` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/show-me-your-work/scripts/log.sh` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
-| `skills/statechart/SKILL.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/chart-to-tla.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/compare-charts.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/lib.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/model/OutputFolder.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/model/OutputFolder.map.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/model/OutputFolder.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/statechart.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/statechart.test.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/sync.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/upload.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/tlc-to-chart.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
+| `skills/statechart/SKILL.md` | adapted | Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported. | reviewed |
+| `skills/statechart/scripts/chart-to-tla.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/compare-charts.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/lib.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/model/OutputFolder.cfg` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/model/OutputFolder.map.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/model/OutputFolder.tla` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/statechart.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/test/statechart.test.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/test/sync.mmd` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/test/upload.mmd` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/tlc-to-chart.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
 | `skills/swarm/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/tdd/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/teach/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |

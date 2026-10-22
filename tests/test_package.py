@@ -59,7 +59,7 @@ class PackageTests(unittest.TestCase):
 
     def test_all_registered_skills_and_invocation_semantics(self):
         upstream = sorted((ROOT / "upstream/pstack/skills").glob("*/SKILL.md"))
-        self.assertEqual(len(upstream), 56)
+        self.assertEqual(len(upstream), 57)
         self.assertEqual({p.parent.name for p in upstream}, set(self.rules["skills"]))
         for path in upstream:
             source = yaml.safe_load(path.read_text().split("---", 2)[1])
@@ -268,6 +268,21 @@ class PackageTests(unittest.TestCase):
                        "confirmed preferences", "answer the original question",
                        "inherited host settings"):
             self.assertIn(clause, adapted)
+
+    def test_statechart_exposes_guarded_workflow_without_bundled_executables(self):
+        entry = self.files["skills/statechart/SKILL.md"].decode()
+        metadata = yaml.safe_load(entry.split("---", 2)[1])
+        self.assertTrue(metadata["disable-model-invocation"])
+        self.assertIn("bundled upstream generators are unsupported", metadata["description"])
+        self.assertIn("../statechart/SKILL.md", self.files["skills/poteto-help/SKILL.md"].decode())
+        support = [p for p in self.rules["files"] if p.startswith("skills/statechart/scripts/")]
+        self.assertEqual(len(support), 11)
+        for path in support:
+            self.assertEqual(self.rules["files"][path]["status"], "unsupported")
+            self.assertNotIn("destination", self.rules["files"][path])
+        self.assertFalse(any(p.startswith("skills/statechart/scripts/") for p in self.files))
+        self.assertIn("Mapping modules are executable code", entry)
+        self.assertIn("Do not run helpers from the vendored snapshot", entry)
 
     def test_sharpen_and_help_agree_on_rewrite_only_semantics(self):
         sharpen = self.files["skills/sharpen/SKILL.md"].decode()

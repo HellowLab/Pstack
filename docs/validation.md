@@ -249,3 +249,11 @@ All eight upstream 0.15.29 source changes and subtree identity were reviewed. Sh
 All 67 repository tests and the reproducible build check passed in the cloud workspace. All 18 historical ZIP/checksum files match tag v0.1.8 byte-for-byte. Disposable ZIP extraction matched all 178 rendered files. No native installation, host resource access or actual model execution was tested. Full host/model qualification remains incomplete.
 
 The candidate ZIP is 1,462,844 bytes, SHA-256 `23d5318aa5e02e82bc41200b45fbd3dca205701b20f0fcfee487353d5cb12058`. Both explicit Ubuntu CI jobs and independent review must pass on the final head before merge; consult the PR and main run for their exact source revisions and results. GitHub publication is separate from plugin marketplace submission or approval.
+
+## October 22 candidate 0.1.10
+
+All 17 upstream 0.15.30 changes and subtree identity received static source review. Statechart is adapted as guarded chart/model reasoning with explicit tool and evidence limits. All 11 upstream generator/model/test support files remain source-only and are excluded from the package. Vendored helpers and their Node/Java/C/Linux-namespace test harness were not executed.
+
+All 68 repository tests and the reproducible build check passed locally. Tests cover skill inventory and invocation, complete source disposition, preserved help behavior, unavailable statechart tooling, invariant/replay mismatch, open user decisions and truthful artifacts. These are static/package tests, not model-behavior qualification. Disposable extraction matched all 180 rendered files. All 20 historical archive/checksum files match tag v0.1.9 byte-for-byte.
+
+The 0.1.10 ZIP is 1,478,400 bytes, SHA-256 `7816741a5d3e3f0e7b59efd5f7f3dc71ea27f401ae6c0833337af13c44218695`, with 57 skill entry points and 23 routes. Exact-head independent review and green explicit Ubuntu 24.04/26.04 CI remain required before merge. Consult PR #16 and its final main workflow for those results. Native installation, actual model execution, Java/TLC checking and PNG rendering/inspection were not run; full host qualification remains incomplete. GitHub release publication is separate from marketplace approval.

@@ -1,38 +1,19 @@
 {
-  "package_version": "0.1.9",
+  "package_version": "0.1.10",
   "upstream_commit": "eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10",
   "upstream_tree": "d08bf3a76c8f3bdaeb9af65c98344c85a304fb63",
   "upstream_version": "0.15.30",
   "latest_checked_commit": "eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10",
   "checked_at": "2026-10-22",
-  "adaptation_status": "pending",
+  "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
-  "pending_files": [
-    ".cursor-plugin/plugin.json",
-    "README.md",
-    "docs/guide/06-verify-and-ship.md",
-    "plugin.json",
-    "skills/poteto-help/SKILL.md",
-    "skills/statechart/SKILL.md",
-    "skills/statechart/scripts/chart-to-tla.mjs",
-    "skills/statechart/scripts/compare-charts.mjs",
-    "skills/statechart/scripts/lib.mjs",
-    "skills/statechart/scripts/model/OutputFolder.cfg",
-    "skills/statechart/scripts/model/OutputFolder.map.mjs",
-    "skills/statechart/scripts/model/OutputFolder.tla",
-    "skills/statechart/scripts/statechart.mjs",
-    "skills/statechart/scripts/test/statechart.test.mjs",
-    "skills/statechart/scripts/test/sync.mmd",
-    "skills/statechart/scripts/test/upload.mmd",
-    "skills/statechart/scripts/tlc-to-chart.mjs",
-    "<subtree tree, including file modes>"
-  ],
+  "pending_files": [],
   "files": [
     {
       "source": ".cursor-plugin/plugin.json",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": ".gitignore",
@@ -50,7 +31,7 @@
       "source": "README.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "agents/comment-sicko.md",
@@ -177,7 +158,7 @@
       "source": "docs/guide/06-verify-and-ship.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "docs/guide/07-overnight.md",
@@ -255,7 +236,7 @@
       "source": "plugin.json",
       "status": "unsupported",
       "reason": "Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/architect/SKILL.md",
@@ -472,7 +453,7 @@
       "status": "adapted",
       "destination": "skills/poteto-help/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "pending"
+      "review": "reviewed"
     },
     {
       "source": "skills/poteto-help/references/prompting.md",
@@ -1036,75 +1017,76 @@
     },
     {
       "source": "skills/statechart/SKILL.md",
-      "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "status": "adapted",
+      "destination": "skills/statechart/SKILL.md",
+      "reason": "Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported.",
+      "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/chart-to-tla.mjs",
       "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/compare-charts.mjs",
       "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/lib.mjs",
       "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/model/OutputFolder.cfg",
       "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/model/OutputFolder.map.mjs",
       "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/model/OutputFolder.tla",
       "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/statechart.mjs",
       "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/test/statechart.test.mjs",
       "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/test/sync.mmd",
       "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/test/upload.mmd",
       "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/tlc-to-chart.mjs",
       "status": "unsupported",
-      "reason": "Unclassified new upstream file; review required.",
-      "review": "pending"
+      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "review": "reviewed"
     },
     {
       "source": "skills/swarm/SKILL.md",
