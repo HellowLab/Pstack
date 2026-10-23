@@ -1,7 +1,7 @@
 # Capability coverage
 
-Upstream 0.15.30 at `eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10`.
-Subtree `d08bf3a76c8f3bdaeb9af65c98344c85a304fb63`. Latest checked commit `eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10` on 2026-10-22.
+Upstream 0.15.30 at `8b3326d99fd4b993cb33a24dad8af03175c642c5`.
+Subtree `ed6351a9f6ec6e18cc2dbf2ba673effa33f3c9fe`. Latest checked commit `8b3326d99fd4b993cb33a24dad8af03175c642c5` on 2026-10-23.
 Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.

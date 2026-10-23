@@ -308,6 +308,31 @@ class PackageTests(unittest.TestCase):
             self.assertIn("role settings allowed by the host contract", playbook)
             self.assertNotIn("with inherited model settings", playbook)
 
+    def test_upstream_summary_uses_raw_outcome_without_hiding_failure(self):
+        workflow = yaml.safe_load((ROOT / ".github/workflows/upstream.yml").read_text())
+        steps = workflow["jobs"]["check"]["steps"]
+        summary = next(s for s in steps if s.get("name") == "Report raw candidate validation outcome")
+        self.assertEqual(summary["env"]["VALIDATION_OUTCOME"], "${{ steps.validation.outcome }}")
+        self.assertIn("always()", summary["if"])
+        gate = next(s for s in steps if s.get("name") == "Keep pending adaptation visibly failing")
+        self.assertIn("steps.validation.outcome == 'failure'", gate["if"])
+        with tempfile.TemporaryDirectory() as directory:
+            for outcome in ("success", "failure", "skipped", "cancelled"):
+                with self.subTest(outcome=outcome):
+                    path = Path(directory) / outcome
+                    subprocess.run(["bash", "-e", "-c", summary["run"]], check=True,
+                                   env={"VALIDATION_OUTCOME": outcome, "GITHUB_STEP_SUMMARY": str(path)})
+                    text = path.read_text()
+                    if outcome == "success":
+                        self.assertIn("repository validation passed", text)
+                        self.assertIn("does not authorize release", text)
+                    else:
+                        self.assertIn(f"raw outcome: {outcome}", text)
+                        self.assertIn("NOT release-qualified", text)
+                        self.assertNotIn("validation passed", text)
+            result = subprocess.run(["bash", "-e", "-c", gate["run"]], capture_output=True)
+            self.assertEqual(result.returncode, 1)
+
     def test_ci_uses_scoped_permissions_and_no_publication(self):
         for path in (ROOT / ".github/workflows").glob("*.yml"):
             workflow = yaml.safe_load(path.read_text())

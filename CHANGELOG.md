@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.11] - 2026-10-23
+
+- Review all five changed sources in the latest upstream Pstack 0.15.30 revision without importing its unsupported runtime or test harness.
+- Strengthen statechart review with documented baseline configurations, shared-variable labels, per-condition source citations and user-visible rule grounding.
+- Require real-entry-point replay evidence; separate execution from code reading and disclose copied-code provenance and omissions. Distinguish known baseline issues, unchecked rules, temporal failures and incomplete checker results from confirmed fixes.
+- Report raw candidate validation outcomes explicitly in scheduled-run summaries, retaining draft creation and the final failure gate.
+- Preserve 57 skill entry points, 23 routes, historical release archives, attribution, host guards and immutable/stale-run publication safeguards.
+
+Native installation, actual model execution, TLC checking and PNG rendering were not run. GitHub distribution is separate from plugin marketplace approval; full host/model qualification remains incomplete.
+
 ## [0.1.10] - 2026-10-22
 
 - Review all 17 upstream Pstack 0.15.30 source changes and subtree identity, preserving attribution and unsupported-host boundaries.
