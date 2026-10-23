@@ -1,13 +1,20 @@
 {
   "package_version": "0.1.10",
-  "upstream_commit": "eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10",
-  "upstream_tree": "d08bf3a76c8f3bdaeb9af65c98344c85a304fb63",
+  "upstream_commit": "8b3326d99fd4b993cb33a24dad8af03175c642c5",
+  "upstream_tree": "ed6351a9f6ec6e18cc2dbf2ba673effa33f3c9fe",
   "upstream_version": "0.15.30",
-  "latest_checked_commit": "eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10",
-  "checked_at": "2026-10-22",
-  "adaptation_status": "reviewed",
+  "latest_checked_commit": "8b3326d99fd4b993cb33a24dad8af03175c642c5",
+  "checked_at": "2026-10-23",
+  "adaptation_status": "pending",
   "host_validation": "not-qualified",
-  "pending_files": [],
+  "pending_files": [
+    "skills/statechart/SKILL.md",
+    "skills/statechart/scripts/lib.mjs",
+    "skills/statechart/scripts/statechart.mjs",
+    "skills/statechart/scripts/test/statechart.test.mjs",
+    "skills/statechart/scripts/tlc-to-chart.mjs",
+    "<subtree tree, including file modes>"
+  ],
   "files": [
     {
       "source": ".cursor-plugin/plugin.json",
@@ -1020,7 +1027,7 @@
       "status": "adapted",
       "destination": "skills/statechart/SKILL.md",
       "reason": "Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/chart-to-tla.mjs",
@@ -1038,7 +1045,7 @@
       "source": "skills/statechart/scripts/lib.mjs",
       "status": "unsupported",
       "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/model/OutputFolder.cfg",
@@ -1062,13 +1069,13 @@
       "source": "skills/statechart/scripts/statechart.mjs",
       "status": "unsupported",
       "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/test/statechart.test.mjs",
       "status": "unsupported",
       "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/test/sync.mmd",
@@ -1086,7 +1093,7 @@
       "source": "skills/statechart/scripts/tlc-to-chart.mjs",
       "status": "unsupported",
       "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/swarm/SKILL.md",
