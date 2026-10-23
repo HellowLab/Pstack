@@ -31,6 +31,16 @@ jobs:
         run: |
           python -m unittest discover -s tests -v
           python scripts/build.py --check
+      - name: Report raw candidate validation outcome
+        if: always() && steps.sync.outputs.changed == 'true'
+        env:
+          VALIDATION_OUTCOME: ${{ steps.validation.outcome }}
+        run: |
+          case "$VALIDATION_OUTCOME" in
+            success) message='Candidate repository validation passed. This alone does not authorize release or establish host/model qualification.' ;;
+            *) message="Candidate validation did not pass (raw outcome: $VALIDATION_OUTCOME). This preview is NOT release-qualified. Inspect the test log; later commands may have been skipped. The continued step conclusion is not a passing test result." ;;
+          esac
+          printf '%s\n' "$message" >> "$GITHUB_STEP_SUMMARY"
       - name: Open or update the maintenance draft
         if: steps.sync.outputs.changed == 'true'
         env:
