@@ -1,19 +1,68 @@
 {
   "package_version": "0.1.11",
-  "upstream_commit": "8b3326d99fd4b993cb33a24dad8af03175c642c5",
-  "upstream_tree": "ed6351a9f6ec6e18cc2dbf2ba673effa33f3c9fe",
-  "upstream_version": "0.15.30",
-  "latest_checked_commit": "8b3326d99fd4b993cb33a24dad8af03175c642c5",
-  "checked_at": "2026-10-23",
-  "adaptation_status": "reviewed",
+  "upstream_commit": "9580c23696ac8d7abed0c166f2f9918800afb819",
+  "upstream_tree": "880564357e051d7c7802da1cb5d8df1d0b008299",
+  "upstream_version": "0.15.32",
+  "latest_checked_commit": "9580c23696ac8d7abed0c166f2f9918800afb819",
+  "checked_at": "2026-10-24",
+  "adaptation_status": "pending",
   "host_validation": "not-qualified",
-  "pending_files": [],
+  "pending_files": [
+    ".cursor-plugin/plugin.json",
+    "README.md",
+    "docs/guide/10-recipes-and-pitfalls.md",
+    "plugin.json",
+    "skills/create-formal-verification-skill/SKILL.md",
+    "skills/ketchup-video/SKILL.md",
+    "skills/poteto-help/SKILL.md",
+    "skills/poteto-mode/scripts/check-plan.mjs",
+    "skills/poteto-mode/scripts/check-plan.test.ts",
+    "skills/poteto-mode/scripts/orch/orch.test.ts",
+    "skills/poteto-mode/scripts/orch/store.ts",
+    "skills/poteto-mode/scripts/watch-pr/github.test.ts",
+    "skills/poteto-mode/scripts/watch-pr/github.ts",
+    "skills/poteto-mode/scripts/watch-pr/policy.test.ts",
+    "skills/poteto-mode/scripts/watch-pr/policy.ts",
+    "skills/poteto-mode/scripts/watch-pr/types.ts",
+    "skills/poteto-mode/scripts/worktree-audit.sh",
+    "skills/reflect/SKILL.md",
+    "skills/statechart/SKILL.md",
+    "skills/statechart/scripts/bug-states.mjs",
+    "skills/statechart/scripts/chart-edges.mjs",
+    "skills/statechart/scripts/chart-parts.mjs",
+    "skills/statechart/scripts/chart-to-tla.mjs",
+    "skills/statechart/scripts/compare-charts.mjs",
+    "skills/statechart/scripts/lib.mjs",
+    "skills/statechart/scripts/map-view.mjs",
+    "skills/statechart/scripts/model/OutputFolder.cfg",
+    "skills/statechart/scripts/model/OutputFolder.map.mjs",
+    "skills/statechart/scripts/model/OutputFolder.tla",
+    "skills/statechart/scripts/property-loop.mjs",
+    "skills/statechart/scripts/read-check.mjs",
+    "skills/statechart/scripts/regions-chart.mjs",
+    "skills/statechart/scripts/render.mjs",
+    "skills/statechart/scripts/rule-book.mjs",
+    "skills/statechart/scripts/second-replay.mjs",
+    "skills/statechart/scripts/snapshot.mjs",
+    "skills/statechart/scripts/spec-text.mjs",
+    "skills/statechart/scripts/statechart-help.mjs",
+    "skills/statechart/scripts/statechart.mjs",
+    "skills/statechart/scripts/test/band.mmd",
+    "skills/statechart/scripts/test/regions.mmd",
+    "skills/statechart/scripts/test/statechart.test.mjs",
+    "skills/statechart/scripts/tlc-to-chart-args.mjs",
+    "skills/statechart/scripts/tlc-to-chart.mjs",
+    "skills/statechart/scripts/tlc-tools.mjs",
+    "skills/statechart/scripts/ways-in.mjs",
+    "skills/swarm/SKILL.md",
+    "<subtree tree, including file modes>"
+  ],
   "files": [
     {
       "source": ".cursor-plugin/plugin.json",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": ".gitignore",
@@ -31,7 +80,7 @@
       "source": "README.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "agents/comment-sicko.md",
@@ -182,7 +231,7 @@
       "source": "docs/guide/10-recipes-and-pitfalls.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "docs/guide/README.md",
@@ -236,7 +285,7 @@
       "source": "plugin.json",
       "status": "unsupported",
       "reason": "Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/architect/SKILL.md",
@@ -313,7 +362,7 @@
       "status": "adapted",
       "destination": "skills/create-formal-verification-skill/SKILL.md",
       "reason": "Portable formal-verification workflow with explicit tool, scope, scratch-isolation, and host registration limits.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/create-verification-skill/SKILL.md",
@@ -414,6 +463,12 @@
       "review": "reviewed"
     },
     {
+      "source": "skills/ketchup-video/SKILL.md",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
       "source": "skills/ketchup/SKILL.md",
       "status": "adapted",
       "destination": "skills/ketchup/SKILL.md",
@@ -453,7 +508,7 @@
       "status": "adapted",
       "destination": "skills/poteto-help/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-help/references/prompting.md",
@@ -661,19 +716,19 @@
       "status": "adapted",
       "destination": "skills/poteto-mode/references/plan-validation.md",
       "reason": "Preserve structural checks as an explicit review contract; no Node helper, vendor-model assertion, scheduler, or project-trunk plugin path is assumed.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-mode/scripts/check-plan.test.ts",
       "status": "unsupported",
       "reason": "Source-only Node helper tests. The portable plan-validation contract carries supported semantics; no vendored helper is executed or packaged.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-mode/scripts/orch/orch.test.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-mode/scripts/orch/orch.ts",
@@ -685,7 +740,7 @@
       "source": "skills/poteto-mode/scripts/orch/store.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-mode/scripts/package.json",
@@ -715,25 +770,25 @@
       "source": "skills/poteto-mode/scripts/watch-pr/github.test.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-mode/scripts/watch-pr/github.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-mode/scripts/watch-pr/policy.test.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-mode/scripts/watch-pr/policy.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-mode/scripts/watch-pr/render.ts",
@@ -757,7 +812,7 @@
       "source": "skills/poteto-mode/scripts/watch-pr/types.ts",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-mode/scripts/watch-pr/watch-pr",
@@ -769,7 +824,7 @@
       "source": "skills/poteto-mode/scripts/worktree-audit.sh",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/principle-attack-the-premise/SKILL.md",
@@ -951,7 +1006,7 @@
       "status": "adapted",
       "destination": "skills/reflect/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/reflect/references/divergent-reviewer.md",
@@ -1020,55 +1075,127 @@
       "status": "adapted",
       "destination": "skills/statechart/SKILL.md",
       "reason": "Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported.",
-      "review": "reviewed"
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/bug-states.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/chart-edges.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/chart-parts.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/chart-to-tla.mjs",
       "status": "unsupported",
       "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/compare-charts.mjs",
       "status": "unsupported",
       "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/lib.mjs",
       "status": "unsupported",
       "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
-      "source": "skills/statechart/scripts/model/OutputFolder.cfg",
+      "source": "skills/statechart/scripts/map-view.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
     },
     {
-      "source": "skills/statechart/scripts/model/OutputFolder.map.mjs",
+      "source": "skills/statechart/scripts/property-loop.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
     },
     {
-      "source": "skills/statechart/scripts/model/OutputFolder.tla",
+      "source": "skills/statechart/scripts/read-check.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/regions-chart.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/render.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/rule-book.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/second-replay.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/snapshot.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/spec-text.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/statechart-help.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/statechart.mjs",
       "status": "unsupported",
       "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/test/band.mmd",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/test/regions.mmd",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/test/statechart.test.mjs",
       "status": "unsupported",
       "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/test/sync.mmd",
@@ -1083,17 +1210,35 @@
       "review": "reviewed"
     },
     {
+      "source": "skills/statechart/scripts/tlc-to-chart-args.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
       "source": "skills/statechart/scripts/tlc-to-chart.mjs",
       "status": "unsupported",
       "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
-      "review": "reviewed"
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/tlc-tools.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/ways-in.mjs",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
     },
     {
       "source": "skills/swarm/SKILL.md",
       "status": "adapted",
       "destination": "skills/swarm/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/tdd/SKILL.md",
