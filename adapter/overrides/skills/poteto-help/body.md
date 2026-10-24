@@ -75,7 +75,8 @@ The default answer is `/poteto-mode`, which runs most of the others when its ste
 | Bring a verification skill and its feature map back in line with the app | [`/maintain-verification-skill`](../maintain-verification-skill/SKILL.md) |
 | Formally verify a race, invariant, or other property that tests rarely reach | [`/create-formal-verification-skill`](../create-formal-verification-skill/SKILL.md) |
 | Bring formal verification back in line with changed code and distinguish drift from bugs | [`/maintain-formal-verification-skill`](../maintain-formal-verification-skill/SKILL.md) |
-| Review user-visible behavior as a statechart or model sketch, with explicit tool and verification limits | [`/statechart`](../statechart/SKILL.md) |
+| Catch up with a silent slide video when rendering and frame inspection are available, plus waiting decisions | [`/ketchup-video`](../ketchup-video/SKILL.md) |
+| Review product, protocol, service or design behavior as a statechart or model sketch, with explicit tool and verification limits | [`/statechart`](../statechart/SKILL.md) |
 | Vet a performance number before reporting or acting on it | [`/benchmark-checklist`](../benchmark-checklist/SKILL.md) |
 | Run a large or cross-cutting change, or one to review after stepping away | [`/figure-it-out`](../figure-it-out/SKILL.md) |
 | Keep a decision log during a run, and review it afterward | [`/show-me-your-work`](../show-me-your-work/SKILL.md) |

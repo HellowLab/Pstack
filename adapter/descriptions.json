@@ -19,5 +19,6 @@
   "why": "Investigate why code or a design exists using available evidence. Use for why does X work this way, design rationale, regressions, or postmortems.",
   "principle-guard-the-context-window": "Manage large context and outputs without losing evidence. Apply when context is filling up.",
   "principle-never-block-on-the-human": "Proceed with authorized reversible work while respecting scope and approval boundaries. Apply when considering an unnecessary permission question.",
-  "statechart": "Review user-visible behavior as Mermaid statecharts or TLA+ sketches using verified available tools. Disclose missing model checks, replay and rendering; bundled upstream generators are unsupported. Use for /statechart or show the PM the bug."
+  "statechart": "Review product, protocol, service or design behavior as Mermaid statecharts or TLA+ sketches using verified available tools. Disclose missing checks, replay and rendering; bundled upstream generators are unsupported. Use for /statechart.",
+  "ketchup-video": "Catch up on this chat with a silent slide video only when rendering and inspection are available; otherwise report the gap and waiting decisions. Use for /ketchup-video."
 }

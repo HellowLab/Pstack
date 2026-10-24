@@ -24,3 +24,5 @@ Babysitting starts when the user asks for it, which is normally once a phase or 
 **Reply:** the mode, the frontier and its active-forge state, a table of PR, current head SHA, observed forge state, and blockers from the actual tool results, what you fixed versus dismissed with reasons, what is still pending, and what needs the human.
 
 Babysitting does not authorize merge or auto-merge.
+
+Resolve stack edges using repository identity as well as branch names. A fork head with the same name as a local branch is not that branch's parent; do not traverse descendants through that fork head. Missing cross-repository identity is an unknown gate. Prefer a sole open PR over historical closed/merged PRs for the same branch; multiple active matches remain ambiguous and blocked. Preserve historical references when no active PR exists. Cap each poll or retry wait to the remaining authorized deadline; when time expires, report the unresolved state rather than extending the budget.
