@@ -59,7 +59,7 @@ class PackageTests(unittest.TestCase):
 
     def test_all_registered_skills_and_invocation_semantics(self):
         upstream = sorted((ROOT / "upstream/pstack/skills").glob("*/SKILL.md"))
-        self.assertEqual(len(upstream), 57)
+        self.assertEqual(len(upstream), 58)
         self.assertEqual({p.parent.name for p in upstream}, set(self.rules["skills"]))
         for path in upstream:
             source = yaml.safe_load(path.read_text().split("---", 2)[1])
@@ -276,13 +276,22 @@ class PackageTests(unittest.TestCase):
         self.assertIn("bundled upstream generators are unsupported", metadata["description"])
         self.assertIn("../statechart/SKILL.md", self.files["skills/poteto-help/SKILL.md"].decode())
         support = [p for p in self.rules["files"] if p.startswith("skills/statechart/scripts/")]
-        self.assertEqual(len(support), 11)
+        self.assertEqual(len(support), 26)
         for path in support:
             self.assertEqual(self.rules["files"][path]["status"], "unsupported")
             self.assertNotIn("destination", self.rules["files"][path])
         self.assertFalse(any(p.startswith("skills/statechart/scripts/") for p in self.files))
         self.assertIn("Mapping modules are executable code", entry)
         self.assertIn("Do not run helpers from the vendored snapshot", entry)
+
+    def test_ketchup_video_keeps_explicit_invocation_and_no_runtime(self):
+        entry = self.files["skills/ketchup-video/SKILL.md"].decode()
+        metadata = yaml.safe_load(entry.split("---", 2)[1])
+        self.assertTrue(metadata["disable-model-invocation"])
+        self.assertIn("../ketchup-video/SKILL.md", self.files["skills/poteto-help/SKILL.md"].decode())
+        self.assertEqual({p for p in self.files if p.startswith("skills/ketchup-video/")},
+                         {"skills/ketchup-video/SKILL.md", "skills/ketchup-video/references/host-contract.md"})
+        self.assertIn("not a bundled video runtime", entry)
 
     def test_sharpen_and_help_agree_on_rewrite_only_semantics(self):
         sharpen = self.files["skills/sharpen/SKILL.md"].decode()

@@ -1,10 +1,10 @@
 {
-  "package_version": "0.1.11",
-  "upstream_commit": "8b3326d99fd4b993cb33a24dad8af03175c642c5",
-  "upstream_tree": "ed6351a9f6ec6e18cc2dbf2ba673effa33f3c9fe",
-  "upstream_version": "0.15.30",
-  "latest_checked_commit": "8b3326d99fd4b993cb33a24dad8af03175c642c5",
-  "checked_at": "2026-10-23",
+  "package_version": "0.1.12",
+  "upstream_commit": "9580c23696ac8d7abed0c166f2f9918800afb819",
+  "upstream_tree": "880564357e051d7c7802da1cb5d8df1d0b008299",
+  "upstream_version": "0.15.32",
+  "latest_checked_commit": "9580c23696ac8d7abed0c166f2f9918800afb819",
+  "checked_at": "2026-10-24",
   "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
   "pending_files": [],
@@ -411,6 +411,13 @@
       "status": "unchanged",
       "destination": "skills/interrogate/references/rubric.md",
       "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/ketchup-video/SKILL.md",
+      "status": "adapted",
+      "destination": "skills/ketchup-video/SKILL.md",
+      "reason": "Explicit recap with available authorized video tools, outside-repo scratch only, actual artifact/frame evidence and honest fallback to waiting decisions.",
       "review": "reviewed"
     },
     {
@@ -1023,69 +1030,159 @@
       "review": "reviewed"
     },
     {
+      "source": "skills/statechart/scripts/bug-states.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/chart-edges.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/chart-parts.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
       "source": "skills/statechart/scripts/chart-to-tla.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
       "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/compare-charts.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
       "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/lib.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
       "review": "reviewed"
     },
     {
-      "source": "skills/statechart/scripts/model/OutputFolder.cfg",
+      "source": "skills/statechart/scripts/map-view.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
       "review": "reviewed"
     },
     {
-      "source": "skills/statechart/scripts/model/OutputFolder.map.mjs",
+      "source": "skills/statechart/scripts/property-loop.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
       "review": "reviewed"
     },
     {
-      "source": "skills/statechart/scripts/model/OutputFolder.tla",
+      "source": "skills/statechart/scripts/read-check.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/regions-chart.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/render.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/rule-book.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/second-replay.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/snapshot.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/spec-text.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/statechart-help.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
       "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/statechart.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/test/band.mmd",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/test/regions.mmd",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
       "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/test/statechart.test.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
       "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/test/sync.mmd",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
       "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/test/upload.mmd",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/tlc-to-chart-args.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
       "review": "reviewed"
     },
     {
       "source": "skills/statechart/scripts/tlc-to-chart.mjs",
       "status": "unsupported",
-      "reason": "Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification.",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/tlc-tools.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/ways-in.mjs",
+      "status": "unsupported",
+      "reason": "Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported.",
       "review": "reviewed"
     },
     {

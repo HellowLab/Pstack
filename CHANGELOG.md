@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.12] - 2026-10-24
+
+- Review all 47 changed, added or removed upstream sources through Pstack 0.15.32, retaining attribution and source-only runtime exclusions.
+- Add explicit ketchup-video guidance with actual rendering/frame-inspection requirements, authorized outside-repository scratch output and an honest fallback to waiting decisions.
+- Extend statechart guidance to services, protocols and designs; distinguish code replay from design evidence, intentional goal witnesses, reduced-graph omissions, mixed results and temporal-check limits. Keep all 26 upstream statechart support files excluded.
+- Protect installed plugin/cache skills during reflection; show an approved local-copy destination before edits and keep reflection from implicitly pushing or opening PRs.
+- Route TLA+ verification results to statechart by name without copying unstable commands. Improve multi-backtick plan review, repository-qualified stack resolution and deadline-bounded polling.
+- Preserve historical releases, immutable tags and guarded publication. The package represents 58 skill entry points and 23 routes.
+
+Native installation, actual model execution, video rendering, TLC checking and PNG inspection were not run. GitHub distribution is separate from marketplace approval; full host/model qualification remains incomplete.
+
 ## [0.1.11] - 2026-10-23
 
 - Review all five changed sources in the latest upstream Pstack 0.15.30 revision without importing its unsupported runtime or test harness.

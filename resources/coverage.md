@@ -1,7 +1,7 @@
 # Capability coverage
 
-Upstream 0.15.30 at `8b3326d99fd4b993cb33a24dad8af03175c642c5`.
-Subtree `ed6351a9f6ec6e18cc2dbf2ba673effa33f3c9fe`. Latest checked commit `8b3326d99fd4b993cb33a24dad8af03175c642c5` on 2026-10-23.
+Upstream 0.15.32 at `9580c23696ac8d7abed0c166f2f9918800afb819`.
+Subtree `880564357e051d7c7802da1cb5d8df1d0b008299`. Latest checked commit `9580c23696ac8d7abed0c166f2f9918800afb819` on 2026-10-24.
 Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
@@ -73,6 +73,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/interrogate/references/lead-judgment.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/interrogate/references/reviewer-prompt.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/interrogate/references/rubric.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
+| `skills/ketchup-video/SKILL.md` | adapted | Explicit recap with available authorized video tools, outside-repo scratch only, actual artifact/frame evidence and honest fallback to waiting decisions. | reviewed |
 | `skills/ketchup/SKILL.md` | adapted | Explicit-only portable workflow with host capability and permission guards. | reviewed |
 | `skills/maintain-formal-verification-skill/SKILL.md` | adapted | Formal verification drift review with isolated negative controls, dirty-worktree coverage, evidence-based outcomes and guarded sync advancement. | reviewed |
 | `skills/maintain-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
@@ -163,17 +164,32 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/show-me-your-work/references/decision-log-template.tsv` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/show-me-your-work/scripts/log.sh` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/statechart/SKILL.md` | adapted | Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported. | reviewed |
-| `skills/statechart/scripts/chart-to-tla.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
-| `skills/statechart/scripts/compare-charts.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
-| `skills/statechart/scripts/lib.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
-| `skills/statechart/scripts/model/OutputFolder.cfg` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
-| `skills/statechart/scripts/model/OutputFolder.map.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
-| `skills/statechart/scripts/model/OutputFolder.tla` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
-| `skills/statechart/scripts/statechart.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
-| `skills/statechart/scripts/test/statechart.test.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
-| `skills/statechart/scripts/test/sync.mmd` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
-| `skills/statechart/scripts/test/upload.mmd` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
-| `skills/statechart/scripts/tlc-to-chart.mjs` | unsupported | Source-only upstream Node/TLC generator, model or test fixture; not packaged or executed. Existing authorized project tools require separate verification. | reviewed |
+| `skills/statechart/scripts/bug-states.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/chart-edges.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/chart-parts.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/chart-to-tla.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/compare-charts.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/lib.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/map-view.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/property-loop.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/read-check.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/regions-chart.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/render.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/rule-book.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/second-replay.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/snapshot.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/spec-text.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/statechart-help.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/statechart.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/test/band.mmd` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/test/regions.mmd` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/test/statechart.test.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/test/sync.mmd` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/test/upload.mmd` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/tlc-to-chart-args.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/tlc-to-chart.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/tlc-tools.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
+| `skills/statechart/scripts/ways-in.mjs` | unsupported | Source-only upstream Node/TLC generator or test fixture; not packaged or executed. No auto-install, renderer, snapshot or publication guarantees imported. | reviewed |
 | `skills/swarm/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/tdd/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/teach/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |

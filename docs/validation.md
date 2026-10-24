@@ -265,3 +265,11 @@ All five changed sources in the same-version upstream 0.15.30 revision and the s
 All 69 repository tests and the reproducible build check passed locally. The new automation test executes the summary shell for success, failure, skipped and cancelled outcomes and verifies that the retained failure gate exits nonzero. Static skill contracts do not claim actual model behavior. Disposable extraction matched all 180 rendered files. All 22 historical ZIP/checksum files match tag v0.1.10 byte-for-byte.
 
 The 0.1.11 ZIP is 1,480,353 bytes, SHA-256 `ba9ba533958a8efa4609300c5e84e614cd63e51088152470a701f8c6f8103c68`, with 57 skill entry points and 23 routes. Exact-head independent review and green Ubuntu 24.04/26.04 CI remain required before merge; consult PR #17 and its final main workflow for their results. Native installation, actual model behavior, TLC execution and PNG rendering/inspection were not run. Full host qualification remains incomplete; GitHub publication is separate from marketplace approval.
+
+## October 24 candidate 0.1.12
+
+All 47 upstream changes and subtree identity were statically reviewed. The guarded adaptation adds video recap instructions, broader statechart semantics, approved-copy reflection safeguards, named TLA result handoff and stack/deadline/plan-review corrections. All 26 statechart support files remain excluded; no vendored helpers ran.
+
+All 70 repository tests and reproducible build checks passed locally. Disposable extraction matched all 182 rendered files. All 24 historical ZIP/checksum files match tag v0.1.11 byte-for-byte. Static cases exercise capability fallbacks, design/goal evidence, cache protection, command-free skill references, fork identity, bounded polling and multi-backtick review. They are not actual model-behavior tests.
+
+ZIP size: 1,499,730 bytes. SHA-256: `8ca310c8338b75b08bb29af6b40425be1c09dfdfcb4fb3b0d868a4adf9f970a7`. The package retains 23 routes and now represents 58 skill entry points. Independent exact-head review and green Ubuntu 24.04/26.04 CI are required before merge; PR #18 and the final main workflow record actual results. Native install, model execution, video rendering/frame inspection, TLC and PNG checks were not run. Full host qualification remains incomplete; GitHub distribution is separate from marketplace approval.

@@ -50,6 +50,8 @@ Before applying any Accepted edit, present the synthesizer's full Accepted/Rejec
 
 Keep Backlog items local unless the user authorized filing them to the relevant tracker. Accepted standing-skill edits require explicit approval.
 
+Never edit installed plugin files or a plugin cache. Before approval, show the exact host-supported project or personal skill destination for a local copy; do not assume Cursor paths or cloud resources are filesystem paths. After approval, copy the skill and its needed resources there and edit only that copy. If copying or registration is unavailable, provide a draft and report the gap. Reflection itself never opens a PR or pushes; those require a separate authorized workflow.
+
 For each approved Accepted item, follow the Routing field exactly:
 
 - Trivial existing-skill edit (a one-line bullet, a tightened sentence, a stale fact corrected): parent does directly.
