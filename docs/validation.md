@@ -279,3 +279,27 @@ ZIP size: 1,499,730 bytes. SHA-256: `8ca310c8338b75b08bb29af6b40425be1c09dfdfcb4
 The October 27 adaptation reviews all 439 upstream changes through 0.15.34, including the TypeScript statechart replacement and all 33 recorded test-corpus families. All 405 current runtime/test support files remain source-only. The portable rendering reference is adapted without installing Pele. Independent source reviews covered all 52 changed non-test statechart items and all 381 changed tests/fixtures; the remaining six manifest/documentation changes were reviewed directly.
 
 Repository tests cover package integrity, source disposition, reproducible output, historical artifact retention, maintenance ownership and guarded release behavior. Added workflow scenarios are static instruction-contract assertions, not actual model evaluations. Vendored tests/helpers, native installation, model behavior, TLC checking and image rendering/inspection were not run. Prior host evidence remains specific to its recorded version.
+
+### Isolated native CLI check for 0.1.13
+
+On October 27, 2026, an isolated Linux x86_64 executor with kernel 6.18.55 and glibc 2.41 ran Codex CLI `0.159.0-alpha.3`. The test used a separate initially empty `HOME`, a pre-created isolated `CODEX_HOME`, and a clean working directory. No credentials were copied and no account plugin was created or edited. The existing executor configuration and plugin files were fingerprinted before testing and compared afterward.
+
+The tested release was `v0.1.13`, tag commit `afaa0e172dd2c712b8197683b96b414e8a446f52`. Fresh HTTPS downloads matched the release ZIP checksum `7cfc2cfe88c5067996f287950627675483a9aca0f7e17a7b6a18916ce7d9b122`, size 1,735,101 bytes. An isolated checkout of that tag ran `scripts/stage_local.py` to prepare the local marketplace. Native command help was checked before registration and installation.
+
+| Check | Measured result |
+|---|---|
+| Initial native plugin and marketplace lists | Both empty |
+| Native marketplace registration | `codex plugin marketplace add` succeeded |
+| Native plugin installation | `codex plugin add pstack@pstack-preview` reported version 0.1.13 |
+| Installed state | Native list reported installed and enabled |
+| Installed cache | Exactly 183 files, each byte-identical to the qualified ZIP; no extra source-only runtime files |
+| Fresh-process discovery | App-server `skills/list` reported all 58 namespaced Pstack skills from that isolated cache, enabled, with no discovery errors |
+| Resources | Relative references in all discovered skill entry points resolved |
+| Model smoke | Not run: isolated `codex login status` returned `Not logged in`; no authentication or permission changes attempted |
+| Synthetic fixture | Unchanged; no model invocation occurred |
+| Native cleanup | Plugin remove and marketplace remove succeeded; final native lists were empty and the test cache was gone |
+| Existing state | All 161 baseline configuration/plugin files unchanged; owned temporary test tree removed |
+
+The fresh process also exposed six built-in CLI skills; these were counted separately and were not mistaken for Pstack skills. Discovery is not an executed skill invocation. No `poteto-help` or `how` model result, macOS/Windows installation, account synchronization, or full compatibility claim follows from this test. The test did not access a user's other computer or real installed Pstack. The README and installation guide retain those limits.
+
+The Git-marketplace route remains unqualified. This repository has no release-only catalog; its root includes source material excluded from the ZIP. Adding a safe route requires release-only contents and pinning, guarded catalog publication, and native installation/upgrade verification. The current native check qualifies the local ZIP/staging path only.
