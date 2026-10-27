@@ -523,5 +523,16 @@
       "Group colors must not conceal rule marks"
     ],
     "expected": "Disclose missing requested renderer and inspection; provide source and preserve named rule marks."
+  },
+  {
+    "id": "statechart-aggregate-mark-certainty",
+    "prompt": "This red mark names A and B. A always fails and B only sometimes fails. Say both always fail.",
+    "entry": "skills/statechart/SKILL.md",
+    "required_contracts": [
+      "cannot establish per-rule certainty",
+      "always breaks A but sometimes breaks B",
+      "Consult per-rule evidence"
+    ],
+    "expected": "Keep certainty per rule; do not promote an aggregate legend to proof that every named rule always fails."
   }
 ]
