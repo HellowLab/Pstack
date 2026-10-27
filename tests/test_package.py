@@ -276,7 +276,7 @@ class PackageTests(unittest.TestCase):
         self.assertIn("bundled upstream generators are unsupported", metadata["description"])
         self.assertIn("../statechart/SKILL.md", self.files["skills/poteto-help/SKILL.md"].decode())
         support = [p for p in self.rules["files"] if p.startswith("skills/statechart/scripts/")]
-        self.assertEqual(len(support), 26)
+        self.assertEqual(len(support), 405)
         for path in support:
             self.assertEqual(self.rules["files"][path]["status"], "unsupported")
             self.assertNotIn("destination", self.rules["files"][path])

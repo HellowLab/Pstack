@@ -8,7 +8,7 @@ Run the commands in the root README. The suite validates metadata against the sa
 
 Local Git fixtures exercise the actual update implementation. They prove that same-version and mode-only subtree changes are detected, unrelated monorepo changes are ignored, unknown skills are withheld, symlinks are rejected before replacement, and snapshot tampering fails the build. Incompatible metadata preserves the review candidate while removing the current ZIP and checksum. Earlier archive pairs remain unchanged; corruption or an incomplete pair blocks writes. Local bare-remotes exercise branch creation and update, preservation of main, refusal to overwrite human work, policy-error reporting, and recovery after a successful push followed by failed PR creation, with mocked forge responses. Source hashes are never auto-approved. Changed skills and reference resources receive a pending-review placeholder rather than newly imported executable instructions. These are behavioral tests of the build/update code.
 
-`tests/workflow-cases.json` contains fifteen positive, negative, and unavailable-capability scenarios. Automated assertions check that the necessary instruction contracts exist. They do not run a model or prove compliance. The cases are also the manual host evaluation checklist.
+`tests/workflow-cases.json` contains positive, negative, and unavailable-capability scenarios. Automated assertions check that the necessary instruction contracts exist. They do not run a model or prove compliance. The cases are also the manual host evaluation checklist.
 
 ## Host matrix
 
@@ -273,3 +273,9 @@ All 47 upstream changes and subtree identity were statically reviewed. The guard
 All 70 repository tests and reproducible build checks passed locally. Disposable extraction matched all 182 rendered files. All 24 historical ZIP/checksum files match tag v0.1.11 byte-for-byte. Static cases exercise capability fallbacks, design/goal evidence, cache protection, command-free skill references, fork identity, bounded polling and multi-backtick review. They are not actual model-behavior tests.
 
 ZIP size: 1,499,730 bytes. SHA-256: `8ca310c8338b75b08bb29af6b40425be1c09dfdfcb4fb3b0d868a4adf9f970a7`. The package retains 23 routes and now represents 58 skill entry points. Independent exact-head review and green Ubuntu 24.04/26.04 CI are required before merge; PR #18 and the final main workflow record actual results. Native install, model execution, video rendering/frame inspection, TLC and PNG checks were not run. Full host qualification remains incomplete; GitHub distribution is separate from marketplace approval.
+
+### 0.1.13 repository qualification
+
+The October 27 adaptation reviews all 439 upstream changes through 0.15.34, including the TypeScript statechart replacement and all 33 recorded test-corpus families. All 405 current runtime/test support files remain source-only. The portable rendering reference is adapted without installing Pele. Independent source reviews covered all 52 changed non-test statechart items and all 381 changed tests/fixtures; the remaining six manifest/documentation changes were reviewed directly.
+
+Repository tests cover package integrity, source disposition, reproducible output, historical artifact retention, maintenance ownership and guarded release behavior. Added workflow scenarios are static instruction-contract assertions, not actual model evaluations. Vendored tests/helpers, native installation, model behavior, TLC checking and image rendering/inspection were not run. Prior host evidence remains specific to its recorded version.

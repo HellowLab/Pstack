@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.13] - 2026-10-27
+
+- Review all 439 changed, added or removed upstream sources through Pstack 0.15.34, preserving attribution and excluding all 405 statechart runtime/test support files.
+- Adapt statechart guidance to the replacement pipeline: distinguish definite and possible rule violations, preserve meaningful paths and loop exits, and avoid charts that invent parallel-region behavior.
+- Explain reduced-model assumptions, constraint boundaries, partial or unchecked rules, drawing budgets and checker limits without promising bundled execution or exhaustive correctness.
+- Retain code-grounding, replay and manual design review safeguards while explicitly retiring claims about removed upstream command modes.
+- Add guarded rendering guidance with actual output/error evidence, no automatic Pele installation and protection for prior or concurrently created output files.
+
+Native installation, actual model execution, TLC checking and image rendering/inspection were not run. GitHub distribution is separate from marketplace approval; full host/model qualification remains incomplete.
+
 ## [0.1.12] - 2026-10-24
 
 - Review all 47 changed, added or removed upstream sources through Pstack 0.15.32, retaining attribution and source-only runtime exclusions.

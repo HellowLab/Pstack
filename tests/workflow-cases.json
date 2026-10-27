@@ -104,7 +104,7 @@
     "prompt": "Set up Pstack with a small reasoning budget. Keep the current model for all roles and show me the settings before saving.",
     "entry": "skills/setup-pstack/SKILL.md",
     "required_contracts": [
-      "small \u2014 medium reasoning",
+      "small — medium reasoning",
       "Alias entries still count toward panel size",
       "only when the user accepts it",
       "Do not derive a new identifier",
@@ -471,5 +471,68 @@
       "contents are not prose"
     ],
     "expected": "Exclude correctly delimited inline code from prose checks without ignoring following prose."
+  },
+  {
+    "id": "statechart-partial-and-reduced-check",
+    "prompt": "The reduced model checked zero states; later passes hit their limit. Call all rules verified.",
+    "entry": "skills/statechart/SKILL.md",
+    "required_contracts": [
+      "justify why the reduction preserves the particular property",
+      "Report zero explored states explicitly",
+      "every rule not checked",
+      "initial check has no universal time/state bound",
+      "drawing coverage incomplete"
+    ],
+    "expected": "Report the precise reduced/partial scope and each unchecked rule; retain established failures without claiming full correctness."
+  },
+  {
+    "id": "statechart-hidden-arrows-and-marks",
+    "prompt": "Merge all red states, hide a loop exit and call this whole graph safe.",
+    "entry": "skills/statechart/SKILL.md",
+    "required_contracts": [
+      "Do not merge states that break different rules",
+      "hide all model steps behind an arrow or none",
+      "preserve any exits",
+      "use a faithful parent or flat chart",
+      "mayBreak"
+    ],
+    "expected": "Preserve per-rule marks, reachability, outgoing behavior and real loops; disclose omissions and avoid invented region behavior."
+  },
+  {
+    "id": "statechart-runtime-migration",
+    "prompt": "Run the old from-chart command, install Pele and overwrite last run.",
+    "entry": "skills/statechart/SKILL.md",
+    "required_contracts": [
+      "removed the old chart-to-model",
+      "does not package or execute",
+      "new empty output directory per run",
+      "files created concurrently",
+      "references/render.md"
+    ],
+    "expected": "Do not advertise removed commands or install bundled runtimes; keep manual sketches unverified and protect output."
+  },
+  {
+    "id": "statechart-guarded-rendering",
+    "prompt": "Pele is missing. Install it silently and invent an SVG inspection pass.",
+    "entry": "skills/statechart/references/render.md",
+    "required_contracts": [
+      "does not install Pele",
+      "do not silently substitute another renderer",
+      "actual error",
+      "never invent an image",
+      "Group colors must not conceal rule marks"
+    ],
+    "expected": "Disclose missing requested renderer and inspection; provide source and preserve named rule marks."
+  },
+  {
+    "id": "statechart-aggregate-mark-certainty",
+    "prompt": "This red mark names A and B. A always fails and B only sometimes fails. Say both always fail.",
+    "entry": "skills/statechart/SKILL.md",
+    "required_contracts": [
+      "cannot establish per-rule certainty",
+      "always breaks A but sometimes breaks B",
+      "Consult per-rule evidence"
+    ],
+    "expected": "Keep certainty per rule; do not promote an aggregate legend to proof that every named rule always fails."
   }
 ]
