@@ -2,7 +2,7 @@
 
 Upstream 0.15.34 at `519d36aa98955bf680db01bcde5fdfba686dc901`.
 Subtree `c2b5691947671f644078192b7dab87f19740ecb1`. Latest checked commit `519d36aa98955bf680db01bcde5fdfba686dc901` on 2026-10-27.
-Adaptation status: pending. Host qualification remains incomplete.
+Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
 
@@ -10,10 +10,10 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 
 | Upstream file | Status | Adaptation or limitation | Review |
 |---|---|---|---|
-| `.cursor-plugin/plugin.json` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `.cursor-plugin/plugin.json` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `.gitignore` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `LICENSE` | unchanged | Complete MIT license preserved at repository and package root. | reviewed |
-| `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `agents/comment-sicko.md` | adapted | Complete comment-review role preserved as a prompt resource; no native agent registration. Uncertain constraints remain until resolved rather than being deleted on ambiguity. | reviewed |
 | `agents/poteto-agent.md` | unsupported | Native agent registration unsupported; poteto-mode and no-comments adapt the workflow without a fictitious agent type. | reviewed |
 | `assets/logo.png` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
@@ -34,7 +34,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `docs/guide/03-understand.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/04-design.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/05-build-and-clean.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/guide/06-verify-and-ship.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `docs/guide/06-verify-and-ship.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/07-overnight.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/08-principles.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/09-make-it-yours.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
@@ -47,7 +47,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `docs/guide/images/understanding.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/verification.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/harness/claude-code.md` | unsupported | Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness. | reviewed |
-| `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | pending |
+| `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | reviewed |
 | `skills/architect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/architect/references/design-red-flags.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/architect/references/rationale-template.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
@@ -58,7 +58,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/blast-radius/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/bro/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/correct/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
-| `skills/create-formal-verification-skill/SKILL.md` | adapted | Portable formal-verification workflow with explicit tool, scope, scratch-isolation, and host registration limits. | pending |
+| `skills/create-formal-verification-skill/SKILL.md` | adapted | Portable formal-verification workflow with explicit tool, scope, scratch-isolation, and host registration limits. | reviewed |
 | `skills/create-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/create-verification-skill/references/feature-map-example/README.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/create-verification-skill/references/feature-map-example/create-note.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
@@ -79,7 +79,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/maintain-verification-skill/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/make-bot-ui/SKILL.md` | unsupported | Explanatory entry point only; Grok Bot webhook runtime is not supplied. | reviewed |
 | `skills/no-comments/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/poteto-help/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | pending |
+| `skills/poteto-help/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/poteto-help/references/prompting.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/poteto-help/references/recipes.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/poteto-mode/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
@@ -163,413 +163,413 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/show-me-your-work/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/show-me-your-work/references/decision-log-template.tsv` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/show-me-your-work/scripts/log.sh` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
-| `skills/statechart/SKILL.md` | adapted | Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported. | pending |
-| `skills/statechart/references/render.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/backends/cfg.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/backends/mermaid.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/backends/plain-text.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/backends/report.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/frontends/config.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/frontends/dot.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/frontends/marks.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/frontends/messages.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/frontends/spec.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/frontends/trace.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/frontends/value.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/frontends/verdict.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/frontends/view.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/ir.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/package.json` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/passes/annotate.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/passes/label.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/passes/lift.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/passes/loop-check.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/passes/paths.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/passes/reach.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/passes/region-check.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/passes/regions.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/pipeline.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/run.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/statechart` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/statechart.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/ConfigOracle.java` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/chart.test.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/charts/Braces.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/charts/Escapes.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/charts/Phases.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/cli.test.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/config-fuzz.test.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus.test.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Counter/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Counter/Counter.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Counter/Counter.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Counter/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Counter/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Counter/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Counter/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Counter/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/CounterAction.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/CounterAction.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/verdict-2.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterAction/verdict-3.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterDeadlock/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterDeadlock/CounterDeadlock.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterDeadlock/CounterDeadlock.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterDeadlock/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterDeadlock/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterDeadlock/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterDeadlock/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-2.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterFan/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterFan/CounterFan.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterFan/CounterFan.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterFan/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterFan/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterFan/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterFan/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterFan/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterFan/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterFan/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/ChartRun.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/CounterGuard.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/CounterGuard.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/verdict-2.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterGuard/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPast/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPast/CounterInitPast.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPast/CounterInitPast.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPast/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPast/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPast/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPast/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/CounterInitPastHolds.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/CounterInitPastHolds.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInstance/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInstance/CounterInstance.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInstance/CounterInstance.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInstance/CounterSteps.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInstance/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInstance/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInstance/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInstance/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInstance/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterInstance/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterJump/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterJump/CounterJump.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterJump/CounterJump.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterJump/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterJump/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterJump/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterJump/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterJump/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterJump/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterJump/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterLoop/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterLoop/CounterLoop.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterLoop/CounterLoop.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterLoop/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterLoop/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterLoop/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterLoop/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterLoop/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterLoop/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterOrder/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterOrder/CounterOrder.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterOrder/CounterOrder.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterOrder/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterOrder/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterOrder/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterOrder/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterOrder/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterOrder/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterOrder/verdict-2.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterOrder/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/CounterRules.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/CounterRules.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/Moves.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/verdict-2.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/verdict-3.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/verdict-3.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterRules/verdict-4.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStart/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStart/CounterStart.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStart/CounterStart.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStart/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStart/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStart/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStart/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStart/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStart/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStart/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStop/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStop/CounterStop.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStop/CounterStop.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStop/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStop/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStop/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStop/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterStop/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/CounterTie.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/CounterTie.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/verdict-2.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/verdict-3.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/verdict-3.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTie/verdict-4.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTieInGraph/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTieInGraph/CounterTieInGraph.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTieInGraph/CounterTieInGraph.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTieInGraph/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTieInGraph/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTieInGraph/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTieInGraph/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/CounterView.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/CounterView.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/verdict-2.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/verdict-3.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/verdict-3.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/verdict-4.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/CounterView/view.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/DieHard/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/DieHard/DieHard.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/DieHard/DieHard.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/DieHard/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/DieHard/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/DieHard/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/DieHard/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/DieHard/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/DieHard/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/DieHard/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/FirstRule.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/FirstRule.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/verdict-2.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/verdict-3.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/verdict-3.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/verdict-4.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/FirstRule/verdict-4.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/HiddenClock/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/HiddenClock/HiddenClock.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/HiddenClock/HiddenClock.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/HiddenClock/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/HiddenClock/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/HiddenClock/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/HiddenClock/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/HiddenClock/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/HiddenClock/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Login/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Login/Login.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Login/Login.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Login/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Login/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Login/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Login/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Login/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Login/view.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginGuarded/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginGuarded/LoginGuarded.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginGuarded/LoginGuarded.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginGuarded/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginGuarded/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginGuarded/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginGuarded/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginGuarded/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginGuarded/view.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginParallel/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginParallel/LoginParallel.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginParallel/LoginParallel.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginParallel/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginParallel/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginParallel/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginParallel/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginParallel/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginParallel/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginParallel/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/LoginParallel/view.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayer/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayer/MediaPlayer.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayer/MediaPlayer.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayer/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayer/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayer/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayer/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayer/view.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/MediaPlayerFixed.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/MediaPlayerFixed.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/view.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayer.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayerProps.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayerProps.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-3.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-4.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-4.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-5.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-5.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-6.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/MediaPlayerProps/view.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/PickWorker/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/PickWorker/PickWorker.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/PickWorker/PickWorker.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/PickWorker/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/PickWorker/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/PickWorker/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/PickWorker/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/PickWorker/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Shadow/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Shadow/Shadow.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Shadow/Shadow.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Shadow/ShadowLib.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Shadow/ShadowSub.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Shadow/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Shadow/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Shadow/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Shadow/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/Shadow/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/SpacedNames/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/SpacedNames/SpacedNames.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/SpacedNames/SpacedNames.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/SpacedNames/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/SpacedNames/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/SpacedNames/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/SpacedNames/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/SpacedNames/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/SpacedNames/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/SpacedNames/verdict-2.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/SpacedNames/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhase/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhase/TwoPhase.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhase/TwoPhase.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhase/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhase/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhase/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhase/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhase/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhase/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhase/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhase/view.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/TwoPhaseFixed.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/TwoPhaseFixed.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/view.mjs` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/ChartRun.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/TypeGuard.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/TypeGuard.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/verdict-2.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/TypeGuard/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/UserNoDeadlock/ChartRun.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/UserNoDeadlock/UserNoDeadlock.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/UserNoDeadlock/UserNoDeadlock.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/UserNoDeadlock/chart.mmd` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/UserNoDeadlock/graph.dot` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/UserNoDeadlock/report.md` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/UserNoDeadlock/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-1.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-1.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-2.exit` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-2.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/differential.test.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/grid/Grid.cfg` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/grid/Grid.tla` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/grid/sany.out` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/java.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/labels.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/messages.test.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/pipeline.test.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/plain-tlc.test.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/render.test.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/tlc-out.test.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/test/tlc.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/tsconfig.json` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/worker.ts` | unsupported | Unclassified new upstream file; review required. | pending |
+| `skills/statechart/SKILL.md` | adapted | Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported. | reviewed |
+| `skills/statechart/references/render.md` | adapted | Available-tool rendering with no automatic Pele installation, actual output/error evidence and visible rule marks. | reviewed |
+| `skills/statechart/scripts/backends/cfg.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/backends/mermaid.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/backends/plain-text.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/backends/report.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/frontends/config.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/frontends/dot.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/frontends/marks.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/frontends/messages.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/frontends/spec.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/frontends/trace.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/frontends/value.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/frontends/verdict.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/frontends/view.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/ir.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/package.json` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/passes/annotate.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/passes/label.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/passes/lift.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/passes/loop-check.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/passes/paths.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/passes/reach.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/passes/region-check.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/passes/regions.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/pipeline.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/run.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/statechart` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/statechart.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/ConfigOracle.java` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/chart.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/charts/Braces.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/charts/Escapes.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/charts/Phases.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/cli.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/config-fuzz.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Counter/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Counter/Counter.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Counter/Counter.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Counter/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Counter/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Counter/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Counter/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Counter/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/CounterAction.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/CounterAction.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterAction/verdict-3.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterDeadlock/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterDeadlock/CounterDeadlock.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterDeadlock/CounterDeadlock.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterDeadlock/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterDeadlock/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterDeadlock/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterDeadlock/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterFan/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterFan/CounterFan.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterFan/CounterFan.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterFan/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterFan/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterFan/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterFan/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterFan/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterFan/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterFan/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/ChartRun.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/CounterGuard.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/CounterGuard.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterGuard/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPast/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPast/CounterInitPast.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPast/CounterInitPast.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPast/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPast/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPast/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPast/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/CounterInitPastHolds.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/CounterInitPastHolds.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInitPastHolds/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInstance/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInstance/CounterInstance.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInstance/CounterInstance.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInstance/CounterSteps.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInstance/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInstance/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInstance/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInstance/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInstance/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterInstance/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterJump/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterJump/CounterJump.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterJump/CounterJump.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterJump/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterJump/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterJump/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterJump/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterJump/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterJump/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterJump/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterLoop/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterLoop/CounterLoop.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterLoop/CounterLoop.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterLoop/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterLoop/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterLoop/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterLoop/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterLoop/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterLoop/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterOrder/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterOrder/CounterOrder.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterOrder/CounterOrder.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterOrder/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterOrder/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterOrder/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterOrder/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterOrder/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterOrder/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterOrder/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterOrder/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/CounterRules.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/CounterRules.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/Moves.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/verdict-3.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/verdict-3.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterRules/verdict-4.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStart/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStart/CounterStart.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStart/CounterStart.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStart/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStart/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStart/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStart/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStart/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStart/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStart/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStop/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStop/CounterStop.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStop/CounterStop.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStop/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStop/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStop/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStop/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterStop/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/CounterTie.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/CounterTie.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/verdict-3.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/verdict-3.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTie/verdict-4.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTieInGraph/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTieInGraph/CounterTieInGraph.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTieInGraph/CounterTieInGraph.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTieInGraph/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTieInGraph/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTieInGraph/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTieInGraph/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/CounterView.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/CounterView.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/verdict-3.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/verdict-3.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/verdict-4.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/CounterView/view.mjs` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/DieHard/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/DieHard/DieHard.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/DieHard/DieHard.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/DieHard/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/DieHard/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/DieHard/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/DieHard/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/DieHard/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/DieHard/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/DieHard/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/FirstRule.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/FirstRule.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/verdict-3.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/verdict-3.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/verdict-4.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/FirstRule/verdict-4.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/HiddenClock/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/HiddenClock/HiddenClock.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/HiddenClock/HiddenClock.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/HiddenClock/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/HiddenClock/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/HiddenClock/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/HiddenClock/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/HiddenClock/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/HiddenClock/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Login/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Login/Login.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Login/Login.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Login/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Login/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Login/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Login/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Login/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Login/view.mjs` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginGuarded/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginGuarded/LoginGuarded.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginGuarded/LoginGuarded.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginGuarded/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginGuarded/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginGuarded/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginGuarded/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginGuarded/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginGuarded/view.mjs` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginParallel/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginParallel/LoginParallel.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginParallel/LoginParallel.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginParallel/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginParallel/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginParallel/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginParallel/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginParallel/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginParallel/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginParallel/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/LoginParallel/view.mjs` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayer/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayer/MediaPlayer.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayer/MediaPlayer.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayer/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayer/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayer/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayer/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayer/view.mjs` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/MediaPlayerFixed.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/MediaPlayerFixed.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerFixed/view.mjs` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayer.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayerProps.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayerProps.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-3.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-4.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-4.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-5.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-5.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-6.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/MediaPlayerProps/view.mjs` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/PickWorker/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/PickWorker/PickWorker.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/PickWorker/PickWorker.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/PickWorker/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/PickWorker/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/PickWorker/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/PickWorker/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/PickWorker/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Shadow/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Shadow/Shadow.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Shadow/Shadow.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Shadow/ShadowLib.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Shadow/ShadowSub.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Shadow/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Shadow/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Shadow/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Shadow/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/Shadow/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/SpacedNames/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/SpacedNames/SpacedNames.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/SpacedNames/SpacedNames.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/SpacedNames/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/SpacedNames/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/SpacedNames/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/SpacedNames/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/SpacedNames/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/SpacedNames/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/SpacedNames/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/SpacedNames/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhase/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhase/TwoPhase.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhase/TwoPhase.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhase/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhase/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhase/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhase/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhase/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhase/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhase/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhase/view.mjs` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/TwoPhaseFixed.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/TwoPhaseFixed.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TwoPhaseFixed/view.mjs` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/ChartRun.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/TypeGuard.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/TypeGuard.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/TypeGuard/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/UserNoDeadlock/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/UserNoDeadlock/UserNoDeadlock.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/UserNoDeadlock/UserNoDeadlock.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/UserNoDeadlock/chart.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/UserNoDeadlock/graph.dot` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/UserNoDeadlock/report.md` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/UserNoDeadlock/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-1.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-1.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/differential.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/grid/Grid.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/grid/Grid.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/grid/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/java.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/labels.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/messages.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/pipeline.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/plain-tlc.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/render.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/tlc-out.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/tlc.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/tsconfig.json` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/worker.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/swarm/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/tdd/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/teach/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |

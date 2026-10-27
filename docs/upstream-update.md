@@ -1,451 +1,453 @@
-# Pending upstream adaptation
+# Upstream 0.15.34 adaptation review
 
-Previous snapshot: `9580c23696ac8d7abed0c166f2f9918800afb819`.
-Candidate snapshot: `519d36aa98955bf680db01bcde5fdfba686dc901`. Version: 0.15.34.
-[Upstream comparison](https://github.com/cursor/plugins/compare/9580c23696ac8d7abed0c166f2f9918800afb819...519d36aa98955bf680db01bcde5fdfba686dc901)
+Source commit: `519d36aa98955bf680db01bcde5fdfba686dc901`; source tree: `c2b5691947671f644078192b7dab87f19740ecb1`.
 
-The snapshot changed even if the version did not. Source hashes were NOT approved.
-Inspect the subtree diff in this PR, update adapters and tests, then deliberately update reviewed hashes.
-The generated ZIP is an unqualified preview. No auto-merge or publication.
+All 439 changed source items were reviewed as data: six manifests/documentation/entrypoint changes, 52 non-test statechart changes, and 381 test/corpus changes. No vendored helper or test was executed. Deleted runtime/test sources were inspected as removals of the previously reviewed implementation; they do not qualify replacement features.
 
-Changed files:
+The replacement TypeScript pipeline, executable view modules, process lifecycle, Java/TLC installation, rendering dependencies and test corpus remain excluded. Portable guidance retains grounded modeling and replay, adds partial-result/reduction/abstraction safeguards, and labels removed command modes unavailable. The rendering reference is adapted without installation or claims of tool execution.
 
-- `.cursor-plugin/plugin.json`
-- `README.md`
-- `docs/guide/06-verify-and-ship.md`
-- `plugin.json`
-- `skills/create-formal-verification-skill/SKILL.md`
-- `skills/poteto-help/SKILL.md`
-- `skills/statechart/SKILL.md`
-- `skills/statechart/references/render.md`
-- `skills/statechart/scripts/backends/cfg.ts`
-- `skills/statechart/scripts/backends/mermaid.ts`
-- `skills/statechart/scripts/backends/plain-text.ts`
-- `skills/statechart/scripts/backends/report.ts`
-- `skills/statechart/scripts/bug-states.mjs`
-- `skills/statechart/scripts/chart-edges.mjs`
-- `skills/statechart/scripts/chart-parts.mjs`
-- `skills/statechart/scripts/chart-to-tla.mjs`
-- `skills/statechart/scripts/compare-charts.mjs`
-- `skills/statechart/scripts/frontends/config.ts`
-- `skills/statechart/scripts/frontends/dot.ts`
-- `skills/statechart/scripts/frontends/marks.ts`
-- `skills/statechart/scripts/frontends/messages.ts`
-- `skills/statechart/scripts/frontends/spec.ts`
-- `skills/statechart/scripts/frontends/trace.ts`
-- `skills/statechart/scripts/frontends/value.ts`
-- `skills/statechart/scripts/frontends/verdict.ts`
-- `skills/statechart/scripts/frontends/view.ts`
-- `skills/statechart/scripts/ir.ts`
-- `skills/statechart/scripts/lib.mjs`
-- `skills/statechart/scripts/map-view.mjs`
-- `skills/statechart/scripts/package.json`
-- `skills/statechart/scripts/passes/annotate.ts`
-- `skills/statechart/scripts/passes/label.ts`
-- `skills/statechart/scripts/passes/lift.ts`
-- `skills/statechart/scripts/passes/loop-check.ts`
-- `skills/statechart/scripts/passes/paths.ts`
-- `skills/statechart/scripts/passes/reach.ts`
-- `skills/statechart/scripts/passes/region-check.ts`
-- `skills/statechart/scripts/passes/regions.ts`
-- `skills/statechart/scripts/pipeline.ts`
-- `skills/statechart/scripts/property-loop.mjs`
-- `skills/statechart/scripts/read-check.mjs`
-- `skills/statechart/scripts/regions-chart.mjs`
-- `skills/statechart/scripts/render.mjs`
-- `skills/statechart/scripts/rule-book.mjs`
-- `skills/statechart/scripts/run.ts`
-- `skills/statechart/scripts/second-replay.mjs`
-- `skills/statechart/scripts/snapshot.mjs`
-- `skills/statechart/scripts/spec-text.mjs`
-- `skills/statechart/scripts/statechart`
-- `skills/statechart/scripts/statechart-help.mjs`
-- `skills/statechart/scripts/statechart.mjs`
-- `skills/statechart/scripts/statechart.ts`
-- `skills/statechart/scripts/test/ConfigOracle.java`
-- `skills/statechart/scripts/test/band.mmd`
-- `skills/statechart/scripts/test/chart.test.ts`
-- `skills/statechart/scripts/test/charts/Braces.mmd`
-- `skills/statechart/scripts/test/charts/Escapes.mmd`
-- `skills/statechart/scripts/test/charts/Phases.mmd`
-- `skills/statechart/scripts/test/cli.test.ts`
-- `skills/statechart/scripts/test/config-fuzz.test.ts`
-- `skills/statechart/scripts/test/corpus.test.ts`
-- `skills/statechart/scripts/test/corpus/Counter/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/Counter/Counter.cfg`
-- `skills/statechart/scripts/test/corpus/Counter/Counter.tla`
-- `skills/statechart/scripts/test/corpus/Counter/chart.mmd`
-- `skills/statechart/scripts/test/corpus/Counter/graph.dot`
-- `skills/statechart/scripts/test/corpus/Counter/report.md`
-- `skills/statechart/scripts/test/corpus/Counter/sany.out`
-- `skills/statechart/scripts/test/corpus/Counter/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterAction/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterAction/CounterAction.cfg`
-- `skills/statechart/scripts/test/corpus/CounterAction/CounterAction.tla`
-- `skills/statechart/scripts/test/corpus/CounterAction/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterAction/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterAction/report.md`
-- `skills/statechart/scripts/test/corpus/CounterAction/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterAction/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterAction/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterAction/verdict-2.exit`
-- `skills/statechart/scripts/test/corpus/CounterAction/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterAction/verdict-3.out`
-- `skills/statechart/scripts/test/corpus/CounterDeadlock/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterDeadlock/CounterDeadlock.cfg`
-- `skills/statechart/scripts/test/corpus/CounterDeadlock/CounterDeadlock.tla`
-- `skills/statechart/scripts/test/corpus/CounterDeadlock/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterDeadlock/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterDeadlock/report.md`
-- `skills/statechart/scripts/test/corpus/CounterDeadlock/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-2.exit`
-- `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterFan/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterFan/CounterFan.cfg`
-- `skills/statechart/scripts/test/corpus/CounterFan/CounterFan.tla`
-- `skills/statechart/scripts/test/corpus/CounterFan/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterFan/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterFan/report.md`
-- `skills/statechart/scripts/test/corpus/CounterFan/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterFan/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterFan/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterFan/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterGuard/ChartRun.exit`
-- `skills/statechart/scripts/test/corpus/CounterGuard/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterGuard/CounterGuard.cfg`
-- `skills/statechart/scripts/test/corpus/CounterGuard/CounterGuard.tla`
-- `skills/statechart/scripts/test/corpus/CounterGuard/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterGuard/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterGuard/report.md`
-- `skills/statechart/scripts/test/corpus/CounterGuard/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterGuard/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterGuard/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterGuard/verdict-2.exit`
-- `skills/statechart/scripts/test/corpus/CounterGuard/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterInitPast/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterInitPast/CounterInitPast.cfg`
-- `skills/statechart/scripts/test/corpus/CounterInitPast/CounterInitPast.tla`
-- `skills/statechart/scripts/test/corpus/CounterInitPast/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterInitPast/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterInitPast/report.md`
-- `skills/statechart/scripts/test/corpus/CounterInitPast/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterInitPastHolds/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterInitPastHolds/CounterInitPastHolds.cfg`
-- `skills/statechart/scripts/test/corpus/CounterInitPastHolds/CounterInitPastHolds.tla`
-- `skills/statechart/scripts/test/corpus/CounterInitPastHolds/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterInitPastHolds/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterInitPastHolds/report.md`
-- `skills/statechart/scripts/test/corpus/CounterInitPastHolds/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterInitPastHolds/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterInstance/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterInstance/CounterInstance.cfg`
-- `skills/statechart/scripts/test/corpus/CounterInstance/CounterInstance.tla`
-- `skills/statechart/scripts/test/corpus/CounterInstance/CounterSteps.tla`
-- `skills/statechart/scripts/test/corpus/CounterInstance/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterInstance/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterInstance/report.md`
-- `skills/statechart/scripts/test/corpus/CounterInstance/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterInstance/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterInstance/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterJump/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterJump/CounterJump.cfg`
-- `skills/statechart/scripts/test/corpus/CounterJump/CounterJump.tla`
-- `skills/statechart/scripts/test/corpus/CounterJump/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterJump/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterJump/report.md`
-- `skills/statechart/scripts/test/corpus/CounterJump/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterJump/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterJump/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterJump/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterLoop/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterLoop/CounterLoop.cfg`
-- `skills/statechart/scripts/test/corpus/CounterLoop/CounterLoop.tla`
-- `skills/statechart/scripts/test/corpus/CounterLoop/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterLoop/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterLoop/report.md`
-- `skills/statechart/scripts/test/corpus/CounterLoop/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterLoop/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterLoop/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterOrder/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterOrder/CounterOrder.cfg`
-- `skills/statechart/scripts/test/corpus/CounterOrder/CounterOrder.tla`
-- `skills/statechart/scripts/test/corpus/CounterOrder/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterOrder/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterOrder/report.md`
-- `skills/statechart/scripts/test/corpus/CounterOrder/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterOrder/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterOrder/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterOrder/verdict-2.exit`
-- `skills/statechart/scripts/test/corpus/CounterOrder/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterRules/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterRules/CounterRules.cfg`
-- `skills/statechart/scripts/test/corpus/CounterRules/CounterRules.tla`
-- `skills/statechart/scripts/test/corpus/CounterRules/Moves.tla`
-- `skills/statechart/scripts/test/corpus/CounterRules/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterRules/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterRules/report.md`
-- `skills/statechart/scripts/test/corpus/CounterRules/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterRules/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterRules/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterRules/verdict-2.exit`
-- `skills/statechart/scripts/test/corpus/CounterRules/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterRules/verdict-3.exit`
-- `skills/statechart/scripts/test/corpus/CounterRules/verdict-3.out`
-- `skills/statechart/scripts/test/corpus/CounterRules/verdict-4.out`
-- `skills/statechart/scripts/test/corpus/CounterStart/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterStart/CounterStart.cfg`
-- `skills/statechart/scripts/test/corpus/CounterStart/CounterStart.tla`
-- `skills/statechart/scripts/test/corpus/CounterStart/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterStart/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterStart/report.md`
-- `skills/statechart/scripts/test/corpus/CounterStart/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterStart/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterStart/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterStart/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterStop/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterStop/CounterStop.cfg`
-- `skills/statechart/scripts/test/corpus/CounterStop/CounterStop.tla`
-- `skills/statechart/scripts/test/corpus/CounterStop/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterStop/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterStop/report.md`
-- `skills/statechart/scripts/test/corpus/CounterStop/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterStop/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterTie/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterTie/CounterTie.cfg`
-- `skills/statechart/scripts/test/corpus/CounterTie/CounterTie.tla`
-- `skills/statechart/scripts/test/corpus/CounterTie/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterTie/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterTie/report.md`
-- `skills/statechart/scripts/test/corpus/CounterTie/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterTie/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterTie/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterTie/verdict-2.exit`
-- `skills/statechart/scripts/test/corpus/CounterTie/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterTie/verdict-3.exit`
-- `skills/statechart/scripts/test/corpus/CounterTie/verdict-3.out`
-- `skills/statechart/scripts/test/corpus/CounterTie/verdict-4.out`
-- `skills/statechart/scripts/test/corpus/CounterTieInGraph/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterTieInGraph/CounterTieInGraph.cfg`
-- `skills/statechart/scripts/test/corpus/CounterTieInGraph/CounterTieInGraph.tla`
-- `skills/statechart/scripts/test/corpus/CounterTieInGraph/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterTieInGraph/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterTieInGraph/report.md`
-- `skills/statechart/scripts/test/corpus/CounterTieInGraph/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterView/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/CounterView/CounterView.cfg`
-- `skills/statechart/scripts/test/corpus/CounterView/CounterView.tla`
-- `skills/statechart/scripts/test/corpus/CounterView/chart.mmd`
-- `skills/statechart/scripts/test/corpus/CounterView/graph.dot`
-- `skills/statechart/scripts/test/corpus/CounterView/report.md`
-- `skills/statechart/scripts/test/corpus/CounterView/sany.out`
-- `skills/statechart/scripts/test/corpus/CounterView/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/CounterView/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/CounterView/verdict-2.exit`
-- `skills/statechart/scripts/test/corpus/CounterView/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/CounterView/verdict-3.exit`
-- `skills/statechart/scripts/test/corpus/CounterView/verdict-3.out`
-- `skills/statechart/scripts/test/corpus/CounterView/verdict-4.out`
-- `skills/statechart/scripts/test/corpus/CounterView/view.mjs`
-- `skills/statechart/scripts/test/corpus/DieHard/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/DieHard/DieHard.cfg`
-- `skills/statechart/scripts/test/corpus/DieHard/DieHard.tla`
-- `skills/statechart/scripts/test/corpus/DieHard/chart.mmd`
-- `skills/statechart/scripts/test/corpus/DieHard/graph.dot`
-- `skills/statechart/scripts/test/corpus/DieHard/report.md`
-- `skills/statechart/scripts/test/corpus/DieHard/sany.out`
-- `skills/statechart/scripts/test/corpus/DieHard/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/DieHard/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/DieHard/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/FirstRule/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/FirstRule/FirstRule.cfg`
-- `skills/statechart/scripts/test/corpus/FirstRule/FirstRule.tla`
-- `skills/statechart/scripts/test/corpus/FirstRule/chart.mmd`
-- `skills/statechart/scripts/test/corpus/FirstRule/graph.dot`
-- `skills/statechart/scripts/test/corpus/FirstRule/report.md`
-- `skills/statechart/scripts/test/corpus/FirstRule/sany.out`
-- `skills/statechart/scripts/test/corpus/FirstRule/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/FirstRule/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/FirstRule/verdict-2.exit`
-- `skills/statechart/scripts/test/corpus/FirstRule/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/FirstRule/verdict-3.exit`
-- `skills/statechart/scripts/test/corpus/FirstRule/verdict-3.out`
-- `skills/statechart/scripts/test/corpus/FirstRule/verdict-4.exit`
-- `skills/statechart/scripts/test/corpus/FirstRule/verdict-4.out`
-- `skills/statechart/scripts/test/corpus/HiddenClock/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/HiddenClock/HiddenClock.cfg`
-- `skills/statechart/scripts/test/corpus/HiddenClock/HiddenClock.tla`
-- `skills/statechart/scripts/test/corpus/HiddenClock/chart.mmd`
-- `skills/statechart/scripts/test/corpus/HiddenClock/graph.dot`
-- `skills/statechart/scripts/test/corpus/HiddenClock/report.md`
-- `skills/statechart/scripts/test/corpus/HiddenClock/sany.out`
-- `skills/statechart/scripts/test/corpus/HiddenClock/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/HiddenClock/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/Login/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/Login/Login.cfg`
-- `skills/statechart/scripts/test/corpus/Login/Login.tla`
-- `skills/statechart/scripts/test/corpus/Login/chart.mmd`
-- `skills/statechart/scripts/test/corpus/Login/graph.dot`
-- `skills/statechart/scripts/test/corpus/Login/report.md`
-- `skills/statechart/scripts/test/corpus/Login/sany.out`
-- `skills/statechart/scripts/test/corpus/Login/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/Login/view.mjs`
-- `skills/statechart/scripts/test/corpus/LoginGuarded/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/LoginGuarded/LoginGuarded.cfg`
-- `skills/statechart/scripts/test/corpus/LoginGuarded/LoginGuarded.tla`
-- `skills/statechart/scripts/test/corpus/LoginGuarded/chart.mmd`
-- `skills/statechart/scripts/test/corpus/LoginGuarded/graph.dot`
-- `skills/statechart/scripts/test/corpus/LoginGuarded/report.md`
-- `skills/statechart/scripts/test/corpus/LoginGuarded/sany.out`
-- `skills/statechart/scripts/test/corpus/LoginGuarded/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/LoginGuarded/view.mjs`
-- `skills/statechart/scripts/test/corpus/LoginParallel/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/LoginParallel/LoginParallel.cfg`
-- `skills/statechart/scripts/test/corpus/LoginParallel/LoginParallel.tla`
-- `skills/statechart/scripts/test/corpus/LoginParallel/chart.mmd`
-- `skills/statechart/scripts/test/corpus/LoginParallel/graph.dot`
-- `skills/statechart/scripts/test/corpus/LoginParallel/report.md`
-- `skills/statechart/scripts/test/corpus/LoginParallel/sany.out`
-- `skills/statechart/scripts/test/corpus/LoginParallel/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/LoginParallel/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/LoginParallel/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/LoginParallel/view.mjs`
-- `skills/statechart/scripts/test/corpus/MediaPlayer/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayer/MediaPlayer.cfg`
-- `skills/statechart/scripts/test/corpus/MediaPlayer/MediaPlayer.tla`
-- `skills/statechart/scripts/test/corpus/MediaPlayer/chart.mmd`
-- `skills/statechart/scripts/test/corpus/MediaPlayer/graph.dot`
-- `skills/statechart/scripts/test/corpus/MediaPlayer/report.md`
-- `skills/statechart/scripts/test/corpus/MediaPlayer/sany.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayer/view.mjs`
-- `skills/statechart/scripts/test/corpus/MediaPlayerFixed/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayerFixed/MediaPlayerFixed.cfg`
-- `skills/statechart/scripts/test/corpus/MediaPlayerFixed/MediaPlayerFixed.tla`
-- `skills/statechart/scripts/test/corpus/MediaPlayerFixed/chart.mmd`
-- `skills/statechart/scripts/test/corpus/MediaPlayerFixed/graph.dot`
-- `skills/statechart/scripts/test/corpus/MediaPlayerFixed/report.md`
-- `skills/statechart/scripts/test/corpus/MediaPlayerFixed/sany.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayerFixed/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayerFixed/view.mjs`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayer.tla`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayerProps.cfg`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayerProps.tla`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/chart.mmd`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/graph.dot`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/report.md`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/sany.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-3.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-4.exit`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-4.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-5.exit`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-5.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-6.out`
-- `skills/statechart/scripts/test/corpus/MediaPlayerProps/view.mjs`
-- `skills/statechart/scripts/test/corpus/PickWorker/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/PickWorker/PickWorker.cfg`
-- `skills/statechart/scripts/test/corpus/PickWorker/PickWorker.tla`
-- `skills/statechart/scripts/test/corpus/PickWorker/chart.mmd`
-- `skills/statechart/scripts/test/corpus/PickWorker/graph.dot`
-- `skills/statechart/scripts/test/corpus/PickWorker/report.md`
-- `skills/statechart/scripts/test/corpus/PickWorker/sany.out`
-- `skills/statechart/scripts/test/corpus/PickWorker/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/Shadow/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/Shadow/Shadow.cfg`
-- `skills/statechart/scripts/test/corpus/Shadow/Shadow.tla`
-- `skills/statechart/scripts/test/corpus/Shadow/ShadowLib.tla`
-- `skills/statechart/scripts/test/corpus/Shadow/ShadowSub.tla`
-- `skills/statechart/scripts/test/corpus/Shadow/chart.mmd`
-- `skills/statechart/scripts/test/corpus/Shadow/graph.dot`
-- `skills/statechart/scripts/test/corpus/Shadow/report.md`
-- `skills/statechart/scripts/test/corpus/Shadow/sany.out`
-- `skills/statechart/scripts/test/corpus/Shadow/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/SpacedNames/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/SpacedNames/SpacedNames.cfg`
-- `skills/statechart/scripts/test/corpus/SpacedNames/SpacedNames.tla`
-- `skills/statechart/scripts/test/corpus/SpacedNames/chart.mmd`
-- `skills/statechart/scripts/test/corpus/SpacedNames/graph.dot`
-- `skills/statechart/scripts/test/corpus/SpacedNames/report.md`
-- `skills/statechart/scripts/test/corpus/SpacedNames/sany.out`
-- `skills/statechart/scripts/test/corpus/SpacedNames/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/SpacedNames/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/SpacedNames/verdict-2.exit`
-- `skills/statechart/scripts/test/corpus/SpacedNames/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/TwoPhase/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/TwoPhase/TwoPhase.cfg`
-- `skills/statechart/scripts/test/corpus/TwoPhase/TwoPhase.tla`
-- `skills/statechart/scripts/test/corpus/TwoPhase/chart.mmd`
-- `skills/statechart/scripts/test/corpus/TwoPhase/graph.dot`
-- `skills/statechart/scripts/test/corpus/TwoPhase/report.md`
-- `skills/statechart/scripts/test/corpus/TwoPhase/sany.out`
-- `skills/statechart/scripts/test/corpus/TwoPhase/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/TwoPhase/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/TwoPhase/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/TwoPhase/view.mjs`
-- `skills/statechart/scripts/test/corpus/TwoPhaseFixed/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/TwoPhaseFixed/TwoPhaseFixed.cfg`
-- `skills/statechart/scripts/test/corpus/TwoPhaseFixed/TwoPhaseFixed.tla`
-- `skills/statechart/scripts/test/corpus/TwoPhaseFixed/chart.mmd`
-- `skills/statechart/scripts/test/corpus/TwoPhaseFixed/graph.dot`
-- `skills/statechart/scripts/test/corpus/TwoPhaseFixed/report.md`
-- `skills/statechart/scripts/test/corpus/TwoPhaseFixed/sany.out`
-- `skills/statechart/scripts/test/corpus/TwoPhaseFixed/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/TwoPhaseFixed/view.mjs`
-- `skills/statechart/scripts/test/corpus/TypeGuard/ChartRun.exit`
-- `skills/statechart/scripts/test/corpus/TypeGuard/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/TypeGuard/TypeGuard.cfg`
-- `skills/statechart/scripts/test/corpus/TypeGuard/TypeGuard.tla`
-- `skills/statechart/scripts/test/corpus/TypeGuard/chart.mmd`
-- `skills/statechart/scripts/test/corpus/TypeGuard/graph.dot`
-- `skills/statechart/scripts/test/corpus/TypeGuard/report.md`
-- `skills/statechart/scripts/test/corpus/TypeGuard/sany.out`
-- `skills/statechart/scripts/test/corpus/TypeGuard/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/TypeGuard/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/TypeGuard/verdict-2.exit`
-- `skills/statechart/scripts/test/corpus/TypeGuard/verdict-2.out`
-- `skills/statechart/scripts/test/corpus/UserNoDeadlock/ChartRun.out`
-- `skills/statechart/scripts/test/corpus/UserNoDeadlock/UserNoDeadlock.cfg`
-- `skills/statechart/scripts/test/corpus/UserNoDeadlock/UserNoDeadlock.tla`
-- `skills/statechart/scripts/test/corpus/UserNoDeadlock/chart.mmd`
-- `skills/statechart/scripts/test/corpus/UserNoDeadlock/graph.dot`
-- `skills/statechart/scripts/test/corpus/UserNoDeadlock/report.md`
-- `skills/statechart/scripts/test/corpus/UserNoDeadlock/sany.out`
-- `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-1.exit`
-- `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-1.out`
-- `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-2.exit`
-- `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-2.out`
-- `skills/statechart/scripts/test/differential.test.ts`
-- `skills/statechart/scripts/test/grid/Grid.cfg`
-- `skills/statechart/scripts/test/grid/Grid.tla`
-- `skills/statechart/scripts/test/grid/sany.out`
-- `skills/statechart/scripts/test/java.ts`
-- `skills/statechart/scripts/test/labels.ts`
-- `skills/statechart/scripts/test/messages.test.ts`
-- `skills/statechart/scripts/test/pipeline.test.ts`
-- `skills/statechart/scripts/test/plain-tlc.test.ts`
-- `skills/statechart/scripts/test/regions.mmd`
-- `skills/statechart/scripts/test/render.test.ts`
-- `skills/statechart/scripts/test/statechart.test.mjs`
-- `skills/statechart/scripts/test/sync.mmd`
-- `skills/statechart/scripts/test/tlc-out.test.ts`
-- `skills/statechart/scripts/test/tlc.ts`
-- `skills/statechart/scripts/test/upload.mmd`
-- `skills/statechart/scripts/tlc-to-chart-args.mjs`
-- `skills/statechart/scripts/tlc-to-chart.mjs`
-- `skills/statechart/scripts/tlc-tools.mjs`
-- `skills/statechart/scripts/tsconfig.json`
-- `skills/statechart/scripts/ways-in.mjs`
-- `skills/statechart/scripts/worker.ts`
+Independent source reviews covered the non-test pipeline and test corpus separately. The 33 corpus families cover constraints, initial-only properties, representative states, temporal/stuttering paths, deadlock identity, output ownership and drawing budgets. Recorded fixture output is upstream evidence, not a test run in this environment.
+
+## Per-file disposition
+
+| Change | Source | Review disposition |
+|---|---|---|
+| M | `.cursor-plugin/plugin.json` | Source version metadata only; portable package version is independent. |
+| M | `README.md` | Source-only documentation narrows statechart description; no runtime capabilities imported. |
+| M | `docs/guide/06-verify-and-ship.md` | Source-only documentation narrows statechart description; no runtime capabilities imported. |
+| M | `plugin.json` | Source version metadata only; portable package version is independent. |
+| M | `skills/create-formal-verification-skill/SKILL.md` | Removed automatic fix-comparison claim upstream; existing name-only adapted handoff already avoids it. |
+| M | `skills/poteto-help/SKILL.md` | Adapted statechart route without removed command promises. |
+| M | `skills/statechart/SKILL.md` | Adapted replacement semantics; preserve tool, replay, reduction and output guards. |
+| A | `skills/statechart/references/render.md` | Adapted: available renderer, no automatic install, real image/error evidence and visible rule marks. |
+| A | `skills/statechart/scripts/backends/cfg.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/backends/mermaid.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/backends/plain-text.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/backends/report.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| D | `skills/statechart/scripts/bug-states.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/chart-edges.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/chart-parts.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/chart-to-tla.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/compare-charts.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| A | `skills/statechart/scripts/frontends/config.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/frontends/dot.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/frontends/marks.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/frontends/messages.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/frontends/spec.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/frontends/trace.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/frontends/value.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/frontends/verdict.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/frontends/view.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/ir.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| D | `skills/statechart/scripts/lib.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/map-view.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| A | `skills/statechart/scripts/package.json` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/passes/annotate.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/passes/label.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/passes/lift.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/passes/loop-check.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/passes/paths.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/passes/reach.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/passes/region-check.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/passes/regions.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/pipeline.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| D | `skills/statechart/scripts/property-loop.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/read-check.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/regions-chart.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/render.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/rule-book.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| A | `skills/statechart/scripts/run.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| D | `skills/statechart/scripts/second-replay.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/snapshot.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/spec-text.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| A | `skills/statechart/scripts/statechart` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| D | `skills/statechart/scripts/statechart-help.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/statechart.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| A | `skills/statechart/scripts/statechart.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/ConfigOracle.java` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| D | `skills/statechart/scripts/test/band.mmd` | Removed former runtime/test source; no capability retained by deletion. |
+| A | `skills/statechart/scripts/test/chart.test.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/charts/Braces.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/charts/Escapes.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/charts/Phases.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/cli.test.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/config-fuzz.test.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus.test.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Counter/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Counter/Counter.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Counter/Counter.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Counter/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Counter/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Counter/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Counter/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Counter/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/CounterAction.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/CounterAction.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/verdict-2.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterAction/verdict-3.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterDeadlock/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterDeadlock/CounterDeadlock.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterDeadlock/CounterDeadlock.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterDeadlock/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterDeadlock/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterDeadlock/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterDeadlock/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-2.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterDeadlock/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterFan/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterFan/CounterFan.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterFan/CounterFan.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterFan/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterFan/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterFan/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterFan/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterFan/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterFan/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterFan/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/ChartRun.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/CounterGuard.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/CounterGuard.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/verdict-2.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterGuard/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPast/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPast/CounterInitPast.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPast/CounterInitPast.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPast/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPast/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPast/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPast/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPast/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPastHolds/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPastHolds/CounterInitPastHolds.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPastHolds/CounterInitPastHolds.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPastHolds/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPastHolds/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPastHolds/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPastHolds/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInitPastHolds/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInstance/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInstance/CounterInstance.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInstance/CounterInstance.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInstance/CounterSteps.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInstance/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInstance/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInstance/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInstance/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInstance/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterInstance/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterJump/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterJump/CounterJump.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterJump/CounterJump.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterJump/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterJump/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterJump/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterJump/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterJump/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterJump/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterJump/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterLoop/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterLoop/CounterLoop.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterLoop/CounterLoop.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterLoop/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterLoop/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterLoop/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterLoop/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterLoop/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterLoop/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterOrder/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterOrder/CounterOrder.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterOrder/CounterOrder.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterOrder/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterOrder/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterOrder/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterOrder/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterOrder/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterOrder/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterOrder/verdict-2.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterOrder/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/CounterRules.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/CounterRules.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/Moves.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/verdict-2.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/verdict-3.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/verdict-3.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterRules/verdict-4.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStart/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStart/CounterStart.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStart/CounterStart.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStart/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStart/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStart/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStart/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStart/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStart/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStart/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStop/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStop/CounterStop.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStop/CounterStop.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStop/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStop/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStop/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStop/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterStop/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/CounterTie.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/CounterTie.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/verdict-2.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/verdict-3.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/verdict-3.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTie/verdict-4.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTieInGraph/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTieInGraph/CounterTieInGraph.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTieInGraph/CounterTieInGraph.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTieInGraph/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTieInGraph/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTieInGraph/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTieInGraph/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterTieInGraph/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/CounterView.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/CounterView.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/verdict-2.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/verdict-3.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/verdict-3.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/verdict-4.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/CounterView/view.mjs` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/DieHard/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/DieHard/DieHard.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/DieHard/DieHard.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/DieHard/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/DieHard/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/DieHard/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/DieHard/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/DieHard/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/DieHard/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/DieHard/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/FirstRule.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/FirstRule.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/verdict-2.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/verdict-3.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/verdict-3.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/verdict-4.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/FirstRule/verdict-4.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/HiddenClock/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/HiddenClock/HiddenClock.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/HiddenClock/HiddenClock.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/HiddenClock/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/HiddenClock/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/HiddenClock/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/HiddenClock/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/HiddenClock/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/HiddenClock/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Login/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Login/Login.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Login/Login.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Login/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Login/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Login/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Login/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Login/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Login/view.mjs` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginGuarded/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginGuarded/LoginGuarded.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginGuarded/LoginGuarded.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginGuarded/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginGuarded/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginGuarded/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginGuarded/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginGuarded/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginGuarded/view.mjs` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginParallel/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginParallel/LoginParallel.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginParallel/LoginParallel.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginParallel/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginParallel/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginParallel/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginParallel/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginParallel/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginParallel/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginParallel/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/LoginParallel/view.mjs` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayer/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayer/MediaPlayer.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayer/MediaPlayer.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayer/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayer/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayer/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayer/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayer/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayer/view.mjs` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerFixed/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerFixed/MediaPlayerFixed.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerFixed/MediaPlayerFixed.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerFixed/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerFixed/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerFixed/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerFixed/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerFixed/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerFixed/view.mjs` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayer.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayerProps.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/MediaPlayerProps.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-3.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-4.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-4.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-5.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-5.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/verdict-6.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/MediaPlayerProps/view.mjs` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/PickWorker/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/PickWorker/PickWorker.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/PickWorker/PickWorker.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/PickWorker/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/PickWorker/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/PickWorker/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/PickWorker/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/PickWorker/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Shadow/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Shadow/Shadow.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Shadow/Shadow.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Shadow/ShadowLib.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Shadow/ShadowSub.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Shadow/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Shadow/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Shadow/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Shadow/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/Shadow/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/SpacedNames/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/SpacedNames/SpacedNames.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/SpacedNames/SpacedNames.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/SpacedNames/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/SpacedNames/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/SpacedNames/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/SpacedNames/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/SpacedNames/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/SpacedNames/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/SpacedNames/verdict-2.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/SpacedNames/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhase/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhase/TwoPhase.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhase/TwoPhase.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhase/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhase/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhase/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhase/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhase/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhase/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhase/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhase/view.mjs` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhaseFixed/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhaseFixed/TwoPhaseFixed.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhaseFixed/TwoPhaseFixed.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhaseFixed/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhaseFixed/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhaseFixed/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhaseFixed/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhaseFixed/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TwoPhaseFixed/view.mjs` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/ChartRun.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/TypeGuard.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/TypeGuard.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/verdict-2.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/TypeGuard/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/UserNoDeadlock/ChartRun.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/UserNoDeadlock/UserNoDeadlock.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/UserNoDeadlock/UserNoDeadlock.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/UserNoDeadlock/chart.mmd` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/UserNoDeadlock/graph.dot` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/UserNoDeadlock/report.md` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/UserNoDeadlock/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-1.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-1.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-2.exit` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-2.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/differential.test.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/grid/Grid.cfg` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/grid/Grid.tla` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/grid/sany.out` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/java.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/labels.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/messages.test.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/pipeline.test.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/plain-tlc.test.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| D | `skills/statechart/scripts/test/regions.mmd` | Removed former runtime/test source; no capability retained by deletion. |
+| A | `skills/statechart/scripts/test/render.test.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| D | `skills/statechart/scripts/test/statechart.test.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/test/sync.mmd` | Removed former runtime/test source; no capability retained by deletion. |
+| A | `skills/statechart/scripts/test/tlc-out.test.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| A | `skills/statechart/scripts/test/tlc.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| D | `skills/statechart/scripts/test/upload.mmd` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/tlc-to-chart-args.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/tlc-to-chart.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| D | `skills/statechart/scripts/tlc-tools.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| A | `skills/statechart/scripts/tsconfig.json` | Reviewed runtime/test source only; unsupported and excluded from package. |
+| D | `skills/statechart/scripts/ways-in.mjs` | Removed former runtime/test source; no capability retained by deletion. |
+| A | `skills/statechart/scripts/worker.ts` | Reviewed runtime/test source only; unsupported and excluded from package. |
