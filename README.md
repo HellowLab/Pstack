@@ -6,9 +6,43 @@ Ship faster. Build better.
 
 Bring Pstack’s engineering workflows to ChatGPT and Codex. Faithfully adapted from [Lauren Tan’s original](https://github.com/cursor/plugins/tree/main/pstack), with upstream tracking and reviewed updates to keep pace with Pstack as it evolves. Investigate, design, build, review, and verify with a consistent set of engineering practices. Independently maintained by HellowLab.
 
-This is not an official poteto, Cursor, or OpenAI release. Pstack uses only the tools and permissions available in the host. Version 0.1.13 is distributed through GitHub releases and is not fully host-qualified. GitHub releases are separate from plugin marketplace approval. The submitted 0.1.0-rc.5 package is preserved; its last verified review state on October 13 was in review.
+This is not an official poteto, Cursor, or OpenAI release. Pstack uses only the tools and permissions available in the host. Version 0.1.13 is distributed through GitHub releases and is not fully host-qualified. GitHub releases are separate from plugin marketplace approval. The submitted 0.1.0-rc.5 package is preserved; its verified state on October 27, 2026 was In review / Not published.
 
 The source is pinned to Pstack **0.15.34**, commit [`519d36a`](https://github.com/cursor/plugins/tree/519d36aa98955bf680db01bcde5fdfba686dc901/pstack). The [generated coverage map](resources/coverage.md) exposes the pinned version, last checked revision, adaptation status, and every source file's disposition. The [upstream workflow](.github/workflows/upstream.yml) is on `main` and checks subtree changes daily at 08:17 UTC. It detects changes without a version bump and requires adaptation review. It never merges or publishes.
+
+## Install Pstack
+
+Choose the [latest qualified GitHub release](https://github.com/HellowLab/Pstack/releases/latest). It is our latest tested, supported adaptation of [Lauren Tan's upstream Pstack](https://github.com/cursor/plugins/tree/main/pstack). We check upstream daily and review changes before release. Pending branches and upstream HEAD are not installation targets.
+
+The public OpenAI marketplace submission is **in review**, last verified October 27, 2026. No public install link is available yet. Marketplace review can delay initial availability and later updates; there is no promised turnaround. Once published, we will add the verified public listing here as another installation option. GitHub installations also need update checks to stay current.
+
+Copy one prompt into an agent with access to the intended installation target. The agent must check its available tools and required permissions. These prompts do not guarantee support in every Codex client.
+
+### On this computer
+
+```text
+Install Pstack on this computer only. Follow https://github.com/HellowLab/Pstack/blob/main/docs/install.md and use the latest qualified GitHub release with its verified checksum. Check native local-plugin support first. Reuse an existing Pstack installation, preserve settings, and avoid duplicates or downgrades. Ask for required permissions; stop if unsupported. Verify the installed version and new-session availability, and report anything you could not test.
+```
+
+A local marketplace and plugin cache belong to that computer. They do not synchronize through your account.
+
+### In my private account
+
+```text
+Set up Pstack privately in my personal account using Plugin Creator and https://github.com/HellowLab/Pstack/blob/main/docs/install.md. Use the latest qualified GitHub release and verify its checksum. Confirm personal USER scope and PRIVATE visibility before writing; reuse my existing Pstack identity and preserve settings. If personal scope or tooling is unavailable, stop and explain, without creating a workspace or local substitute. Verify saving, installation or enabling, and new-session access separately.
+```
+
+This route requires Plugin Creator and the necessary permissions. Account availability depends on the client and account context; it does not promise access on every computer or Codex client. See the [scope and compatibility checks](docs/install.md#install-in-a-private-personal-account).
+
+### Optional weekly updates
+
+Copy this into a personal assistant such as dot only if you want it to create an update schedule:
+
+```text
+Set up weekly Pstack update checks following https://github.com/HellowLab/Pstack/blob/main/docs/install.md. Ask me to choose my existing private account install, a named computer install, or both, and a weekly time and timezone. Use a supported scheduler with access to those targets and verify schedule creation. Update only those existing targets when a newer qualified GitHub release is available; verify its checksum and installed result, preserve identity and settings, and never downgrade or duplicate. Ask for required permissions. Report updates or blockers concisely; keep no-op checks quiet.
+```
+
+A reminder alone cannot update a plugin. An offline computer or unavailable account tool is a blocker for that target, not permission to update another. The [installation guide](docs/install.md) covers updates, removal, and verification limits.
 
 ## What is included
 
@@ -34,17 +68,9 @@ The current candidate ZIP and SHA-256 file are in [dist](dist/). Earlier archive
 
 Edit `adapter/overrides/`, `adapter/rules.json`, and authored metadata rather than generated skills. The complete untouched upstream subtree is retained under `upstream/pstack/` as review data. Do not install that subtree as this plugin.
 
-## Try the candidate locally
+## Test a release locally
 
-Stage the exact ZIP in a fresh disposable marketplace:
-
-```sh
-python3 scripts/stage_local.py /tmp/pstack-preview
-```
-
-The staging command does not install or alter user configuration. On a supported Codex installation, register that local source with `codex plugin marketplace add /tmp/pstack-preview`, then install with `codex plugin add pstack@pstack-preview`. These installation commands change local plugin configuration. In the desktop plugin directory, select the local source where available, install the candidate, and start a new chat. Local-source availability varies between ChatGPT and Codex surfaces. See [the host validation matrix](docs/validation.md) for what was actually tested and what remains blocked.
-
-To remove a test installation, use `codex plugin remove pstack@pstack-preview` and `codex plugin marketplace remove pstack-preview` on a compatible CLI. Keep evidence before deleting the disposable staging directory. No public marketplace URL exists yet.
+Follow the [installation guide](docs/install.md#install-on-one-computer) to stage a verified release in a native local marketplace. Staging, installing, and checking behavior are separate steps. Pstack 0.1.13 passed repository tests and reproducible builds; a fresh native installation and model-behavior qualification have not been completed for this version. See [validation evidence](docs/validation.md) for version-specific results.
 
 ## Privacy and support
 
