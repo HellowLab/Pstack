@@ -56,3 +56,9 @@ API contracts: [GitHub releases](https://docs.github.com/en/rest/releases/releas
 Validation runs on explicit `ubuntu-24.04` and `ubuntu-26.04` runners with Python 3.12. Both must pass before the main-only release job can run. Matrix artifact names include the OS. This tests package construction and repository behavior; it does not qualify native plugin installation or model behavior.
 
 GitHub announced [26.04 general availability](https://github.com/actions/runner-images/issues/14747) and an [October 19–November 19 ubuntu-latest migration](https://github.com/actions/runner-images/issues/14748). A successful `ubuntu-latest` job alone does not identify which OS ran; inspect the job's runner image evidence.
+
+## Keep installation links current
+
+When the public marketplace version is published, verify that the public listing is accessible and belongs to this Pstack project. Add its verified installation URL to the README installation section, alongside the qualified GitHub release route. Do not use a publisher-management URL as an install link. Update the dated review status only from verified publisher evidence, and retain the distinction between marketplace availability and the latest tested repository adaptation.
+
+Documentation-only changes do not require a new package version. Confirm that package bytes remain unchanged and let the release guard preserve the existing immutable version tag and assets.
