@@ -20,6 +20,12 @@ Register that directory with `codex plugin marketplace add /absolute/new/staging
 
 Start a new session. Check the installed version, enabled state, skill discovery, and a harmless read-only invocation. Record what ran and what remains untested. Local catalogs and caches do not provide account synchronization.
 
+### Why there is no direct Git shortcut yet
+
+This repository does not expose a release-only Git marketplace. Its root contains vendored upstream helpers and review material that the qualified ZIP excludes. Do not register the repository root as a plugin source or install a moving maintenance branch.
+
+A future Git route needs a dedicated package directory, immutable release pinning, and guarded catalog updates. It also needs a native upgrade test that verifies the installed cache and version. Until then, use the verified ZIP staging route. Refreshing a Git marketplace alone is not evidence that its installed plugin was updated.
+
 ## Install in a private personal account
 
 Use [Plugin Creator](https://learn.chatgpt.com/docs/build-plugins) only when available and permitted. Inspect the current account context and any existing Pstack plugin before writing. Resolve an existing plugin by its actual identity, not its name alone.
@@ -46,4 +52,4 @@ For a private account installation, use the host's supported uninstall or disabl
 
 ## Qualification limits
 
-Pstack 0.1.13 has repository-test and reproducible-package evidence. These documentation checks did not perform a fresh native install, account installation, or model-behavior qualification. The agent must report the actual capabilities and verification results of your environment. See [version-specific validation](validation.md).
+Pstack 0.1.13 has repository-test, reproducible-package, and isolated Linux CLI installation/discovery evidence. The native test used Codex CLI `0.159.0-alpha.3`, separate empty home/configuration directories, and no copied credentials. It verified all 183 installed files, 58 discovered skills, relative references, and native uninstall cleanup. Model smoke tests were blocked by missing authentication in that isolated environment. Account installation, macOS/Windows installation, and actual model behavior were not tested in this check. The agent must report the actual capabilities and verification results of your environment. See [version-specific validation](validation.md).
