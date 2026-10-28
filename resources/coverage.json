@@ -1,10 +1,10 @@
 {
-  "package_version": "0.1.13",
-  "upstream_commit": "519d36aa98955bf680db01bcde5fdfba686dc901",
-  "upstream_tree": "c2b5691947671f644078192b7dab87f19740ecb1",
-  "upstream_version": "0.15.34",
-  "latest_checked_commit": "519d36aa98955bf680db01bcde5fdfba686dc901",
-  "checked_at": "2026-10-27",
+  "package_version": "0.1.14",
+  "upstream_commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+  "upstream_tree": "4719e1c4b4c43bac85d4206a8b41dd2899769c1c",
+  "upstream_version": "0.15.36",
+  "latest_checked_commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+  "checked_at": "2026-10-28",
   "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
   "pending_files": [],
@@ -386,34 +386,6 @@
       "review": "reviewed"
     },
     {
-      "source": "skills/interrogate/references/code-quality-review.md",
-      "status": "unchanged",
-      "destination": "skills/interrogate/references/code-quality-review.md",
-      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/interrogate/references/lead-judgment.md",
-      "status": "unchanged",
-      "destination": "skills/interrogate/references/lead-judgment.md",
-      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/interrogate/references/reviewer-prompt.md",
-      "status": "unchanged",
-      "destination": "skills/interrogate/references/reviewer-prompt.md",
-      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/interrogate/references/rubric.md",
-      "status": "unchanged",
-      "destination": "skills/interrogate/references/rubric.md",
-      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
-      "review": "reviewed"
-    },
-    {
       "source": "skills/ketchup-video/SKILL.md",
       "status": "adapted",
       "destination": "skills/ketchup-video/SKILL.md",
@@ -674,24 +646,6 @@
       "source": "skills/poteto-mode/scripts/check-plan.test.ts",
       "status": "unsupported",
       "reason": "Source-only Node helper tests. The portable plan-validation contract carries supported semantics; no vendored helper is executed or packaged.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/poteto-mode/scripts/orch/orch.test.ts",
-      "status": "unsupported",
-      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/poteto-mode/scripts/orch/orch.ts",
-      "status": "unsupported",
-      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/poteto-mode/scripts/orch/store.ts",
-      "status": "unsupported",
-      "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
       "review": "reviewed"
     },
     {

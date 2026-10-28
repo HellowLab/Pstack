@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.14] - 2026-10-28
+
+- Review all 29 changed or removed upstream sources through Pstack 0.15.36, preserving attribution and historical releases.
+- Require executable evidence and parent reruns for adversarial findings, including scoped uncommitted changes; retire four obsolete review references.
+- Restrict Arena cross-judging to an accepted, explicitly different model family and disclose unavailable independence instead of silently changing configuration.
+- Add silent-video subtitle, readability and fully visible hold checks without promising a rendering runtime.
+- Carry the user’s goal through implementation and handoff, stack only actual dependencies, and freeze writes after operator handoff. Retain current-head verification and unsupported unattended-runtime guards after upstream removes its orchestration CLI.
+
+Native installation, actual model execution and video rendering were not run for this version. The earlier v0.1.13 Linux installation/discovery result does not qualify this package. GitHub distribution is separate from marketplace approval.
+
 ## [0.1.13] - 2026-10-27
 
 - Review all 439 changed, added or removed upstream sources through Pstack 0.15.34, preserving attribution and excluding all 405 statechart runtime/test support files.

@@ -35,7 +35,7 @@ Swap in the real paths, skills, and done checks. Informal wording works.
 
 - `/create-formal-verification-skill prove <property> holds in <module>, even when <steps> interleave or retry.` After merges or refactors in that code: `/maintain-formal-verification-skill`.
 
-- `/interrogate the whole branch, but skeptically. don't change anything yet. no nitpicks unless it's a real bug or regression.` Read the dismissals too.
+- `/interrogate the whole branch, but skeptically. don't change anything yet. no nitpicks unless it's a real bug or regression.` Read the Dropped list and execution gaps too.
 - `/swarm check every package under <dir> against its check script. one worker per package. one report.`
 - `/poteto-mode open the pr. small ordered commits, evidence in the description.`
 - `/poteto-mode babysit this pr. get it green.` For status only: `/poteto-mode check on pr <number>. anything outstanding?`
@@ -48,7 +48,7 @@ This recipe does not provide unattended execution. If the host cannot persist or
 - `/poteto-mode im going to bed. <goal> in a fresh worktree off <base>. done means <checks>. keep a decision log. don't ask me before committing. continue within this session until done; if future wakeups are needed, use only a supported scheduler I have explicitly authorized, otherwise leave a resumable checkpoint. if you're truly stuck after a few hours, stop and write up why.`
 - `/show-me-your-work catch me up on what you did last night.` Read its Attention section first.
 - `/poteto-mode full autopilot on this queue. each item is independent.`
-- `/poteto-mode autopilot these changes but stack them, don't ship. i'll land the stack.`
+- `/poteto-mode autopilot these changes, but don't merge. i'll land them.`
 - `/reflect capture what we learned so the next run doesn't repeat it.` Approve only edits that change a future decision.
 - `/bro` restates the last reply in plain words.
 

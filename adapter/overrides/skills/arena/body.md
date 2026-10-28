@@ -20,7 +20,7 @@ The N candidates will receive the same prompt, so the prompt is the contract.
 1. State the artifact each candidate is producing.
 2. Derive the rubric. State what success looks like for *this* task, then turn it into 3-6 concrete gradeable criteria. The rubric is the picker's tool in Phase D. Candidates only see the task.
 3. Pick actual permitted host workers. Inherit the current model unless a supported model override was requested. Record the real runner/model capabilities. Without delegation, produce clearly labeled sequential candidates; if independent or multi-model judgment is required, that gate stays blocked.
-   Use accepted `arena runners` preferences from the current session or an authorized project document. An unconfigured role has two inherited entries. Run one permitted worker per entry. Use the accepted `arena cross-judge pool`, or two inherited entries when unconfigured, to select one judge. Repeated inherited models do not establish model diversity.
+   Use accepted `arena runners` preferences from the current session or an authorized project document. An unconfigured role has two inherited entries. Run one permitted worker per entry. Preserve the accepted `arena cross-judge pool`; its order expresses preference. An unconfigured pool has two inherited entries, which are not eligible cross-family judges. If a runner is unavailable, use only an observed, permitted replacement consistent with the accepted preferences, or report the dropped seat. Do not silently change saved choices or expand access. Preserve a minimum of two runners unless the accepted list explicitly requested one; if permitted replacements cannot run, disclose the reduced coverage. Repeated inherited models do not establish model diversity.
 4. Assign output paths. Each candidate writes to its own location (a git worktree where possible, otherwise `/tmp/arena-<slug>/candidate-<n>/`), per the **separate-before-serializing-shared-state** principle skill.
 
 ## Phase B: Fan out
@@ -33,17 +33,19 @@ If a candidate fails to produce output, proceed with N-1 and note the dropout in
 
 ## Phase C: Cross-judge
 
-After all Phase B candidates complete, assign one actual read-only independent judge when available. It sees the rubric and candidates by path label, scores each criterion, and recommends a base with rationale. Prefer a distinct supported model only when an override was requested and available. Run the judge alongside the parent's reading, never while candidates are still writing. Without a judge, label the parent's review as single-agent and leave the independent cross-judge gate unfulfilled.
+After all Phase B candidates complete, try the accepted pool in order and select at most one actual read-only judge from a model family different from the parent's. `inherit-parent` and `auto` never qualify as cross-judges. Use only observed supported models and authorized overrides; do not invent family defaults or change access. If the parent's family is unknown, disclose that the family check could not run and do not claim cross-family review. If no eligible permitted judge runs, skip the judge and say so; the parent may pick the base alone. An explicit independent or diverse-review requirement remains unfulfilled rather than being silently downgraded.
+
+The judge sees the rubric and completed candidates by path label, scores each criterion and recommends a base. Run it alongside the parent's reading only when supported, never while candidates are still writing.
 
 ## Phase D: Pick a base
 
 Read every candidate end to end before picking.
 
-Score each candidate against the rubric criterion by criterion, not on holistic feel. Compare against the cross-judge. Agreement on the base confirms the pick. Disagreement means one of you is biased or the rubric was ambiguous. Read both rationales before deciding.
+Score each candidate against the rubric criterion by criterion, not on holistic feel. Compare against the cross-judge when one ran. Agreement on the base confirms the pick. Disagreement means one of you is biased or the rubric was ambiguous. Read both rationales before deciding.
 
 Pick the base on which candidate a future maintainer can extend most easily without breaking invariants. Prefer the cleaner boundary or smaller API when two feel tied, per the Laziness Protocol.
 
-Record the pick and the reason in a short synthesis note alongside the base artifact, including the cross-judge's verdict.
+Record the pick and the reason in a short synthesis note alongside the base artifact, including the cross-judge's verdict or the reason it was skipped.
 
 ## Phase E: Graft
 

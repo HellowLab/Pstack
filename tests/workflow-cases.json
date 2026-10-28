@@ -104,7 +104,7 @@
     "prompt": "Set up Pstack with a small reasoning budget. Keep the current model for all roles and show me the settings before saving.",
     "entry": "skills/setup-pstack/SKILL.md",
     "required_contracts": [
-      "small — medium reasoning",
+      "small \u2014 medium reasoning",
       "Alias entries still count toward panel size",
       "only when the user accepts it",
       "Do not derive a new identifier",
@@ -534,5 +534,37 @@
       "Consult per-rule evidence"
     ],
     "expected": "Keep certainty per rule; do not promote an aggregate legend to proof that every named rule always fails."
+  },
+  {
+    "id": "review-working-tree-evidence",
+    "prompt": "Review actual scoped working-tree behavior; unavailable execution remains unverified.",
+    "entry": "skills/interrogate/SKILL.md",
+    "required_contracts": [
+      "Copy scoped uncommitted changes",
+      "Rerun each proposed finding",
+      "Blocked execution is an unverified coverage gap"
+    ],
+    "expected": "Review actual scoped working-tree behavior; unavailable execution remains unverified."
+  },
+  {
+    "id": "handoff-stops-pushes",
+    "prompt": "Independent PRs stay independent and operator handoff stops writes.",
+    "entry": "skills/poteto-mode/playbooks/autopilot-stack.md",
+    "required_contracts": [
+      "stack only real dependencies",
+      "freeze further pushes until the operator explicitly authorizes them"
+    ],
+    "expected": "Independent PRs stay independent and operator handoff stops writes."
+  },
+  {
+    "id": "orchestration-without-runtime",
+    "prompt": "Explain missing host capabilities and never use removed CLI helpers.",
+    "entry": "skills/poteto-mode/playbooks/orchestrate.md",
+    "required_contracts": [
+      "No orchestration runtime is bundled",
+      "one isolated branch writer",
+      "Reconcile late results"
+    ],
+    "expected": "Explain missing host capabilities and never use removed CLI helpers."
   }
 ]

@@ -1,7 +1,7 @@
 # Capability coverage
 
-Upstream 0.15.34 at `519d36aa98955bf680db01bcde5fdfba686dc901`.
-Subtree `c2b5691947671f644078192b7dab87f19740ecb1`. Latest checked commit `519d36aa98955bf680db01bcde5fdfba686dc901` on 2026-10-27.
+Upstream 0.15.36 at `c742dd61706fbacc1b95f1a20b7b988cf096ce6c`.
+Subtree `4719e1c4b4c43bac85d4206a8b41dd2899769c1c`. Latest checked commit `c742dd61706fbacc1b95f1a20b7b988cf096ce6c` on 2026-10-28.
 Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
@@ -69,10 +69,6 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/how/references/explorer-prompt.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/in-your-own-words/SKILL.md` | adapted | Explicit-only portable workflow with host capability and permission guards. | reviewed |
 | `skills/interrogate/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/interrogate/references/code-quality-review.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
-| `skills/interrogate/references/lead-judgment.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
-| `skills/interrogate/references/reviewer-prompt.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
-| `skills/interrogate/references/rubric.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/ketchup-video/SKILL.md` | adapted | Explicit recap with available authorized video tools, outside-repo scratch only, actual artifact/frame evidence and honest fallback to waiting decisions. | reviewed |
 | `skills/ketchup/SKILL.md` | adapted | Explicit-only portable workflow with host capability and permission guards. | reviewed |
 | `skills/maintain-formal-verification-skill/SKILL.md` | adapted | Formal verification drift review with isolated negative controls, dirty-worktree coverage, evidence-based outcomes and guarded sync advancement. | reviewed |
@@ -111,9 +107,6 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/poteto-mode/scripts/bun.lock` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/check-plan.mjs` | adapted | Preserve structural checks as an explicit review contract; no Node helper, vendor-model assertion, scheduler, or project-trunk plugin path is assumed. | reviewed |
 | `skills/poteto-mode/scripts/check-plan.test.ts` | unsupported | Source-only Node helper tests. The portable plan-validation contract carries supported semantics; no vendored helper is executed or packaged. | reviewed |
-| `skills/poteto-mode/scripts/orch/orch.test.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
-| `skills/poteto-mode/scripts/orch/orch.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
-| `skills/poteto-mode/scripts/orch/store.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/package.json` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/watch-pr/cli.test.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/watch-pr/cli.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |

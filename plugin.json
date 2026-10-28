@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "pstack",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Pstack engineering workflows faithfully adapted for ChatGPT and Codex, independently maintained by HellowLab.",
   "author": {
     "name": "SEAN P KUDRNA",
@@ -23,7 +23,7 @@
         "shortDescription": "Ship faster. Build better.",
         "logo": "./assets/pstack.jpeg",
         "composerIcon": "./assets/pstack.jpeg",
-        "longDescription": "Bring Pstack’s engineering workflows to ChatGPT and Codex. Faithfully adapted from Lauren Tan’s original, with upstream tracking and reviewed updates to keep pace with Pstack as it evolves. Investigate, design, build, review, and verify with a consistent set of engineering practices. Independently maintained by HellowLab.",
+        "longDescription": "Bring Pstack\u2019s engineering workflows to ChatGPT and Codex. Faithfully adapted from Lauren Tan\u2019s original, with upstream tracking and reviewed updates to keep pace with Pstack as it evolves. Investigate, design, build, review, and verify with a consistent set of engineering practices. Independently maintained by HellowLab.",
         "developerName": "SEAN P KUDRNA",
         "category": "Developer Tools",
         "capabilities": [],

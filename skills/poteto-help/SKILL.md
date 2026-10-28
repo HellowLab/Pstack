@@ -74,7 +74,7 @@ The default answer is `/poteto-mode`, which runs most of the others when its ste
 | Settle types and module shape before code that crosses a function boundary | [`/architect`](../architect/SKILL.md) |
 | Get several attempts at one brief, merged into the best one | [`/arena`](../arena/SKILL.md) |
 | Run parallel checks over slices, or race workers, through actual supported workers | [`/swarm`](../swarm/SKILL.md) |
-| Have actual independent reviewers review a diff and try to break it | [`/interrogate`](../interrogate/SKILL.md) |
+| Have actual reviewers run safe reproductions and retain rerun-verified failures | [`/interrogate`](../interrogate/SKILL.md) |
 | Fix a bug test-first when a cheap local test exists | [`/tdd`](../tdd/SKILL.md) |
 | Apply TypeScript rules to `.ts` or `.tsx` work | [`/typescript-best-practices`](../typescript-best-practices/SKILL.md) |
 | Strip comments before review, using a reviewer that didn't write them | [`/no-comments`](../no-comments/SKILL.md) |
@@ -85,7 +85,7 @@ The default answer is `/poteto-mode`, which runs most of the others when its ste
 | Bring a verification skill and its feature map back in line with the app | [`/maintain-verification-skill`](../maintain-verification-skill/SKILL.md) |
 | Formally verify a race, invariant, or other property that tests rarely reach | [`/create-formal-verification-skill`](../create-formal-verification-skill/SKILL.md) |
 | Bring formal verification back in line with changed code and distinguish drift from bugs | [`/maintain-formal-verification-skill`](../maintain-formal-verification-skill/SKILL.md) |
-| Catch up with a silent slide video when rendering and frame inspection are available, plus waiting decisions | [`/ketchup-video`](../ketchup-video/SKILL.md) |
+| Catch up with a silent subtitled slide video when rendering and frame inspection are available, plus waiting decisions | [`/ketchup-video`](../ketchup-video/SKILL.md) |
 | Review a TLA+ model or unverified sketch in reader-facing states, with per-rule paths and explicit checker, rendering and replay limits | [`/statechart`](../statechart/SKILL.md) |
 | Vet a performance number before reporting or acting on it | [`/benchmark-checklist`](../benchmark-checklist/SKILL.md) |
 | Run a large or cross-cutting change, or one to review after stepping away | [`/figure-it-out`](../figure-it-out/SKILL.md) |

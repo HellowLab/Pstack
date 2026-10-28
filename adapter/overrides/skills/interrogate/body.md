@@ -1,95 +1,30 @@
 # Interrogate
 
-A single-agent critique is not an independent or multi-model review. Do not auto-apply fixes or post findings externally without the user's authorization.
+Adversaries try to break a change or design. Keep only findings established by an actual run against the relevant code and confirmed by rerunning it. Do not auto-apply fixes or post findings externally without the user's authorization. A single-agent critique is not an independent or multi-model review.
 
-Assign independent reviewers when the host supports them to adversarially review code changes. Each model gets the same prompt and rubric. The upstream adversarial signal comes from real model diversity, not assigned personas. Record the actual available review scope.
+## Frame
 
-The deliverable is a synthesized verdict. Do NOT auto-apply changes.
+Use the scope the user names. Otherwise include the branch diff from its merge base with the actual base branch through the working tree, including relevant staged, unstaged and untracked work. Preserve all original files. State the intent in your own words from the user's message, commits and PR description; clarify genuine ambiguity before assessing violations.
 
-## Step 1, Scope
+## Fan out
 
-Identify what to review from context:
+Use the framing, isolated output locations and fan-out practices in [arena](../arena/SKILL.md), with accepted `interrogate reviewers` preferences instead of arena runners. An unconfigured role has two inherited entries. Run only actual permitted reviewers. Inherit the current model unless a supported override was requested. Preserve confirmed panel lists and report unavailable seats; repeated inherited models do not establish model diversity. If explicitly requested independent or multi-model review cannot run, report that gate as blocked, not satisfied by a single-agent substitute.
 
-- If the user points at specific files or a diff, use that
-- If on a feature branch, run `git diff main...HEAD` (or the appropriate base branch) for the full changeset
-- If the user's message references recent work, gather the relevant files
+Copy scoped uncommitted changes into each isolated reproduction workspace so reviewers test the actual candidate, not just HEAD. Give each reviewer the same scope and intent and this brief:
 
-Package the diff (or file contents) plus any surrounding context files the reviewers need to understand the code.
+> Try to break this change. Prove each finding with a safe run against the real code, such as a failing test, reproduction script or command showing behavior that violates the intent. For a design or plan, use an authorized isolated prototype or probe the current tree. Keep reproduction files in your own workspace. Report a title, exact command, actual output and expected output for every finding. Leave out unexecuted claims, stylistic preferences and speculative future risks. No verified findings is a valid result.
 
-## Step 2, Intent
+Inspect reproduction commands before running them. Review permission does not authorize production writes, new credentials, dependency installation, external posting, or edits to the user's checkout. Use only available tools within scope. When execution is unavailable, unsafe or denied, record the exact missing check and reason; do not bypass it or invent output. Keep the real working tree unchanged and clean up only owned reproduction artifacts.
 
-Before spawning reviewers, state the intent explicitly. Derive this from:
+## Verify
 
-- The user's message
-- Commit messages
-- PR description if one exists
-- The code itself
+Rerun each proposed finding's command in an authorized isolated environment matching the reviewed revision and working-tree changes. Keep it only when the observed output demonstrates a failure that breaks the stated intent. Record the rerun evidence. Merge findings that share a root cause and retain every distinct verified finding, not one reviewer's preferred list. Skip arena's cross-judge, base selection and grafting phases: review does not choose a candidate or apply fixes.
 
-Write one clear paragraph. If you're unsure about the intent, ask the user before proceeding.
+Drop unconfirmed findings with a reason. Blocked execution is an unverified coverage gap, not proof that no bug exists. Distinguish no verified findings from a complete clean bill of health; state what could not be exercised.
 
-## Step 3, Spawn Reviewers
+## Output
 
-Use actual available, permitted independent reviewers. Model diversity is meaningful only when distinct supported models really run. Inherit the host's current model unless a supported override was requested. If independent or multi-model review was explicitly requested and cannot run, report that gate as blocked. A labeled single-agent critique is an alternative, never a substitute reported as independent review.
-
-Use accepted `interrogate reviewers` preferences from the current session or an authorized project document. An unconfigured role has two inherited entries. Run one permitted reviewer per entry and preserve confirmed panel lists. Repeated inherited models do not establish model diversity.
-
-Read `references/reviewer-prompt.md` and fill in the template with:
-1. The stated intent
-2. The diff or file contents
-3. The review rubric from `references/rubric.md`
-4. The code-quality lens from `references/code-quality-review.md`
-
-The same filled template goes to all reviewers, so every model applies the code-quality lens.
-
-## Step 4, Synthesize
-
-As results come back, build a unified picture:
-
-1. **Parse all findings** from the reviewers
-2. **Identify consensus**. Findings raised by 2+ models independently are highest signal.
-3. **Identify lone-model findings**. Still worth reading, but weight accordingly.
-4. **Deduplicate**. Different models may describe the same issue differently. Merge these and note which models raised it.
-5. **Note disagreements**. If one model flags something and another explicitly says the opposite, that's useful context for the verdict.
-
-## Step 5, Lead Judgment
-
-You are the lead reviewer, a pragmatic senior engineer, not a neutral aggregator.
-
-Read `references/lead-judgment.md` for the full framework.
-
-Categorize every finding using these buckets:
-
-- **Act on**. Real issues affecting correctness, security, or maintainability given the actual goals. These would block a real PR.
-- **Consider**. Legitimate points, but you're not sure they outweigh the cost of addressing them right now. Worth the user's attention.
-- **Noted**. Technically valid but not actionable. Context-dependent, premature optimization, or low-impact given the current stage.
-- **Dismissed**. Wrong, nitpicky, or missing context. Brief explanation why.
-
-For each finding, include:
-- Which model(s) raised it
-- The category (act on / consider / noted / dismissed)
-- A one-line rationale for the categorization
-
-## Output Format
-
-Present the verdict in this structure:
-
-### Intent
-> [The stated intent paragraph from Step 2]
-
-### Reviewers
-- Reviewer [label]: [model name], [N findings] (one bullet per reviewer)
-
-### Act On
-[Findings that should be addressed. For each: description, which models raised it, why it matters.]
-
-### Consider
-[Findings worth thinking about. For each: description, which models raised it, tradeoff involved.]
-
-### Noted
-[Valid but low-priority. Brief list.]
-
-### Dismissed
-[Rejected findings with brief rationale.]
-
-### Agreement Map
-[Where did models agree, where did they diverge, and what does the pattern of agreement/disagreement tell us?]
+- Intent: the agreed purpose and exact reviewed revision, including any uncommitted scope.
+- Findings: every verified issue, exact command, actual output, expected behavior, how it breaks intent and which real reviewers found it.
+- Dropped: each reviewer's dropped count and reasons, including unavailable reruns.
+- Coverage limits: missing tools, blocked execution, untested paths and any unmet independence or diversity requirement.
