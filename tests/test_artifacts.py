@@ -1,5 +1,6 @@
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -46,6 +47,8 @@ class ArtifactTests(unittest.TestCase):
             return subprocess.check_output(["git", "-C", str(repo), *args], text=True).strip()
 
         git("init", "-q")
+        # Disposable repos must not leave background writers racing cleanup.
+        git("config", "maintenance.auto", "false")
         git("config", "user.name", "Fixture")
         git("config", "user.email", "fixture@example.invalid")
         git("add", ".")
@@ -59,6 +62,17 @@ class ArtifactTests(unittest.TestCase):
         git("add", ".")
         git("commit", "-qm", "incompatible fixture")
         return repo
+
+    def test_fixture_commits_do_not_spawn_background_maintenance(self):
+        repo = self.source_repo()
+        trace = Path(self.temp.name) / "git-trace.json"
+        subprocess.run(
+            ["git", "-C", str(repo), "-c", "gc.auto=1", "commit",
+             "--allow-empty", "-qm", "maintenance probe"],
+            env={**os.environ, "GIT_TRACE2_EVENT": str(trace)}, check=True)
+        events = [json.loads(line) for line in trace.read_text().splitlines()]
+        children = [event["argv"] for event in events if event["event"] == "child_start"]
+        self.assertFalse(any("maintenance" in argv or "gc" in argv for argv in children), children)
 
     def test_version_bump_retains_prior_pair_and_regenerates_current_archive(self):
         zip_name, digest = build(self.root)

@@ -2,6 +2,7 @@
 
 ## [0.1.14] - 2026-10-28
 
+- Prevent background Git maintenance from racing disposable test-repository cleanup.
 - Review all 29 changed or removed upstream sources through Pstack 0.15.36, preserving attribution and historical releases.
 - Require executable evidence and parent reruns for adversarial findings, including scoped uncommitted changes; retire four obsolete review references.
 - Restrict Arena cross-judging to an accepted, explicitly different model family and disclose unavailable independence instead of silently changing configuration.

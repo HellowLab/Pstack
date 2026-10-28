@@ -387,6 +387,7 @@ class UpstreamTests(unittest.TestCase):
         self.repo = Path(self.temp.name) / "source"
         shutil.copytree(ROOT / "upstream/pstack", self.repo / "pstack")
         self.command("init", "-q")
+        self.command("config", "maintenance.auto", "false")
         self.command("config", "user.name", "Fixture")
         self.command("config", "user.email", "fixture@example.invalid")
         self.commit()
