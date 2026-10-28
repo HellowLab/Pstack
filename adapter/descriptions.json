@@ -6,7 +6,7 @@
   "create-verification-skill": "Create a project verification skill that exercises real user behavior. Use for /create-verification-skill or make a control skill for this repo.",
   "figure-it-out": "Design an auditable workflow for a large migration or a task without a suitable playbook. Use for /figure-it-out or figure it out.",
   "how": "Explain how code works, including runtime flow, placement, ownership, and layering. Use for how does X work or a code walkthrough.",
-  "interrogate": "Adversarially review changes and report a verdict without applying fixes. Use for interrogate, challenge this, stress test this code, or multi-model review.",
+  "interrogate": "Try to break changes or designs with safe real-code runs, rerun findings and report evidence without applying fixes. Disclose unavailable execution or independent review. Use for /interrogate.",
   "maintain-verification-skill": "Audit a project verification skill and feature map against source and live behavior. Use for /maintain-verification-skill or audit the verify skill.",
   "make-bot-ui": "Explain the unsupported Grok Bot webhook UI workflow. Use for make-bot-ui or a request to build the upstream bot UI.",
   "no-comments": "Review comments and replace misleading explanations with clearer code where appropriate. Use for /no-comments or a comment review.",
@@ -20,5 +20,5 @@
   "principle-guard-the-context-window": "Manage large context and outputs without losing evidence. Apply when context is filling up.",
   "principle-never-block-on-the-human": "Proceed with authorized reversible work while respecting scope and approval boundaries. Apply when considering an unnecessary permission question.",
   "statechart": "Review product, protocol, service or design behavior as Mermaid statecharts or TLA+ sketches using verified available tools. Disclose missing checks, replay and rendering; bundled upstream generators are unsupported. Use for /statechart.",
-  "ketchup-video": "Catch up on this chat with a silent slide video only when rendering and inspection are available; otherwise report the gap and waiting decisions. Use for /ketchup-video."
+  "ketchup-video": "Catch up on this chat with a silent subtitled slide video only when rendering and inspection are available; otherwise report the gap and waiting decisions. Use for /ketchup-video."
 }

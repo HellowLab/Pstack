@@ -51,7 +51,7 @@ architect runners: inherit-parent, inherit-parent
 interrogate reviewers: inherit-parent, inherit-parent
 ```
 
-For arena runners, architect runners, and interrogate reviewers, one actual worker runs per list entry when delegation is permitted. Alias entries still count toward panel size. Multiple inherited workers do not establish model diversity. Arena chooses one cross-judge from its pool, preferring an observed model family different from the parent's when available. Swarm uses its worker default unless a race or comparison assigns another supported model per arm. Unavailable independent or diverse review remains a stated gap.
+For arena runners, architect runners, and interrogate reviewers, one actual worker runs per list entry when delegation is permitted. Alias entries still count toward panel size. Multiple inherited workers do not establish model diversity. Arena tries the cross-judge pool in preference order and runs at most one permitted judge from a different model family. Inherited aliases never judge. The default inherited pool therefore supplies no eligible cross-family judge; skip it and disclose the gap unless the user accepts an available explicit override. Do not silently replace an unavailable judge with the parent's family. Swarm uses its worker default unless a race or comparison assigns another supported model per arm. Unavailable independent or diverse review remains a stated gap.
 
 Reflect keeps its three distinct lenses of judgment, tooling, and divergent review. Its shared role line does not reduce the number of lenses.
 

@@ -7,3 +7,5 @@ Full unattended one-owner-per-PR delivery is unsupported in this skills-only pac
 The intended semantics are independent PR owners with isolated branches, current-head proof, root independent verification per round, and one merge only after a current valid verdict and explicit landing authority. Operator-owned items stay with the operator. A plan request is not a go; a stop order halts writes. No invented agents, heartbeat, countersign authority, or implicit merge permission may substitute for those gates.
 
 Explain the missing capabilities and offer an explicitly labeled in-session feature and review workflow. Do not silently downgrade the requested unattended program or call it full autopilot.
+
+Keep the stated user goal in owner briefs and checkpoints. Rebase only for a demonstrated need and revalidate changed heads. Introduced current-head defects block delivery; record unrelated existing issues separately without weakening required verification. Use only supported asynchronous follow-up controls and report unavailable capabilities. Record rejected model choices instead of silently replacing accepted configuration.

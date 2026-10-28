@@ -208,9 +208,9 @@ class PackageTests(unittest.TestCase):
             "architect/references/runner-prompt.md": [
                 "findings against every flag", "design-red-flags.md",
                 "with concrete reasons and any resulting revisions"],
-            "interrogate/SKILL.md": ["references/reviewer-prompt.md",
-                "references/rubric.md", "references/code-quality-review.md",
-                "references/lead-judgment.md"],
+            "interrogate/SKILL.md": ["## Frame", "## Fan out", "## Verify", "## Output",
+                "Copy scoped uncommitted changes", "Rerun each proposed finding",
+                "actual output and expected output", "retain every distinct verified finding"],
             "why/SKILL.md": ["references/epistemics.md", "references/synthesizer-prompt.md"],
             "why/references/epistemics.md": ["### 1. Direct", "### 2. Supported",
                 "### 3. Inferred", "### 4. Speculative", "### 5. Unknown",
@@ -387,6 +387,7 @@ class UpstreamTests(unittest.TestCase):
         self.repo = Path(self.temp.name) / "source"
         shutil.copytree(ROOT / "upstream/pstack", self.repo / "pstack")
         self.command("init", "-q")
+        self.command("config", "maintenance.auto", "false")
         self.command("config", "user.name", "Fixture")
         self.command("config", "user.email", "fixture@example.invalid")
         self.commit()

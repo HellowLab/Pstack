@@ -2,6 +2,10 @@
 
 This page distinguishes repository checks from actual host behavior. A schema-valid ZIP is not a validated ChatGPT or Codex experience.
 
+## Current package boundary
+
+Version 0.1.14 has no native installation, model execution or video rendering qualification. The isolated v0.1.13 measurements below remain historical evidence only.
+
 ## Repository checks
 
 Run the commands in the root README. The suite validates metadata against the saved official Agent Plugins schema, all registered skills and invocation flags, references, licensing, attribution, complete source coverage, byte-identical regeneration, package exclusions, and host/permission regression patterns.
