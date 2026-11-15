@@ -104,7 +104,7 @@
     "prompt": "Set up Pstack with a small reasoning budget. Keep the current model for all roles and show me the settings before saving.",
     "entry": "skills/setup-pstack/SKILL.md",
     "required_contracts": [
-      "small \u2014 medium reasoning",
+      "small \u2014 two steps below the accepted baseline",
       "Alias entries still count toward panel size",
       "only when the user accepts it",
       "Do not derive a new identifier",
