@@ -1,39 +1,73 @@
-# Reviewed upstream adaptation
+# Pending upstream adaptation
 
-Reviewed all 29 changed or removed sources from `519d36aa98955bf680db01bcde5fdfba686dc901` (0.15.34) through `c742dd61706fbacc1b95f1a20b7b988cf096ce6c` (0.15.36). Source data was inspected without running vendored helpers. Reviewed hashes and subtree identity were refreshed only after adaptation.
+Previous snapshot: `c742dd61706fbacc1b95f1a20b7b988cf096ce6c`.
+Candidate snapshot: `bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7`. Version: 0.15.42.
+[Upstream comparison](https://github.com/cursor/plugins/compare/c742dd61706fbacc1b95f1a20b7b988cf096ce6c...bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7)
 
-[Upstream comparison](https://github.com/cursor/plugins/compare/519d36aa98955bf680db01bcde5fdfba686dc901...c742dd61706fbacc1b95f1a20b7b988cf096ce6c)
+The snapshot changed even if the version did not. Source hashes were NOT approved.
+Inspect the subtree diff in this PR, update adapters and tests, then deliberately update reviewed hashes.
+The generated ZIP is an unqualified preview. No auto-merge or publication.
 
-| Source | Review disposition |
-|---|---|
-| `.cursor-plugin/plugin.json` | Version metadata reviewed; adapter retains its own portable manifest. |
-| `README.md` | Source-only documentation reviewed for changed review, dependency-stack and orchestration semantics; adapted guidance carries supported behavior. |
-| `docs/guide/04-design.md` | Source-only documentation reviewed for changed review, dependency-stack and orchestration semantics; adapted guidance carries supported behavior. |
-| `docs/guide/07-overnight.md` | Source-only documentation reviewed for changed review, dependency-stack and orchestration semantics; adapted guidance carries supported behavior. |
-| `docs/guide/10-recipes-and-pitfalls.md` | Source-only documentation reviewed for changed review, dependency-stack and orchestration semantics; adapted guidance carries supported behavior. |
-| `plugin.json` | Version metadata reviewed; adapter retains its own portable manifest. |
-| `skills/arena/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/interrogate/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/interrogate/references/code-quality-review.md` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/interrogate/references/lead-judgment.md` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/interrogate/references/reviewer-prompt.md` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/interrogate/references/rubric.md` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/ketchup-video/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-help/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-help/references/recipes.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/autonomous-run.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/autopilot-full.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/autopilot-stack.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/babysit.md` | Retain stricter existing topology guard while unattended runtimes remain unsupported. |
-| `skills/poteto-mode/playbooks/multi-phase-plan.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/opening-a-pr.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/orchestrate.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/scripts/orch/orch.test.ts` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/poteto-mode/scripts/orch/orch.ts` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/poteto-mode/scripts/orch/store.ts` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/poteto-mode/scripts/package.json` | Source-only test command change; no upstream helper executed or packaged. |
-| `skills/principle-explain-the-number/SKILL.md` | Copy reviewed portable pre-measurement decision threshold and noise-floor guidance. |
-| `skills/setup-pstack/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
+Changed files:
 
-The package keeps 58 skill entry points. Four obsolete interrogate references are removed. Native installation, model execution and video rendering remain unqualified for v0.1.14. Historical archives are preserved byte for byte.
+- `.cursor-plugin/plugin.json`
+- `README.md`
+- `agents/comment-sicko.md`
+- `automations/benny/FOR_AGENTS.md`
+- `automations/benny/skills/reproduce-and-fix-issues/SKILL.md`
+- `automations/benny/skills/setup-benny/SKILL.md`
+- `automations/benny/skills/triage-issue-reports/SKILL.md`
+- `docs/guide/01-setup.md`
+- `docs/guide/02-poteto-mode.md`
+- `docs/guide/03-understand.md`
+- `docs/guide/04-design.md`
+- `docs/guide/10-recipes-and-pitfalls.md`
+- `docs/harness/claude-code.md`
+- `plugin.json`
+- `skills/architect/SKILL.md`
+- `skills/arena/SKILL.md`
+- `skills/blast-radius/SKILL.md`
+- `skills/how/SKILL.md`
+- `skills/how/references/explainer-prompt.md`
+- `skills/how/references/explorer-prompt.md`
+- `skills/no-comments/SKILL.md`
+- `skills/poteto-help/SKILL.md`
+- `skills/poteto-mode/SKILL.md`
+- `skills/poteto-mode/playbooks/bug-fix.md`
+- `skills/poteto-mode/playbooks/feature.md`
+- `skills/poteto-mode/playbooks/hillclimb.md`
+- `skills/poteto-mode/playbooks/investigation.md`
+- `skills/poteto-mode/playbooks/multi-phase-plan.md`
+- `skills/poteto-mode/playbooks/perf-issue.md`
+- `skills/poteto-mode/playbooks/refactoring.md`
+- `skills/recall/SKILL.md`
+- `skills/reflect/SKILL.md`
+- `skills/reflect/references/synthesizer.md`
+- `skills/setup-pstack/SKILL.md`
+- `skills/sharpen/SKILL.md`
+- `skills/statechart/scripts/backends/mermaid.ts`
+- `skills/statechart/scripts/run.ts`
+- `skills/statechart/scripts/test/chart.test.ts`
+- `skills/statechart/scripts/test/cli.test.ts`
+- `skills/statechart/scripts/test/corpus.test.ts`
+- `skills/statechart/scripts/test/corpus/Login/chart.mmd`
+- `skills/statechart/scripts/test/drawn.ts`
+- `skills/statechart/scripts/test/labels.ts`
+- `skills/statechart/scripts/test/render.test.ts`
+- `skills/swarm/SKILL.md`
+- `skills/teach/SKILL.md`
+- `skills/why/SKILL.md`
+- `skills/why/references/epistemics.md`
+- `skills/why/references/investigator-prompt.md`
+- `skills/why/references/source-playbook.md`
+- `skills/why/references/sources/code-archaeology.md`
+- `skills/why/references/sources/databricks.md`
+- `skills/why/references/sources/datadog.md`
+- `skills/why/references/sources/incident-postmortem.md`
+- `skills/why/references/sources/linear.md`
+- `skills/why/references/sources/notion.md`
+- `skills/why/references/sources/sentry.md`
+- `skills/why/references/sources/slack.md`
+- `skills/why/references/synthesizer-prompt.md`
+
+Generation blocked by incompatible upstream input. ValueError. No current candidate ZIP is available. Inspect the source diff and rerun the build locally for diagnostics.
