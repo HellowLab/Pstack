@@ -101,7 +101,7 @@ If an exposed skill is missing from the table, discover it through the host's sk
 
 Close calls:
 
-- `/how` explains what the code does. `/why` explains the reasons. `/teach` runs one or both and explains the result plainly.
+- `/how` briefs one read-only worker to explain the code, with a labeled direct fallback when delegation is unavailable. `/why` answers from the decision record, cites evidence and separates inference from fact. `/teach` uses them when useful and explains the result plainly. Normal implementation playbooks trace the code directly rather than automatically routing through `/how`.
 - `/arena` gives every worker the same brief and merges the best parts. `/swarm` splits work into slices or a race and returns one report.
 - `/architect` implements right after it settles the design. Add "with checkpoint" to review the design before it writes code.
 - `/interrogate` reviews the diff. `/blast-radius` looks for breakage outside the diff and proves the one fact that makes the change safe.

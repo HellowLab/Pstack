@@ -9,6 +9,6 @@ Before the rewrite, briefly state these four practical recommendations:
 3. The specific methods and tools they would use, subject to actual host capabilities and permissions.
 4. An outside check that could establish the result is right, beyond the user or agent asserting it.
 
-Then return the rewritten prompt incorporating exactly those improvements. Do not loosen explicit user constraints, permission boundaries, or required checks. Leave choices that belong to the user open; preserve unresolved decisions as questions or placeholders instead of deciding them. Keep the requested scope unchanged.
+Then return the rewritten prompt incorporating exactly those improvements. Do not loosen explicit user constraints, permission boundaries, or required checks. Have the rewritten prompt ask the agent to prototype choices an experiment can settle and recommend an option from observed results, within the task’s permissions and scope. Leave product or preference choices no experiment can settle to the user; preserve them as questions or placeholders. Keep the requested scope unchanged.
 
 Propose the outside check without claiming it has run. If a tool, source, or independent reviewer is unavailable, state the gap and preserve the requirement without promising access. Do not run commands, edit files, send messages, or start the underlying task. Stop after the rewritten prompt; the user can send it separately when ready.
