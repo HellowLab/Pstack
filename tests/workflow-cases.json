@@ -110,7 +110,7 @@
       "Do not derive a new identifier",
       "Do not promise that a saved preference applies to new sessions"
     ],
-    "expected": "Show all 17 roles and explain inherited settings versus explicit effort targets. Wait for acceptance before any requested save, preserve panel counts, and do not invent model IDs or automatic future loading."
+    "expected": "Show all 13 roles and explain inherited settings versus explicit effort targets. Wait for acceptance before any requested save, preserve panel counts, and do not invent model IDs or automatic future loading."
   },
   {
     "id": "ketchup-no-visual-capability",
