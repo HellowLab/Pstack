@@ -1,10 +1,10 @@
 {
-  "package_version": "0.1.14",
-  "upstream_commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
-  "upstream_tree": "4719e1c4b4c43bac85d4206a8b41dd2899769c1c",
-  "upstream_version": "0.15.36",
-  "latest_checked_commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
-  "checked_at": "2026-10-28",
+  "package_version": "0.1.15",
+  "upstream_commit": "bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7",
+  "upstream_tree": "ca1f48a4c8565485745aab0e6ce6145b176c4bf8",
+  "upstream_version": "0.15.42",
+  "latest_checked_commit": "bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7",
+  "checked_at": "2026-11-15",
   "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
   "pending_files": [],
@@ -355,20 +355,6 @@
       "status": "adapted",
       "destination": "skills/how/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/how/references/explainer-prompt.md",
-      "status": "adapted",
-      "destination": "skills/how/references/explainer-prompt.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/how/references/explorer-prompt.md",
-      "status": "adapted",
-      "destination": "skills/how/references/explorer-prompt.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
@@ -3343,6 +3329,12 @@
       "review": "reviewed"
     },
     {
+      "source": "skills/statechart/scripts/test/drawn.ts",
+      "status": "unsupported",
+      "reason": "Source-only TypeScript chart-test reader; not packaged or executed. No checker or rendering runtime imported.",
+      "review": "reviewed"
+    },
+    {
       "source": "skills/statechart/scripts/test/grid/Grid.cfg",
       "status": "unsupported",
       "reason": "Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported.",
@@ -3474,90 +3466,6 @@
       "status": "adapted",
       "destination": "skills/why/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/epistemics.md",
-      "status": "unchanged",
-      "destination": "skills/why/references/epistemics.md",
-      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/investigator-prompt.md",
-      "status": "adapted",
-      "destination": "skills/why/references/investigator-prompt.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/source-playbook.md",
-      "status": "adapted",
-      "destination": "skills/why/references/source-playbook.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/sources/code-archaeology.md",
-      "status": "adapted",
-      "destination": "skills/why/references/sources/code-archaeology.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/sources/databricks.md",
-      "status": "adapted",
-      "destination": "skills/why/references/sources/databricks.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/sources/datadog.md",
-      "status": "adapted",
-      "destination": "skills/why/references/sources/datadog.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/sources/incident-postmortem.md",
-      "status": "adapted",
-      "destination": "skills/why/references/sources/incident-postmortem.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/sources/linear.md",
-      "status": "adapted",
-      "destination": "skills/why/references/sources/linear.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/sources/notion.md",
-      "status": "adapted",
-      "destination": "skills/why/references/sources/notion.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/sources/sentry.md",
-      "status": "adapted",
-      "destination": "skills/why/references/sources/sentry.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/sources/slack.md",
-      "status": "adapted",
-      "destination": "skills/why/references/sources/slack.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/why/references/synthesizer-prompt.md",
-      "status": "adapted",
-      "destination": "skills/why/references/synthesizer-prompt.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     }
   ]

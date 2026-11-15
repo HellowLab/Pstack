@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.15] - 2026-11-15
+
+- Review upstream Pstack 0.15.42 without importing unavailable model defaults or executable runtimes.
+- Simplify how to one read-only exploration and why to cited historical evidence; remove obsolete templates and mandatory walkthrough routing.
+- Keep recall investigations independent of removed templates and preserve existing model choices during setup.
+- Require a verified different model vendor for Arena cross-judging and disclose unavailable independent judging.
+- Ask sharpen rewrites to test experimentally decidable choices; retain user ownership of product and preference choices.
+- Clarify model-error diagnostics and parent-state diagram entry semantics without claiming a bundled checker or renderer.
+
+Native installation, model execution and rendering were not run for this version. GitHub distribution is separate from marketplace approval.
+
 ## [0.1.14] - 2026-10-28
 
 - Prevent background Git maintenance from racing disposable test-repository cleanup.

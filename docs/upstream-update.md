@@ -1,39 +1,67 @@
 # Reviewed upstream adaptation
 
-Reviewed all 29 changed or removed sources from `519d36aa98955bf680db01bcde5fdfba686dc901` (0.15.34) through `c742dd61706fbacc1b95f1a20b7b988cf096ce6c` (0.15.36). Source data was inspected without running vendored helpers. Reviewed hashes and subtree identity were refreshed only after adaptation.
-
-[Upstream comparison](https://github.com/cursor/plugins/compare/519d36aa98955bf680db01bcde5fdfba686dc901...c742dd61706fbacc1b95f1a20b7b988cf096ce6c)
+Reviewed all 59 changed, added or removed sources from upstream 0.15.36 to 0.15.42 (`bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7`). Vendored code was inspected as source, never executed.
 
 | Source | Review disposition |
 |---|---|
-| `.cursor-plugin/plugin.json` | Version metadata reviewed; adapter retains its own portable manifest. |
-| `README.md` | Source-only documentation reviewed for changed review, dependency-stack and orchestration semantics; adapted guidance carries supported behavior. |
-| `docs/guide/04-design.md` | Source-only documentation reviewed for changed review, dependency-stack and orchestration semantics; adapted guidance carries supported behavior. |
-| `docs/guide/07-overnight.md` | Source-only documentation reviewed for changed review, dependency-stack and orchestration semantics; adapted guidance carries supported behavior. |
-| `docs/guide/10-recipes-and-pitfalls.md` | Source-only documentation reviewed for changed review, dependency-stack and orchestration semantics; adapted guidance carries supported behavior. |
-| `plugin.json` | Version metadata reviewed; adapter retains its own portable manifest. |
-| `skills/arena/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/interrogate/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/interrogate/references/code-quality-review.md` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/interrogate/references/lead-judgment.md` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/interrogate/references/reviewer-prompt.md` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/interrogate/references/rubric.md` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/ketchup-video/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-help/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-help/references/recipes.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/autonomous-run.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/autopilot-full.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/autopilot-stack.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/babysit.md` | Retain stricter existing topology guard while unattended runtimes remain unsupported. |
-| `skills/poteto-mode/playbooks/multi-phase-plan.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/opening-a-pr.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/playbooks/orchestrate.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
-| `skills/poteto-mode/scripts/orch/orch.test.ts` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/poteto-mode/scripts/orch/orch.ts` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/poteto-mode/scripts/orch/store.ts` | Removed upstream; remove obsolete review resources or excluded orchestration classification. No executable imported. |
-| `skills/poteto-mode/scripts/package.json` | Source-only test command change; no upstream helper executed or packaged. |
-| `skills/principle-explain-the-number/SKILL.md` | Copy reviewed portable pre-measurement decision threshold and noise-floor guidance. |
-| `skills/setup-pstack/SKILL.md` | Adapt supported semantics; retain permissions, actual host capabilities, current-head evidence and honest unavailable-capability reporting. |
+| `.cursor-plugin/plugin.json` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `README.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `agents/comment-sicko.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `automations/benny/FOR_AGENTS.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `automations/benny/skills/reproduce-and-fix-issues/SKILL.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `automations/benny/skills/setup-benny/SKILL.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `automations/benny/skills/triage-issue-reports/SKILL.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `docs/guide/01-setup.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `docs/guide/02-poteto-mode.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `docs/guide/03-understand.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `docs/guide/04-design.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `docs/guide/10-recipes-and-pitfalls.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `docs/harness/claude-code.md` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `plugin.json` | Source-only metadata/documentation reviewed; preserve attribution and host-neutral package boundary. |
+| `skills/architect/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/arena/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/blast-radius/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/how/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/how/references/explainer-prompt.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/how/references/explorer-prompt.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/no-comments/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/poteto-help/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/poteto-mode/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/poteto-mode/playbooks/bug-fix.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/poteto-mode/playbooks/feature.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/poteto-mode/playbooks/hillclimb.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/poteto-mode/playbooks/investigation.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/poteto-mode/playbooks/multi-phase-plan.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/poteto-mode/playbooks/perf-issue.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/poteto-mode/playbooks/refactoring.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/recall/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/reflect/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/reflect/references/synthesizer.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/setup-pstack/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/sharpen/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/statechart/scripts/backends/mermaid.ts` | Source-only implementation/test review; no executable or runtime imported. Error and chart readability lessons adapted as guarded instructions. |
+| `skills/statechart/scripts/run.ts` | Source-only implementation/test review; no executable or runtime imported. Error and chart readability lessons adapted as guarded instructions. |
+| `skills/statechart/scripts/test/chart.test.ts` | Source-only implementation/test review; no executable or runtime imported. Error and chart readability lessons adapted as guarded instructions. |
+| `skills/statechart/scripts/test/cli.test.ts` | Source-only implementation/test review; no executable or runtime imported. Error and chart readability lessons adapted as guarded instructions. |
+| `skills/statechart/scripts/test/corpus.test.ts` | Source-only implementation/test review; no executable or runtime imported. Error and chart readability lessons adapted as guarded instructions. |
+| `skills/statechart/scripts/test/corpus/Login/chart.mmd` | Source-only implementation/test review; no executable or runtime imported. Error and chart readability lessons adapted as guarded instructions. |
+| `skills/statechart/scripts/test/drawn.ts` | Source-only implementation/test review; no executable or runtime imported. Error and chart readability lessons adapted as guarded instructions. |
+| `skills/statechart/scripts/test/labels.ts` | Source-only implementation/test review; no executable or runtime imported. Error and chart readability lessons adapted as guarded instructions. |
+| `skills/statechart/scripts/test/render.test.ts` | Source-only implementation/test review; no executable or runtime imported. Error and chart readability lessons adapted as guarded instructions. |
+| `skills/swarm/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/teach/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/why/SKILL.md` | Adapt portable semantics; preserve host permission, actual tools, inherited models and user-selected settings. |
+| `skills/why/references/epistemics.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/why/references/investigator-prompt.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/why/references/source-playbook.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/why/references/sources/code-archaeology.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/why/references/sources/databricks.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/why/references/sources/datadog.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/why/references/sources/incident-postmortem.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/why/references/sources/linear.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/why/references/sources/notion.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/why/references/sources/sentry.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/why/references/sources/slack.md` | Retired upstream resource; remove stale routing and package declarations. |
+| `skills/why/references/synthesizer-prompt.md` | Retired upstream resource; remove stale routing and package declarations. |
 
-The package keeps 58 skill entry points. Four obsolete interrogate references are removed. Native installation, model execution and video rendering remain unqualified for v0.1.14. Historical archives are preserved byte for byte.
+All 58 entry points remain. How uses one read-only worker; why uses cited history without stale templates. Arena cross-judging requires a different verified vendor. Native installation, model execution and rendering remain unqualified for v0.1.15; historical release archives are preserved.

@@ -211,10 +211,8 @@ class PackageTests(unittest.TestCase):
             "interrogate/SKILL.md": ["## Frame", "## Fan out", "## Verify", "## Output",
                 "Copy scoped uncommitted changes", "Rerun each proposed finding",
                 "actual output and expected output", "retain every distinct verified finding"],
-            "why/SKILL.md": ["references/epistemics.md", "references/synthesizer-prompt.md"],
-            "why/references/epistemics.md": ["### 1. Direct", "### 2. Supported",
-                "### 3. Inferred", "### 4. Speculative", "### 5. Unknown",
-                "## When Evidence Contradicts", "## Before Finalizing"],
+            "why/SKILL.md": ["commits and PR discussions", "inferences as inferences", "read-only", "missing evidence"],
+            "how/SKILL.md": ["one actual permitted subagent", "read-only", "delegation is unavailable"],
             "reflect/SKILL.md": ["references/judgment-reviewer.md",
                 "references/tooling-reviewer.md", "references/divergent-reviewer.md",
                 "references/synthesizer.md", "Accepted / Rejected / Backlog"],
@@ -245,15 +243,15 @@ class PackageTests(unittest.TestCase):
         target_table = adapted.split("```text\n", 1)[1].split("```", 1)[0]
         roles = lambda table: [line.split(":", 1)[0] for line in table.splitlines() if ":" in line]
         self.assertEqual(roles(source_table), roles(target_table))
-        for label in ("unlimited — max reasoning", "large — xhigh reasoning",
-                      "medium — high reasoning", "small — medium reasoning"):
+        for label in ("unlimited — one step above the accepted baseline", "large — accepted baseline effort",
+                      "medium — one step below the accepted baseline", "small — two steps below the accepted baseline"):
             self.assertIn(label, adapted)
         for clause in ("Alias entries still count toward panel size",
                        "Do not derive a new identifier", "only when the user accepts it",
                        "Replace only the Pstack configuration section",
                        "Do not promise that a saved preference applies to new sessions"):
             self.assertIn(clause, adapted)
-        self.assertIn("`max`, `xhigh`, `high`, or `medium`", adapted)
+        self.assertIn("`max` > `xhigh` > `high` > `medium` > `low`", adapted)
         self.assertIn("Inherited aliases keep the parent's settings", adapted)
         self.assertIn("Keep existing user-selected models and panel lists", adapted)
         for line in target_table.splitlines():
@@ -261,6 +259,20 @@ class PackageTests(unittest.TestCase):
             if role in {"arena runners", "arena cross-judge pool", "architect runners",
                         "interrogate reviewers"}:
                 self.assertEqual(choices.split(", "), ["inherit-parent", "inherit-parent"])
+
+    def test_simplified_investigations_and_vendor_judging(self):
+        for skill in ("how", "why"):
+            self.assertEqual({p for p in self.files if p.startswith(f"skills/{skill}/")},
+                             {f"skills/{skill}/SKILL.md", f"skills/{skill}/references/host-contract.md"})
+        arena = self.files["skills/arena/SKILL.md"].decode()
+        self.assertIn("model vendor different", arena)
+        self.assertIn("skip", arena.lower())
+        setup = self.files["skills/setup-pstack/SKILL.md"].decode()
+        table = setup.split("```text\n", 1)[1].split("```", 1)[0]
+        for role in ("how explorer", "how explainer", "why investigators", "why synthesizer"):
+            self.assertNotIn(role, table)
+        for name in ("bug-fix", "feature", "refactoring", "hillclimb", "perf-issue", "investigation"):
+            self.assertNotIn("../how/SKILL.md", self.files[f"skills/poteto-mode/playbooks/{name}.md"].decode())
 
     def test_help_offers_setup_without_discarding_existing_preferences(self):
         adapted = self.files["skills/poteto-help/SKILL.md"].decode()
@@ -276,7 +288,7 @@ class PackageTests(unittest.TestCase):
         self.assertIn("bundled upstream generators are unsupported", metadata["description"])
         self.assertIn("../statechart/SKILL.md", self.files["skills/poteto-help/SKILL.md"].decode())
         support = [p for p in self.rules["files"] if p.startswith("skills/statechart/scripts/")]
-        self.assertEqual(len(support), 405)
+        self.assertEqual(len(support), 406)
         for path in support:
             self.assertEqual(self.rules["files"][path]["status"], "unsupported")
             self.assertNotIn("destination", self.rules["files"][path])

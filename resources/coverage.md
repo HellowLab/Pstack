@@ -1,7 +1,7 @@
 # Capability coverage
 
-Upstream 0.15.36 at `c742dd61706fbacc1b95f1a20b7b988cf096ce6c`.
-Subtree `4719e1c4b4c43bac85d4206a8b41dd2899769c1c`. Latest checked commit `c742dd61706fbacc1b95f1a20b7b988cf096ce6c` on 2026-10-28.
+Upstream 0.15.42 at `bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7`.
+Subtree `ca1f48a4c8565485745aab0e6ce6145b176c4bf8`. Latest checked commit `bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7` on 2026-11-15.
 Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
@@ -65,8 +65,6 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/create-verification-skill/references/feature-map-example/search.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/figure-it-out/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/how/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/how/references/explainer-prompt.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/how/references/explorer-prompt.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/in-your-own-words/SKILL.md` | adapted | Explicit-only portable workflow with host capability and permission guards. | reviewed |
 | `skills/interrogate/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/ketchup-video/SKILL.md` | adapted | Explicit recap with available authorized video tools, outside-repo scratch only, actual artifact/frame evidence and honest fallback to waiting decisions. | reviewed |
@@ -550,6 +548,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-2.exit` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/corpus/UserNoDeadlock/verdict-2.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/differential.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/test/drawn.ts` | unsupported | Source-only TypeScript chart-test reader; not packaged or executed. No checker or rendering runtime imported. | reviewed |
 | `skills/statechart/scripts/test/grid/Grid.cfg` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/grid/Grid.tla` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/grid/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
@@ -571,15 +570,3 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/typescript-best-practices/references/patterns.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/unslop/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/why/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/why/references/epistemics.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
-| `skills/why/references/investigator-prompt.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/why/references/source-playbook.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/why/references/sources/code-archaeology.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/why/references/sources/databricks.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/why/references/sources/datadog.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/why/references/sources/incident-postmortem.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/why/references/sources/linear.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/why/references/sources/notion.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/why/references/sources/sentry.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/why/references/sources/slack.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/why/references/synthesizer-prompt.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |

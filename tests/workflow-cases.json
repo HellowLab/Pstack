@@ -104,13 +104,13 @@
     "prompt": "Set up Pstack with a small reasoning budget. Keep the current model for all roles and show me the settings before saving.",
     "entry": "skills/setup-pstack/SKILL.md",
     "required_contracts": [
-      "small \u2014 medium reasoning",
+      "small \u2014 two steps below the accepted baseline",
       "Alias entries still count toward panel size",
       "only when the user accepts it",
       "Do not derive a new identifier",
       "Do not promise that a saved preference applies to new sessions"
     ],
-    "expected": "Show all 17 roles and explain inherited settings versus explicit effort targets. Wait for acceptance before any requested save, preserve panel counts, and do not invent model IDs or automatic future loading."
+    "expected": "Show all 13 roles and explain inherited settings versus explicit effort targets. Wait for acceptance before any requested save, preserve panel counts, and do not invent model IDs or automatic future loading."
   },
   {
     "id": "ketchup-no-visual-capability",
