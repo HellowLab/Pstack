@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.16] - 2026-11-17
+
+- Review all 70 changed, added or removed upstream sources through Pstack 0.15.43 while preserving attribution and historical artifacts.
+- Simplify Architect to two design sketches, using Arena for large or contested designs, and Reflect to durable transcript-grounded proposals with explicit approval. Remove seven retired reference templates.
+- Replace the rigid multi-phase plan skeleton with dependency, ownership and verifiable-result guidance. Retire the Orchestrate route and excluded plan checker; retain 58 skills and 22 playbooks.
+- Add a portable worker contract that preserves user, repository and host gates instead of importing blanket no-question or ready-only PR instructions.
+- Retire obsolete model roles, propose an xhigh ceiling without silently changing accepted preferences, and require verified cross-vendor trail review when available.
+- Carry forward concise writing and engineering principles, plus frozen shipping-scope reuse after watcher restarts, without importing vendor model defaults or executable runtimes.
+
+Native installation, model execution and rendering were not run for this version. Static contracts and repository tests do not establish model behavior or marketplace approval.
+
 ## [0.1.15] - 2026-11-15
 
 - Review upstream Pstack 0.15.42 without importing unavailable model defaults or executable runtimes.

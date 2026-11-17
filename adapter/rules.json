@@ -383,21 +383,6 @@
       "destination": "skills/architect/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
     },
-    "skills/architect/references/design-red-flags.md": {
-      "status": "unchanged",
-      "destination": "skills/architect/references/design-red-flags.md",
-      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow."
-    },
-    "skills/architect/references/rationale-template.md": {
-      "status": "unchanged",
-      "destination": "skills/architect/references/rationale-template.md",
-      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow."
-    },
-    "skills/architect/references/runner-prompt.md": {
-      "status": "adapted",
-      "destination": "skills/architect/references/runner-prompt.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections."
-    },
     "skills/arena/SKILL.md": {
       "status": "adapted",
       "destination": "skills/arena/SKILL.md",
@@ -558,11 +543,6 @@
       "destination": "skills/poteto-mode/playbooks/opening-a-pr.md",
       "reason": "Workflow stages retained with explicit capability, scope, and evidence gates."
     },
-    "skills/poteto-mode/playbooks/orchestrate.md": {
-      "status": "unsupported",
-      "destination": "skills/poteto-mode/playbooks/orchestrate.md",
-      "reason": "Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied."
-    },
     "skills/poteto-mode/playbooks/pause-safely.md": {
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/pause-safely.md",
@@ -625,11 +605,6 @@
     "skills/poteto-mode/scripts/bun.lock": {
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP."
-    },
-    "skills/poteto-mode/scripts/check-plan.mjs": {
-      "status": "adapted",
-      "destination": "skills/poteto-mode/references/plan-validation.md",
-      "reason": "Preserve structural checks as an explicit review contract; no Node helper, vendor-model assertion, scheduler, or project-trunk plugin path is assumed."
     },
     "skills/poteto-mode/scripts/package.json": {
       "status": "unsupported",
@@ -817,26 +792,6 @@
       "destination": "skills/reflect/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained."
     },
-    "skills/reflect/references/divergent-reviewer.md": {
-      "status": "adapted",
-      "destination": "skills/reflect/references/divergent-reviewer.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections."
-    },
-    "skills/reflect/references/judgment-reviewer.md": {
-      "status": "adapted",
-      "destination": "skills/reflect/references/judgment-reviewer.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections."
-    },
-    "skills/reflect/references/synthesizer.md": {
-      "status": "adapted",
-      "destination": "skills/reflect/references/synthesizer.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections."
-    },
-    "skills/reflect/references/tooling-reviewer.md": {
-      "status": "adapted",
-      "destination": "skills/reflect/references/tooling-reviewer.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections."
-    },
     "skills/setup-pstack/SKILL.md": {
       "status": "adapted",
       "destination": "skills/setup-pstack/SKILL.md",
@@ -909,10 +864,6 @@
     "plugin.json": {
       "status": "unsupported",
       "reason": "Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests."
-    },
-    "skills/poteto-mode/scripts/check-plan.test.ts": {
-      "status": "unsupported",
-      "reason": "Source-only Node helper tests. The portable plan-validation contract carries supported semantics; no vendored helper is executed or packaged."
     },
     "skills/sharpen/SKILL.md": {
       "status": "adapted",
@@ -2571,6 +2522,11 @@
     "skills/statechart/scripts/test/drawn.ts": {
       "status": "unsupported",
       "reason": "Source-only TypeScript chart-test reader; not packaged or executed. No checker or rendering runtime imported."
+    },
+    "skills/poteto-mode/worker.md": {
+      "status": "adapted",
+      "destination": "skills/poteto-mode/worker.md",
+      "reason": "Portable worker scope and evidence contract; preserve inherited permission, draft and review gates instead of upstream blanket authority."
     }
   }
 }

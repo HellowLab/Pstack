@@ -4,7 +4,7 @@ This page distinguishes repository checks from actual host behavior. A schema-va
 
 ## Current package boundary
 
-Version 0.1.15 has no native installation, model execution or video rendering qualification. The isolated v0.1.13 measurements below remain historical evidence only.
+Version 0.1.16 has no native installation, model execution or video rendering qualification. The isolated v0.1.13 measurements below remain historical evidence only.
 
 ## Repository checks
 

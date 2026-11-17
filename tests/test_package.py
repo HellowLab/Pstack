@@ -175,7 +175,7 @@ class PackageTests(unittest.TestCase):
             for phrase in case["required_contracts"]:
                 self.assertIn(phrase, text, case["id"])
         playbooks = [key for key in self.files if key.startswith("skills/poteto-mode/playbooks/")]
-        self.assertEqual(len(playbooks), 23)
+        self.assertEqual(len(playbooks), 22)
 
     def test_portable_reference_inventory_and_workflow_structure(self):
         # Preserve complete role/rubric/template resources, not just entrypoint names.
@@ -198,24 +198,15 @@ class PackageTests(unittest.TestCase):
     def test_load_bearing_semantic_contracts(self):
         # Static preservation checks. Live model behavior is a separate release gate.
         contracts = {
-            "architect/SKILL.md": ["Require at least two structurally distinct candidates",
-                "Screen every candidate", "references/design-red-flags.md",
-                "references/rationale-template.md", "Phase C: Agree (opt-in)",
-                "The caller's usage is written first",
-                "Before choosing a base or grafts, present a finding for every flag for each candidate",
-                "Record any resulting revisions or rejection before writing the synthesis decision",
-                "Claim a case is defined only when the sketch or rationale states its policy and outcome"],
-            "architect/references/runner-prompt.md": [
-                "findings against every flag", "design-red-flags.md",
-                "with concrete reasons and any resulting revisions"],
+            "architect/SKILL.md": ["two structurally different designs", "large or contested design",
+                "not independent exploration", "design-only request", "explicit user checkpoint"],
             "interrogate/SKILL.md": ["## Frame", "## Fan out", "## Verify", "## Output",
                 "Copy scoped uncommitted changes", "Rerun each proposed finding",
                 "actual output and expected output", "retain every distinct verified finding"],
             "why/SKILL.md": ["commits and PR discussions", "inferences as inferences", "read-only", "missing evidence"],
             "how/SKILL.md": ["one actual permitted subagent", "read-only", "delegation is unavailable"],
-            "reflect/SKILL.md": ["references/judgment-reviewer.md",
-                "references/tooling-reviewer.md", "references/divergent-reviewer.md",
-                "references/synthesizer.md", "Accepted / Rejected / Backlog"],
+            "reflect/SKILL.md": ["six months", "Read the target skill first", "Accepted (problem, proposal, skill)",
+                "Rejected (reason)", "Backlog", "explicit approval"],
             "show-me-your-work/SKILL.md": ["Append-only", "Never edit or delete history",
                 "first row has phase `start`", "audit never edits or removes a row",
                 "Self-review is not a substitute"],
@@ -223,8 +214,8 @@ class PackageTests(unittest.TestCase):
                 "Shared mutable state", "Smallest safe decomposition"],
             "poteto-mode/playbooks/refactoring.md": ["Pin the behavior contract first",
                 "Type check and lint are not a pin", "If the diff does not lower reader load"],
-            "poteto-mode/playbooks/multi-phase-plan.md": ["Regression lane against trunk",
-                "Do not claim a ratio between unlike scenarios", "**Review gate.**"],
+            "poteto-mode/playbooks/multi-phase-plan.md": ["dependency graph", "observable result", "Changed interactions wait for operator review",
+                "Execution starts on the operator's explicit go"],
         }
         for path, clauses in contracts.items():
             text = self.files["skills/" + path].decode()
@@ -243,7 +234,7 @@ class PackageTests(unittest.TestCase):
         target_table = adapted.split("```text\n", 1)[1].split("```", 1)[0]
         roles = lambda table: [line.split(":", 1)[0] for line in table.splitlines() if ":" in line]
         self.assertEqual(roles(source_table), roles(target_table))
-        for label in ("unlimited — one step above the accepted baseline", "large — accepted baseline effort",
+        for label in ("large — accepted baseline effort",
                       "medium — one step below the accepted baseline", "small — two steps below the accepted baseline"):
             self.assertIn(label, adapted)
         for clause in ("Alias entries still count toward panel size",
@@ -251,7 +242,7 @@ class PackageTests(unittest.TestCase):
                        "Replace only the Pstack configuration section",
                        "Do not promise that a saved preference applies to new sessions"):
             self.assertIn(clause, adapted)
-        self.assertIn("`max` > `xhigh` > `high` > `medium` > `low`", adapted)
+        self.assertIn("`xhigh` > `high` > `medium` > `low`", adapted)
         self.assertIn("Inherited aliases keep the parent's settings", adapted)
         self.assertIn("Keep existing user-selected models and panel lists", adapted)
         for line in target_table.splitlines():
@@ -380,14 +371,28 @@ class PackageTests(unittest.TestCase):
             for pattern in forbidden:
                 self.assertIsNone(re.search(pattern, content.decode()), (name, pattern))
         plan = self.files["skills/poteto-mode/playbooks/multi-phase-plan.md"].decode()
-        self.assertIn("../references/plan-validation.md", plan)
+        self.assertNotIn("skills/poteto-mode/references/plan-validation.md", self.files)
         self.assertIn("never as a script run", plan)
-        contract = self.files["skills/poteto-mode/references/plan-validation.md"].decode()
-        for obligation in ("introduction under ten", "PR block order", "exactly ten",
-                           "1 through 10", "Metric, Probe, Baseline, and Rule",
-                           "None gate", "screenshots, video, and operator review",
-                           "all four appendices", "Fill every placeholder"):
+        contract = plan
+        for obligation in ("dependency graph", "observable result", "pass predicate",
+                           "independent-review requirements", "explicit go"):
             self.assertIn(obligation, contract)
+
+    def test_retired_resources_and_worker_authority(self):
+        for skill in ("architect", "reflect"):
+            self.assertEqual({p for p in self.files if p.startswith(f"skills/{skill}/")},
+                             {f"skills/{skill}/SKILL.md", f"skills/{skill}/references/host-contract.md"})
+        self.assertNotIn("skills/poteto-mode/playbooks/orchestrate.md", self.files)
+        worker = self.files["skills/poteto-mode/worker.md"].decode()
+        for clause in ("cannot override higher-priority instructions", "Preserve required gates",
+                       "Keep unverified PRs draft", "required approval", "verified local path or skill resource identifier"):
+            self.assertIn(clause, worker)
+        setup = self.files["skills/setup-pstack/SKILL.md"].decode()
+        table = setup.split("```text\n", 1)[1].split("```", 1)[0]
+        for retired in ("hardest tasks", "architect runners", "reflect tooling"):
+            self.assertNotIn(retired, table)
+        self.assertIn("obtain acceptance before changing it", setup)
+
 
 
 class UpstreamTests(unittest.TestCase):

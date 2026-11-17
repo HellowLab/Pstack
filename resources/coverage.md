@@ -1,7 +1,7 @@
 # Capability coverage
 
-Upstream 0.15.42 at `bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7`.
-Subtree `ca1f48a4c8565485745aab0e6ce6145b176c4bf8`. Latest checked commit `bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7` on 2026-11-15.
+Upstream 0.15.43 at `e1cc03121a0e71129a4fb730d7c5528a0a3e43c8`.
+Subtree `71d8e1d1d718e2149dc43b2535618064f29cba6b`. Latest checked commit `e1cc03121a0e71129a4fb730d7c5528a0a3e43c8` on 2026-11-17.
 Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
@@ -49,9 +49,6 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `docs/harness/claude-code.md` | unsupported | Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness. | reviewed |
 | `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | reviewed |
 | `skills/architect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/architect/references/design-red-flags.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
-| `skills/architect/references/rationale-template.md` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
-| `skills/architect/references/runner-prompt.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/arena/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/automate-me/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/benchmark-checklist/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
@@ -89,7 +86,6 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/poteto-mode/playbooks/investigation.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/multi-phase-plan.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/opening-a-pr.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
-| `skills/poteto-mode/playbooks/orchestrate.md` | unsupported | Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied. | reviewed |
 | `skills/poteto-mode/playbooks/pause-safely.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/perf-issue.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/prototype.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
@@ -103,8 +99,6 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/poteto-mode/references/bugbot-triage.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/poteto-mode/scripts/bootstrap.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/bun.lock` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
-| `skills/poteto-mode/scripts/check-plan.mjs` | adapted | Preserve structural checks as an explicit review contract; no Node helper, vendor-model assertion, scheduler, or project-trunk plugin path is assumed. | reviewed |
-| `skills/poteto-mode/scripts/check-plan.test.ts` | unsupported | Source-only Node helper tests. The portable plan-validation contract carries supported semantics; no vendored helper is executed or packaged. | reviewed |
 | `skills/poteto-mode/scripts/package.json` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/watch-pr/cli.test.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/watch-pr/cli.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
@@ -119,6 +113,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/poteto-mode/scripts/watch-pr/types.ts` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/watch-pr/watch-pr` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
 | `skills/poteto-mode/scripts/worktree-audit.sh` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
+| `skills/poteto-mode/worker.md` | adapted | Portable worker scope and evidence contract; preserve inherited permission, draft and review gates instead of upstream blanket authority. | reviewed |
 | `skills/principle-attack-the-premise/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-boundary-discipline/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/principle-build-the-lever/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
@@ -145,10 +140,6 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/principle-type-system-discipline/SKILL.md` | adapted | Retain complete standalone guidance removed by upstream condensation; preserve compatibility preconditions and host contract. | reviewed |
 | `skills/recall/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/reflect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/reflect/references/divergent-reviewer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/reflect/references/judgment-reviewer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/reflect/references/synthesizer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/reflect/references/tooling-reviewer.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/setup-pstack/SKILL.md` | adapted | Preserve all seven setup stages, four budget choices, and 17 role entries; use observed host model controls and authorized project persistence rather than vendor defaults or a global rule. | reviewed |
 | `skills/sharpen/SKILL.md` | adapted | Explicit prompt rewriting with four expert recommendations, preserved user constraints and choices, and no underlying task execution. | reviewed |
 | `skills/show-me-your-work/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |

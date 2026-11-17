@@ -1,10 +1,10 @@
 {
-  "package_version": "0.1.15",
-  "upstream_commit": "bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7",
-  "upstream_tree": "ca1f48a4c8565485745aab0e6ce6145b176c4bf8",
-  "upstream_version": "0.15.42",
-  "latest_checked_commit": "bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7",
-  "checked_at": "2026-11-15",
+  "package_version": "0.1.16",
+  "upstream_commit": "e1cc03121a0e71129a4fb730d7c5528a0a3e43c8",
+  "upstream_tree": "71d8e1d1d718e2149dc43b2535618064f29cba6b",
+  "upstream_version": "0.15.43",
+  "latest_checked_commit": "e1cc03121a0e71129a4fb730d7c5528a0a3e43c8",
+  "checked_at": "2026-11-17",
   "adaptation_status": "reviewed",
   "host_validation": "not-qualified",
   "pending_files": [],
@@ -243,27 +243,6 @@
       "status": "adapted",
       "destination": "skills/architect/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/architect/references/design-red-flags.md",
-      "status": "unchanged",
-      "destination": "skills/architect/references/design-red-flags.md",
-      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/architect/references/rationale-template.md",
-      "status": "unchanged",
-      "destination": "skills/architect/references/rationale-template.md",
-      "reason": "Portable reference contract retained byte-for-byte and invoked by its workflow.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/architect/references/runner-prompt.md",
-      "status": "adapted",
-      "destination": "skills/architect/references/runner-prompt.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
@@ -526,13 +505,6 @@
       "review": "reviewed"
     },
     {
-      "source": "skills/poteto-mode/playbooks/orchestrate.md",
-      "status": "unsupported",
-      "destination": "skills/poteto-mode/playbooks/orchestrate.md",
-      "reason": "Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied.",
-      "review": "reviewed"
-    },
-    {
       "source": "skills/poteto-mode/playbooks/pause-safely.md",
       "status": "adapted",
       "destination": "skills/poteto-mode/playbooks/pause-safely.md",
@@ -622,19 +594,6 @@
       "review": "reviewed"
     },
     {
-      "source": "skills/poteto-mode/scripts/check-plan.mjs",
-      "status": "adapted",
-      "destination": "skills/poteto-mode/references/plan-validation.md",
-      "reason": "Preserve structural checks as an explicit review contract; no Node helper, vendor-model assertion, scheduler, or project-trunk plugin path is assumed.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/poteto-mode/scripts/check-plan.test.ts",
-      "status": "unsupported",
-      "reason": "Source-only Node helper tests. The portable plan-validation contract carries supported semantics; no vendored helper is executed or packaged.",
-      "review": "reviewed"
-    },
-    {
       "source": "skills/poteto-mode/scripts/package.json",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
@@ -716,6 +675,13 @@
       "source": "skills/poteto-mode/scripts/worktree-audit.sh",
       "status": "unsupported",
       "reason": "Host-specific helper retained only as source. No helper is executed or distributed in the ZIP.",
+      "review": "reviewed"
+    },
+    {
+      "source": "skills/poteto-mode/worker.md",
+      "status": "adapted",
+      "destination": "skills/poteto-mode/worker.md",
+      "reason": "Portable worker scope and evidence contract; preserve inherited permission, draft and review gates instead of upstream blanket authority.",
       "review": "reviewed"
     },
     {
@@ -898,34 +864,6 @@
       "status": "adapted",
       "destination": "skills/reflect/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/reflect/references/divergent-reviewer.md",
-      "status": "adapted",
-      "destination": "skills/reflect/references/divergent-reviewer.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/reflect/references/judgment-reviewer.md",
-      "status": "adapted",
-      "destination": "skills/reflect/references/judgment-reviewer.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/reflect/references/synthesizer.md",
-      "status": "adapted",
-      "destination": "skills/reflect/references/synthesizer.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
-      "review": "reviewed"
-    },
-    {
-      "source": "skills/reflect/references/tooling-reviewer.md",
-      "status": "adapted",
-      "destination": "skills/reflect/references/tooling-reviewer.md",
-      "reason": "Full reference retained with capability/permission preface and narrow host-path or runner corrections.",
       "review": "reviewed"
     },
     {
