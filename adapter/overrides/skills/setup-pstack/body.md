@@ -12,20 +12,21 @@ Inspect the actual delegation tool schema and any documented model-capability AP
 
 ### 2. Load current state
 
-Read the Pstack role preferences already supplied in this conversation or in an explicitly identified, authorized project document. Do not search unrelated global configuration. Start with inherited roles when no configuration exists. Keep existing user-selected models and panel lists when still available; mark unavailable choices for resolution. The fresh defaults below never shrink a confirmed panel or replace a confirmed model on rerun. Identify retired roles, including how explorer, how explainer, why investigators, and why synthesizer, and show them before removing them from the proposed configuration. Do not infer that a saved model was merely an old default or migrate it automatically.
+Read the Pstack role preferences already supplied in this conversation or in an explicitly identified, authorized project document. Do not search unrelated global configuration. Start with inherited roles when no configuration exists. Keep existing user-selected models and panel lists when still available; mark unavailable choices for resolution. The fresh defaults below never shrink a confirmed panel or replace a confirmed model on rerun. Identify retired roles, including hardest tasks, architect runners, reflect tooling, reflect judgment/divergent/synthesizer, how explorer, how explainer, why investigators, and why synthesizer, and show them before removing them from the proposed configuration. Do not infer that a saved model was merely an old default or migrate it automatically.
 
 ### 3. Budget, map, and confirm
 
 Ask for a budget, naming the current choice when known. Use the host's structured question tool when available, otherwise ask in plain text. Offer these budgets relative to each accepted role baseline:
 
-- `unlimited — one step above the accepted baseline`
 - `large — accepted baseline effort`
 - `medium — one step below the accepted baseline`
 - `small — two steps below the accepted baseline`
 
+Upstream now caps explicit role efforts at xhigh. Show any saved unlimited budget or higher explicit effort as a proposed migration to large or xhigh, and obtain acceptance before changing it. Do not infer the inherited parent effort or silently change saved settings.
+
 These labels are preferences, not price estimates or guaranteed host capabilities. With no configuration, explain that upstream's `large` budget keeps its per-role defaults, which now have different effort levels. This adaptation inherits the host's current settings and applies no automatic effort override.
 
-For an explicit role, agree a baseline effort using observed host controls. Relative to that baseline, `large` keeps the effort, `unlimited` raises it one step, `medium` lowers it one step, and `small` lowers it two steps, clamping at the ladder’s ends. Show each resulting target, including panel entries, before acceptance. Existing accepted absolute effort settings remain unchanged unless the user approves this migration. Apply accepted targets only through documented supported controls. Use the highest supported effort at or below the target on the ladder `max` > `xhigh` > `high` > `medium` > `low`. A requested increase beyond a model’s highest supported effort stays at that supported ceiling. When the host exposes effort-bearing model variants, choose an observed same-family variant under that rule. Do not derive a new identifier by editing its text. If no valid combination is known, mark the role as needing a choice. Inherited aliases keep the parent's settings.
+For an explicit role, agree a baseline effort using observed host controls. Relative to that baseline, `large` keeps the effort, `medium` lowers it one step, and `small` lowers it two steps, clamping at the ladder’s ends. Show each resulting target, including panel entries, before acceptance. Existing accepted absolute effort settings remain unchanged unless the user approves this migration. Apply accepted targets only through documented supported controls. Use the highest supported effort at or below the target on the ladder `xhigh` > `high` > `medium` > `low`. A requested increase beyond a model’s highest supported effort stays at that supported ceiling. When the host exposes effort-bearing model variants, choose an observed same-family variant under that rule. Do not derive a new identifier by editing its text. If no valid combination is known, mark the role as needing a choice. Inherited aliases keep the parent's settings.
 
 Show every role and its model/effort or inherited setting. Ask whether to accept the proposed table or change particular roles, offering only observed choices and the two inherited aliases. Reuse choices the user has already confirmed. A model choice becomes an override request only when the user accepts it; this skill alone does not authorize an override.
 
@@ -37,19 +38,15 @@ bug-fix: inherit-parent
 perf-issue: inherit-parent
 hillclimb: inherit-parent
 judgment and prose: inherit-parent
-hardest tasks: inherit-parent
-reflect tooling: inherit-parent
-reflect judgment, divergent, synthesizer: inherit-parent
 arena runners: inherit-parent, inherit-parent
 arena cross-judge pool: inherit-parent, inherit-parent
 swarm workers: inherit-parent
-architect runners: inherit-parent, inherit-parent
 interrogate reviewers: inherit-parent, inherit-parent
 ```
 
-For arena runners, architect runners, and interrogate reviewers, one actual worker runs per list entry when delegation is permitted. Alias entries still count toward panel size. Multiple inherited workers do not establish model diversity. Arena tries the cross-judge pool in preference order and runs at most one permitted judge from a different model vendor. Different families belonging to the same vendor do not qualify. Use documented identity to establish the vendor. Inherited aliases never judge. The default inherited pool therefore supplies no eligible cross-vendor judge; skip it and disclose the gap unless the user accepts an available explicit override. Do not silently replace an unavailable judge with the parent's vendor. Swarm uses its worker default unless a race or comparison assigns another supported model per arm. Unavailable independent or diverse review remains a stated gap.
+For arena runners and interrogate reviewers, one actual worker runs per list entry when delegation is permitted. Alias entries still count toward panel size. Multiple inherited workers do not establish model diversity. Arena tries the cross-judge pool in preference order and runs at most one permitted judge from a different model vendor. Different families belonging to the same vendor do not qualify. Use documented identity to establish the vendor. Inherited aliases never judge. The default inherited pool therefore supplies no eligible cross-vendor judge; skip it and disclose the gap unless the user accepts an available explicit override. Do not silently replace an unavailable judge with the parent's vendor. Swarm uses its worker default unless a race or comparison assigns another supported model per arm. Unavailable independent or diverse review remains a stated gap.
 
-Reflect keeps its three distinct lenses of judgment, tooling, and divergent review. Its shared role line does not reduce the number of lenses.
+Architect uses two sketches and Arena only for large or contested designs. Reflect reviews the active transcript without mandatory reviewer roles. Retired role settings are shown for confirmation, not silently discarded.
 
 ### 4. Validate
 

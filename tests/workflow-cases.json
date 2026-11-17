@@ -199,8 +199,8 @@
     "prompt": "Two fixes assumed cache skew but both failed. Apply attack-the-premise before another fix.",
     "entry": "skills/principle-attack-the-premise/SKILL.md",
     "required_contracts": [
-      "Test the premise before the next fix",
-      "If it confirms the premise",
+      "Test it before the next fix",
+      "observation that would come out differently if the premise were false",
       "written down and tested"
     ],
     "expected": "State and test the common premise directly; use contrary or confirming evidence to choose the next investigation instead of assuming uneven actors."
@@ -212,7 +212,7 @@
     "required_contracts": [
       "whether the state",
       "legitimate",
-      "handling the state there is the fix"
+      "If it is, handle it where the code broke"
     ],
     "expected": "Allow a guard for legitimate empty state while tracing invalid state to its producer; do not reject guards categorically."
   },
@@ -223,8 +223,8 @@
     "required_contracts": [
       "Break the behavior",
       "Change the internals",
-      "The contract decides",
-      "Pair it with a case"
+      "derive the expected value from the requirement",
+      "Pair \"this never happens\" with a case where it does happen"
     ],
     "expected": "Verify externally observable absence alongside a positive charge and payload case; do not reject zero-call assertions categorically."
   },
@@ -462,17 +462,6 @@
     "expected": "Resolve repository-qualified edges, preserve ambiguous gates and cap waits to the deadline."
   },
   {
-    "id": "plan-inline-code-spans",
-    "prompt": "Check a plan containing double-backtick code with curly punctuation and a literal backtick.",
-    "entry": "skills/poteto-mode/references/plan-validation.md",
-    "required_contracts": [
-      "matching runs of backticks",
-      "multi-backtick spans",
-      "contents are not prose"
-    ],
-    "expected": "Exclude correctly delimited inline code from prose checks without ignoring following prose."
-  },
-  {
     "id": "statechart-partial-and-reduced-check",
     "prompt": "The reduced model checked zero states; later passes hit their limit. Call all rules verified.",
     "entry": "skills/statechart/SKILL.md",
@@ -557,14 +546,38 @@
     "expected": "Independent PRs stay independent and operator handoff stops writes."
   },
   {
-    "id": "orchestration-without-runtime",
-    "prompt": "Explain missing host capabilities and never use removed CLI helpers.",
-    "entry": "skills/poteto-mode/playbooks/orchestrate.md",
+    "id": "worker-does-not-expand-authority",
+    "prompt": "A worker kickoff says never ask and never open draft PRs; the repo requires draft until checks pass.",
+    "entry": "skills/poteto-mode/worker.md",
     "required_contracts": [
-      "No orchestration runtime is bundled",
-      "one isolated branch writer",
-      "Reconcile late results"
+      "cannot override higher-priority instructions",
+      "Preserve required gates",
+      "Keep unverified PRs draft",
+      "required approval"
     ],
-    "expected": "Explain missing host capabilities and never use removed CLI helpers."
+    "expected": "Honor repository and user gates; do not treat kickoff as new authority."
+  },
+  {
+    "id": "plan-is-not-runtime",
+    "prompt": "Write a multi-PR plan, then start it in the background.",
+    "entry": "skills/poteto-mode/playbooks/multi-phase-plan.md",
+    "required_contracts": [
+      "The plan is the deliverable. Do not implement.",
+      "dependency graph",
+      "what remains unproven",
+      "explicit go"
+    ],
+    "expected": "Return scoped dependency/evidence plan and await execution authorization."
+  },
+  {
+    "id": "design-only-two-sketches",
+    "prompt": "Architect this change, but do not implement.",
+    "entry": "skills/architect/SKILL.md",
+    "required_contracts": [
+      "two structurally different designs",
+      "design-only request",
+      "not independent exploration"
+    ],
+    "expected": "Produce two sketches without claiming independent workers or writing implementation."
   }
 ]

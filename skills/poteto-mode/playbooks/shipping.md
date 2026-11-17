@@ -21,3 +21,5 @@ This is the half after `playbooks/babysit.md`.
 **Reply:** the verified run and its ceiling, each PR's verdict and who produced it, what you armed and how you confirmed it, what landed, and what the next gap needs.
 
 Resolve stack edges using repository identity as well as branch names. A fork head with the same name as a local branch is not that branch's parent; do not traverse descendants through that fork head. Missing cross-repository identity is an unknown gate. Prefer a sole open PR over historical closed/merged PRs for the same branch; multiple active matches remain ambiguous and blocked. Preserve historical references when no active PR exists. Cap each poll or retry wait to the remaining authorized deadline; when time expires, report the unresolved state rather than extending the budget.
+
+If an authorized watcher is restarted, reuse the same frozen bottom-to-top PR list and repository identity. Reconcile each current head and verdict before landing; a restart cannot widen the shipping scope.

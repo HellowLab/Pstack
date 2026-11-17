@@ -1,6 +1,6 @@
 # Poteto mode
 
-Stop when the user opts out or starts a casual turn. For a new task, match a fresh playbook; native persistent mode UI is not assumed. The orchestrate and autopilot routes below describe upstream intent but remain unsupported runtimes in this skills-only package.
+Stop when the user opts out or starts a casual turn. For a new task, match a fresh playbook; native persistent mode UI is not assumed. The autopilot routes below describe upstream intent but remain unsupported runtimes in this skills-only package.
 
 Give each delegate the exact skill resource identifier or verified local path and the host-supported way to read it. Never guess a Cursor installation path. The receiving chat owns playbook selection, the todo list, and spawning. Delegates execute their assigned playbook steps; they do not delegate that ownership again.
 
@@ -14,7 +14,7 @@ Remaining triggers:
 
 - About to ask a structured user question on a "which approach", "how should I", or "what should this do" fork → classify it before you ask. If the answer is a fact you could observe by running something (behavior, timing, layout, output, perf, even whether an eval separates), it is not the human's to answer. Sketch it via the Prototype playbook (`playbooks/prototype.md`) and let the result decide. If the task is a read-only Investigation whose deliverable is a cited answer, stay in it and answer from the evidence rather than building a sketch. Reserve the question for a genuine product or preference call no experiment can settle. Under a full-autonomy grant, decide a call that the grant covers, act on it, and report it, with no reply word and no offer. Under the grant, apply a default for a call that only the operator can make. Report the default with a full explanation, and say in plain words what the operator could tell you to do instead. The operator answers in their own words. Never give a shorthand token to type back. User-defined gates and host approval requirements still need the operator.
 - Any code → name the data shape first, and choose its organizing structure per **principle-model-the-domain**.
-- Code crossing a function boundary → the **architect** skill, parallel design exploration before implementing.
+- Code crossing a function boundary → the **architect** skill, two design sketches before implementing; use Arena for large or contested designs.
 - Parallel fan-out → the **swarm** skill for coverage matrices, races, gauntlets, and exploration partitions. Use **arena** for design or code bakeoffs with base selection and grafting.
 - Contested design → the **interrogate** skill (multi-model adversarial) before shipping.
 - Nontrivial multi-step → write the throughput checkpoint (Feature step 3).
@@ -81,6 +81,8 @@ Continue authorized reversible work without needless approval requests. Only use
 
 ## Subagents
 
+Read [the worker contract](worker.md) and include its verified path or resource identifier and reading mechanism in each permitted delegation brief. It preserves user, repository and host gates even when a brief omits them.
+
 Use actual permitted host workers and isolated writable locations. Inherit the current model unless a supported override was requested. Routed workflow skills retain their distinct roles and evidence contracts; there is no native poteto-agent registration in this package. If delegation is unavailable, disclose sequential execution. If independent review or model diversity is a required gate, it remains blocked without actual reviewers. Do not change access modes to work around a restriction.
 
 Match worker effort to the task only within user-confirmed role settings and actual host options. Inherited model settings stay inherited. Do not derive model identifiers, switch families, enable fast service, or change billing from upstream defaults. If an explicitly requested option is unavailable, disclose the gap and keep the permitted setting.
@@ -111,7 +113,7 @@ Comments follow the same rule as the reply. Write them clean as you go. Keep a c
 
 Open a todolist whose first items are the matched playbook's steps, copied in verbatim, before any task-specific todos. A step you choose not to do stays in the list with a one-line `skip: <reason>`. Match the task to a playbook below, open its file, and copy its steps in verbatim.
 
-A large or cross-cutting effort (a migration across many call sites, an ambitious multi-part change), or work the user steps away from to trust later, routes to the **figure-it-out** skill even when a narrower playbook like Feature fits. Use **figure-it-out** whenever no bundled playbook fits. It designs a bespoke, rigorous playbook for the task. A standing project-scale program (multi-day, many stacked PRs, a fleet of subagents under one coordinator) routes to **Orchestrate** instead. figure-it-out designs one bespoke run, orchestrate runs the program.
+A large or cross-cutting effort (a migration across many call sites, an ambitious multi-part change), or work the user steps away from to trust later, routes to the **figure-it-out** skill even when a narrower playbook like Feature fits. Use **figure-it-out** whenever no bundled playbook fits. It designs a bespoke, rigorous playbook for the task. For a project-scale program, design an authorized plan and identify missing durable-state or scheduler capabilities. The upstream Orchestrate route has been retired; do not promise a replacement runtime.
 
 - **Investigation.** Read-only question: how does X work, why was Y built this way, are we sure about Z, should we do X or Y. `playbooks/investigation.md`.
 - **Bug fix.** A reported defect to reproduce, root-cause, and fix with runtime evidence. `playbooks/bug-fix.md`.
@@ -128,7 +130,6 @@ A large or cross-cutting effort (a migration across many call sites, an ambitiou
 - **Babysit.** Driving a PR or a stack to merge-ready: conflicts, review threads, CI. `playbooks/babysit.md`.
 - **Shipping.** The half after Babysit. Independently verifying a green stack, then landing the contiguous verified run bottom-up through `gh` by default or Origin when its CLI is available. `playbooks/shipping.md`.
 - **Autonomous run.** A long task to drive to completion without stopping ("run until done", "repeat until X"). `playbooks/autonomous-run.md`.
-- **Orchestrate.** A standing project handed to one coordinator chat: multi-day, many stacked PRs, dozens to hundreds of subagents, minimal human turns ("run this whole project", "own this migration until it lands"). Distinct from Autonomous run, which drives one task to a predicate. Work one agent could finish inside the session's budget routes there, not here, however program-shaped the phrasing sounds. `playbooks/orchestrate.md`.
 - **Autopilot-full.** A queue of independent PRs run to merged with full autonomy. One owner per PR carries build through merge, and the root swarm-verifies each PR before its owner merges ("autopilot this queue", "full autopilot", one-owner-per-PR programs). `playbooks/autopilot-full.md`.
 - **Autopilot-stack.** Autopilot-full delivery without merging, with only real dependencies stacked and an explicit operator handoff ("autopilot-stack", "stack them, don't ship", "build the stack, I'll land it"). `playbooks/autopilot-stack.md`.
 - **Session pickup.** Resuming or taking over a prior agent's in-flight work from a transcript, cloud-agent URL, or pushed branch. `playbooks/session-pickup.md`.

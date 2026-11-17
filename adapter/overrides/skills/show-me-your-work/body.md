@@ -58,7 +58,7 @@ Correct the log, not the story. The audit never edits or removes a row, even an 
 
 ## Cross-model review of the trail
 
-Before handing back, obtain a real independent review of the trail, using a different model family only if the host exposes one and the task permits it. Self-review is not a substitute. If unavailable, report this review gate as unmet; a labeled self-audit can supplement it but cannot satisfy it. The reviewer reads the trail and available transcript and flags weak evidence and risk without redoing the work.
+Before handing back, obtain a real independent review of the trail, using a verified different model vendor only if the host exposes one and the task permits it. Self-review is not a substitute. If unavailable, report this review gate as unmet; a labeled self-audit can supplement it but cannot satisfy it. The reviewer reads the trail and available transcript and flags weak evidence and risk without redoing the work.
 
 - Decisions logged with weak or absent evidence.
 - Verification steps skipped or claimed without proof in the transcript.
@@ -74,3 +74,5 @@ Read top to bottom, follow the evidence pointers, spot-check. GitHub renders a c
 ## Composing this skill
 
 Other skills route their audit trail here instead of inventing one. Reference it by name and let it own the format. Don't restate the columns.
+
+Different families from the same vendor do not satisfy cross-vendor review. If vendor identity or a permitted other-vendor reviewer is unavailable, report that gap even when an independent same-vendor review was possible.
