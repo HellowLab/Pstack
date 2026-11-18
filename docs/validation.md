@@ -4,6 +4,8 @@ This page distinguishes repository checks from actual host behavior. A schema-va
 
 ## Current package boundary
 
+As of November 18, 2026, public marketplace release is not being pursued. The public-release assessments and submission checklists below are historical records, not pending publication work. This decision does not change any recorded qualification result or platform review state.
+
 Version 0.1.16 has no native installation, model execution or video rendering qualification. The isolated v0.1.13 measurements below remain historical evidence only.
 
 ## Repository checks

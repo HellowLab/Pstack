@@ -47,7 +47,7 @@ The release starts as a draft. It receives only that version's ZIP and checksum 
 
 Rerun a failed workflow on the same current main commit to recover an interrupted tag creation, draft, upload, or publication. Completed objects are reused. API errors other than an explicit missing-tag 404 fail closed. If main advanced, the run stops without updating Latest. If a partial tag/draft belongs to a different commit, preserve it and use a new version rather than move the tag. Review the job summary before retrying. Do not repair failures by deleting historical releases or replacing assets.
 
-These conventions follow the repository's existing project release patterns: version tags, matching changelog notes, and a visible Latest release. The GitHub release distributes repository-validated bytes. It is not a plugin marketplace submission, review approval, or native model-behavior qualification. The public rc.5 review remains separate and untouched.
+These conventions follow the repository's existing project release patterns: version tags, matching changelog notes, and a visible Latest release. The GitHub release distributes repository-validated bytes. It is not a plugin marketplace submission, review approval, or native model-behavior qualification. Public marketplace release is not being pursued. Historical submission records and artifacts remain preserved.
 
 API contracts: [GitHub releases](https://docs.github.com/en/rest/releases/releases), [release assets](https://docs.github.com/en/rest/releases/assets), and [asset digests](https://github.blog/changelog/2025-06-03-releases-now-expose-digests-for-release-assets/).
 
@@ -59,6 +59,6 @@ GitHub announced [26.04 general availability](https://github.com/actions/runner-
 
 ## Keep installation links current
 
-When the public marketplace version is published, verify that the public listing is accessible and belongs to this Pstack project. Add its verified installation URL to the README installation section, alongside the qualified GitHub release route. Do not use a publisher-management URL as an install link. Update the dated review status only from verified publisher evidence, and retain the distinction between marketplace availability and the latest tested repository adaptation.
+As of November 18, 2026, public marketplace release is not being pursued. Maintain the qualified GitHub release and private-installation guidance. Do not add a marketplace installation link or treat the historical submission checklist as pending work. Preserve dated review records and submitted artifacts. This documentation decision does not authorize submission, publication, replacement, cancellation of a review, or deletion of a platform project.
 
 Documentation-only changes do not require a new package version. Confirm that package bytes remain unchanged and let the release guard preserve the existing immutable version tag and assets.
