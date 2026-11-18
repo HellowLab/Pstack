@@ -38,9 +38,9 @@ Set up weekly Pstack update checks following https://github.com/HellowLab/Pstack
 
 A reminder alone cannot update a plugin. An offline computer or unavailable account tool is a blocker for that target, not permission to update another. The [installation guide](docs/install.md) covers updates, removal, and verification limits.
 
-## Compatibility, review, and qualification
+## Distribution, compatibility, and qualification
 
-The public OpenAI marketplace submission is **in review**, last verified October 27, 2026. No public install link is available yet. Marketplace review can delay initial availability and later updates; there is no promised turnaround. Once published, we will add the verified public listing here as another installation option. GitHub installations also need update checks to stay current.
+As of November 18, 2026, a public OpenAI marketplace release is not being pursued. Use the qualified GitHub release for local or private-account installation through the routes above. These installations need update checks to stay current.
 
 This is not an official poteto, Cursor, or OpenAI release. Pstack uses only the tools and permissions available in the host. Version 0.1.16 is distributed through GitHub releases and is not fully host-qualified. GitHub releases are separate from plugin marketplace approval. The submitted 0.1.0-rc.5 package is preserved; its verified state on October 27, 2026 was In review / Not published.
 
@@ -68,7 +68,7 @@ python3 scripts/build.py
 python3 scripts/build.py --check
 ```
 
-The current candidate ZIP and SHA-256 file are in [dist](dist/). Earlier archive pairs remain there with their original checksums, including the submitted rc.5 package. They contain root `plugin.json`, a generated Codex compatibility manifest, generated skills, resources, the approved original artwork, the full MIT license, and attribution. Both icon fields reference the unchanged [Pstack artwork](assets/pstack.jpeg). Its "Always up to date" chalkboard is artwork copy: the workflow is scheduled daily, and updates require review. Marketplace branding approval remains a release gate. The ZIP contains no upstream executable helpers, MCP configuration, hooks, secrets, or publisher agreements. Repeated builds from the same inputs are byte-identical.
+The current candidate ZIP and SHA-256 file are in [dist](dist/). Earlier archive pairs remain there with their original checksums, including the submitted rc.5 package. They contain root `plugin.json`, a generated Codex compatibility manifest, generated skills, resources, the approved original artwork, the full MIT license, and attribution. Both icon fields reference the unchanged [Pstack artwork](assets/pstack.jpeg). Its "Always up to date" chalkboard is artwork copy: the workflow is scheduled daily, and updates require review. The ZIP contains no upstream executable helpers, MCP configuration, hooks, secrets, or publisher agreements. Repeated builds from the same inputs are byte-identical.
 
 Edit `adapter/overrides/`, `adapter/rules.json`, and authored metadata rather than generated skills. The complete untouched upstream subtree is retained under `upstream/pstack/` as review data. Do not install that subtree as this plugin.
 
@@ -78,11 +78,11 @@ Follow the [installation guide](docs/install.md#install-on-one-computer) to stag
 
 ## Privacy and support
 
-Pstack is offered free, with availability requested in all OpenAI-supported countries. See the [privacy policy](docs/privacy.md). Use [GitHub Issues](https://github.com/HellowLab/Pstack/issues) for general support and `me@seankudrna.com` for private support or privacy requests.
+Pstack is free to use. Installation depends on the tools and permissions available in your host. See the [privacy policy](docs/privacy.md). Use [GitHub Issues](https://github.com/HellowLab/Pstack/issues) for general support and `me@seankudrna.com` for private support or privacy requests.
 
 ## Maintain and publish
 
-Read [maintenance](docs/maintenance.md) for the daily check, the one-draft-PR update flow, the verified repository PR-creation permission and recovery behavior, and manual adaptation review. Read [publishing](docs/publishing.md) for verified-publisher requirements, actual host validation, review, and explicit publication steps. The initial private-beta implementation was squash-merged in [PR #1](https://github.com/HellowLab/Pstack/pull/1). Future maintenance updates remain draft PRs for human review.
+Read [maintenance](docs/maintenance.md) for the daily check, the one-draft-PR update flow, the verified repository PR-creation permission and recovery behavior, and manual adaptation review. The [historical public-submission record](docs/publishing.md) preserves the earlier preparation and review evidence; it is not an active publication plan. The initial private-beta implementation was squash-merged in [PR #1](https://github.com/HellowLab/Pstack/pull/1). Future maintenance updates remain draft PRs for human review.
 
 Pstack is MIT licensed. Copyright (c) 2026 Lauren Tan. See [LICENSE](LICENSE).
 
