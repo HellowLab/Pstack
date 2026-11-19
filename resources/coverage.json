@@ -1,19 +1,28 @@
 {
   "package_version": "0.1.16",
-  "upstream_commit": "e1cc03121a0e71129a4fb730d7c5528a0a3e43c8",
-  "upstream_tree": "71d8e1d1d718e2149dc43b2535618064f29cba6b",
-  "upstream_version": "0.15.43",
-  "latest_checked_commit": "e1cc03121a0e71129a4fb730d7c5528a0a3e43c8",
-  "checked_at": "2026-11-17",
-  "adaptation_status": "reviewed",
+  "upstream_commit": "e58dd043600587dbaf58ba315e7f2b38373eeb43",
+  "upstream_tree": "1186430edb1d16e41d644aaf155a92a09efe06ff",
+  "upstream_version": "0.15.44",
+  "latest_checked_commit": "e58dd043600587dbaf58ba315e7f2b38373eeb43",
+  "checked_at": "2026-11-19",
+  "adaptation_status": "pending",
   "host_validation": "not-qualified",
-  "pending_files": [],
+  "pending_files": [
+    ".cursor-plugin/plugin.json",
+    "README.md",
+    "docs/harness/claude-code.md",
+    "plugin.json",
+    "skills/arena/SKILL.md",
+    "skills/poteto-mode/SKILL.md",
+    "skills/setup-pstack/SKILL.md",
+    "<subtree tree, including file modes>"
+  ],
   "files": [
     {
       "source": ".cursor-plugin/plugin.json",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": ".gitignore",
@@ -31,7 +40,7 @@
       "source": "README.md",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "agents/comment-sicko.md",
@@ -230,13 +239,13 @@
       "source": "docs/harness/claude-code.md",
       "status": "unsupported",
       "reason": "Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "plugin.json",
       "status": "unsupported",
       "reason": "Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/architect/SKILL.md",
@@ -250,7 +259,7 @@
       "status": "adapted",
       "destination": "skills/arena/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/automate-me/SKILL.md",
@@ -418,7 +427,7 @@
       "status": "adapted",
       "destination": "skills/poteto-mode/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-mode/playbooks/authoring-a-skill.md",
@@ -871,7 +880,7 @@
       "status": "adapted",
       "destination": "skills/setup-pstack/SKILL.md",
       "reason": "Preserve all seven setup stages, four budget choices, and 17 role entries; use observed host model controls and authorized project persistence rather than vendor defaults or a global rule.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/sharpen/SKILL.md",
