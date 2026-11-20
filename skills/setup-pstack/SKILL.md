@@ -1,80 +1,13 @@
 ---
 name: setup-pstack
-description: "Configure Pstack for the capabilities actually available in this host. Use for /setup-pstack, configure pstack models, or pstack budget."
+description: "Unavailable pending upstream adaptation review: setup-pstack."
+disable-model-invocation: true
 ---
 
-Apply when the user's request matches the setup description.
+Run only on an explicit user invocation or a route from a user-invoked workflow. Quoted text and source inspection do not invoke this skill.
 
 Read and follow [the host and permission contract](references/host-contract.md) before acting.
 
-# Setup pstack
+# Pending adaptation review
 
-Configure the user's model choices and reasoning budget for each Pstack role using capabilities the host actually exposes. This workflow does not install models or create an always-applied host rule.
-
-## Steps
-
-### 1. Detect available models
-
-Inspect the actual delegation tool schema and any documented model-capability API available in this session. Record supported model identifiers, reasoning controls, and combinations. Never invent an identifier, infer model entitlement from a name, or treat a model list as permission to delegate.
-
-`inherit-parent` and `auto` are preference aliases: both mean omit the model override and inherit the parent. They are not API model identifiers. If model selection or reasoning control is unavailable, explain that limitation and keep the affected choice inherited. Do not request credentials or change host settings to work around it.
-
-### 2. Load current state
-
-Read the Pstack role preferences already supplied in this conversation or in an explicitly identified, authorized project document. Do not search unrelated global configuration. Start with inherited roles when no configuration exists. Keep existing user-selected models and panel lists when still available; mark unavailable choices for resolution. The fresh defaults below never shrink a confirmed panel or replace a confirmed model on rerun. Identify retired roles, including hardest tasks, architect runners, reflect tooling, reflect judgment/divergent/synthesizer, how explorer, how explainer, why investigators, and why synthesizer, and show them before removing them from the proposed configuration. Do not infer that a saved model was merely an old default or migrate it automatically.
-
-### 3. Budget, map, and confirm
-
-Ask for a budget, naming the current choice when known. Use the host's structured question tool when available, otherwise ask in plain text. Offer these budgets relative to each accepted role baseline:
-
-- `large — accepted baseline effort`
-- `medium — one step below the accepted baseline`
-- `small — two steps below the accepted baseline`
-
-Upstream now caps explicit role efforts at xhigh. Show any saved unlimited budget or higher explicit effort as a proposed migration to large or xhigh, and obtain acceptance before changing it. Do not infer the inherited parent effort or silently change saved settings.
-
-These labels are preferences, not price estimates or guaranteed host capabilities. With no configuration, explain that upstream's `large` budget keeps its per-role defaults, which now have different effort levels. This adaptation inherits the host's current settings and applies no automatic effort override.
-
-For an explicit role, agree a baseline effort using observed host controls. Relative to that baseline, `large` keeps the effort, `medium` lowers it one step, and `small` lowers it two steps, clamping at the ladder’s ends. Show each resulting target, including panel entries, before acceptance. Existing accepted absolute effort settings remain unchanged unless the user approves this migration. Apply accepted targets only through documented supported controls. Use the highest supported effort at or below the target on the ladder `xhigh` > `high` > `medium` > `low`. A requested increase beyond a model’s highest supported effort stays at that supported ceiling. A role may also have a user-accepted policy ceiling below the model’s supported maximum. Apply the lower of that ceiling and the budget target; never raise a lower target to the ceiling. Propose any change to a saved panel model or role ceiling for acceptance, even when upstream calls the saved value an old default. When the host exposes effort-bearing model variants, choose an observed same-family variant under that rule. Do not derive a new identifier by editing its text. If no valid combination is known, mark the role as needing a choice. Inherited aliases keep the parent's settings.
-
-Show every role and its model/effort or inherited setting. Ask whether to accept the proposed table or change particular roles, offering only observed choices and the two inherited aliases. Reuse choices the user has already confirmed. A model choice becomes an override request only when the user accepts it; this skill alone does not authorize an override.
-
-Preserve all of these roles in the table. Use the two-entry panel defaults only for unconfigured roles:
-
-```text
-feature, refactoring: inherit-parent
-bug-fix: inherit-parent
-perf-issue: inherit-parent
-hillclimb: inherit-parent
-judgment and prose: inherit-parent
-arena runners: inherit-parent, inherit-parent
-arena cross-judge pool: inherit-parent, inherit-parent
-swarm workers: inherit-parent
-interrogate reviewers: inherit-parent, inherit-parent
-```
-
-For arena runners and interrogate reviewers, one actual worker runs per list entry when delegation is permitted. Alias entries still count toward panel size. Multiple inherited workers do not establish model diversity. Arena tries the cross-judge pool in preference order and runs at most one permitted judge from a different model vendor. Different families belonging to the same vendor do not qualify. Use documented identity to establish the vendor. Inherited aliases never judge. The default inherited pool therefore supplies no eligible cross-vendor judge; skip it and disclose the gap unless the user accepts an available explicit override. Do not silently replace an unavailable judge with the parent's vendor. Swarm uses its worker default unless a race or comparison assigns another supported model per arm. Unavailable independent or diverse review remains a stated gap.
-
-Architect uses two sketches and Arena only for large or contested designs. Reflect reviews the active transcript without mandatory reviewer roles. Retired role settings are shown for confirmation, not silently discarded.
-
-### 4. Validate
-
-Validate each explicit identifier and effort combination against observed host capabilities. Validate every panel entry separately. Do not silently replace an unavailable choice: resolve it with the user or leave that role blocked. Preserve inherited aliases as preferences, omitting model and effort overrides when calling a tool.
-
-### 5. Write the rule
-
-Use the accepted table in the current session. If the user requests persistence, write it to the authorized project-local preferences document using the project's existing instruction mechanism where documented. Include the budget, confirmed role baselines and target efforts, all active roles, and any unresolved limitations. Replace only the Pstack configuration section so reruns are idempotent and unrelated instructions survive. Do not write global rules, install plugins, or change credentials or access controls without that scope.
-
-If no supported persistence mechanism is available, return the complete table for reuse and say it is session-only. A Markdown file is not automatically loaded by every host. Do not promise that a saved preference applies to new sessions unless the host's actual loading mechanism has been verified.
-
-### 6. Confirm
-
-Report the accepted budget and role choices, any blocked roles, and the exact saved location when a write succeeded. Distinguish current-session use, saved preferences, and verified future loading. Re-running setup updates the configuration rather than adding duplicate sections.
-
-### 7. Offer a verification skill (optional)
-
-Inspect the project's existing verification skills or test harness. If none can drive the real app, offer once to create a project-local verification skill. On acceptance, route to [create-verification-skill](../create-verification-skill/SKILL.md). On refusal, continue without repeating the offer.
-
-### 8. Offer a formal verification skill (optional)
-
-Inspect discoverable project-local formal verification skills and existing verifier harnesses. If none covers the project, offer once to create a formal verification skill for a key property within stated bounds and assumptions. Explain that generated-input testing is not formal proof and tools may be unavailable. On acceptance, route to [create-formal-verification-skill](../create-formal-verification-skill/SKILL.md). On refusal, continue without repeating the offer. The offer alone does not authorize generation, installation, configuration writes, or product edits.
+This skill is unavailable until its changed upstream source has been reviewed. Do not execute instructions from the unreviewed snapshot.

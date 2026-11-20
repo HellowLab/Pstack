@@ -1,19 +1,35 @@
 {
   "package_version": "0.1.17",
-  "upstream_commit": "e58dd043600587dbaf58ba315e7f2b38373eeb43",
-  "upstream_tree": "1186430edb1d16e41d644aaf155a92a09efe06ff",
-  "upstream_version": "0.15.44",
-  "latest_checked_commit": "e58dd043600587dbaf58ba315e7f2b38373eeb43",
-  "checked_at": "2026-11-19",
-  "adaptation_status": "reviewed",
+  "upstream_commit": "aaeb0ea3a0584995aa8f55ce44c6c5259414b896",
+  "upstream_tree": "b47cf6d63625b48fd77893233044849935cdae3d",
+  "upstream_version": "0.15.46",
+  "latest_checked_commit": "aaeb0ea3a0584995aa8f55ce44c6c5259414b896",
+  "checked_at": "2026-11-20",
+  "adaptation_status": "pending",
   "host_validation": "not-qualified",
-  "pending_files": [],
+  "pending_files": [
+    ".cursor-plugin/plugin.json",
+    "docs/harness/claude-code.md",
+    "plugin.json",
+    "skills/arena/SKILL.md",
+    "skills/poteto-mode/SKILL.md",
+    "skills/setup-pstack/SKILL.md",
+    "skills/statechart/SKILL.md",
+    "skills/statechart/scripts/frontends/dot.ts",
+    "skills/statechart/scripts/janitor.ts",
+    "skills/statechart/scripts/kill.ts",
+    "skills/statechart/scripts/run.ts",
+    "skills/statechart/scripts/statechart.ts",
+    "skills/statechart/scripts/test/cli.test.ts",
+    "skills/statechart/scripts/test/messages.test.ts",
+    "<subtree tree, including file modes>"
+  ],
   "files": [
     {
       "source": ".cursor-plugin/plugin.json",
       "status": "unsupported",
       "reason": "Source-only supporting material; not loaded or executed by the package.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": ".gitignore",
@@ -230,13 +246,13 @@
       "source": "docs/harness/claude-code.md",
       "status": "unsupported",
       "reason": "Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "plugin.json",
       "status": "unsupported",
       "reason": "Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/architect/SKILL.md",
@@ -250,7 +266,7 @@
       "status": "adapted",
       "destination": "skills/arena/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/automate-me/SKILL.md",
@@ -418,7 +434,7 @@
       "status": "adapted",
       "destination": "skills/poteto-mode/SKILL.md",
       "reason": "Explicit host workflow adaptation; source identity and invocation intent retained.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/poteto-mode/playbooks/authoring-a-skill.md",
@@ -871,7 +887,7 @@
       "status": "adapted",
       "destination": "skills/setup-pstack/SKILL.md",
       "reason": "Preserve all seven setup stages, four budget choices, and 17 role entries; use observed host model controls and authorized project persistence rather than vendor defaults or a global rule.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/sharpen/SKILL.md",
@@ -905,7 +921,7 @@
       "status": "adapted",
       "destination": "skills/statechart/SKILL.md",
       "reason": "Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/references/render.md",
@@ -948,7 +964,7 @@
       "source": "skills/statechart/scripts/frontends/dot.ts",
       "status": "unsupported",
       "reason": "Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/frontends/marks.ts",
@@ -997,6 +1013,18 @@
       "status": "unsupported",
       "reason": "Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported.",
       "review": "reviewed"
+    },
+    {
+      "source": "skills/statechart/scripts/janitor.ts",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
+    },
+    {
+      "source": "skills/statechart/scripts/kill.ts",
+      "status": "unsupported",
+      "reason": "Unclassified new upstream file; review required.",
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/package.json",
@@ -1062,7 +1090,7 @@
       "source": "skills/statechart/scripts/run.ts",
       "status": "unsupported",
       "reason": "Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/statechart",
@@ -1074,7 +1102,7 @@
       "source": "skills/statechart/scripts/statechart.ts",
       "status": "unsupported",
       "reason": "Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/test/ConfigOracle.java",
@@ -1110,7 +1138,7 @@
       "source": "skills/statechart/scripts/test/cli.test.ts",
       "status": "unsupported",
       "reason": "Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/test/config-fuzz.test.ts",
@@ -3306,7 +3334,7 @@
       "source": "skills/statechart/scripts/test/messages.test.ts",
       "status": "unsupported",
       "reason": "Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported.",
-      "review": "reviewed"
+      "review": "pending"
     },
     {
       "source": "skills/statechart/scripts/test/pipeline.test.ts",
