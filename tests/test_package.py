@@ -239,6 +239,8 @@ class PackageTests(unittest.TestCase):
             self.assertIn(label, adapted)
         for clause in ("Alias entries still count toward panel size",
                        "Do not derive a new identifier", "only when the user accepts it",
+                       "never raise a lower target to the ceiling",
+                       "even when upstream calls the saved value an old default",
                        "Replace only the Pstack configuration section",
                        "Do not promise that a saved preference applies to new sessions"):
             self.assertIn(clause, adapted)
