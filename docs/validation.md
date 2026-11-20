@@ -6,7 +6,7 @@ This page distinguishes repository checks from actual host behavior. A schema-va
 
 As of November 18, 2026, public marketplace release is not being pursued. The public-release assessments and submission checklists below are historical records, not pending publication work. This decision does not change any recorded qualification result or platform review state.
 
-Version 0.1.16 has no native installation, model execution or video rendering qualification. The isolated v0.1.13 measurements below remain historical evidence only.
+Version 0.1.17 has no native installation, model execution or video rendering qualification. The isolated v0.1.13 measurements below remain historical evidence only.
 
 ## Repository checks
 
@@ -309,3 +309,7 @@ The tested release was `v0.1.13`, tag commit `afaa0e172dd2c712b8197683b96b414e8a
 The fresh process also exposed six built-in CLI skills; these were counted separately and were not mistaken for Pstack skills. Discovery is not an executed skill invocation. No `poteto-help` or `how` model result, macOS/Windows installation, account synchronization, or full compatibility claim follows from this test. The test did not access a user's other computer or real installed Pstack. The README and installation guide retain those limits.
 
 The Git-marketplace route remains unqualified. This repository has no release-only catalog; its root includes source material excluded from the ZIP. Adding a safe route requires release-only contents and pinning, guarded catalog publication, and native installation/upgrade verification. The current native check qualifies the local ZIP/staging path only.
+
+## Upstream 0.15.44 adaptation (0.1.17)
+
+All seven changed sources were reviewed. Vendor-specific defaults, automatic Gemini migrations and Claude/Cursor harness mappings remain source-only. Setup distinguishes an accepted role policy ceiling from host capability, preserves lower budget targets and requires acceptance before changing saved panel choices. Native installation, model execution and rendering were not run for this version. Repository tests and reproducible builds do not establish host behavior.

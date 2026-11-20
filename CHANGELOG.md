@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.17] - 2026-11-20
+
+- Review all seven upstream changes through Pstack 0.15.44 while keeping vendor-specific defaults and Claude/Cursor harness mappings source-only.
+- Clarify that accepted role policy ceilings can be lower than host capability. Preserve lower budget targets and require acceptance before changing saved panel choices.
+- Preserve existing model preferences, inherited aliases, unsupported-host guards and historical release artifacts.
+
+Native installation, model execution and rendering were not run for this version. Static checks do not establish host behavior.
+
 ## [0.1.16] - 2026-11-17
 
 - Review all 70 changed, added or removed upstream sources through Pstack 0.15.43 while preserving attribution and historical artifacts.
