@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.18] - 2026-11-21
+
+- Review all 14 changed sources through Pstack 0.15.46 without changing accepted model or effort settings.
+- Preserve raw Statechart checker output when inspecting normalized Windows line endings. The upstream launcher, process cleanup and tests remain source-only and are not included in the portable package.
+- Preserve historical release artifacts and the existing private plugin identity.
+
+Native installation, model execution and rendering were not run for this version. The upstream Windows runtime changes are not part of this package.
+
 ## [0.1.17] - 2026-11-20
 
 - Review all seven upstream changes through Pstack 0.15.44 while keeping vendor-specific defaults and Claude/Cursor harness mappings source-only.

@@ -1,17 +1,18 @@
 # Reviewed upstream adaptation
 
-Reviewed all seven changed sources from `e1cc03121a0e71129a4fb730d7c5528a0a3e43c8` (0.15.43) through `e58dd043600587dbaf58ba315e7f2b38373eeb43` (0.15.44). Vendored helpers were not executed. Reviewed hashes were refreshed after inspecting every source diff and the affected adapters.
+Reviewed all 14 changed sources from `e58dd043600587dbaf58ba315e7f2b38373eeb43` (0.15.44) through `aaeb0ea3a0584995aa8f55ce44c6c5259414b896` (0.15.46). The snapshot matches the canonical Pstack subtree. Vendored helpers were not executed.
 
-[Upstream comparison](https://github.com/cursor/plugins/compare/e1cc03121a0e71129a4fb730d7c5528a0a3e43c8...e58dd043600587dbaf58ba315e7f2b38373eeb43)
+[Upstream comparison](https://github.com/cursor/plugins/compare/e58dd043600587dbaf58ba315e7f2b38373eeb43...aaeb0ea3a0584995aa8f55ce44c6c5259414b896)
 
 | Source | Disposition |
 |---|---|
-| `.cursor-plugin/plugin.json` | Version bump; source-only native manifest. |
-| `plugin.json` | Version bump; adapted package metadata remains independently maintained. |
-| `README.md` | Carbon-to-Neon default panel change remains source-only. |
-| `docs/harness/claude-code.md` | Updated Neon mapping remains unsupported Claude Code harness documentation. |
-| `skills/arena/SKILL.md` | Vendor-default changes are not imported. Preserve accepted panels, real capabilities and cross-vendor evidence gates. |
-| `skills/poteto-mode/SKILL.md` | Updated vendor defaults and Gemini high policy cap remain source-only; the cap is not a model capability maximum. Preserve inherited defaults and authorized overrides. |
-| `skills/setup-pstack/SKILL.md` | Do not automatically rewrite saved Gemini panel choices. Generalize the distinction between an accepted policy ceiling and host capability; apply the lower of accepted ceiling and budget target. Changes to saved choices require acceptance. |
+| `.cursor-plugin/plugin.json`, `plugin.json` | Upstream version bumps; downstream metadata remains independently maintained. |
+| `docs/harness/claude-code.md` | Vendor-specific model mapping stays source-only. |
+| `skills/arena/SKILL.md`, `skills/poteto-mode/SKILL.md` | Do not import changed vendor defaults or raise any accepted policy ceiling. |
+| `skills/setup-pstack/SKILL.md` | Do not rewrite accepted model or effort values on rerun; preserve budget and consent gates. |
+| `skills/statechart/SKILL.md` | Do not import Node or TLC invocation. Preserve raw checker output when inspecting a normalized copy. |
+| `skills/statechart/scripts/frontends/dot.ts`, `run.ts` | Line-ending and UTF-8 handling, child execution flags and pipeline changes stay source-only. |
+| `skills/statechart/scripts/janitor.ts`, `kill.ts`, `statechart.ts` | Detached cleanup, process-control, temporary-file and platform behavior stay source-only. |
+| `skills/statechart/scripts/test/cli.test.ts`, `test/messages.test.ts` | New line-ending coverage is upstream-only and was not executed. |
 
-The package retains 58 skills and 22 playbooks. No vendor model defaults, global configuration writes or runtime capabilities are imported. Native installation, model execution and rendering remain unqualified for v0.1.17. Historical release artifacts and dated public-review records are preserved. Public marketplace release is not being pursued.
+The package retains 58 skills and 22 playbooks. No vendor defaults, launchers, checker integration or process-control code are added. Native installation, model execution, rendering and Windows runtime behavior are unverified. Historical release artifacts and public-review records are preserved.

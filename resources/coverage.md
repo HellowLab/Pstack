@@ -1,7 +1,7 @@
 # Capability coverage
 
-Upstream 0.15.44 at `e58dd043600587dbaf58ba315e7f2b38373eeb43`.
-Subtree `1186430edb1d16e41d644aaf155a92a09efe06ff`. Latest checked commit `e58dd043600587dbaf58ba315e7f2b38373eeb43` on 2026-11-19.
+Upstream 0.15.46 at `aaeb0ea3a0584995aa8f55ce44c6c5259414b896`.
+Subtree `b47cf6d63625b48fd77893233044849935cdae3d`. Latest checked commit `aaeb0ea3a0584995aa8f55ce44c6c5259414b896` on 2026-11-20.
 Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
@@ -161,6 +161,8 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/statechart/scripts/frontends/verdict.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/frontends/view.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/ir.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/janitor.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/kill.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/package.json` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/passes/annotate.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/passes/label.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
