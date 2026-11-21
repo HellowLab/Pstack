@@ -986,6 +986,14 @@
       "status": "unsupported",
       "reason": "Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported."
     },
+    "skills/statechart/scripts/janitor.ts": {
+      "status": "unsupported",
+      "reason": "Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported."
+    },
+    "skills/statechart/scripts/kill.ts": {
+      "status": "unsupported",
+      "reason": "Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported."
+    },
     "skills/statechart/scripts/pipeline.ts": {
       "status": "unsupported",
       "reason": "Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported."

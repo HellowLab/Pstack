@@ -6,7 +6,7 @@ This page distinguishes repository checks from actual host behavior. A schema-va
 
 As of November 18, 2026, public marketplace release is not being pursued. The public-release assessments and submission checklists below are historical records, not pending publication work. This decision does not change any recorded qualification result or platform review state.
 
-Version 0.1.17 has no native installation, model execution or video rendering qualification. The isolated v0.1.13 measurements below remain historical evidence only.
+Version 0.1.18 has no native installation, model execution or video rendering qualification. The isolated v0.1.13 measurements below remain historical evidence only.
 
 ## Repository checks
 
@@ -313,3 +313,7 @@ The Git-marketplace route remains unqualified. This repository has no release-on
 ## Upstream 0.15.44 adaptation (0.1.17)
 
 All seven changed sources were reviewed. Vendor-specific defaults, automatic Gemini migrations and Claude/Cursor harness mappings remain source-only. Setup distinguishes an accepted role policy ceiling from host capability, preserves lower budget targets and requires acceptance before changing saved panel choices. Native installation, model execution and rendering were not run for this version. Repository tests and reproducible builds do not establish host behavior.
+
+## Upstream 0.15.46 adaptation (0.1.18)
+
+All 14 changed sources were reviewed against the pinned subtree. The portable package keeps saved model choices and requires agreement before changing them. All 408 upstream Statechart runtime and test files remain source-only; none was executed. The Statechart guidance distinguishes normalized checker text from raw evidence and does not claim a native Windows fix. Native installation, model execution and rendering were not run for this version.

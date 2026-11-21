@@ -281,13 +281,17 @@ class PackageTests(unittest.TestCase):
         self.assertIn("bundled upstream generators are unsupported", metadata["description"])
         self.assertIn("../statechart/SKILL.md", self.files["skills/poteto-help/SKILL.md"].decode())
         support = [p for p in self.rules["files"] if p.startswith("skills/statechart/scripts/")]
-        self.assertEqual(len(support), 406)
+        self.assertEqual(len(support), 408)
+        self.assertIn("skills/statechart/scripts/janitor.ts", support)
+        self.assertIn("skills/statechart/scripts/kill.ts", support)
         for path in support:
             self.assertEqual(self.rules["files"][path]["status"], "unsupported")
             self.assertNotIn("destination", self.rules["files"][path])
         self.assertFalse(any(p.startswith("skills/statechart/scripts/") for p in self.files))
         self.assertIn("Mapping modules are executable code", entry)
         self.assertIn("Do not run helpers from the vendored snapshot", entry)
+        self.assertIn("Preserve raw checker output", entry)
+        self.assertIn("against the original output", entry)
 
     def test_ketchup_video_keeps_explicit_invocation_and_no_runtime(self):
         entry = self.files["skills/ketchup-video/SKILL.md"].decode()

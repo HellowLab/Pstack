@@ -2,7 +2,7 @@
 
 Upstream 0.15.46 at `aaeb0ea3a0584995aa8f55ce44c6c5259414b896`.
 Subtree `b47cf6d63625b48fd77893233044849935cdae3d`. Latest checked commit `aaeb0ea3a0584995aa8f55ce44c6c5259414b896` on 2026-11-20.
-Adaptation status: pending. Host qualification remains incomplete.
+Adaptation status: reviewed. Host qualification remains incomplete.
 
 All registered skill names remain discoverable. Explicit-only invocation metadata and a body guard are retained; setup keeps its upstream automatic eligibility. Native mode and path-selector metadata are replaced by description and body instructions.
 
@@ -10,7 +10,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 
 | Upstream file | Status | Adaptation or limitation | Review |
 |---|---|---|---|
-| `.cursor-plugin/plugin.json` | unsupported | Source-only supporting material; not loaded or executed by the package. | pending |
+| `.cursor-plugin/plugin.json` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `.gitignore` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `LICENSE` | unchanged | Complete MIT license preserved at repository and package root. | reviewed |
 | `README.md` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
@@ -46,10 +46,10 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `docs/guide/images/router.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/understanding.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
 | `docs/guide/images/verification.jpg` | unsupported | Source-only supporting material; not loaded or executed by the package. | reviewed |
-| `docs/harness/claude-code.md` | unsupported | Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness. | pending |
-| `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | pending |
+| `docs/harness/claude-code.md` | unsupported | Claude Code-specific tool, model, agent, path, and transcript mappings are source-only documentation, not ChatGPT/Codex capabilities. The adapter uses its own host contract and does not package or execute this harness. | reviewed |
+| `plugin.json` | unsupported | Upstream root manifest describes Cursor packaging; the adapter owns the ChatGPT/Codex manifests. | reviewed |
 | `skills/architect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/arena/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | pending |
+| `skills/arena/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/automate-me/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/benchmark-checklist/SKILL.md` | adapted | Upstream body retained; invocation and host/permission guards added. | reviewed |
 | `skills/blast-radius/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
@@ -73,7 +73,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/poteto-help/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/poteto-help/references/prompting.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
 | `skills/poteto-help/references/recipes.md` | adapted | Full reference retained with capability/permission preface and narrow host-path or runner corrections. | reviewed |
-| `skills/poteto-mode/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | pending |
+| `skills/poteto-mode/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/poteto-mode/playbooks/authoring-a-skill.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/autonomous-run.md` | adapted | Workflow stages retained with explicit capability, scope, and evidence gates. | reviewed |
 | `skills/poteto-mode/playbooks/autopilot-full.md` | unsupported | Explanatory entry point; persistent worker lifecycle and orchestration runtime are not supplied. | reviewed |
@@ -140,19 +140,19 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/principle-type-system-discipline/SKILL.md` | adapted | Retain complete standalone guidance removed by upstream condensation; preserve compatibility preconditions and host contract. | reviewed |
 | `skills/recall/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/reflect/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
-| `skills/setup-pstack/SKILL.md` | adapted | Preserve all seven setup stages, four budget choices, and 17 role entries; use observed host model controls and authorized project persistence rather than vendor defaults or a global rule. | pending |
+| `skills/setup-pstack/SKILL.md` | adapted | Preserve all seven setup stages, four budget choices, and 17 role entries; use observed host model controls and authorized project persistence rather than vendor defaults or a global rule. | reviewed |
 | `skills/sharpen/SKILL.md` | adapted | Explicit prompt rewriting with four expert recommendations, preserved user constraints and choices, and no underlying task execution. | reviewed |
 | `skills/show-me-your-work/SKILL.md` | adapted | Explicit host workflow adaptation; source identity and invocation intent retained. | reviewed |
 | `skills/show-me-your-work/references/decision-log-template.tsv` | unchanged | Portable reference contract retained byte-for-byte and invoked by its workflow. | reviewed |
 | `skills/show-me-your-work/scripts/log.sh` | unsupported | Host-specific helper retained only as source. No helper is executed or distributed in the ZIP. | reviewed |
-| `skills/statechart/SKILL.md` | adapted | Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported. | pending |
+| `skills/statechart/SKILL.md` | adapted | Portable statechart/model review with explicit checker, renderer and replay evidence; bundled Node generators and TLC integration remain unsupported. | reviewed |
 | `skills/statechart/references/render.md` | adapted | Available-tool rendering with no automatic Pele installation, actual output/error evidence and visible rule marks. | reviewed |
 | `skills/statechart/scripts/backends/cfg.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/backends/mermaid.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/backends/plain-text.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/backends/report.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/frontends/config.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
-| `skills/statechart/scripts/frontends/dot.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | pending |
+| `skills/statechart/scripts/frontends/dot.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/frontends/marks.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/frontends/messages.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/frontends/spec.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
@@ -161,8 +161,8 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/statechart/scripts/frontends/verdict.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/frontends/view.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/ir.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
-| `skills/statechart/scripts/janitor.ts` | unsupported | Unclassified new upstream file; review required. | pending |
-| `skills/statechart/scripts/kill.ts` | unsupported | Unclassified new upstream file; review required. | pending |
+| `skills/statechart/scripts/janitor.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
+| `skills/statechart/scripts/kill.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/package.json` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/passes/annotate.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/passes/label.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
@@ -173,15 +173,15 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/statechart/scripts/passes/region-check.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/passes/regions.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/pipeline.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
-| `skills/statechart/scripts/run.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | pending |
+| `skills/statechart/scripts/run.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/statechart` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
-| `skills/statechart/scripts/statechart.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | pending |
+| `skills/statechart/scripts/statechart.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/ConfigOracle.java` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/chart.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/charts/Braces.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/charts/Escapes.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/charts/Phases.mmd` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
-| `skills/statechart/scripts/test/cli.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | pending |
+| `skills/statechart/scripts/test/cli.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/config-fuzz.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/corpus.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/corpus/Counter/ChartRun.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
@@ -547,7 +547,7 @@ Unchanged means exact copied bytes. Adapted means host-neutral instructions or g
 | `skills/statechart/scripts/test/grid/sany.out` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/java.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/labels.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
-| `skills/statechart/scripts/test/messages.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | pending |
+| `skills/statechart/scripts/test/messages.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/pipeline.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/plain-tlc.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
 | `skills/statechart/scripts/test/render.test.ts` | unsupported | Source-only TypeScript/TLC pipeline, launcher, test or fixture; not packaged or executed. No automatic runtime installation, checker or renderer capability imported. | reviewed |
